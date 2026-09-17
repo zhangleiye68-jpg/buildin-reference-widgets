@@ -61,6 +61,47 @@ function mountProgress(){
   let read=clamp(Number(safeGet(readKey,0))||0,0,20);
   let study=safeGet(studyKey,{running:false,remaining:3620,endAt:null});
   let rest=safeGet(breakKey,{running:false,remaining:1500,endAt:null});
+  let popIndex=0;
+  const showChange=(delta,button)=>{
+    const bounds=button.getBoundingClientRect();
+    const pop=document.createElement('span');
+    pop.className='change-pop';
+    pop.textContent=delta>0?'+1':'−1';
+    pop.setAttribute('aria-hidden','true');
+    pop.style.left=`${bounds.left+bounds.width/2+(popIndex++%3-1)*8}px`;
+    pop.style.top=`${bounds.top+bounds.height/2}px`;
+    document.body.append(pop);
+    const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const frames=reduced
+      ? [{opacity:1},{opacity:0}]
+      : [
+          {transform:'translate(-50%,-20%) scale(.75)',opacity:0},
+          {transform:'translate(-50%,-65%) scale(1.15)',opacity:1,offset:.18},
+          {transform:'translate(-50%,calc(-50% - 52px)) scale(1)',opacity:0}
+        ];
+    const animation=pop.animate(frames,{duration:reduced?160:650,easing:'cubic-bezier(.18,.67,.2,1)',fill:'forwards'});
+    animation.addEventListener('finish',()=>pop.remove(),{once:true});
+  };
+  const setRead=(value,button)=>{
+    const next=clamp(Number(value)||0,0,20);
+    if(next===read){
+      const amount=document.querySelector('.backdrop #amount');
+      if(amount)amount.value=read;
+      return;
+    }
+    const delta=next-read;
+    read=next;
+    safeSet(readKey,read);
+    const number=app.querySelector('.small-number');
+    const progress=app.querySelector('.reading-progress');
+    if(number)number.textContent=`${read} / 20`;
+    if(progress)progress.style.width=`${read*5}%`;
+    const amount=document.querySelector('.backdrop #amount');
+    const fill=document.querySelector('.backdrop #fill');
+    if(amount)amount.value=read;
+    if(fill)fill.style.width=`${read*5}%`;
+    if(button&&Math.abs(delta)===1)showChange(delta,button);
+  };
   const modal=(content)=>{
     const back=document.createElement('div');back.className='backdrop';back.innerHTML=content;
     back.addEventListener('click',e=>{if(e.target===back||e.target.closest('[data-close]'))back.remove()});
@@ -78,34 +119,33 @@ function mountProgress(){
       <button class="study-toggle" id="study-toggle">${study.running?'Pause':'Start'}</button>
       <div class="study-land"></div><div class="panda" aria-hidden="true">🐼</div><div class="study-footer">${hhmmss(remaining(study))}</div></div>
       <div class="small-group"><div><p class="byline">PROGRESS WIDGET</p><div class="small-card reading" id="reading" role="button" tabindex="0" aria-label="Open reading progress">
-        <div class="small-icon">📖</div><div class="small-body"><div class="small-number">${read} / 20</div><div class="small-label">Read 20 pages</div></div>
+        <div class="reading-progress" style="width:${read*5}%"></div>
+        <div class="small-icon">📖</div><div class="small-body"><div class="small-number" aria-live="polite" aria-atomic="true">${read} / 20</div><div class="small-label">Read 20 pages</div></div>
         <div class="small-actions"><button class="mini-button" id="read-minus" aria-label="Decrease reading">−</button><button class="mini-button" id="read-plus" aria-label="Add reading">+</button></div>
       </div></div><div><p class="byline">BREAK WIDGET</p><div class="small-card"><div class="small-icon">🍩</div>
         <div class="small-body"><div class="small-number" id="break-time">${mmss(remaining(rest))}</div><div class="small-label">25 minutes break</div></div>
         <button class="play-button ${rest.running?'running':''}" id="break-toggle" aria-label="${rest.running?'Pause':'Start'} break">${rest.running?'Ⅱ':'▶'}</button>
-      </div></div><div class="widget-caption">Tap the reading card to log progress.</div></div>
+      </div></div><div class="widget-caption">Tap the reading card for details. + / − saves instantly.</div></div>
     </div></section>`;
-    const openRead=(delta=0)=>{
-      let current=clamp(read+delta,0,20);
+    const openRead=()=>{
       const back=modal(`<div class="modal" role="dialog" aria-modal="true" aria-label="Read 20 pages">
         <div class="modal-head"><h2>Read 20 pages</h2><button class="close" data-close aria-label="Close">×</button></div>
         <div class="overline">LOG PROGRESS</div><div class="modal-label">Pages read today</div>
         <div class="help">Track a small win in your reading goal.</div>
-        <div class="stepper"><button id="minus" aria-label="Minus one">−</button><input id="amount" type="number" min="0" max="20" value="${current}" aria-label="Pages read"><button id="plus" aria-label="Plus one">+</button></div>
-        <div class="goal-line">Goal: 20 pages</div><div class="progress-track"><div class="progress-fill" id="fill" style="width:${current*5}%"></div></div>
-        <button class="save" id="save-progress">Save progress</button></div>`);
-      const amount=back.querySelector('#amount'),fill=back.querySelector('#fill');
-      const update=n=>{current=clamp(Number(n)||0,0,20);amount.value=current;fill.style.width=(current*5)+'%'};
-      back.querySelector('#minus').onclick=()=>update(current-1);
-      back.querySelector('#plus').onclick=()=>update(current+1);
-      amount.oninput=()=>update(amount.value);
-      back.querySelector('#save-progress').onclick=()=>{read=current;safeSet(readKey,read);back.remove();render()};
+        <div class="stepper"><button id="minus" aria-label="Minus one">−</button><input id="amount" type="number" min="0" max="20" value="${read}" aria-label="Pages read"><button id="plus" aria-label="Plus one">+</button></div>
+        <div class="goal-line">Goal: 20 pages</div><div class="progress-track"><div class="progress-fill" id="fill" style="width:${read*5}%"></div></div>
+        <p class="autosave-note">Changes save automatically</p></div>`);
+      const amount=back.querySelector('#amount');
+      back.querySelector('#minus').onclick=e=>setRead(read-1,e.currentTarget);
+      back.querySelector('#plus').onclick=e=>setRead(read+1,e.currentTarget);
+      amount.onchange=()=>setRead(amount.value);
+      amount.onkeydown=e=>{if(e.key==='Enter')amount.blur()};
       amount.focus();
     };
     app.querySelector('#reading').onclick=()=>openRead();
-    app.querySelector('#reading').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openRead()}};
-    app.querySelector('#read-minus').onclick=e=>{e.stopPropagation();openRead(-1)};
-    app.querySelector('#read-plus').onclick=e=>{e.stopPropagation();openRead(1)};
+    app.querySelector('#reading').onkeydown=e=>{if(e.target===e.currentTarget&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openRead()}};
+    app.querySelector('#read-minus').onclick=e=>{e.stopPropagation();setRead(read-1,e.currentTarget)};
+    app.querySelector('#read-plus').onclick=e=>{e.stopPropagation();setRead(read+1,e.currentTarget)};
     app.querySelector('#break-toggle').onclick=()=>toggle('break');
     app.querySelector('#study-toggle').onclick=()=>toggle('study');
   };

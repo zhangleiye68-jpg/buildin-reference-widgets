@@ -33,8 +33,11 @@ button{cursor:pointer}
 .small-group{display:flex;flex-direction:column;gap:23px}
 .byline{font-size:12px;color:#a0a9ad;margin:0 0 7px 3px}
 .small-card{height:132px;border:2px solid #697278;background:#f9fafb;border-radius:8px;display:flex;align-items:center;gap:15px;padding:14px 15px;position:relative}
-.small-card.reading{cursor:pointer}
+.small-card.reading{cursor:pointer;overflow:hidden}
 .small-card:hover{background:#f4f7f8}
+.reading-progress{position:absolute;inset:0 auto 0 0;background:#e4e9eb;pointer-events:none;transition:width .18s ease}
+.small-card.reading>.small-icon,.small-card.reading>.small-body,.small-card.reading>.small-actions{position:relative;z-index:1}
+.change-pop{position:fixed;z-index:20;pointer-events:none;color:#4e5960;font-size:22px;font-weight:800;line-height:1;text-shadow:0 1px 0 white;white-space:nowrap}
 .small-icon{width:53px;height:53px;border:1px solid #d8e0e2;border-radius:7px;background:white;display:grid;place-items:center;font-size:26px;color:#6e818a;flex:none}
 .small-body{text-align:center;flex:1;min-width:0}
 .small-number{font-size:26px;font-weight:700;color:#4d585e;font-variant-numeric:tabular-nums}
@@ -61,6 +64,7 @@ button{cursor:pointer}
 .goal-line{font-size:13px;color:#7b878c;margin:20px 0 8px}
 .progress-track{height:5px;background:#e6ebea;border-radius:9px;overflow:hidden}
 .progress-fill{height:100%;background:#8da9a1}
+.autosave-note{text-align:center;font-size:13px;color:#7b878c;margin:20px 0 0}
 .save{background:#647e85;color:white;border:0;border-radius:6px;width:100%;padding:12px 16px;font-size:15px;font-weight:700;margin-top:21px}
 .settings-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:20px}
 .settings-grid label{font-size:12px;color:#647179}
