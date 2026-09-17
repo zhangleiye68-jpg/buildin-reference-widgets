@@ -1,5 +1,6 @@
 const app=document.getElementById('app');
 const view=new URLSearchParams(location.search).get('view')||'timer';
+if(new URLSearchParams(location.search).get('dashboard')==='1')document.body.classList.add('dashboard-embed');
 const readKey='buildin-reference-read-pages';
 const timerKey='buildin-reference-pomodoro';
 const studyKey='buildin-reference-study';
