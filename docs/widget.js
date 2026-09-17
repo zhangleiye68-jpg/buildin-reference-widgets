@@ -1,10 +1,30 @@
 const app=document.getElementById('app');
-const view=new URLSearchParams(location.search).get('view')||'timer';
-if(new URLSearchParams(location.search).get('dashboard')==='1')document.body.classList.add('dashboard-embed');
-const readKey='buildin-reference-read-pages';
-const timerKey='buildin-reference-pomodoro';
-const studyKey='buildin-reference-study';
-const breakKey='buildin-reference-break';
+const params=new URLSearchParams(location.search);
+const view=params.get('view')||'timer';
+const lang=params.get('lang')==='ru'?'ru':'en';
+if(params.get('dashboard')==='1')document.body.classList.add('dashboard-embed');
+document.documentElement.lang=lang;
+const russian={
+  'Pomodoro':'Помодоро','Short Break':'Короткий перерыв','Long Break':'Длинный перерыв',
+  'Start':'Старт','Pause':'Пауза','Reset timer':'Сбросить таймер','Timer settings':'Настройки таймера',
+  'Close':'Закрыть','DURATIONS IN MINUTES':'ДЛИТЕЛЬНОСТЬ В МИНУТАХ','Save settings':'Сохранить настройки',
+  'Sky photo: Jeffrey Betts · CC0':'Фото неба: Jeffrey Betts · CC0',
+  'Study for 1 hour':'Учёба: 1 час','PROGRESS WIDGET':'ПРОГРЕСС','BREAK WIDGET':'ПЕРЕРЫВ',
+  'Open reading progress':'Открыть прогресс чтения','Read 20 pages':'Прочитать 20 страниц',
+  'Decrease reading':'Уменьшить счётчик чтения','Add reading':'Добавить страницу',
+  '25 minutes break':'Перерыв: 25 минут','Start break':'Начать перерыв','Pause break':'Пауза перерыва',
+  'Tap the reading card for details. + / − saves instantly.':'Нажмите на карточку чтения, чтобы увидеть детали. Изменения сохраняются сразу.',
+  'LOG PROGRESS':'ЗАПИСАТЬ ПРОГРЕСС','Pages read today':'Прочитано страниц сегодня',
+  'Track a small win in your reading goal.':'Отмечайте каждый шаг к цели по чтению.',
+  'Minus one':'Минус одна','Plus one':'Плюс одна','Pages read':'Прочитано страниц',
+  'Goal: 20 pages':'Цель: 20 страниц','Changes save automatically':'Изменения сохраняются автоматически'
+};
+const t=(value)=>lang==='ru'?(russian[value]||value):value;
+const storageSuffix=lang==='ru'?'-ru':'';
+const readKey='buildin-reference-read-pages'+storageSuffix;
+const timerKey='buildin-reference-pomodoro'+storageSuffix;
+const studyKey='buildin-reference-study'+storageSuffix;
+const breakKey='buildin-reference-break'+storageSuffix;
 const safeGet=(key,defaultValue)=>{try{const raw=localStorage.getItem(key);return raw?JSON.parse(raw):defaultValue}catch{return defaultValue}};
 const safeSet=(key,value)=>{try{localStorage.setItem(key,JSON.stringify(value))}catch{}};
 const clamp=(n,min,max)=>Math.max(min,Math.min(max,n));
@@ -16,7 +36,7 @@ function mountTimer(){
   const defaultSettings={focus:25,short:5,long:15};
   let state=safeGet(timerKey,{mode:'focus',running:false,remaining:1500,endAt:null,settings:defaultSettings});
   state.settings={...defaultSettings,...(state.settings||{})};
-  const names={focus:'Pomodoro',short:'Short Break',long:'Long Break'};
+  const names={focus:t('Pomodoro'),short:t('Short Break'),long:t('Long Break')};
   const duration=mode=>state.settings[mode]*60;
   const save=()=>safeSet(timerKey,state);
   const modal=(content)=>{
@@ -29,10 +49,10 @@ function mountTimer(){
     app.innerHTML=`<section class="timer-page"><div class="timer"><div class="timer-inner">
       <div class="modes">${Object.entries(names).map(([id,label])=>`<button class="mode ${state.mode===id?'active':''}" data-mode="${id}">${label}</button>`).join('')}</div>
       <div class="time" aria-live="off">${mmss(remaining(state))}</div>
-      <div class="controls"><button class="main-control ${state.running?'running':''}" id="start">${state.running?'Pause':'Start'}</button>
-      <button class="icon-control" id="reset" aria-label="Reset timer">↻</button>
-      <button class="icon-control" id="settings" aria-label="Timer settings">⚙</button></div>
-      </div><span class="credit">Sky photo: Jeffrey Betts · CC0</span></div></section>`;
+      <div class="controls"><button class="main-control ${state.running?'running':''}" id="start">${t(state.running?'Pause':'Start')}</button>
+      <button class="icon-control" id="reset" aria-label="${t('Reset timer')}">↻</button>
+      <button class="icon-control" id="settings" aria-label="${t('Timer settings')}">⚙</button></div>
+      </div><span class="credit">${t('Sky photo: Jeffrey Betts · CC0')}</span></div></section>`;
     app.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{
       state.mode=b.dataset.mode;state.running=false;state.remaining=duration(state.mode);state.endAt=null;save();render()
     });
@@ -43,11 +63,11 @@ function mountTimer(){
     };
     app.querySelector('#reset').onclick=()=>{state.running=false;state.remaining=duration(state.mode);state.endAt=null;save();render()};
     app.querySelector('#settings').onclick=()=>{
-      const back=modal(`<div class="modal" role="dialog" aria-modal="true" aria-label="Timer settings">
-        <div class="modal-head"><h2>Timer settings</h2><button class="close" data-close aria-label="Close">×</button></div>
-        <div class="overline">DURATIONS IN MINUTES</div><div class="settings-grid">
+      const back=modal(`<div class="modal" role="dialog" aria-modal="true" aria-label="${t('Timer settings')}">
+        <div class="modal-head"><h2>${t('Timer settings')}</h2><button class="close" data-close aria-label="${t('Close')}">×</button></div>
+        <div class="overline">${t('DURATIONS IN MINUTES')}</div><div class="settings-grid">
         ${Object.entries(names).map(([id,label])=>`<label>${label}<input type="number" min="1" max="180" name="${id}" value="${state.settings[id]}"></label>`).join('')}</div>
-        <button class="save" id="save-settings">Save settings</button></div>`);
+        <button class="save" id="save-settings">${t('Save settings')}</button></div>`);
       back.querySelector('#save-settings').onclick=()=>{
         for(const id of Object.keys(names))state.settings[id]=clamp(Number(back.querySelector('[name="'+id+'"]').value)||defaultSettings[id],1,180);
         state.running=false;state.remaining=duration(state.mode);state.endAt=null;save();back.remove();render()
@@ -116,26 +136,26 @@ function mountProgress(){
   };
   const render=()=>{
     app.innerHTML=`<section class="progress-page"><div class="widget-grid">
-      <div class="study"><div class="study-time">${hhmmss(remaining(study))}</div><div class="study-label">Study for 1 hour</div>
-      <button class="study-toggle" id="study-toggle">${study.running?'Pause':'Start'}</button>
+      <div class="study"><div class="study-time">${hhmmss(remaining(study))}</div><div class="study-label">${t('Study for 1 hour')}</div>
+      <button class="study-toggle" id="study-toggle">${t(study.running?'Pause':'Start')}</button>
       <div class="study-land"></div><div class="panda" aria-hidden="true">🐼</div><div class="study-footer">${hhmmss(remaining(study))}</div></div>
-      <div class="small-group"><div><p class="byline">PROGRESS WIDGET</p><div class="small-card reading" id="reading" role="button" tabindex="0" aria-label="Open reading progress">
+      <div class="small-group"><div><p class="byline">${t('PROGRESS WIDGET')}</p><div class="small-card reading" id="reading" role="button" tabindex="0" aria-label="${t('Open reading progress')}">
         <div class="reading-progress" style="width:${read*5}%"></div>
-        <div class="small-icon">📖</div><div class="small-body"><div class="small-number" aria-live="polite" aria-atomic="true">${read} / 20</div><div class="small-label">Read 20 pages</div></div>
-        <div class="small-actions"><button class="mini-button" id="read-minus" aria-label="Decrease reading">−</button><button class="mini-button" id="read-plus" aria-label="Add reading">+</button></div>
-      </div></div><div><p class="byline">BREAK WIDGET</p><div class="small-card"><div class="small-icon">🍩</div>
-        <div class="small-body"><div class="small-number" id="break-time">${mmss(remaining(rest))}</div><div class="small-label">25 minutes break</div></div>
-        <button class="play-button ${rest.running?'running':''}" id="break-toggle" aria-label="${rest.running?'Pause':'Start'} break">${rest.running?'Ⅱ':'▶'}</button>
-      </div></div><div class="widget-caption">Tap the reading card for details. + / − saves instantly.</div></div>
+        <div class="small-icon">📖</div><div class="small-body"><div class="small-number" aria-live="polite" aria-atomic="true">${read} / 20</div><div class="small-label">${t('Read 20 pages')}</div></div>
+        <div class="small-actions"><button class="mini-button" id="read-minus" aria-label="${t('Decrease reading')}">−</button><button class="mini-button" id="read-plus" aria-label="${t('Add reading')}">+</button></div>
+      </div></div><div><p class="byline">${t('BREAK WIDGET')}</p><div class="small-card"><div class="small-icon">🍩</div>
+        <div class="small-body"><div class="small-number" id="break-time">${mmss(remaining(rest))}</div><div class="small-label">${t('25 minutes break')}</div></div>
+        <button class="play-button ${rest.running?'running':''}" id="break-toggle" aria-label="${t(rest.running?'Pause break':'Start break')}">${rest.running?'Ⅱ':'▶'}</button>
+      </div></div><div class="widget-caption">${t('Tap the reading card for details. + / − saves instantly.')}</div></div>
     </div></section>`;
     const openRead=()=>{
-      const back=modal(`<div class="modal" role="dialog" aria-modal="true" aria-label="Read 20 pages">
-        <div class="modal-head"><h2>Read 20 pages</h2><button class="close" data-close aria-label="Close">×</button></div>
-        <div class="overline">LOG PROGRESS</div><div class="modal-label">Pages read today</div>
-        <div class="help">Track a small win in your reading goal.</div>
-        <div class="stepper"><button id="minus" aria-label="Minus one">−</button><input id="amount" type="number" min="0" max="20" value="${read}" aria-label="Pages read"><button id="plus" aria-label="Plus one">+</button></div>
-        <div class="goal-line">Goal: 20 pages</div><div class="progress-track"><div class="progress-fill" id="fill" style="width:${read*5}%"></div></div>
-        <p class="autosave-note">Changes save automatically</p></div>`);
+      const back=modal(`<div class="modal" role="dialog" aria-modal="true" aria-label="${t('Read 20 pages')}">
+        <div class="modal-head"><h2>${t('Read 20 pages')}</h2><button class="close" data-close aria-label="${t('Close')}">×</button></div>
+        <div class="overline">${t('LOG PROGRESS')}</div><div class="modal-label">${t('Pages read today')}</div>
+        <div class="help">${t('Track a small win in your reading goal.')}</div>
+        <div class="stepper"><button id="minus" aria-label="${t('Minus one')}">−</button><input id="amount" type="number" min="0" max="20" value="${read}" aria-label="${t('Pages read')}"><button id="plus" aria-label="${t('Plus one')}">+</button></div>
+        <div class="goal-line">${t('Goal: 20 pages')}</div><div class="progress-track"><div class="progress-fill" id="fill" style="width:${read*5}%"></div></div>
+        <p class="autosave-note">${t('Changes save automatically')}</p></div>`);
       const amount=back.querySelector('#amount');
       back.querySelector('#minus').onclick=e=>setRead(read-1,e.currentTarget);
       back.querySelector('#plus').onclick=e=>setRead(read+1,e.currentTarget);
