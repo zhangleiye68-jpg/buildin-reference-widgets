@@ -1,6 +1,6 @@
 const app=document.getElementById('app');
 const params=new URLSearchParams(location.search);
-const view=params.get('view')||'timer';
+const view=window.__widgetView||params.get('view')||'timer';
 const lang=params.get('lang')==='ru'?'ru':'en';
 if(params.get('dashboard')==='1')document.body.classList.add('dashboard-embed');
 document.documentElement.lang=lang;
