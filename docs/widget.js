@@ -177,4 +177,89 @@ function mountProgress(){
   },500);
 }
 
-if(view==='progress')mountProgress();else mountTimer();
+function mountFlipClock(){
+  const render=()=>{
+    const now=new Date();
+    const hour=String(now.getHours()).padStart(2,'0');
+    const minute=String(now.getMinutes()).padStart(2,'0');
+    const weekday=now.toLocaleDateString(lang==='ru'?'ru-RU':'en-US',{weekday:'long'});
+    const date=now.toLocaleDateString(lang==='ru'?'ru-RU':'en-US',{month:'long',day:'numeric'});
+    app.innerHTML=`<section class="flip-page"><div class="flip-clock" aria-label="${hour}:${minute}">
+      <div class="flip-unit"><strong>${hour}</strong><span>HOUR</span></div>
+      <div class="flip-unit"><strong>${minute}</strong><span>MINUTE</span></div>
+      <div class="flip-meta"><b>${weekday}</b><span>${date}</span></div>
+    </div></section>`;
+  };
+  render();
+  setInterval(render,1000);
+}
+
+function mountAmbient(){
+  let audioContext=null;
+  let master=null;
+  let playing=false;
+  const selected=new Set(['rain']);
+  const activeNodes=new Map();
+  const ensureAudio=()=>{
+    if(audioContext)return;
+    audioContext=new (window.AudioContext||window.webkitAudioContext)();
+    master=audioContext.createGain();
+    master.gain.value=.22;
+    master.connect(audioContext.destination);
+  };
+  const noiseBuffer=()=>{
+    const length=audioContext.sampleRate*2;
+    const buffer=audioContext.createBuffer(1,length,audioContext.sampleRate);
+    const data=buffer.getChannelData(0);
+    for(let i=0;i<length;i++)data[i]=Math.random()*2-1;
+    return buffer;
+  };
+  const startSound=(name)=>{
+    if(activeNodes.has(name))return;
+    ensureAudio();
+    const source=audioContext.createBufferSource();
+    source.buffer=noiseBuffer();
+    source.loop=true;
+    const filter=audioContext.createBiquadFilter();
+    const gain=audioContext.createGain();
+    if(name==='rain'){
+      filter.type='highpass';filter.frequency.value=1200;gain.gain.value=.7;
+    }else if(name==='waves'){
+      filter.type='lowpass';filter.frequency.value=420;gain.gain.value=.8;
+      const lfo=audioContext.createOscillator();const lfoGain=audioContext.createGain();
+      lfo.frequency.value=.12;lfoGain.gain.value=.42;lfo.connect(lfoGain);lfoGain.connect(gain.gain);lfo.start();
+      activeNodes.set(name,{source,lfo});
+    }else{
+      filter.type='bandpass';filter.frequency.value=520;filter.Q.value=.65;gain.gain.value=.55;
+    }
+    source.connect(filter);filter.connect(gain);gain.connect(master);source.start();
+    if(!activeNodes.has(name))activeNodes.set(name,{source});
+  };
+  const stopSound=(name)=>{
+    const node=activeNodes.get(name);if(!node)return;
+    try{node.source.stop()}catch{};try{node.lfo&&node.lfo.stop()}catch{};activeNodes.delete(name);
+  };
+  const sync=()=>{
+    ['rain','waves','fire'].forEach(name=>playing&&selected.has(name)?startSound(name):stopSound(name));
+    document.querySelectorAll('[data-sound]').forEach(button=>button.classList.toggle('active',selected.has(button.dataset.sound)));
+    const play=app.querySelector('#ambient-play');
+    if(play){play.textContent=playing?'Ⅱ':'▶';play.setAttribute('aria-label',playing?'Pause ambient sounds':'Play ambient sounds')}
+  };
+  app.innerHTML=`<section class="ambient-page"><div class="ambient-player">
+    <div class="ambient-nav"><span>Sounds</span><span>Favorites</span><span>About</span><span>Links</span></div>
+    <h1>A SOFT<br>MURMUR</h1><p>Ambient sounds to wash away distraction.</p>
+    <div class="ambient-controls"><button class="ambient-round" aria-label="Download">↓</button><button class="ambient-play" id="ambient-play" aria-label="Play ambient sounds">▶</button><button class="ambient-round" aria-label="Timer">◷</button></div>
+    <div class="ambient-sounds"><button data-sound="rain">Rain</button><button data-sound="waves">Waves</button><button data-sound="fire">Fire</button></div>
+  </div></section>`;
+  app.querySelector('#ambient-play').onclick=async()=>{ensureAudio();await audioContext.resume();playing=!playing;sync()};
+  app.querySelectorAll('[data-sound]').forEach(button=>button.onclick=async()=>{
+    ensureAudio();await audioContext.resume();const name=button.dataset.sound;
+    selected.has(name)?selected.delete(name):selected.add(name);sync();
+  });
+  sync();
+}
+
+if(view==='progress')mountProgress();
+else if(view==='flipclock')mountFlipClock();
+else if(view==='ambient')mountAmbient();
+else mountTimer();

@@ -100,3 +100,31 @@ button{cursor:pointer}
   .timer{height:315px}
   .mode{min-width:0;padding:7px 11px;font-size:12px}
 }
+
+.flip-page{min-height:220px;background:#fff;padding:10px;display:grid;place-items:center;color:#111}
+.flip-clock{width:min(640px,100%);display:grid;grid-template-columns:1fr 1fr .9fr;gap:10px;align-items:stretch}
+.flip-unit{height:190px;background:#141414;color:#fff;border-radius:10px;position:relative;display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,0,0,.15);overflow:hidden}
+.flip-unit::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:#4c4c4c;box-shadow:0 1px 0 #000}
+.flip-unit strong{font-size:92px;line-height:1;font-weight:700;letter-spacing:-.07em;font-variant-numeric:tabular-nums;padding-right:6px}
+.flip-unit span{position:absolute;bottom:11px;color:#aaa;font-size:10px;letter-spacing:.16em}
+.flip-meta{height:190px;border:2px solid #171717;border-radius:10px;padding:24px 18px;display:flex;flex-direction:column;justify-content:flex-end;text-transform:uppercase}
+.flip-meta b{font-size:20px;letter-spacing:.08em;margin-bottom:7px}
+.flip-meta span{font-size:12px;color:#777;letter-spacing:.08em}
+
+.ambient-page{min-height:360px;background:#fff;padding:10px;color:#fff}
+.ambient-player{width:min(620px,100%);min-height:340px;margin:auto;background:#111;padding:20px 24px 24px;border:2px solid #000}
+.ambient-nav{display:flex;justify-content:space-between;text-transform:uppercase;color:#aaa;font-size:10px;letter-spacing:.12em}
+.ambient-player h1{font-size:56px;line-height:.9;letter-spacing:-.04em;margin:48px 0 7px}
+.ambient-player p{font-size:12px;color:#aaa;margin:0}
+.ambient-controls{display:flex;align-items:center;justify-content:space-between;margin:34px 0 25px}
+.ambient-controls button{color:#fff;background:transparent;border:2px solid #fff;border-radius:50%}
+.ambient-round{width:48px;height:48px;font-size:22px}
+.ambient-play{width:72px;height:72px;font-size:30px;padding-left:6px}
+.ambient-sounds{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.ambient-sounds button{border:1px solid #666;background:#111;color:#ccc;padding:9px;text-transform:uppercase;font-size:10px;letter-spacing:.12em}
+.ambient-sounds button.active{background:#fff;color:#111;border-color:#fff;font-weight:700}
+
+@media(max-width:520px){
+  .flip-clock{grid-template-columns:1fr 1fr}.flip-meta{grid-column:1/-1;height:auto;min-height:82px;padding:15px}.flip-unit{height:150px}.flip-unit strong{font-size:72px}
+  .ambient-player h1{font-size:46px}.ambient-page{padding:4px}
+}
