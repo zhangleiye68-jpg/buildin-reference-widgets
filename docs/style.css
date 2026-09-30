@@ -126,5 +126,14 @@ button{cursor:pointer}
 
 @media(max-width:520px){
   .flip-clock{grid-template-columns:1fr 1fr}.flip-meta{grid-column:1/-1;height:auto;min-height:82px;padding:15px}.flip-unit{height:150px}.flip-unit strong{font-size:72px}
-  .ambient-player h1{font-size:46px}.ambient-page{padding:4px}
+  .ambient-page{padding:4px}
+  .ambient-player{padding:14px 10px 16px;overflow:hidden}
+  .ambient-nav{display:grid;grid-template-columns:1fr 1fr;gap:5px 8px;font-size:8px;letter-spacing:.03em}
+  .ambient-player h1{font-size:38px;margin:28px 0 7px}
+  .ambient-player p{font-size:11px;line-height:1.35}
+  .ambient-controls{margin:22px 0 18px}
+  .ambient-round{width:38px;height:38px;font-size:18px}
+  .ambient-play{width:56px;height:56px;font-size:24px}
+  .ambient-sounds{gap:4px}
+  .ambient-sounds button{padding:7px 2px;font-size:9px;letter-spacing:0}
 }
