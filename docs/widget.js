@@ -17,7 +17,14 @@ const russian={
   'LOG PROGRESS':'ЗАПИСАТЬ ПРОГРЕСС','Pages read today':'Прочитано страниц сегодня',
   'Track a small win in your reading goal.':'Отмечайте каждый шаг к цели по чтению.',
   'Minus one':'Минус одна','Plus one':'Плюс одна','Pages read':'Прочитано страниц',
-  'Goal: 20 pages':'Цель: 20 страниц','Changes save automatically':'Изменения сохраняются автоматически'
+  'Goal: 20 pages':'Цель: 20 страниц','Changes save automatically':'Изменения сохраняются автоматически',
+  'HOUR':'ЧАС','MINUTE':'МИНУТА',
+  'Sounds':'Звуки','Favorites':'Избранное','About':'О проекте','Links':'Ссылки',
+  'A SOFT':'ТИХИЙ','MURMUR':'ШЁПОТ',
+  'Ambient sounds to wash away distraction.':'Фоновые звуки, которые помогают сосредоточиться.',
+  'Download':'Скачать','Play ambient sounds':'Включить фоновые звуки',
+  'Pause ambient sounds':'Поставить фоновые звуки на паузу','Timer':'Таймер',
+  'Rain':'Дождь','Waves':'Волны','Fire':'Огонь'
 };
 const t=(value)=>lang==='ru'?(russian[value]||value):value;
 const storageSuffix=lang==='ru'?'-ru':'';
@@ -185,8 +192,8 @@ function mountFlipClock(){
     const weekday=now.toLocaleDateString(lang==='ru'?'ru-RU':'en-US',{weekday:'long'});
     const date=now.toLocaleDateString(lang==='ru'?'ru-RU':'en-US',{month:'long',day:'numeric'});
     app.innerHTML=`<section class="flip-page"><div class="flip-clock" aria-label="${hour}:${minute}">
-      <div class="flip-unit"><strong>${hour}</strong><span>HOUR</span></div>
-      <div class="flip-unit"><strong>${minute}</strong><span>MINUTE</span></div>
+      <div class="flip-unit"><strong>${hour}</strong><span>${t('HOUR')}</span></div>
+      <div class="flip-unit"><strong>${minute}</strong><span>${t('MINUTE')}</span></div>
       <div class="flip-meta"><b>${weekday}</b><span>${date}</span></div>
     </div></section>`;
   };
@@ -243,13 +250,13 @@ function mountAmbient(){
     ['rain','waves','fire'].forEach(name=>playing&&selected.has(name)?startSound(name):stopSound(name));
     document.querySelectorAll('[data-sound]').forEach(button=>button.classList.toggle('active',selected.has(button.dataset.sound)));
     const play=app.querySelector('#ambient-play');
-    if(play){play.textContent=playing?'Ⅱ':'▶';play.setAttribute('aria-label',playing?'Pause ambient sounds':'Play ambient sounds')}
+    if(play){play.textContent=playing?'Ⅱ':'▶';play.setAttribute('aria-label',t(playing?'Pause ambient sounds':'Play ambient sounds'))}
   };
   app.innerHTML=`<section class="ambient-page"><div class="ambient-player">
-    <div class="ambient-nav"><span>Sounds</span><span>Favorites</span><span>About</span><span>Links</span></div>
-    <h1>A SOFT<br>MURMUR</h1><p>Ambient sounds to wash away distraction.</p>
-    <div class="ambient-controls"><button class="ambient-round" aria-label="Download">↓</button><button class="ambient-play" id="ambient-play" aria-label="Play ambient sounds">▶</button><button class="ambient-round" aria-label="Timer">◷</button></div>
-    <div class="ambient-sounds"><button data-sound="rain">Rain</button><button data-sound="waves">Waves</button><button data-sound="fire">Fire</button></div>
+    <div class="ambient-nav"><span>${t('Sounds')}</span><span>${t('Favorites')}</span><span>${t('About')}</span><span>${t('Links')}</span></div>
+    <h1>${t('A SOFT')}<br>${t('MURMUR')}</h1><p>${t('Ambient sounds to wash away distraction.')}</p>
+    <div class="ambient-controls"><button class="ambient-round" aria-label="${t('Download')}">↓</button><button class="ambient-play" id="ambient-play" aria-label="${t('Play ambient sounds')}">▶</button><button class="ambient-round" aria-label="${t('Timer')}">◷</button></div>
+    <div class="ambient-sounds"><button data-sound="rain">${t('Rain')}</button><button data-sound="waves">${t('Waves')}</button><button data-sound="fire">${t('Fire')}</button></div>
   </div></section>`;
   app.querySelector('#ambient-play').onclick=async()=>{ensureAudio();await audioContext.resume();playing=!playing;sync()};
   app.querySelectorAll('[data-sound]').forEach(button=>button.onclick=async()=>{
