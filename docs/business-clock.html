@@ -5,13 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#edf8fd">
   <meta name="darkreader-lock">
-  <title>Business creator clock</title>
+  <title>Live clock</title>
   <style>
     :root {
       color-scheme: light;
       font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont,
         "Segoe UI", sans-serif;
-      font-synthesis: none;
     }
 
     * { box-sizing: border-box; }
@@ -21,169 +20,76 @@
       width: 100%;
       min-width: 0;
       margin: 0;
+      overflow: hidden;
       background: transparent;
-      color: #2b3135;
     }
 
     body { padding: 2px; }
 
     .clock {
+      display: grid;
       width: 100%;
-      min-height: 146px;
-      padding: 13px 12px 11px;
-      overflow: hidden;
+      min-height: 78px;
+      padding: 10px 8px;
+      place-items: center;
       border: 1px solid #dceaf1;
       border-radius: 12px;
       background:
         radial-gradient(circle at 18% 8%, rgba(255, 255, 255, .96), transparent 42%),
         linear-gradient(145deg, #f5fbfe 0%, #e5f3fa 100%);
       box-shadow: 0 7px 20px rgba(52, 88, 105, .08);
-    }
-
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      margin: 0 2px 10px;
-      color: #6f818b;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .12em;
-      line-height: 1;
-      text-transform: uppercase;
-    }
-
-    .live {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      white-space: nowrap;
-    }
-
-    .live::before {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #75aabd;
-      box-shadow: 0 0 0 3px rgba(117, 170, 189, .15);
-      content: "";
+      color: #2b3135;
     }
 
     .digits {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 6px minmax(0, 1fr) 6px minmax(0, 1fr);
-      align-items: center;
-      gap: 4px;
-    }
-
-    .unit {
-      min-width: 0;
-      padding: 10px 2px 8px;
-      border: 1px solid rgba(211, 225, 232, .9);
-      border-radius: 9px;
-      background: rgba(255, 255, 255, .9);
-      box-shadow: 0 4px 11px rgba(63, 84, 94, .06);
-      text-align: center;
-    }
-
-    .unit strong {
-      display: block;
-      overflow: hidden;
-      font-size: clamp(24px, 7.6vw, 34px);
-      font-variant-numeric: tabular-nums;
-      font-weight: 720;
-      letter-spacing: -.055em;
-      line-height: .95;
-    }
-
-    .unit span {
-      display: block;
-      margin-top: 7px;
-      color: #91a0a7;
-      font-size: 8px;
-      font-weight: 700;
-      letter-spacing: .1em;
-      line-height: 1;
-      text-transform: uppercase;
-    }
-
-    .separator {
-      color: #77909b;
-      font-size: 22px;
-      font-weight: 700;
-      line-height: 1;
-      text-align: center;
-      transform: translateY(-5px);
-    }
-
-    .meta {
       display: flex;
+      width: 100%;
       align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      margin: 10px 2px 0;
-      color: #62757f;
-      font-size: 10px;
-      font-weight: 650;
-      letter-spacing: .06em;
+      justify-content: center;
+      color: #2b3135;
+      font-size: clamp(21px, 12vw, 46px);
+      font-variant-numeric: tabular-nums;
+      font-weight: 740;
+      letter-spacing: -.055em;
       line-height: 1;
-      text-transform: uppercase;
-    }
-
-    .meta time:last-child {
-      overflow: hidden;
-      color: #83939b;
-      text-overflow: ellipsis;
       white-space: nowrap;
     }
 
-    @media (max-width: 210px) {
-      .clock { padding-inline: 9px; }
-      .digits { gap: 2px; }
-      .unit strong { font-size: 24px; }
-      .eyebrow { letter-spacing: .08em; }
+    .separator {
+      margin: 0 .08em;
+      color: #77909b;
+      font-weight: 650;
+      transform: translateY(-.06em);
+    }
+
+    @media (max-width: 180px) {
+      body { padding: 1px; }
+      .clock {
+        min-height: 68px;
+        padding: 8px 4px;
+        border-radius: 10px;
+      }
+      .digits { font-size: 21px; }
+      .separator { margin-inline: .03em; }
     }
   </style>
 </head>
 <body>
   <section class="clock" aria-label="Live local time">
-    <div class="eyebrow">
-      <span>Local time</span>
-      <span class="live">Live</span>
-    </div>
-    <div class="digits" aria-live="off">
-      <div class="unit"><strong id="hour">--</strong><span>Hour</span></div>
-      <div class="separator" aria-hidden="true">:</div>
-      <div class="unit"><strong id="minute">--</strong><span>Minute</span></div>
-      <div class="separator" aria-hidden="true">:</div>
-      <div class="unit"><strong id="second">--</strong><span>Second</span></div>
-    </div>
-    <div class="meta">
-      <time id="period">--</time>
-      <time id="date">---</time>
-    </div>
+    <time class="digits">
+      <span id="hour">--</span><span class="separator" aria-hidden="true">:</span><span id="minute">--</span><span class="separator" aria-hidden="true">:</span><span id="second">--</span>
+    </time>
   </section>
   <script>
     const hour = document.querySelector('#hour');
     const minute = document.querySelector('#minute');
     const second = document.querySelector('#second');
-    const period = document.querySelector('#period');
-    const date = document.querySelector('#date');
 
     const render = () => {
       const now = new Date();
-      const hour24 = now.getHours();
-      const hour12 = hour24 % 12 || 12;
-      hour.textContent = String(hour12).padStart(2, '0');
+      hour.textContent = String(now.getHours()).padStart(2, '0');
       minute.textContent = String(now.getMinutes()).padStart(2, '0');
       second.textContent = String(now.getSeconds()).padStart(2, '0');
-      period.textContent = hour24 >= 12 ? 'PM' : 'AM';
-      date.textContent = now.toLocaleDateString('en-US', {
-        weekday: 'short',
-        month: 'short',
-        day: 'numeric'
-      });
       document.title = `${hour.textContent}:${minute.textContent}:${second.textContent}`;
     };
 
