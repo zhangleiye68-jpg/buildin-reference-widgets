@@ -276,7 +276,7 @@ function mountMedClock(){
       <div class="med-clock-kicker"><span>Прекрасного дня!</span><span class="med-sun" aria-hidden="true">☀</span></div>
       <div class="med-clock-digits" aria-label="${parts.join(':')}">${parts.map((part,index)=>`${index?'<i>:</i>':''}<strong>${part}</strong>`).join('')}</div>
       <div class="med-clock-date"><b>${weekday}</b><span>${fullDate}</span></div>
-      <div class="med-clock-leaf" aria-hidden="true">🍋</div>
+      <img class="med-clock-leaf" src="assets/mediterranean/v3/lemon-mark.svg" alt="" aria-hidden="true">
     </div></section>`;
   };
   render();
@@ -294,7 +294,7 @@ function mountMedProgress(){
       {id:'tasks',icon:'✓',label:'Завершено задач',value:state.tasks,max:6,suffix:'/6'}
     ];
     app.innerHTML=`<section class="med-progress-page"><div class="med-progress-card">
-      <header><div><span class="med-eyebrow">МОЙ ПРОГРЕСС</span><h1>Спокойно к цели</h1></div><span class="med-lemon" aria-hidden="true">🍋</span></header>
+      <header><div><span class="med-eyebrow">МОЙ ПРОГРЕСС</span><h1>Спокойно к цели</h1></div><img class="med-lemon" src="assets/mediterranean/v3/lemon-mark.svg" alt="" aria-hidden="true"></header>
       <div class="med-progress-list">${rows.map(row=>`<div class="med-progress-row">
         <div class="med-progress-line"><span><i>${row.icon}</i>${row.label}</span><b>${row.value}${row.suffix}</b></div>
         <div class="med-progress-track"><span style="width:${clamp(row.value/row.max*100,0,100)}%"></span></div>
