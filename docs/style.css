@@ -168,18 +168,19 @@ button{cursor:pointer}
 .med-progress-actions button{width:25px;height:25px;border-radius:7px;border:1px solid #b9dceb;background:#fff;color:#1b5c9c;font-size:18px;line-height:1;padding:0}
 .med-progress-card>p{margin:13px 0 0;color:#5d87ae;text-align:center;font:italic 11px Georgia,"Times New Roman",serif}
 
-.med-calendar-page{min-height:338px;font-family:Arial,Helvetica,sans-serif}
-.med-calendar{border:1px solid #c5e0ef;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 8px 24px rgba(24,91,142,.08)}
-.med-calendar header{height:46px;background:linear-gradient(90deg,#dff5ff,#edfaff 70%,#fff7d4);display:flex;align-items:center;justify-content:space-between;padding:0 15px;border-bottom:1px solid #cce5f3}
-.med-calendar h1{font:700 19px Georgia,"Times New Roman",serif;color:#164d92;text-transform:capitalize;margin:0}
-.med-calendar header button{border:0;background:#fff;border-radius:50%;color:#276ba7;width:31px;height:31px;font-size:23px;line-height:1;box-shadow:0 2px 8px rgba(20,80,130,.11)}
+.med-calendar-page{--cal-head:clamp(46px,7dvh,84px);--cal-week:clamp(26px,3.6dvh,44px);--cal-foot:clamp(29px,4.5dvh,54px);height:100vh;height:100dvh;min-height:338px;font-family:Arial,Helvetica,sans-serif;display:flex;overflow-y:auto}
+.med-calendar{flex:1;min-height:330px;border:1px solid #c5e0ef;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 8px 24px rgba(24,91,142,.08);display:grid;grid-template-rows:var(--cal-head) var(--cal-week) minmax(228px,1fr) var(--cal-foot)}
+.med-calendar header{height:var(--cal-head);background:linear-gradient(90deg,#dff5ff,#edfaff 70%,#fff7d4);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(15px,1.8vw,32px);border-bottom:1px solid #cce5f3}
+.med-calendar h1{font:700 clamp(19px,3.1dvh,36px) Georgia,"Times New Roman",serif;color:#164d92;text-transform:capitalize;margin:0}
+.med-calendar header button{border:0;background:#fff;border-radius:50%;color:#276ba7;width:clamp(31px,4.4dvh,52px);height:clamp(31px,4.4dvh,52px);font-size:clamp(23px,3.3dvh,36px);line-height:1;box-shadow:0 2px 8px rgba(20,80,130,.11)}
 .med-cal-week,.med-cal-grid{display:grid;grid-template-columns:repeat(7,1fr)}
-.med-cal-week{height:26px;align-items:center;text-align:center;color:#6688a8;font-size:9px;border-bottom:1px solid #e4edf3}
-.med-cal-cell{height:38px;border-right:1px solid #edf2f5;border-bottom:1px solid #edf2f5;padding:3px 3px;color:#315779;font-size:9px;overflow:hidden;background:#fff}
+.med-cal-week{height:var(--cal-week);align-items:center;text-align:center;color:#6688a8;font-size:clamp(9px,1.35dvh,15px);border-bottom:1px solid #e4edf3}
+.med-cal-grid{min-height:0;grid-template-rows:repeat(6,minmax(38px,1fr))}
+.med-cal-cell{height:auto;min-height:38px;border-right:1px solid #edf2f5;border-bottom:1px solid #edf2f5;padding:clamp(3px,.7dvh,7px);color:#315779;font-size:clamp(9px,1.3dvh,14px);overflow:hidden;background:#fff}
 .med-cal-cell:nth-child(7n){border-right:0}.med-cal-cell.muted{color:#b9c7d1;background:#fafcfd}
 .med-cal-cell span{display:block;text-align:right;margin-bottom:2px}
-.med-cal-cell b{display:block;border-radius:999px;background:#dceeff;color:#256db1;padding:2px 3px;font-size:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600}
-.med-calendar footer{height:29px;display:flex;align-items:center;justify-content:center;gap:16px;color:#6a89a5;font-size:8px;background:#fbfdff}
+.med-cal-cell b{display:block;border-radius:999px;background:#dceeff;color:#256db1;padding:clamp(2px,.35dvh,4px) clamp(3px,.55vw,8px);font-size:clamp(7px,1.08dvh,12px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600}
+.med-calendar footer{height:var(--cal-foot);display:flex;align-items:center;justify-content:center;gap:clamp(16px,2vw,28px);color:#6a89a5;font-size:clamp(8px,1.18dvh,13px);background:#fbfdff}
 .med-calendar footer span:nth-child(1){color:#2f7fc2}.med-calendar footer span:nth-child(2){color:#db9d2a}.med-calendar footer span:nth-child(3){color:#5ea882}
 
 .med-music-page{min-height:250px;font-family:Arial,Helvetica,sans-serif}
@@ -201,5 +202,5 @@ button{cursor:pointer}
 @media(max-width:360px){
   .med-clock-digits strong{min-width:43px;height:49px;font-size:28px}.med-clock-digits i{margin:0 2px}
   .med-progress-card{padding-left:10px;padding-right:10px}.med-progress-card h1{font-size:19px}
-  .med-cal-cell{height:52px;padding:4px 2px}.med-calendar h1{font-size:19px}
+  .med-cal-cell{min-height:52px;padding:4px 2px}.med-calendar h1{font-size:19px}
 }
