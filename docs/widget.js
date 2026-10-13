@@ -266,7 +266,153 @@ function mountAmbient(){
   sync();
 }
 
-if(view==='progress')mountProgress();
+function mountMedClock(){
+  const render=()=>{
+    const now=new Date();
+    const parts=[now.getHours(),now.getMinutes(),now.getSeconds()].map(value=>String(value).padStart(2,'0'));
+    const weekday=now.toLocaleDateString('ru-RU',{weekday:'long'});
+    const fullDate=now.toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'});
+    app.innerHTML=`<section class="med-clock-page"><div class="med-clock-card">
+      <div class="med-clock-kicker"><span>Прекрасного дня!</span><span class="med-sun" aria-hidden="true">☀</span></div>
+      <div class="med-clock-digits" aria-label="${parts.join(':')}">${parts.map((part,index)=>`${index?'<i>:</i>':''}<strong>${part}</strong>`).join('')}</div>
+      <div class="med-clock-date"><b>${weekday}</b><span>${fullDate}</span></div>
+      <div class="med-clock-leaf" aria-hidden="true">🍋</div>
+    </div></section>`;
+  };
+  render();
+  setInterval(render,1000);
+}
+
+function mountMedProgress(){
+  const key='buildin-mediterranean-progress-v1';
+  let state=safeGet(key,{week:68,reading:7,tasks:4});
+  const save=()=>safeSet(key,state);
+  const render=()=>{
+    const rows=[
+      {id:'week',icon:'☀',label:'Учёба на неделе',value:state.week,max:100,suffix:'%'},
+      {id:'reading',icon:'📖',label:'Прочитано страниц',value:state.reading,max:20,suffix:'/20'},
+      {id:'tasks',icon:'✓',label:'Завершено задач',value:state.tasks,max:6,suffix:'/6'}
+    ];
+    app.innerHTML=`<section class="med-progress-page"><div class="med-progress-card">
+      <header><div><span class="med-eyebrow">МОЙ ПРОГРЕСС</span><h1>Спокойно к цели</h1></div><span class="med-lemon" aria-hidden="true">🍋</span></header>
+      <div class="med-progress-list">${rows.map(row=>`<div class="med-progress-row">
+        <div class="med-progress-line"><span><i>${row.icon}</i>${row.label}</span><b>${row.value}${row.suffix}</b></div>
+        <div class="med-progress-track"><span style="width:${clamp(row.value/row.max*100,0,100)}%"></span></div>
+        ${row.id==='week'?'':`<div class="med-progress-actions"><button data-id="${row.id}" data-delta="-1" aria-label="Уменьшить">−</button><button data-id="${row.id}" data-delta="1" aria-label="Увеличить">+</button></div>`}
+      </div>`).join('')}</div>
+      <p>Маленькие шаги ведут к большим горизонтам</p>
+    </div></section>`;
+    app.querySelectorAll('[data-id]').forEach(button=>button.onclick=()=>{
+      const id=button.dataset.id;
+      const max=id==='reading'?20:6;
+      state[id]=clamp(Number(state[id])+Number(button.dataset.delta),0,max);
+      save();render();
+    });
+  };
+  render();
+}
+
+function mountMedCalendar(){
+  let cursor=new Date(2026,8,1);
+  const events={
+    '2026-09-01':['Прочитать гл. 3'],
+    '2026-09-03':['Лаб. отчёт'],
+    '2026-09-05':['День на пляже'],
+    '2026-09-08':['План эссе'],
+    '2026-09-11':['Учебная группа'],
+    '2026-09-14':['Подготовка к сессии'],
+    '2026-09-18':['Встреча группы'],
+    '2026-09-22':['Анализ статьи'],
+    '2026-09-25':['День библиотеки'],
+    '2026-09-29':['Черновик проекта']
+  };
+  const pad=value=>String(value).padStart(2,'0');
+  const render=()=>{
+    const year=cursor.getFullYear(),month=cursor.getMonth();
+    const first=(new Date(year,month,1).getDay()+6)%7;
+    const total=new Date(year,month+1,0).getDate();
+    const previous=new Date(year,month,0).getDate();
+    const cells=[];
+    for(let i=0;i<42;i++){
+      const day=i-first+1;
+      let date,muted=false;
+      if(day<1){date=previous+day;muted=true}else if(day>total){date=day-total;muted=true}else date=day;
+      const key=muted?'':`${year}-${pad(month+1)}-${pad(date)}`;
+      const labels=events[key]||[];
+      cells.push(`<div class="med-cal-cell ${muted?'muted':''}"><span>${date}</span>${labels.slice(0,1).map(label=>`<b>${label}</b>`).join('')}</div>`);
+    }
+    const title=cursor.toLocaleDateString('ru-RU',{month:'long',year:'numeric'});
+    app.innerHTML=`<section class="med-calendar-page"><div class="med-calendar">
+      <header><button id="med-prev" aria-label="Предыдущий месяц">‹</button><h1>${title}</h1><button id="med-next" aria-label="Следующий месяц">›</button></header>
+      <div class="med-cal-week">${['Пн','Вт','Ср','Чт','Пт','Сб','Вс'].map(day=>`<b>${day}</b>`).join('')}</div>
+      <div class="med-cal-grid">${cells.join('')}</div>
+      <footer><span>● Учёба</span><span>● Личное</span><span>● Проекты</span></footer>
+    </div></section>`;
+    app.querySelector('#med-prev').onclick=()=>{cursor=new Date(year,month-1,1);render()};
+    app.querySelector('#med-next').onclick=()=>{cursor=new Date(year,month+1,1);render()};
+  };
+  render();
+}
+
+function mountMedMusic(){
+  let playing=false;
+  let startedAt=0;
+  let elapsed=32;
+  let audioContext=null;
+  let master=null;
+  let timer=null;
+  const duration=201;
+  const fmt=seconds=>`${Math.floor(seconds/60)}:${String(Math.floor(seconds%60)).padStart(2,'0')}`;
+  const startSound=()=>{
+    audioContext=new (window.AudioContext||window.webkitAudioContext)();
+    master=audioContext.createGain();master.gain.value=.055;master.connect(audioContext.destination);
+    const notes=[261.63,329.63,392,493.88];
+    notes.forEach((frequency,index)=>{
+      const osc=audioContext.createOscillator();
+      const gain=audioContext.createGain();
+      osc.type=index%2?'sine':'triangle';osc.frequency.value=frequency/2;
+      gain.gain.value=index===0?.38:.16;
+      osc.connect(gain);gain.connect(master);osc.start();
+    });
+  };
+  const stopSound=()=>{if(audioContext){audioContext.close();audioContext=null;master=null}};
+  const update=()=>{
+    if(playing)elapsed=Math.min(duration,elapsed+(Date.now()-startedAt)/1000),startedAt=Date.now();
+    const fill=app.querySelector('.med-music-fill');
+    const current=app.querySelector('#med-current');
+    if(fill)fill.style.width=`${elapsed/duration*100}%`;
+    if(current)current.textContent=fmt(elapsed);
+    if(elapsed>=duration){playing=false;elapsed=0;stopSound();render()}
+  };
+  const render=()=>{
+    app.innerHTML=`<section class="med-music-page"><div class="med-music-card">
+      <div class="med-music-top"><span>Сейчас играет</span><span aria-hidden="true">⋯</span></div>
+      <div class="med-music-main"><div class="med-album" aria-hidden="true"><span>☀</span><i>≈</i></div><div class="med-track"><h1>Солнечный день</h1><p>Береговой ансамбль</p></div><button class="med-heart" aria-label="Добавить в избранное">♡</button></div>
+      <div class="med-music-progress" id="med-seek"><span class="med-music-fill" style="width:${elapsed/duration*100}%"></span></div>
+      <div class="med-music-time"><span id="med-current">${fmt(elapsed)}</span><span>${fmt(duration)}</span></div>
+      <div class="med-music-controls"><button aria-label="Перемешать">⌁</button><button id="med-prev-track" aria-label="Предыдущая">◀</button><button class="med-play" id="med-play" aria-label="${playing?'Пауза':'Воспроизвести'}">${playing?'Ⅱ':'▶'}</button><button id="med-next-track" aria-label="Следующая">▶</button><button aria-label="Повтор">↻</button></div>
+    </div></section>`;
+    app.querySelector('#med-play').onclick=()=>{
+      update();playing=!playing;
+      if(playing){startedAt=Date.now();startSound();timer=setInterval(update,500)}
+      else{clearInterval(timer);stopSound()}
+      render();
+    };
+    const restart=()=>{elapsed=0;startedAt=Date.now();update()};
+    app.querySelector('#med-prev-track').onclick=restart;
+    app.querySelector('#med-next-track').onclick=restart;
+    app.querySelector('#med-seek').onclick=event=>{
+      const box=event.currentTarget.getBoundingClientRect();elapsed=clamp((event.clientX-box.left)/box.width*duration,0,duration);startedAt=Date.now();update();
+    };
+  };
+  render();
+}
+
+if(view==='med-clock')mountMedClock();
+else if(view==='med-progress')mountMedProgress();
+else if(view==='med-calendar')mountMedCalendar();
+else if(view==='med-music')mountMedMusic();
+else if(view==='progress')mountProgress();
 else if(view==='flipclock')mountFlipClock();
 else if(view==='ambient')mountAmbient();
 else mountTimer();

@@ -137,3 +137,69 @@ button{cursor:pointer}
   .ambient-sounds{gap:4px}
   .ambient-sounds button{padding:7px 2px;font-size:9px;letter-spacing:0}
 }
+
+/* Mediterranean student planner widgets */
+.med-clock-page,.med-progress-page,.med-calendar-page,.med-music-page{background:#fff;color:#123f83;padding:4px;font-family:Georgia,"Times New Roman",serif}
+.med-clock-page{min-height:180px}
+.med-clock-card{position:relative;overflow:hidden;min-height:172px;border:1px solid #b9def1;border-radius:13px;background:linear-gradient(145deg,#edfaff,#d7f2ff 58%,#fef9e8);box-shadow:0 8px 22px rgba(24,91,142,.1);padding:15px 15px 12px}
+.med-clock-card::after{content:"";position:absolute;right:-21px;bottom:-31px;width:94px;height:94px;border:2px solid rgba(34,109,177,.1);border-radius:50%}
+.med-clock-kicker{display:flex;align-items:center;justify-content:space-between;font-size:15px;font-weight:700}
+.med-sun{color:#f7bd23;font-size:23px;line-height:1}
+.med-clock-digits{display:flex;align-items:center;justify-content:center;margin:10px 0 8px;font-family:Georgia,"Times New Roman",serif;font-variant-numeric:tabular-nums}
+.med-clock-digits strong{display:grid;place-items:center;min-width:51px;height:53px;border-radius:8px;background:linear-gradient(180deg,#317db8,#195e9e);color:#fff;font-size:31px;font-weight:500;box-shadow:inset 0 -12px 22px rgba(0,42,95,.09),0 3px 8px rgba(19,79,132,.15)}
+.med-clock-digits i{font-style:normal;font-size:26px;margin:0 3px;color:#286ba7}
+.med-clock-date{display:flex;align-items:center;justify-content:center;gap:5px;font-family:Arial,Helvetica,sans-serif;color:#2d69a8;font-size:11px;text-transform:capitalize}
+.med-clock-leaf{position:absolute;right:7px;bottom:2px;font-size:22px;transform:rotate(-10deg)}
+
+.med-progress-page{min-height:310px;font-family:Arial,Helvetica,sans-serif}
+.med-progress-card{min-height:302px;border:1px solid #bcdff0;border-radius:13px;background:linear-gradient(160deg,#fff,#f3fbff 60%,#fff8db);box-shadow:0 8px 24px rgba(24,91,142,.1);padding:16px 14px 13px;overflow:hidden}
+.med-progress-card header{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid #d7eaf5;padding-bottom:10px}
+.med-eyebrow{font-size:9px;letter-spacing:.14em;color:#5a88b5;font-weight:800}
+.med-progress-card h1{font:700 21px Georgia,"Times New Roman",serif;margin:3px 0 0;color:#124a91}
+.med-lemon{font-size:28px}
+.med-progress-list{display:grid;gap:13px;margin-top:13px}
+.med-progress-row{position:relative}
+.med-progress-line{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:#315e8d;margin-bottom:5px;padding-right:58px}
+.med-progress-line span{display:flex;align-items:center;gap:6px}.med-progress-line i{font-style:normal;font-size:15px}
+.med-progress-line b{color:#124a91}
+.med-progress-track{height:8px;background:#dceef7;border-radius:999px;overflow:hidden;margin-right:58px}
+.med-progress-track span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#2f80c5,#63b5df 78%,#f1c54a)}
+.med-progress-actions{position:absolute;right:0;bottom:-3px;display:flex;gap:4px}
+.med-progress-actions button{width:25px;height:25px;border-radius:7px;border:1px solid #b9dceb;background:#fff;color:#1b5c9c;font-size:18px;line-height:1;padding:0}
+.med-progress-card>p{margin:13px 0 0;color:#5d87ae;text-align:center;font:italic 11px Georgia,"Times New Roman",serif}
+
+.med-calendar-page{min-height:490px;font-family:Arial,Helvetica,sans-serif}
+.med-calendar{border:1px solid #c5e0ef;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 8px 24px rgba(24,91,142,.08)}
+.med-calendar header{height:58px;background:linear-gradient(90deg,#dff5ff,#edfaff 70%,#fff7d4);display:flex;align-items:center;justify-content:space-between;padding:0 15px;border-bottom:1px solid #cce5f3}
+.med-calendar h1{font:700 22px Georgia,"Times New Roman",serif;color:#164d92;text-transform:capitalize;margin:0}
+.med-calendar header button{border:0;background:#fff;border-radius:50%;color:#276ba7;width:31px;height:31px;font-size:23px;line-height:1;box-shadow:0 2px 8px rgba(20,80,130,.11)}
+.med-cal-week,.med-cal-grid{display:grid;grid-template-columns:repeat(7,1fr)}
+.med-cal-week{height:34px;align-items:center;text-align:center;color:#6688a8;font-size:10px;border-bottom:1px solid #e4edf3}
+.med-cal-cell{height:58px;border-right:1px solid #edf2f5;border-bottom:1px solid #edf2f5;padding:5px 4px;color:#315779;font-size:10px;overflow:hidden;background:#fff}
+.med-cal-cell:nth-child(7n){border-right:0}.med-cal-cell.muted{color:#b9c7d1;background:#fafcfd}
+.med-cal-cell span{display:block;text-align:right;margin-bottom:4px}
+.med-cal-cell b{display:block;border-radius:999px;background:#dceeff;color:#256db1;padding:3px 4px;font-size:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600}
+.med-calendar footer{height:36px;display:flex;align-items:center;justify-content:center;gap:16px;color:#6a89a5;font-size:9px;background:#fbfdff}
+.med-calendar footer span:nth-child(1){color:#2f7fc2}.med-calendar footer span:nth-child(2){color:#db9d2a}.med-calendar footer span:nth-child(3){color:#5ea882}
+
+.med-music-page{min-height:250px;font-family:Arial,Helvetica,sans-serif}
+.med-music-card{min-height:242px;border-radius:15px;padding:14px;color:#fff;background:linear-gradient(145deg,#1f6ba8,#2688c2 62%,#67b9de);box-shadow:0 10px 24px rgba(20,89,143,.26);position:relative;overflow:hidden}
+.med-music-card::after{content:"";position:absolute;width:150px;height:150px;border:1px solid rgba(255,255,255,.15);border-radius:50%;right:-76px;bottom:-84px}
+.med-music-top{display:flex;align-items:center;justify-content:space-between;font-family:Georgia,"Times New Roman",serif;font-size:16px;font-weight:700;margin-bottom:13px}
+.med-music-main{display:grid;grid-template-columns:62px 1fr 24px;gap:11px;align-items:center}
+.med-album{width:62px;height:62px;border-radius:9px;background:linear-gradient(#9bdcff 0 44%,#fff 44% 49%,#1679b3 49% 100%);position:relative;overflow:hidden;box-shadow:0 4px 12px rgba(0,44,89,.2)}
+.med-album span{position:absolute;right:8px;top:6px;color:#f9c937;font-size:18px}.med-album i{position:absolute;left:7px;bottom:2px;font:700 34px Georgia;color:rgba(255,255,255,.86);transform:rotate(-7deg)}
+.med-track h1{font-size:14px;margin:0 0 5px}.med-track p{font-size:10px;margin:0;color:rgba(255,255,255,.76)}
+.med-heart{border:0;background:transparent;color:#fff;font-size:24px;padding:0}
+.med-music-progress{height:4px;background:rgba(255,255,255,.3);border-radius:99px;margin-top:17px;overflow:hidden;cursor:pointer}
+.med-music-fill{display:block;height:100%;border-radius:inherit;background:#fff}
+.med-music-time{display:flex;justify-content:space-between;font-size:9px;color:rgba(255,255,255,.78);margin-top:5px}
+.med-music-controls{display:flex;justify-content:space-between;align-items:center;margin-top:8px;position:relative;z-index:1}
+.med-music-controls button{border:0;background:transparent;color:#fff;width:27px;height:27px;padding:0;font-size:16px}
+.med-music-controls .med-play{width:43px;height:43px;border-radius:50%;background:#fff;color:#1d70ae;font-size:19px;padding-left:3px;box-shadow:0 4px 12px rgba(0,45,90,.18)}
+
+@media(max-width:360px){
+  .med-clock-digits strong{min-width:43px;height:49px;font-size:28px}.med-clock-digits i{margin:0 2px}
+  .med-progress-card{padding-left:10px;padding-right:10px}.med-progress-card h1{font-size:19px}
+  .med-cal-cell{height:52px;padding:4px 2px}.med-calendar h1{font-size:19px}
+}
