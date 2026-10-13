@@ -168,18 +168,18 @@ button{cursor:pointer}
 .med-progress-actions button{width:25px;height:25px;border-radius:7px;border:1px solid #b9dceb;background:#fff;color:#1b5c9c;font-size:18px;line-height:1;padding:0}
 .med-progress-card>p{margin:13px 0 0;color:#5d87ae;text-align:center;font:italic 11px Georgia,"Times New Roman",serif}
 
-.med-calendar-page{min-height:490px;font-family:Arial,Helvetica,sans-serif}
+.med-calendar-page{min-height:338px;font-family:Arial,Helvetica,sans-serif}
 .med-calendar{border:1px solid #c5e0ef;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 8px 24px rgba(24,91,142,.08)}
-.med-calendar header{height:58px;background:linear-gradient(90deg,#dff5ff,#edfaff 70%,#fff7d4);display:flex;align-items:center;justify-content:space-between;padding:0 15px;border-bottom:1px solid #cce5f3}
-.med-calendar h1{font:700 22px Georgia,"Times New Roman",serif;color:#164d92;text-transform:capitalize;margin:0}
+.med-calendar header{height:46px;background:linear-gradient(90deg,#dff5ff,#edfaff 70%,#fff7d4);display:flex;align-items:center;justify-content:space-between;padding:0 15px;border-bottom:1px solid #cce5f3}
+.med-calendar h1{font:700 19px Georgia,"Times New Roman",serif;color:#164d92;text-transform:capitalize;margin:0}
 .med-calendar header button{border:0;background:#fff;border-radius:50%;color:#276ba7;width:31px;height:31px;font-size:23px;line-height:1;box-shadow:0 2px 8px rgba(20,80,130,.11)}
 .med-cal-week,.med-cal-grid{display:grid;grid-template-columns:repeat(7,1fr)}
-.med-cal-week{height:34px;align-items:center;text-align:center;color:#6688a8;font-size:10px;border-bottom:1px solid #e4edf3}
-.med-cal-cell{height:58px;border-right:1px solid #edf2f5;border-bottom:1px solid #edf2f5;padding:5px 4px;color:#315779;font-size:10px;overflow:hidden;background:#fff}
+.med-cal-week{height:26px;align-items:center;text-align:center;color:#6688a8;font-size:9px;border-bottom:1px solid #e4edf3}
+.med-cal-cell{height:38px;border-right:1px solid #edf2f5;border-bottom:1px solid #edf2f5;padding:3px 3px;color:#315779;font-size:9px;overflow:hidden;background:#fff}
 .med-cal-cell:nth-child(7n){border-right:0}.med-cal-cell.muted{color:#b9c7d1;background:#fafcfd}
-.med-cal-cell span{display:block;text-align:right;margin-bottom:4px}
-.med-cal-cell b{display:block;border-radius:999px;background:#dceeff;color:#256db1;padding:3px 4px;font-size:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600}
-.med-calendar footer{height:36px;display:flex;align-items:center;justify-content:center;gap:16px;color:#6a89a5;font-size:9px;background:#fbfdff}
+.med-cal-cell span{display:block;text-align:right;margin-bottom:2px}
+.med-cal-cell b{display:block;border-radius:999px;background:#dceeff;color:#256db1;padding:2px 3px;font-size:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600}
+.med-calendar footer{height:29px;display:flex;align-items:center;justify-content:center;gap:16px;color:#6a89a5;font-size:8px;background:#fbfdff}
 .med-calendar footer span:nth-child(1){color:#2f7fc2}.med-calendar footer span:nth-child(2){color:#db9d2a}.med-calendar footer span:nth-child(3){color:#5ea882}
 
 .med-music-page{min-height:250px;font-family:Arial,Helvetica,sans-serif}
