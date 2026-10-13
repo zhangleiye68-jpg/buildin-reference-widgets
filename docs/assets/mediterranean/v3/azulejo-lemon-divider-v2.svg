@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="350" viewBox="0 0 1800 350" role="img" aria-label="Mediterranean blue and white floral tile strip with a lemon">
+  <defs>
+    <filter id="paint" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="11" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.8" xChannelSelector="R" yChannelSelector="B"/>
+    </filter>
+    <g id="leaf">
+      <path d="M0 0 C25-42 72-52 105-27 C82 11 39 24 0 0Z" fill="#1d61ad"/>
+      <path d="M8-3 C38-11 66-19 94-27" fill="none" stroke="#f8f4e8" stroke-width="7" stroke-linecap="round" opacity=".72"/>
+    </g>
+    <g id="petal">
+      <path d="M0-13 C24-85 76-105 91-62 C99-24 51 7 0 13 C-6 3-6-3 0-13Z" fill="#1d61ad"/>
+    </g>
+  </defs>
+
+  <rect x="5" y="5" width="1790" height="340" rx="10" fill="#fffdf7" stroke="#16589f" stroke-width="10"/>
+  <g stroke="#82b7e0" stroke-width="6">
+    <rect x="20" y="20" width="340" height="310" fill="#fffaf0"/>
+    <rect x="375" y="20" width="340" height="310" fill="#eaf6ff"/>
+    <rect x="730" y="20" width="340" height="310" fill="#fffaf0"/>
+    <rect x="1085" y="20" width="340" height="310" fill="#eaf6ff"/>
+    <rect x="1440" y="20" width="340" height="310" fill="#fffaf0"/>
+  </g>
+
+  <g filter="url(#paint)" fill="#1d61ad" stroke="#16589f" stroke-linecap="round" stroke-linejoin="round">
+    <!-- hand-painted branch tile -->
+    <g transform="translate(190 175)">
+      <path d="M0 111 C-5 39 9-33 16-112" fill="none" stroke-width="13"/>
+      <g transform="translate(7 -62) rotate(190) scale(.72)"><use href="#leaf"/></g>
+      <g transform="translate(10 -10) rotate(166) scale(.68)"><use href="#leaf"/></g>
+      <g transform="translate(4 52) rotate(194) scale(.68)"><use href="#leaf"/></g>
+      <g transform="translate(15 -91) rotate(-17) scale(.64)"><use href="#leaf"/></g>
+      <g transform="translate(13 -39) rotate(13) scale(.71)"><use href="#leaf"/></g>
+      <g transform="translate(4 23) rotate(-12) scale(.66)"><use href="#leaf"/></g>
+      <circle cx="16" cy="-118" r="25" fill="#f3c63c" stroke-width="8"/>
+      <circle cx="16" cy="-118" r="8" fill="#fffaf0" stroke="none"/>
+    </g>
+
+    <!-- small floral azulejo tile -->
+    <g transform="translate(545 175)">
+      <circle r="27" fill="#f3c63c" stroke-width="8"/>
+      <g stroke="none">
+        <ellipse cx="0" cy="-76" rx="29" ry="59"/>
+        <ellipse cx="0" cy="76" rx="29" ry="59"/>
+        <ellipse cx="-76" cy="0" rx="59" ry="29"/>
+        <ellipse cx="76" cy="0" rx="59" ry="29"/>
+        <ellipse cx="-55" cy="-55" rx="25" ry="50" transform="rotate(-45 -55 -55)"/>
+        <ellipse cx="55" cy="-55" rx="25" ry="50" transform="rotate(45 55 -55)"/>
+        <ellipse cx="-55" cy="55" rx="25" ry="50" transform="rotate(45 -55 55)"/>
+        <ellipse cx="55" cy="55" rx="25" ry="50" transform="rotate(-45 55 55)"/>
+      </g>
+      <g fill="#f3c63c" stroke="none">
+        <circle cx="-108" cy="-108" r="11"/><circle cx="108" cy="-108" r="11"/>
+        <circle cx="-108" cy="108" r="11"/><circle cx="108" cy="108" r="11"/>
+      </g>
+      <g fill="none" stroke-width="9">
+        <path d="M-143-61 C-119-79-99-86-74-86"/><path d="M143-61 C119-79 99-86 74-86"/>
+        <path d="M-143 61 C-119 79-99 86-74 86"/><path d="M143 61 C119 79 99 86 74 86"/>
+      </g>
+    </g>
+
+    <!-- central lemon tile -->
+    <g transform="translate(900 182)">
+      <path d="M-10-103 C-18-137-3-158 19-172" fill="none" stroke="#28714f" stroke-width="14"/>
+      <path d="M7-145 C41-190 92-182 111-146 C75-113 35-112 7-145Z" fill="#2f7b55" stroke-width="7"/>
+      <path d="M1-137 C-34-174-79-158-91-124 C-56-96-20-101 1-137Z" fill="#3c895f" stroke-width="7"/>
+      <path d="M-67-78 C-31-111 42-108 73-67 C104-26 94 54 49 93 C12 126-54 120-88 76 C-121 34-111-43-67-78Z" fill="#ffd447" stroke-width="10"/>
+      <path d="M-68-44 C-56-68-35-81-13-86" fill="none" stroke="#fff2a3" stroke-width="15" opacity=".9"/>
+      <circle cx="48" cy="36" r="8" fill="#e5a91d" stroke="none"/>
+      <circle cx="29" cy="64" r="6" fill="#e5a91d" stroke="none"/>
+      <circle cx="57" cy="2" r="5" fill="#e5a91d" stroke="none"/>
+    </g>
+
+    <!-- rosette tile -->
+    <g transform="translate(1255 175)">
+      <g stroke="none">
+        <g transform="rotate(0)"><use href="#petal"/></g><g transform="rotate(45)"><use href="#petal"/></g>
+        <g transform="rotate(90)"><use href="#petal"/></g><g transform="rotate(135)"><use href="#petal"/></g>
+        <g transform="rotate(180)"><use href="#petal"/></g><g transform="rotate(225)"><use href="#petal"/></g>
+        <g transform="rotate(270)"><use href="#petal"/></g><g transform="rotate(315)"><use href="#petal"/></g>
+      </g>
+      <circle r="35" fill="#f3c63c" stroke-width="9"/>
+      <circle r="11" fill="#fffaf0" stroke="none"/>
+      <g fill="none" stroke-width="9">
+        <path d="M-142-142 C-98-140-77-120-64-83"/><path d="M142-142 C98-140 77-120 64-83"/>
+        <path d="M-142 142 C-98 140-77 120-64 83"/><path d="M142 142 C98 140 77 120 64 83"/>
+      </g>
+    </g>
+
+    <!-- curling vine tile -->
+    <g transform="translate(1610 175)">
+      <path d="M-135 85 C-62 62-67 2-2-9 C69-22 65-88 132-108" fill="none" stroke-width="13"/>
+      <path d="M-119 95 C-58 132-18 104-12 65" fill="none" stroke-width="11"/>
+      <path d="M126-116 C69-151 30-123 26-84" fill="none" stroke-width="11"/>
+      <g transform="translate(-80 61) rotate(189) scale(.6)"><use href="#leaf"/></g>
+      <g transform="translate(-38 14) rotate(112) scale(.66)"><use href="#leaf"/></g>
+      <g transform="translate(22 -27) rotate(-70) scale(.68)"><use href="#leaf"/></g>
+      <g transform="translate(73 -71) rotate(-8) scale(.62)"><use href="#leaf"/></g>
+      <circle cx="-2" cy="-9" r="24" fill="#f3c63c" stroke-width="8"/>
+      <circle cx="-2" cy="-9" r="8" fill="#fffaf0" stroke="none"/>
+    </g>
+  </g>
+</svg>
