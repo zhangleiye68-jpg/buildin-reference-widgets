@@ -1,0 +1,2720 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-03",
+  "title": "Buildin 统一组件库",
+  "catalog_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/catalog/",
+  "repository": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets",
+  "workflow": [
+    "先搜索本库的类型、语言、尺寸、状态与依赖，优先复用可用组件。",
+    "本库没有合适的，再搜索公开来源；新增条目须保留来源、参数、预览与许可。",
+    "自制组件仅使用 GitHub Pages 固定地址；不使用 ChatGPT 临时网址。"
+  ],
+  "scope": "当前模板与组件展示库已识别的组件、公开服务引用及自制素材；不包含无关网页、私人模板内容或服务音频文件。",
+  "components": [
+    {
+      "id": "widget-001",
+      "kind": "widget",
+      "name": "LIFE SPACE 翻页时钟",
+      "category": "日期与时钟",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=flipclock&lang=ru&v=efe15cc",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=flipclock&lang=ru&v=efe15cc"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/widget.js",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/widget.js",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "LIFE SPACE 翻页时钟",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。"
+      ],
+      "parameters": {
+        "view": {
+          "example": "flipclock",
+          "description": "沿用组件 URL 中的配置"
+        },
+        "lang": {
+          "example": "ru",
+          "description": "界面语言；ru 为俄语"
+        },
+        "v": {
+          "example": "efe15cc",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "previews/widget-001.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-002",
+      "kind": "widget",
+      "name": "LIFE SPACE 翻页时钟",
+      "category": "日期与时钟",
+      "language": "英语／通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=flipclock&v=30d8053",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=flipclock&v=30d8053"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/widget.js",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/widget.js",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "LIFE SPACE 翻页时钟",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。"
+      ],
+      "parameters": {
+        "view": {
+          "example": "flipclock",
+          "description": "沿用组件 URL 中的配置"
+        },
+        "v": {
+          "example": "30d8053",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "previews/widget-002.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-003",
+      "kind": "widget",
+      "name": "商务风格时钟",
+      "category": "日期与时钟",
+      "language": "英语／通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/business-clock.html?v=0c7eb29",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/business-clock.html?v=0c7eb29"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/business-clock.html",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/business-clock.html",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "商务风格时钟",
+      "tags": [],
+      "recommended_size": {
+        "width": 360,
+        "height": 140
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。"
+      ],
+      "parameters": {
+        "v": {
+          "example": "0c7eb29",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "previews/widget-003.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 360,
+        "preview_height": 140
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-004",
+      "kind": "widget",
+      "name": "地中海风格时钟",
+      "category": "日期与时钟",
+      "language": "俄语（来源模板）",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=med-clock&v=9b2067d",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=med-clock&v=9b2067d"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/widget.js",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/widget.js",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "地中海风格时钟",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。"
+      ],
+      "parameters": {
+        "view": {
+          "example": "med-clock",
+          "description": "沿用组件 URL 中的配置"
+        },
+        "v": {
+          "example": "9b2067d",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "previews/widget-004.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-005",
+      "kind": "widget",
+      "name": "学习计划日期卡片",
+      "category": "日期与时钟",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/date.html?view=date&v=9&locale=ru",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/date.html?view=date&v=9&locale=ru"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/date.html",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/date.html",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "学习计划日期卡片",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。"
+      ],
+      "parameters": {
+        "view": {
+          "example": "date",
+          "description": "沿用组件 URL 中的配置"
+        },
+        "v": {
+          "example": "9",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        },
+        "locale": {
+          "example": "ru",
+          "description": "界面语言；ru 为俄语"
+        }
+      },
+      "preview": "previews/widget-005.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-006",
+      "kind": "widget",
+      "name": "学习计划日期卡片",
+      "category": "日期与时钟",
+      "language": "英语／通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/date.html?view=date&v=8",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/date.html?view=date&v=8"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/date.html",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/date.html",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "学习计划日期卡片",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。"
+      ],
+      "parameters": {
+        "view": {
+          "example": "date",
+          "description": "沿用组件 URL 中的配置"
+        },
+        "v": {
+          "example": "8",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "previews/widget-006.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-007",
+      "kind": "widget",
+      "name": "深色翻页时钟",
+      "category": "日期与时钟",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/flip-clock/?locale=ru&v=27",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/flip-clock/?locale=ru&v=27"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/flip-clock/",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/flip-clock/",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "深色翻页时钟",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。"
+      ],
+      "parameters": {
+        "locale": {
+          "example": "ru",
+          "description": "界面语言；ru 为俄语"
+        },
+        "v": {
+          "example": "27",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "previews/widget-007.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-008",
+      "kind": "widget",
+      "name": "生活计划·翻页时钟",
+      "category": "日期与时钟",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/clock.html",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/clock.html"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/my-life-planner/clock.html",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/my-life-planner/clock.html",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "生活计划·翻页时钟",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。"
+      ],
+      "parameters": {},
+      "preview": "previews/widget-008.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-009",
+      "kind": "widget",
+      "name": "绿色翻页时钟",
+      "category": "日期与时钟",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/green-flip-clock/?locale=ru&v=37",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/green-flip-clock/?locale=ru&v=37"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/green-flip-clock/",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/green-flip-clock/",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "绿色翻页时钟",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。"
+      ],
+      "parameters": {
+        "locale": {
+          "example": "ru",
+          "description": "界面语言；ru 为俄语"
+        },
+        "v": {
+          "example": "37",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "previews/widget-009.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-010",
+      "kind": "widget",
+      "name": "地中海风格月历",
+      "category": "日历",
+      "language": "俄语（来源模板）",
+      "ownership": "self",
+      "status": "sample",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=med-calendar&v=26810d7",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=med-calendar&v=26810d7"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/widget.js",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/widget.js",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "地中海风格月历",
+      "tags": [],
+      "recommended_size": {
+        "width": 700,
+        "height": 560
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。",
+        "默认打开 2026 年 9 月，可手动切月；包含示例事件，不同步 Buildin 日程。"
+      ],
+      "parameters": {
+        "view": {
+          "example": "med-calendar",
+          "description": "沿用组件 URL 中的配置"
+        },
+        "v": {
+          "example": "26810d7",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "previews/widget-010.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 700,
+        "preview_height": 560
+      },
+      "replacement_id": "cozy-calendar"
+    },
+    {
+      "id": "widget-011",
+      "kind": "widget",
+      "name": "简洁月历",
+      "category": "日历",
+      "language": "通用",
+      "ownership": "community",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere-calendar/calendar.html?sw=1&dd=0",
+      "aliases": [
+        "https://httishere.github.io/notion-widget/calendar.html?sw=1&dd=0"
+      ],
+      "source_url": "https://github.com/httIsHere/notion-widget",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/community/httishere-calendar/",
+      "license": {
+        "label": "Apache-2.0；字体 SIL OFL",
+        "url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/community/httishere-calendar/NOTICE.md"
+      },
+      "description": "简洁月历",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "社区源码已收录并保留归属、许可；使用本地简化运行脚本。",
+        "固定 280px 宽，当前月展示，无切月按钮；sw=1 周日起始，省略则周一起始；dd=1 深色。",
+        "不支持上游加密配置参数。"
+      ],
+      "parameters": {
+        "sw": {
+          "example": "1",
+          "description": "沿用组件 URL 中的配置"
+        },
+        "dd": {
+          "example": "0",
+          "description": "沿用组件 URL 中的配置"
+        }
+      },
+      "preview": "previews/widget-011.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-012",
+      "kind": "widget",
+      "name": "深色天气",
+      "category": "天气",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/weather/?locale=ru&theme=dark&v=30",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/weather/?locale=ru&theme=dark&v=30"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/weather/",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/weather/",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "洛杉矶天气与五日预报；保留原深色配置。",
+      "tags": [
+        "深色模板"
+      ],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [
+        "Open-Meteo 实时天气接口"
+      ],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。",
+        "浅色文字与透明背景，适合深色模板；浅色页面需提供深色底色。",
+        "当前固定洛杉矶；变更城市需调整源码配置。"
+      ],
+      "parameters": {
+        "locale": {
+          "example": "ru",
+          "description": "界面语言；ru 为俄语"
+        },
+        "theme": {
+          "example": "dark",
+          "description": "组件主题配置，按该组件的值保留"
+        },
+        "v": {
+          "example": "30",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "previews/widget-012.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-013",
+      "kind": "widget",
+      "name": "总览计时器",
+      "category": "专注与计时",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=timer&lang=ru&dashboard=1",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=timer&lang=ru&dashboard=1"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/widget.js",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/widget.js",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "总览计时器",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [
+        "Wikimedia 天空背景图片 CDN"
+      ],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。"
+      ],
+      "parameters": {
+        "view": {
+          "example": "timer",
+          "description": "沿用组件 URL 中的配置"
+        },
+        "lang": {
+          "example": "ru",
+          "description": "界面语言；ru 为俄语"
+        },
+        "dashboard": {
+          "example": "1",
+          "description": "1 为总览布局"
+        }
+      },
+      "preview": "previews/widget-013.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-014",
+      "kind": "widget",
+      "name": "番茄钟·25 分钟工作／5 分钟休息",
+      "category": "专注与计时",
+      "language": "英语／通用",
+      "ownership": "external",
+      "status": "ready",
+      "embed_url": "https://widget0.com/e/pomodoro/?work=25&break=5&sound=None&autostart=false&theme=light&accent=37352f",
+      "aliases": [
+        "https://widget0.com/e/pomodoro/?work=25&break=5&sound=None&autostart=false&theme=light&accent=37352f"
+      ],
+      "source_url": "https://widget0.com/widgets/pomodoro/",
+      "code_url": null,
+      "license": {
+        "label": "第三方服务，保存引用",
+        "url": null
+      },
+      "description": "番茄钟·25 分钟工作／5 分钟休息",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [
+        "widget0.com"
+      ],
+      "notes": [
+        "公开服务组件；未确认源码再分发许可，保存地址及参考图。"
+      ],
+      "parameters": {
+        "work": {
+          "example": "25",
+          "description": "沿用组件 URL 中的配置"
+        },
+        "break": {
+          "example": "5",
+          "description": "沿用组件 URL 中的配置"
+        },
+        "sound": {
+          "example": "None",
+          "description": "沿用组件 URL 中的配置"
+        },
+        "autostart": {
+          "example": "false",
+          "description": "沿用组件 URL 中的配置"
+        },
+        "theme": {
+          "example": "light",
+          "description": "组件主题配置，按该组件的值保留"
+        },
+        "accent": {
+          "example": "37352f",
+          "description": "沿用组件 URL 中的配置"
+        }
+      },
+      "preview": "previews/widget-014.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-015",
+      "kind": "widget",
+      "name": "花园专注计时器",
+      "category": "专注与计时",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/pomodoro.html",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/pomodoro.html"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/my-life-planner/pomodoro.html",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/my-life-planner/pomodoro.html",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "花园专注计时器",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。"
+      ],
+      "parameters": {},
+      "preview": "previews/widget-015.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-016",
+      "kind": "widget",
+      "name": "计时器",
+      "category": "专注与计时",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=timer&lang=ru&v=ee286ab",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=timer&lang=ru&v=ee286ab"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/widget.js",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/widget.js",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "计时器",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [
+        "Wikimedia 天空背景图片 CDN"
+      ],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。"
+      ],
+      "parameters": {
+        "view": {
+          "example": "timer",
+          "description": "沿用组件 URL 中的配置"
+        },
+        "lang": {
+          "example": "ru",
+          "description": "界面语言；ru 为俄语"
+        },
+        "v": {
+          "example": "ee286ab",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "previews/widget-016.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-017",
+      "kind": "widget",
+      "name": "计时器",
+      "category": "专注与计时",
+      "language": "英语／通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=timer",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=timer"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/widget.js",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/widget.js",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "计时器",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [
+        "Wikimedia 天空背景图片 CDN"
+      ],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。"
+      ],
+      "parameters": {
+        "view": {
+          "example": "timer",
+          "description": "沿用组件 URL 中的配置"
+        }
+      },
+      "preview": "previews/widget-017.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-018",
+      "kind": "widget",
+      "name": "地中海风格进度",
+      "category": "进度",
+      "language": "俄语（来源模板）",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=med-progress&v=9b2067d",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=med-progress&v=9b2067d"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/widget.js",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/widget.js",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "地中海风格进度",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。",
+        "带示例初值，可手动加减；不自动读取数据库完成率。"
+      ],
+      "parameters": {
+        "view": {
+          "example": "med-progress",
+          "description": "沿用组件 URL 中的配置"
+        },
+        "v": {
+          "example": "9b2067d",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "previews/widget-018.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-019",
+      "kind": "widget",
+      "name": "总览进度",
+      "category": "进度",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=progress&dashboard=1&lang=ru&v=ee286ab",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=progress&dashboard=1&lang=ru&v=ee286ab"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/widget.js",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/widget.js",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "总览进度",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。"
+      ],
+      "parameters": {
+        "view": {
+          "example": "progress",
+          "description": "沿用组件 URL 中的配置"
+        },
+        "dashboard": {
+          "example": "1",
+          "description": "1 为总览布局"
+        },
+        "lang": {
+          "example": "ru",
+          "description": "界面语言；ru 为俄语"
+        },
+        "v": {
+          "example": "ee286ab",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "previews/widget-019.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-020",
+      "kind": "widget",
+      "name": "总览进度",
+      "category": "进度",
+      "language": "英语／通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=progress&dashboard=1&v=be7dbb4",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=progress&dashboard=1&v=be7dbb4"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/widget.js",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/widget.js",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "总览进度",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。"
+      ],
+      "parameters": {
+        "view": {
+          "example": "progress",
+          "description": "沿用组件 URL 中的配置"
+        },
+        "dashboard": {
+          "example": "1",
+          "description": "1 为总览布局"
+        },
+        "v": {
+          "example": "be7dbb4",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "previews/widget-020.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-021",
+      "kind": "widget",
+      "name": "时间进度",
+      "category": "进度",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/time-progress/?locale=ru&v=31",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/time-progress/?locale=ru&v=31"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/time-progress/",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/time-progress/",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "时间进度",
+      "tags": [
+        "深色模板"
+      ],
+      "recommended_size": {
+        "width": 560,
+        "height": 320
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。",
+        "浅色文字与透明背景，适合深色模板；浅色页面需提供深色底色。"
+      ],
+      "parameters": {
+        "locale": {
+          "example": "ru",
+          "description": "界面语言；ru 为俄语"
+        },
+        "v": {
+          "example": "31",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "previews/widget-021.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 320
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-022",
+      "kind": "widget",
+      "name": "进度组件",
+      "category": "进度",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=progress&lang=ru&v=ee286ab",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=progress&lang=ru&v=ee286ab"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/widget.js",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/widget.js",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "进度组件",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。"
+      ],
+      "parameters": {
+        "view": {
+          "example": "progress",
+          "description": "沿用组件 URL 中的配置"
+        },
+        "lang": {
+          "example": "ru",
+          "description": "界面语言；ru 为俄语"
+        },
+        "v": {
+          "example": "ee286ab",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "previews/widget-022.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-023",
+      "kind": "widget",
+      "name": "进度组件",
+      "category": "进度",
+      "language": "英语／通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=progress",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=progress"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/widget.js",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/widget.js",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "进度组件",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。"
+      ],
+      "parameters": {
+        "view": {
+          "example": "progress",
+          "description": "沿用组件 URL 中的配置"
+        }
+      },
+      "preview": "previews/widget-023.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-024",
+      "kind": "widget",
+      "name": "学习计划阅读计数器",
+      "category": "习惯与阅读计数",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/reader.html?view=reader&v=9&locale=ru",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/reader.html?view=reader&v=9&locale=ru"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/reader.html",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/reader.html",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "学习计划阅读计数器",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。"
+      ],
+      "parameters": {
+        "view": {
+          "example": "reader",
+          "description": "沿用组件 URL 中的配置"
+        },
+        "v": {
+          "example": "9",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        },
+        "locale": {
+          "example": "ru",
+          "description": "界面语言；ru 为俄语"
+        }
+      },
+      "preview": "previews/widget-024.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-025",
+      "kind": "widget",
+      "name": "学习计划阅读计数器",
+      "category": "习惯与阅读计数",
+      "language": "英语／通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/reader.html?view=reader&v=3",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/reader.html?view=reader&v=7",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/reader.html?view=reader&v=3"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/reader.html",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/reader.html",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "学习计划阅读计数器",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。"
+      ],
+      "parameters": {
+        "view": {
+          "example": "reader",
+          "description": "沿用组件 URL 中的配置"
+        },
+        "v": {
+          "example": "3",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "previews/widget-025.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-026",
+      "kind": "widget",
+      "name": "已读书籍计数器",
+      "category": "习惯与阅读计数",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/counter.html",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/counter.html"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/my-life-planner/counter.html",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/my-life-planner/counter.html",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "已读书籍计数器",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。"
+      ],
+      "parameters": {},
+      "preview": "previews/widget-026.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-027",
+      "kind": "widget",
+      "name": "运动目标计数器",
+      "category": "习惯与阅读计数",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/goals/exercise/?locale=ru&v=33",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/goals/exercise/?locale=ru&v=34",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/goals/exercise/?locale=ru&v=33"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/goals/exercise/",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/goals/exercise/",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "独立目标计数，带加减、进度填充与浏览器本地保存。",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 180
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。",
+        "独立本地累计计数，不自动每天清零。"
+      ],
+      "parameters": {
+        "locale": {
+          "example": "ru",
+          "description": "界面语言；ru 为俄语"
+        },
+        "v": {
+          "example": "33",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "previews/widget-027.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 180
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-028",
+      "kind": "widget",
+      "name": "阅读目标计数器",
+      "category": "习惯与阅读计数",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/goals/read/?locale=ru&v=33",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/goals/read/?locale=ru&v=34",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/goals/read/?locale=ru&v=33"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/goals/read/",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/goals/read/",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "独立目标计数，带加减、进度填充与浏览器本地保存。",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 140
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。",
+        "独立本地累计计数，不自动每天清零。"
+      ],
+      "parameters": {
+        "locale": {
+          "example": "ru",
+          "description": "界面语言；ru 为俄语"
+        },
+        "v": {
+          "example": "33",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "previews/widget-028.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 140
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-029",
+      "kind": "widget",
+      "name": "饮水目标计数器",
+      "category": "习惯与阅读计数",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/goals/drink/?locale=ru&v=33",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/goals/drink/?locale=ru&v=34",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/goals/drink/?locale=ru&v=33"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/goals/drink/",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/goals/drink/",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "独立目标计数，带加减、进度填充与浏览器本地保存。",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 180
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。",
+        "独立本地累计计数，不自动每天清零。"
+      ],
+      "parameters": {
+        "locale": {
+          "example": "ru",
+          "description": "界面语言；ru 为俄语"
+        },
+        "v": {
+          "example": "33",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "previews/widget-029.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 180
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-030",
+      "kind": "widget",
+      "name": "交互任务面板",
+      "category": "任务与学习面板",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/task-panel-interaction-demo/?lang=ru&v=f891c3f",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/task-panel-interaction-demo/?lang=ru&v=f891c3f"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/task-panel-interaction-demo",
+      "code_url": "https://github.com/zhangleiye68-jpg/task-panel-interaction-demo",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "交互任务面板",
+      "tags": [],
+      "recommended_size": {
+        "width": 1000,
+        "height": 720
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。"
+      ],
+      "parameters": {
+        "lang": {
+          "example": "ru",
+          "description": "界面语言；ru 为俄语"
+        },
+        "v": {
+          "example": "f891c3f",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "previews/widget-030.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 1000,
+        "preview_height": 720
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-031",
+      "kind": "widget",
+      "name": "交互任务面板",
+      "category": "任务与学习面板",
+      "language": "英语／通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/task-panel-interaction-demo/",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/task-panel-interaction-demo/"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/task-panel-interaction-demo",
+      "code_url": "https://github.com/zhangleiye68-jpg/task-panel-interaction-demo",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "交互任务面板",
+      "tags": [],
+      "recommended_size": {
+        "width": 1000,
+        "height": 720
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。"
+      ],
+      "parameters": {},
+      "preview": "previews/widget-031.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 1000,
+        "preview_height": 720
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-032",
+      "kind": "widget",
+      "name": "学习计划网页仪表盘",
+      "category": "任务与学习面板",
+      "language": "英语／通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/dashboard.html?view=dashboard&v=6",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/dashboard.html?view=dashboard&v=6"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/dashboard.html",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/dashboard.html",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "学习计划网页仪表盘",
+      "tags": [],
+      "recommended_size": {
+        "width": 1000,
+        "height": 720
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。"
+      ],
+      "parameters": {
+        "view": {
+          "example": "dashboard",
+          "description": "沿用组件 URL 中的配置"
+        },
+        "v": {
+          "example": "6",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "previews/widget-032.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 1000,
+        "preview_height": 720
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-033",
+      "kind": "widget",
+      "name": "学习计划顶部横幅",
+      "category": "任务与学习面板",
+      "language": "英语／通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/banner.html?view=banner&v=3",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/banner.html?view=banner&v=3"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/banner.html",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/banner.html",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "学习计划顶部横幅",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。"
+      ],
+      "parameters": {
+        "view": {
+          "example": "banner",
+          "description": "沿用组件 URL 中的配置"
+        },
+        "v": {
+          "example": "3",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "previews/widget-033.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "visual_only": true
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-034",
+      "kind": "widget",
+      "name": "LIFE SPACE 环境音播放器",
+      "category": "音乐与白噪声",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/ambient.html?lang=ru&v=37e91a0",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/ambient.html?lang=ru&v=37e91a0"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/ambient.html",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/ambient.html",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "LIFE SPACE 环境音播放器",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。",
+        "自制合成氛围音示例；不包含第三方歌曲文件。"
+      ],
+      "parameters": {
+        "lang": {
+          "example": "ru",
+          "description": "界面语言；ru 为俄语"
+        },
+        "v": {
+          "example": "37e91a0",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "previews/widget-034.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-035",
+      "kind": "widget",
+      "name": "LIFE SPACE 环境音播放器",
+      "category": "音乐与白噪声",
+      "language": "英语／通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/ambient.html?v=09a2036",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/ambient.html?v=09a2036"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/ambient.html",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/ambient.html",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "LIFE SPACE 环境音播放器",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。",
+        "自制合成氛围音示例；不包含第三方歌曲文件。"
+      ],
+      "parameters": {
+        "v": {
+          "example": "09a2036",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "previews/widget-035.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-036",
+      "kind": "widget",
+      "name": "Spotify 歌单",
+      "category": "音乐与白噪声",
+      "language": "Spotify 界面",
+      "ownership": "external",
+      "status": "ready",
+      "embed_url": "https://open.spotify.com/embed/playlist/5qVEV9KSQzl6MR9qUqFzNW",
+      "aliases": [
+        "https://open.spotify.com/embed/playlist/5qVEV9KSQzl6MR9qUqFzNW"
+      ],
+      "source_url": "https://open.spotify.com/embed/playlist/5qVEV9KSQzl6MR9qUqFzNW",
+      "code_url": null,
+      "license": {
+        "label": "第三方服务，保存引用",
+        "url": null
+      },
+      "description": "Spotify 歌单",
+      "tags": [
+        "外部音乐服务"
+      ],
+      "recommended_size": {
+        "width": 560,
+        "height": 352
+      },
+      "dependencies": [
+        "open.spotify.com"
+      ],
+      "notes": [
+        "仅收录服务嵌入地址与界面参考，不保存音乐文件或服务实现。"
+      ],
+      "parameters": {},
+      "preview": "previews/widget-036.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 352
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-037",
+      "kind": "widget",
+      "name": "Spotify 歌单·深色",
+      "category": "音乐与白噪声",
+      "language": "Spotify 界面",
+      "ownership": "external",
+      "status": "ready",
+      "embed_url": "https://open.spotify.com/embed/playlist/2eLwNSlpcwxXHQNWml6m98?theme=0",
+      "aliases": [
+        "https://open.spotify.com/embed/playlist/2eLwNSlpcwxXHQNWml6m98?theme=0"
+      ],
+      "source_url": "https://open.spotify.com/embed/playlist/2eLwNSlpcwxXHQNWml6m98?theme=0",
+      "code_url": null,
+      "license": {
+        "label": "第三方服务，保存引用",
+        "url": null
+      },
+      "description": "Spotify 歌单·深色",
+      "tags": [
+        "外部音乐服务"
+      ],
+      "recommended_size": {
+        "width": 560,
+        "height": 352
+      },
+      "dependencies": [
+        "open.spotify.com"
+      ],
+      "notes": [
+        "仅收录服务嵌入地址与界面参考，不保存音乐文件或服务实现。"
+      ],
+      "parameters": {
+        "theme": {
+          "example": "0",
+          "description": "组件主题配置，按该组件的值保留"
+        }
+      },
+      "preview": "previews/widget-037.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 352
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-038",
+      "kind": "widget",
+      "name": "地中海风格音乐",
+      "category": "音乐与白噪声",
+      "language": "俄语（来源模板）",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=med-music&v=9b2067d",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=med-music&v=9b2067d"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/widget.js",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/widget.js",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "地中海风格音乐",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。",
+        "自制合成氛围音示例；不包含第三方歌曲文件。"
+      ],
+      "parameters": {
+        "view": {
+          "example": "med-music",
+          "description": "沿用组件 URL 中的配置"
+        },
+        "v": {
+          "example": "9b2067d",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "previews/widget-038.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-039",
+      "kind": "widget",
+      "name": "效率音乐播放器",
+      "category": "音乐与白噪声",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/music.html",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/music.html"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/my-life-planner/music.html",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/my-life-planner/music.html",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "效率音乐播放器",
+      "tags": [],
+      "recommended_size": {
+        "width": 360,
+        "height": 480
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。",
+        "自制合成氛围音示例；不包含第三方歌曲文件。"
+      ],
+      "parameters": {},
+      "preview": "previews/widget-039.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-040",
+      "kind": "widget",
+      "name": "动物·温馨房间",
+      "category": "植物与动物",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/animal.html",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/animal.html"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/my-life-planner/animal.html",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/my-life-planner/animal.html",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "动物·温馨房间",
+      "tags": [],
+      "recommended_size": {
+        "width": 360,
+        "height": 480
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。"
+      ],
+      "parameters": {},
+      "preview": "previews/widget-040.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widget-041",
+      "kind": "widget",
+      "name": "我的植物",
+      "category": "植物与动物",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/plant.html",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/plant.html"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/my-life-planner/plant.html",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/my-life-planner/plant.html",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "我的植物",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。"
+      ],
+      "parameters": {},
+      "preview": "previews/widget-041.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "cozy-calendar",
+      "kind": "widget",
+      "name": "Cozy 动态月历",
+      "category": "日历",
+      "language": "英语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=calendar",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=calendar&v=8bde6ea"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/cozy-study/",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/cozy-study/",
+      "license": {
+        "label": "MIT",
+        "url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/cozy-study/LICENSE"
+      },
+      "description": "跟随当前月份，高亮今天，可切月、选日期和返回今天。",
+      "tags": [],
+      "recommended_size": {
+        "width": 320,
+        "height": 320
+      },
+      "dependencies": [],
+      "notes": [
+        "周一开始；不存储日程，不连接数据库。",
+        "可加 theme=light 或 theme=dark；无参数时跟随色彩模式。"
+      ],
+      "parameters": {
+        "widget": {
+          "example": "calendar",
+          "description": "calendar 为月历，clock 为指针时钟"
+        }
+      },
+      "preview": "previews/cozy-calendar.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 320,
+        "preview_height": 320
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "cozy-clock",
+      "kind": "widget",
+      "name": "Cozy 蓝色指针时钟",
+      "category": "日期与时钟",
+      "language": "英语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=clock",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=clock&v=8bde6ea"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/cozy-study/",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/cozy-study/",
+      "license": {
+        "label": "MIT",
+        "url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/cozy-study/LICENSE"
+      },
+      "description": "按设备时间更新的蓝色圆形指针时钟。",
+      "tags": [],
+      "recommended_size": {
+        "width": 340,
+        "height": 340
+      },
+      "dependencies": [],
+      "notes": [
+        "按查看者设备日期与时区显示；可加 theme=light 或 theme=dark。"
+      ],
+      "parameters": {
+        "widget": {
+          "example": "clock",
+          "description": "calendar 为月历，clock 为指针时钟"
+        }
+      },
+      "preview": "previews/cozy-clock.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 340,
+        "preview_height": 340
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "studywithme-pomodoro",
+      "kind": "widget",
+      "name": "Study With Me 番茄钟",
+      "category": "专注与计时",
+      "language": "英语",
+      "ownership": "external",
+      "status": "ready",
+      "embed_url": "https://studywithme.io/aesthetic-pomodoro-timer/",
+      "aliases": [],
+      "source_url": "https://studywithme.io/",
+      "code_url": null,
+      "license": {
+        "label": "第三方服务，保存引用",
+        "url": null
+      },
+      "description": "Study With Me 番茄钟",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [
+        "studywithme.io"
+      ],
+      "notes": [
+        "公开服务，收录原始入口与参考图；实际可嵌入性以目标平台测试为准。"
+      ],
+      "parameters": {},
+      "preview": "previews/studywithme-pomodoro.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "spotify-playlist-0ofs",
+      "kind": "widget",
+      "name": "Spotify 学习歌单 A",
+      "category": "音乐与白噪声",
+      "language": "Spotify 界面",
+      "ownership": "external",
+      "status": "ready",
+      "embed_url": "https://open.spotify.com/embed/playlist/0ofsIXBCxkqYtt30YoJm1c",
+      "aliases": [],
+      "source_url": "https://open.spotify.com/embed/playlist/0ofsIXBCxkqYtt30YoJm1c",
+      "code_url": null,
+      "license": {
+        "label": "第三方服务，保存引用",
+        "url": null
+      },
+      "description": "Spotify 学习歌单 A",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 352
+      },
+      "dependencies": [
+        "open.spotify.com"
+      ],
+      "notes": [
+        "仅保存服务嵌入与预览；播放内容由 Spotify 提供。"
+      ],
+      "parameters": {},
+      "preview": "previews/spotify-playlist-0ofs.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 352
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "spotify-playlist-6hug",
+      "kind": "widget",
+      "name": "Spotify 学习歌单 B",
+      "category": "音乐与白噪声",
+      "language": "Spotify 界面",
+      "ownership": "external",
+      "status": "ready",
+      "embed_url": "https://open.spotify.com/embed/playlist/6HuGmDDzcvvcJ88nWrPEoG",
+      "aliases": [],
+      "source_url": "https://open.spotify.com/embed/playlist/6HuGmDDzcvvcJ88nWrPEoG",
+      "code_url": null,
+      "license": {
+        "label": "第三方服务，保存引用",
+        "url": null
+      },
+      "description": "Spotify 学习歌单 B",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 352
+      },
+      "dependencies": [
+        "open.spotify.com"
+      ],
+      "notes": [
+        "仅保存服务嵌入与预览；播放内容由 Spotify 提供。"
+      ],
+      "parameters": {},
+      "preview": "previews/spotify-playlist-6hug.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 352
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "widgetbox-calendar-retired",
+      "kind": "widget",
+      "name": "WidgetBox 旧月历参考",
+      "category": "日历",
+      "language": "通用",
+      "ownership": "external",
+      "status": "retired",
+      "embed_url": "https://widgetbox.app/embed/calendar/simple/60788344-032d-4bad-b871-5832168828ae",
+      "aliases": [],
+      "source_url": "https://widgetbox.app/embed/calendar/simple/60788344-032d-4bad-b871-5832168828ae",
+      "code_url": null,
+      "license": {
+        "label": "第三方服务，保存引用",
+        "url": null
+      },
+      "description": "WidgetBox 旧月历参考",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [
+        "widgetbox.app"
+      ],
+      "notes": [
+        "原模板的旧链接已返回站点推广页，保留作溯源，勿用于新模板。",
+        "预览若显示站点首页，代表失效状态，不代表原组件效果。"
+      ],
+      "parameters": {},
+      "preview": "previews/widgetbox-calendar-retired.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "reference",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": "cozy-calendar"
+    },
+    {
+      "id": "widgetbox-clock-retired",
+      "kind": "widget",
+      "name": "WidgetBox 旧指针时钟参考",
+      "category": "日期与时钟",
+      "language": "通用",
+      "ownership": "external",
+      "status": "retired",
+      "embed_url": "https://widgetbox.app/embed/clock/analog/e78606f2-863a-4335-a0b4-5320b334e14e",
+      "aliases": [],
+      "source_url": "https://widgetbox.app/embed/clock/analog/e78606f2-863a-4335-a0b4-5320b334e14e",
+      "code_url": null,
+      "license": {
+        "label": "第三方服务，保存引用",
+        "url": null
+      },
+      "description": "WidgetBox 旧指针时钟参考",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [
+        "widgetbox.app"
+      ],
+      "notes": [
+        "原模板的旧链接已返回站点推广页，保留作溯源，勿用于新模板。",
+        "预览若显示站点首页，代表失效状态，不代表原组件效果。"
+      ],
+      "parameters": {},
+      "preview": "previews/widgetbox-clock-retired.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "reference",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420
+      },
+      "replacement_id": "cozy-clock"
+    },
+    {
+      "id": "my-life-garden-cover",
+      "kind": "widget",
+      "name": "花园动态封面",
+      "category": "封面与装饰",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/cover.html",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/my-life-planner/cover.html",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/my-life-planner/cover.html",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "自制花园动态网页封面，可作为独立嵌入组件。",
+      "tags": [],
+      "recommended_size": {
+        "width": 900,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "独立网页组件，不自动关联 Buildin 原生数据库。"
+      ],
+      "parameters": {},
+      "preview": "previews/my-life-garden-cover.png",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "preview",
+        "default_state": true,
+        "visual_only": true
+      },
+      "replacement_id": null
+    }
+  ],
+  "assets": [
+    {
+      "id": "asset-001",
+      "kind": "asset",
+      "name": "地中海柠檬分隔条",
+      "category": "封面与装饰",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/azulejo-lemon-divider-v2.svg?v=99aba43",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/mediterranean/v3/azulejo-lemon-divider-v2.svg",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/mediterranean/v3/azulejo-lemon-divider-v2.svg",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "地中海柠檬分隔条",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "图片或动图素材，作为图片/原生页面封面使用；不含交互控件。"
+      ],
+      "parameters": {
+        "v": {
+          "example": "99aba43",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/azulejo-lemon-divider-v2.svg?v=99aba43",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "source-asset"
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "asset-002",
+      "kind": "asset",
+      "name": "日历栏目横幅",
+      "category": "封面与装饰",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/banner-calendar-v3.png?v=9b2067d",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/mediterranean/v3/banner-calendar-v3.png",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/mediterranean/v3/banner-calendar-v3.png",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "日历栏目横幅",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "图片或动图素材，作为图片/原生页面封面使用；不含交互控件。"
+      ],
+      "parameters": {
+        "v": {
+          "example": "9b2067d",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/banner-calendar-v3.png?v=9b2067d",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "source-asset"
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "asset-003",
+      "kind": "asset",
+      "name": "项目栏目横幅",
+      "category": "封面与装饰",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/banner-projects-v3.png?v=9b2067d",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/mediterranean/v3/banner-projects-v3.png",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/mediterranean/v3/banner-projects-v3.png",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "项目栏目横幅",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "图片或动图素材，作为图片/原生页面封面使用；不含交互控件。"
+      ],
+      "parameters": {
+        "v": {
+          "example": "9b2067d",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/banner-projects-v3.png?v=9b2067d",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "source-asset"
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "asset-004",
+      "kind": "asset",
+      "name": "课表栏目横幅",
+      "category": "封面与装饰",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/banner-schedule-v3.png?v=9b2067d",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/mediterranean/v3/banner-schedule-v3.png",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/mediterranean/v3/banner-schedule-v3.png",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "课表栏目横幅",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "图片或动图素材，作为图片/原生页面封面使用；不含交互控件。"
+      ],
+      "parameters": {
+        "v": {
+          "example": "9b2067d",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/banner-schedule-v3.png?v=9b2067d",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "source-asset"
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "asset-005",
+      "kind": "asset",
+      "name": "任务栏目横幅",
+      "category": "封面与装饰",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/banner-tasks-v3.png?v=9b2067d",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/mediterranean/v3/banner-tasks-v3.png",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/mediterranean/v3/banner-tasks-v3.png",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "任务栏目横幅",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "图片或动图素材，作为图片/原生页面封面使用；不含交互控件。"
+      ],
+      "parameters": {
+        "v": {
+          "example": "9b2067d",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/banner-tasks-v3.png?v=9b2067d",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "source-asset"
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "asset-006",
+      "kind": "asset",
+      "name": "地中海激励装饰图",
+      "category": "封面与装饰",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/motivation-hd.png?v=9b2067d",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/mediterranean/v3/motivation-hd.png",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/mediterranean/v3/motivation-hd.png",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "地中海激励装饰图",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "图片或动图素材，作为图片/原生页面封面使用；不含交互控件。"
+      ],
+      "parameters": {
+        "v": {
+          "example": "9b2067d",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/motivation-hd.png?v=9b2067d",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "source-asset"
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "asset-007",
+      "kind": "asset",
+      "name": "地中海明信片",
+      "category": "封面与装饰",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/postcard-hd.png?v=9b2067d",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/mediterranean/v3/postcard-hd.png",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/mediterranean/v3/postcard-hd.png",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "地中海明信片",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "图片或动图素材，作为图片/原生页面封面使用；不含交互控件。"
+      ],
+      "parameters": {
+        "v": {
+          "example": "9b2067d",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/postcard-hd.png?v=9b2067d",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "source-asset"
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "asset-008",
+      "kind": "asset",
+      "name": "地中海个人资料图",
+      "category": "封面与装饰",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/profile-final.png?v=9b2067d",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/mediterranean/v3/profile-final.png",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/mediterranean/v3/profile-final.png",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "地中海个人资料图",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "图片或动图素材，作为图片/原生页面封面使用；不含交互控件。"
+      ],
+      "parameters": {
+        "v": {
+          "example": "9b2067d",
+          "description": "缓存标识；不代表可恢复的历史版本"
+        }
+      },
+      "preview": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/profile-final.png?v=9b2067d",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "source-asset"
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "asset-009",
+      "kind": "asset",
+      "name": "花园动态封面 GIF",
+      "category": "封面与装饰",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/garden-cover-animated.gif",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/my-life-planner/assets/garden-cover-animated.gif",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/my-life-planner/assets/garden-cover-animated.gif",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "花园动态封面 GIF",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "图片或动图素材，作为图片/原生页面封面使用；不含交互控件。"
+      ],
+      "parameters": {},
+      "preview": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/garden-cover-animated.gif",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "source-asset"
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "asset-010",
+      "kind": "asset",
+      "name": "池塘动态封面 GIF",
+      "category": "封面与装饰",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/pond-cover.gif",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/pond-cover.gif",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/pond-cover.gif",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "池塘动态封面 GIF",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "图片或动图素材，作为图片/原生页面封面使用；不含交互控件。"
+      ],
+      "parameters": {},
+      "preview": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/pond-cover.gif",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "source-asset"
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "asset-011",
+      "kind": "asset",
+      "name": "透明封面占位素材",
+      "category": "封面与装饰",
+      "language": "通用",
+      "ownership": "self",
+      "status": "reference",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/transparent-cover-placeholder.svg",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/transparent-cover-placeholder.svg",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/transparent-cover-placeholder.svg",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "透明封面占位素材",
+      "tags": [],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [],
+      "notes": [
+        "内部透明占位素材，不作为可见装饰图推荐。"
+      ],
+      "parameters": {},
+      "preview": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/transparent-cover-placeholder.svg",
+      "checked_at": "2026-11-03",
+      "verification": {
+        "level": "source-asset"
+      },
+      "replacement_id": null
+    }
+  ]
+}

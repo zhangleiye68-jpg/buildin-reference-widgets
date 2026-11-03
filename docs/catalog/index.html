@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Buildin 模板统一组件库：按用途搜索小组件，查看预览，复制嵌入地址，查阅来源和源码。">
+  <title>Buildin 统一组件库</title>
+  <link rel="stylesheet" href="catalog.css">
+  <script src="catalog.js" defer></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="topline"><a class="brand" href="./">◈ BUILDIN COMPONENTS</a><a href="https://github.com/zhangleiye68-jpg/buildin-reference-widgets" target="_blank" rel="noopener">GitHub 仓库 ↗</a></div>
+    <p class="eyebrow">先从这里，找到适合模板的组件</p>
+    <h1>Buildin 统一组件库</h1>
+    <p class="intro">看实际预览，挑选语言和风格，复制嵌入地址。自制组件、社区源码、公开服务与装饰素材都收录在这里。</p>
+    <p class="workflow">使用顺序：<strong>先搜索本库 → 没有合适的再上网找 → 新选中的组件补回本库。</strong></p>
+    <div class="stats" id="stats" aria-live="polite">正在读取目录…</div>
+  </header>
+  <main>
+    <form class="filters" id="filters" role="search" onsubmit="return false">
+      <label class="search">搜索组件<input id="search" type="search" placeholder="日历、俄语、阅读、深色…" autocomplete="off"></label>
+      <label>用途<select id="category"><option value="">全部用途</option></select></label>
+      <label>类型<select id="kind"><option value="">组件与素材</option><option value="widget">交互组件</option><option value="asset">图片与动图</option></select></label>
+      <label>来源<select id="owner"><option value="">全部来源</option><option value="self">自制 · GitHub</option><option value="community">社区 · 已收录源码</option><option value="external">公开服务引用</option></select></label>
+      <label>状态<select id="status"><option value="">全部状态</option><option value="ready">可用</option><option value="sample">含示例内容</option><option value="needs-review">待复核</option><option value="retired">已停用参考</option><option value="unavailable">当前不可用</option><option value="reference">内部占位素材</option></select></label>
+      <button id="reset" type="button">清除筛选</button>
+    </form>
+    <div class="results-line"><p id="result-count" role="status"></p><a href="README.md">完整目录</a><a href="components.json">组件数据 JSON</a></div>
+    <section class="grid" id="grid" aria-label="组件列表"></section>
+    <p id="empty" hidden>没有匹配的条目。先换个关键词；仍没有合适的，再寻找新的公开来源并补充到仓库。</p>
+    <p id="error" role="alert" hidden></p>
+  </main>
+  <footer>预览展示组件的默认状态。来源、依赖、示例数据和已知限制见各条目；预览检查不等同于测试所有按钮。<br>自制组件使用 GitHub Pages 固定地址。第三方服务只保存引用和参考图；允许再分发的源码保留原许可与归属。</footer>
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

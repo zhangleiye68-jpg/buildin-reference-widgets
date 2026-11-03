@@ -1,0 +1,328 @@
+{
+  "updated_at": "2026-11-03",
+  "note": "仓库中全部现有图片、动图和视频素材（不含目录缩略图）。许可依对应组件或相邻归属说明；不把第三方资源统一声明为自制。",
+  "assets": [
+    {
+      "path": "assets/mediterranean/book-cover-hd.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/book-cover-hd.png",
+      "bytes": 1052953,
+      "sha256": "1557774f3adfcb78d4808574fb15576decdc0677754da17957d379f2c9d75639"
+    },
+    {
+      "path": "assets/mediterranean/course-chemistry-hd.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/course-chemistry-hd.png",
+      "bytes": 2948906,
+      "sha256": "5983dc8a87a2721dd057bacd64b23ef41bf7a68f96ff1fd0e2cdf3395dd5144a"
+    },
+    {
+      "path": "assets/mediterranean/course-history-hd.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/course-history-hd.png",
+      "bytes": 2813929,
+      "sha256": "6618a120ab7f426ba8dfcd082b45ec5661895a63b64668cfc598050fbedf1db8"
+    },
+    {
+      "path": "assets/mediterranean/course-literature-hd.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/course-literature-hd.png",
+      "bytes": 2575874,
+      "sha256": "7ef2f852615f30227c646cc2f239fc3367787d78250fc49610b1937dca73ed57"
+    },
+    {
+      "path": "assets/mediterranean/v3/azulejo-lemon-divider-v2.svg",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/azulejo-lemon-divider-v2.svg",
+      "bytes": 5946,
+      "sha256": "a856912fa7f35c3fc1ef3a79e8448c77864a10bce6b796da3fd9045475b49001"
+    },
+    {
+      "path": "assets/mediterranean/v3/banner-calendar-v3.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/banner-calendar-v3.png",
+      "bytes": 31931,
+      "sha256": "a3c2102189d09a205dbcf56032a8fab9296531957c507ac3817340fe72212de2"
+    },
+    {
+      "path": "assets/mediterranean/v3/banner-projects-v3.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/banner-projects-v3.png",
+      "bytes": 31267,
+      "sha256": "15fa943023f8e9ca88fe69a04092a9e03dd0b2bf92aacbdec9788638b7616848"
+    },
+    {
+      "path": "assets/mediterranean/v3/banner-schedule-v3.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/banner-schedule-v3.png",
+      "bytes": 28600,
+      "sha256": "3f4b75939f8bc87c6c284831ca5d503d1f21130c6f69f93b3a5cd30d815e4f40"
+    },
+    {
+      "path": "assets/mediterranean/v3/banner-tasks-v3.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/banner-tasks-v3.png",
+      "bytes": 33811,
+      "sha256": "f94ba3f179308bfdc8f2825044e4af5c587a0817799e9f7927fb66dfae71a1a7"
+    },
+    {
+      "path": "assets/mediterranean/v3/book-mark.svg",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/book-mark.svg",
+      "bytes": 622,
+      "sha256": "4648739ba3453a268c9705781d4615bcc867815ffc359e702295c69f295844f8"
+    },
+    {
+      "path": "assets/mediterranean/v3/cover-hd.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/cover-hd.png",
+      "bytes": 2030771,
+      "sha256": "3b1414fef87c08e46a5d53f6dd9642671acbe7e02b3dd2f7809a723c033004ff"
+    },
+    {
+      "path": "assets/mediterranean/v3/cover-scenic-hd-v4.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/cover-scenic-hd-v4.png",
+      "bytes": 2687679,
+      "sha256": "014a891ef1a54d13e4a3afd3c6c1b005cc2bc0814afb908c6a55414fd6914fb1"
+    },
+    {
+      "path": "assets/mediterranean/v3/feather-mark.svg",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/feather-mark.svg",
+      "bytes": 469,
+      "sha256": "6405e911bdcf1c0ad4ccff98afd894c332ab761954bbc8dec8a5af6fc0d9e81a"
+    },
+    {
+      "path": "assets/mediterranean/v3/lemon-mark.svg",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/lemon-mark.svg",
+      "bytes": 1334,
+      "sha256": "4404757574dc88f41576be4a6739466aacfe10f77a96ef5349ecf9503274952a"
+    },
+    {
+      "path": "assets/mediterranean/v3/motivation-hd.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/motivation-hd.png",
+      "bytes": 2693879,
+      "sha256": "31edf33392d8df9e770c1bb171e9a6dc315680ab76d0f6782dbaadc9d5f79d50"
+    },
+    {
+      "path": "assets/mediterranean/v3/postcard-hd.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/postcard-hd.png",
+      "bytes": 2643420,
+      "sha256": "8086eb0ff0a9c009d6518a65d2a244836a30c9fef540646e85b4103b4b4fd8d2"
+    },
+    {
+      "path": "assets/mediterranean/v3/profile-final.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/profile-final.png",
+      "bytes": 1694598,
+      "sha256": "357f105e1dd24bb955d9d9af71eb8252db64b9371f5f16e545b8288a07af9a11"
+    },
+    {
+      "path": "assets/mediterranean/v3/sailboat-mark.svg",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/sailboat-mark.svg",
+      "bytes": 630,
+      "sha256": "bd6966c1c874602e6d3053d13118e1a7a9dc56c9a3acb96b62064fd4fe2248d4"
+    },
+    {
+      "path": "assets/mediterranean/v3/shell-mark.svg",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/shell-mark.svg",
+      "bytes": 447,
+      "sha256": "786f465c58ec6a69b699f9609f7a3bbf0dbeb5cfb673d9a0615ef3151d0bcf5b"
+    },
+    {
+      "path": "assets/mediterranean/v3/tile-divider-hd.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v3/tile-divider-hd.png",
+      "bytes": 43174,
+      "sha256": "3ce6c570f30aae9f17b0dbf24ac739503e588b1147fddabf8eaa3a80b953c305"
+    },
+    {
+      "path": "assets/mediterranean/v4/cover-dynamic-loop-v1.gif",
+      "kind": "animation",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v4/cover-dynamic-loop-v1.gif",
+      "bytes": 12620126,
+      "sha256": "11cf5cf735543b736730e3cd51d15aac9cd878638112fc683673ec5f93377c16"
+    },
+    {
+      "path": "assets/mediterranean/v5/cover-fixed-camera-hd.gif",
+      "kind": "animation",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v5/cover-fixed-camera-hd.gif",
+      "bytes": 10534970,
+      "sha256": "9984dead6497785222ee7a558230ad67c4616ddef8473d5b0ca9a3d06fdb88d3"
+    },
+    {
+      "path": "before-home-cover.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/before-home-cover.png",
+      "bytes": 8919,
+      "sha256": "5a6b3db14a48ccc3eb341c6e377dcc187fa49ba410e53eeb226efc53869415cf"
+    },
+    {
+      "path": "life-space-cover.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/life-space-cover.png",
+      "bytes": 50930,
+      "sha256": "f8dd1114fdde7f302ef4584b7093f3d0aea4a1f93655d9b598bb362e1c1a3522"
+    },
+    {
+      "path": "my-life-planner/assets/album.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/album.png",
+      "bytes": 342117,
+      "sha256": "6bc75e42deb92210b2493730183a69af2027d0453f2f8a008d2b772f73289445"
+    },
+    {
+      "path": "my-life-planner/assets/animal-1.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/animal-1.png",
+      "bytes": 667527,
+      "sha256": "1093914592bb3e097fb9f8a60b6bea135f4dc5b8632e3ac718ddbc88357087fa"
+    },
+    {
+      "path": "my-life-planner/assets/animal-2.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/animal-2.png",
+      "bytes": 668528,
+      "sha256": "efda5e1d76f36f7dc95b0bdc7640a9df1f18d4d107fbabe2c1d62f37e052ffbd"
+    },
+    {
+      "path": "my-life-planner/assets/cover-garden.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/cover-garden.png",
+      "bytes": 3458203,
+      "sha256": "323ebbdd346a4ab8fb3e3fe8f3aa966b5b4fa5f813c57b8dfb233662e0d5640c"
+    },
+    {
+      "path": "my-life-planner/assets/forest-friend.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/forest-friend.png",
+      "bytes": 698641,
+      "sha256": "2252670aed1c85f473efaaddf68352357d11848a08ab7ece89c74330573d0b65"
+    },
+    {
+      "path": "my-life-planner/assets/garden-cover-animated.gif",
+      "kind": "animation",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/garden-cover-animated.gif",
+      "bytes": 4508629,
+      "sha256": "4a48a4dbdebed4329fa97ed057fd469bd60e62100ce01be4dd31ac3f063040e2"
+    },
+    {
+      "path": "my-life-planner/assets/garden-cover-preview.mp4",
+      "kind": "video",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/garden-cover-preview.mp4",
+      "bytes": 589975,
+      "sha256": "f0a8f56e08b36bcf20cd95e440e6fe7a563ebd17d81263ddd270b4af5efe159b"
+    },
+    {
+      "path": "my-life-planner/assets/garden-cover.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/garden-cover.png",
+      "bytes": 3457034,
+      "sha256": "edf59f4fc261282b80f640482b40cd97b545c170a53cfc6513d6cc479c94ef8a"
+    },
+    {
+      "path": "my-life-planner/assets/meadow.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/meadow.png",
+      "bytes": 911667,
+      "sha256": "60e087611571732491b63df48cc8dbc47cb59fc3ecb491204ae3af3367977421"
+    },
+    {
+      "path": "my-life-planner/assets/pixel-plant.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/pixel-plant.png",
+      "bytes": 175639,
+      "sha256": "05e689568869dae5034557877d91f26dcd6c6e6755884ae8bd45bc33d3d43879"
+    },
+    {
+      "path": "my-life-planner/assets/room-day.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/room-day.png",
+      "bytes": 2224294,
+      "sha256": "32800772cc3403659294711d6b856b0341ed9fb3000e5c1e9c56a3adbe62bb44"
+    },
+    {
+      "path": "my-life-planner/assets/room-night.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/room-night.png",
+      "bytes": 2182958,
+      "sha256": "4ba0a9fa7e122982db5015c7bdf58527a0ac1a0b716c34b947b7085cc2df17d5"
+    },
+    {
+      "path": "my-life-planner/assets/room-rain.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/room-rain.png",
+      "bytes": 2303457,
+      "sha256": "c7efe0429737d09a5ebd0c6382a6bddb9c881413c59d0e6d41471b797e5e27f8"
+    },
+    {
+      "path": "my-life-planner/assets/room-sunset.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/room-sunset.png",
+      "bytes": 2153387,
+      "sha256": "b280c271a1adc14bf528c90a3e1d29ffae7f0b3009cab9951177a5ad345d7ddd"
+    },
+    {
+      "path": "school-planner/goals/assets/book.svg",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/goals/assets/book.svg",
+      "bytes": 853,
+      "sha256": "78f4d87e4e97c7ab24215a1a04cf9093a1a7556709e00c2e65543ad21e54413d"
+    },
+    {
+      "path": "school-planner/goals/assets/drink.svg",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/goals/assets/drink.svg",
+      "bytes": 2616,
+      "sha256": "df58aa30f583cad12635c66e84a19e735536dc8b400fc8f6cb0a9e24e9e53df4"
+    },
+    {
+      "path": "school-planner/goals/assets/exercise.svg",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/goals/assets/exercise.svg",
+      "bytes": 1205,
+      "sha256": "9abe6b1f8f8e8903d93e62630394568dbbd09e4fdad84026e2374f3935d5d25f"
+    },
+    {
+      "path": "school-planner/pond-cover.gif",
+      "kind": "animation",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/pond-cover.gif",
+      "bytes": 8935176,
+      "sha256": "63abf91250ab699ba082ad78cfe51346e3d2354386b7c6f0df6ef05eb4db69c4"
+    },
+    {
+      "path": "school-planner/pond-loop.mp4",
+      "kind": "video",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/pond-loop.mp4",
+      "bytes": 3107368,
+      "sha256": "d930710b1405b8ca2cbdf8477f6f19d477aa031395142598a99b9afc27bb4007"
+    },
+    {
+      "path": "school-planner/pond-poster.png",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/pond-poster.png",
+      "bytes": 1907724,
+      "sha256": "3ae2d808c5f41a572e1b53b126b1e120cdbeb6bd683736f148937bd439eeae46"
+    },
+    {
+      "path": "school-planner/study-cover.gif",
+      "kind": "animation",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/study-cover.gif",
+      "bytes": 2468029,
+      "sha256": "d59eea394e75ec5c2e53c0412afd9fe709a67702e738441bb051a99fb4b88f7c"
+    },
+    {
+      "path": "school-planner/transparent-cover-placeholder.svg",
+      "kind": "image",
+      "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/transparent-cover-placeholder.svg",
+      "bytes": 146,
+      "sha256": "8394779cb5dcdcc72126913ecf8cabb6738cd3d6cdccac676287ff8420274a45"
+    }
+  ]
+}
