@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Музыка для продуктивности</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    html, body { width: 100%; height: 100%; overflow: hidden; }
+    body { padding: 0; }
+    .music { padding: 24px; color: white; background: linear-gradient(160deg, #244f78, #0b294b); }
+    .hero { display: grid; grid-template-columns: 132px 1fr; gap: 19px; align-items: center; }
+    .hero img { width: 132px; height: 132px; object-fit: cover; border-radius: 17px; box-shadow: 0 12px 24px rgba(0,0,0,.24); }
+    h1 { margin: 0 0 5px; font-size: 29px; letter-spacing: -.5px; }
+    .by { opacity: .8; }
+    .save { margin-top: 14px; border: 0; background: transparent; color: white; font-size: 16px; }
+    .controls { margin: 24px 0 17px; display: flex; align-items: center; justify-content: center; gap: 21px; }
+    .controls button { border: 0; color: white; background: transparent; font-size: 28px; }
+    .play { width: 59px; height: 59px; border-radius: 50% !important; color: #173451 !important; background: white !important; }
+    .progress { height: 5px; overflow: hidden; border-radius: 5px; background: rgba(255,255,255,.18); }
+    .progress i { display: block; width: 0%; height: 100%; border-radius: inherit; background: #f5df9b; transition: width 1s linear; }
+    .tracks { margin-top: 17px; display: grid; gap: 8px; }
+    .track { display: grid; grid-template-columns: 28px 1fr auto; gap: 9px; padding: 10px 9px; border-radius: 10px; align-items: center; cursor:pointer; }
+    .track.active { background: rgba(255,255,255,.09); }
+    .track small { display: block; opacity: .65; margin-top: 3px; }
+    @media (max-width: 420px) {
+      .music { min-height: 100%; padding: 16px 13px; border-radius: 18px; }
+      .hero { grid-template-columns: 76px minmax(0, 1fr); gap: 12px; }
+      .hero img { width: 76px; height: 76px; border-radius: 12px; }
+      h1 { font-size: 18px; line-height: 1.08; overflow-wrap: anywhere; }
+      .by { font-size: 13px; }
+      .save { margin-top: 8px; padding: 3px 0; font-size: 13px; }
+      .controls { margin: 16px 0 13px; gap: 10px; }
+      .controls button { padding: 4px; font-size: 20px; }
+      .play { width: 46px; height: 46px; }
+      .tracks { margin-top: 12px; gap: 5px; }
+      .track { grid-template-columns: 20px minmax(0,1fr) auto; gap: 6px; padding: 7px 6px; font-size: 13px; }
+      .track small { font-size: 11px; }
+      .track time { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="widget music">
+    <section class="hero">
+      <img src="assets/album.png" alt="Обложка музыки для продуктивности">
+      <div><h1>музыка для продуктивности</h1><div class="by">тихий сад</div><button class="save" id="save">＋ Сохранить</button></div>
+    </section>
+    <div class="controls"><button id="prev" aria-label="Предыдущий трек">◀</button><button class="play" id="play" aria-label="Воспроизвести">▶</button><button id="next" aria-label="Следующий трек">▶</button><button id="theme" aria-label="Сменить оформление">•••</button></div>
+    <div class="progress"><i id="progress"></i></div>
+    <section class="tracks">
+      <div class="track active" data-index="0"><span>1</span><div>Тихое утро<small>садовые заметки</small></div><time>01:46</time></div>
+      <div class="track" data-index="1"><span>2</span><div>Только мы<small>мягкий свет</small></div><time>01:00</time></div>
+      <div class="track" data-index="2"><span>3</span><div>Рядом<small>вечерний дождь</small></div><time>01:44</time></div>
+    </section>
+  </main>
+  <script src="shared.js"></script>
+  <script>
+    const tracks=[{duration:106,freq:196},{duration:60,freq:220},{duration:104,freq:174}];let playing=false,elapsed=0,current=0,audio=null,master=null,nodes=[],theme=0;
+    const button=document.querySelector('#play'),bar=document.querySelector('#progress'),card=document.querySelector('.music');
+    function ensureAudio(){if(audio)return;audio=new AudioContext();master=audio.createGain();master.gain.value=.055;master.connect(audio.destination)}
+    function stopSound(){nodes.forEach(node=>{try{node.stop()}catch(_){}});nodes=[]}
+    function startSound(){ensureAudio();audio.resume();stopSound();const {freq}=tracks[current];const low=audio.createOscillator(),high=audio.createOscillator(),lowGain=audio.createGain(),highGain=audio.createGain();low.type='sine';high.type='triangle';low.frequency.value=freq;high.frequency.value=freq*1.5;lowGain.gain.value=.75;highGain.gain.value=.16;low.connect(lowGain).connect(master);high.connect(highGain).connect(master);const length=audio.sampleRate*2,buffer=audio.createBuffer(1,length,audio.sampleRate),data=buffer.getChannelData(0);for(let i=0;i<length;i++)data[i]=(Math.random()*2-1)*.08;const noise=audio.createBufferSource(),filter=audio.createBiquadFilter(),noiseGain=audio.createGain();noise.buffer=buffer;noise.loop=true;filter.type='lowpass';filter.frequency.value=620;noiseGain.gain.value=.22;noise.connect(filter).connect(noiseGain).connect(master);low.start();high.start();noise.start();nodes=[low,high,noise]}
+    function select(index,autoplay=playing){current=(index+tracks.length)%tracks.length;elapsed=0;document.querySelectorAll('.track').forEach((row,i)=>row.classList.toggle('active',i===current));bar.style.width='0%';if(autoplay){playing=true;button.textContent='Ⅱ';button.setAttribute('aria-label','Поставить на паузу');startSound()}else stopSound()}
+    function toggle(){playing=!playing;button.textContent=playing?'Ⅱ':'▶';button.setAttribute('aria-label',playing?'Поставить на паузу':'Воспроизвести');if(playing)startSound();else stopSound()}
+    button.onclick=toggle;document.querySelector('#prev').onclick=()=>select(current-1);document.querySelector('#next').onclick=()=>select(current+1);document.querySelectorAll('.track').forEach(row=>row.onclick=()=>select(Number(row.dataset.index),true));
+    document.querySelector('#save').onclick=event=>{const saved=event.currentTarget.dataset.saved==='true';event.currentTarget.dataset.saved=String(!saved);event.currentTarget.textContent=saved?'＋ Сохранить':'✓ Сохранено'};
+    document.querySelector('#theme').onclick=()=>{theme=(theme+1)%3;card.style.background=["linear-gradient(160deg,#244f78,#0b294b)","linear-gradient(160deg,#6b3d62,#2a274d)","linear-gradient(160deg,#2f695e,#173b49)"][theme]};
+    setInterval(()=>{if(!playing)return;elapsed++;if(elapsed>=tracks[current].duration){select(current+1,true);return}bar.style.width=`${elapsed/tracks[current].duration*100}%`},1000);
+  </script>
+</body>
+</html>

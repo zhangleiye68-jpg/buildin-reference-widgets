@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Green Flip Clock</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      min-width: 188px;
+      min-height: 100%;
+      overflow: hidden;
+      background: transparent;
+    }
+    body {
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+    }
+    .clock {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(10px, 3.8vw, 14px);
+      padding: 14px;
+      background: transparent;
+    }
+    .card {
+      --size: clamp(78px, 38vw, 112px);
+      position: relative;
+      width: var(--size);
+      height: var(--size);
+      flex: 0 0 var(--size);
+      overflow: hidden;
+      border: 1px solid rgb(24 75 34 / 28%);
+      border-radius: clamp(8px, 3vw, 10px);
+      background: #85d171;
+      box-shadow: 0 2px 3px rgb(0 0 0 / 14%);
+      perspective: 460px;
+      perspective-origin: 50% 50%;
+    }
+    .card::after {
+      content: "";
+      position: absolute;
+      z-index: 8;
+      top: calc(50% - .5px);
+      right: 0;
+      left: 0;
+      height: 1px;
+      background: rgb(31 83 39 / 32%);
+      box-shadow: 0 1px rgb(255 255 255 / 9%);
+      pointer-events: none;
+    }
+    .half,
+    .flap {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .top {
+      top: 0;
+      border-radius: 9px 9px 0 0;
+      background: #89d777;
+    }
+    .bottom {
+      bottom: 0;
+      border-radius: 0 0 9px 9px;
+      background: #79c766;
+    }
+    .static { z-index: 1; }
+    .underlay { z-index: 2; visibility: hidden; }
+    .number {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: calc(var(--size) - 2px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(1px, .7vw, 3px);
+      color: #fffdf0;
+      font-family: Impact, "Arial Narrow", "Roboto Condensed", sans-serif;
+      font-size: clamp(49px, 22vw, 72px);
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0;
+      line-height: 1;
+      text-shadow: 0 1px 0 rgb(36 78 41 / 16%);
+    }
+    .digit {
+      display: block;
+      width: .55em;
+      flex: 0 0 .55em;
+      text-align: center;
+    }
+    .top .number { top: 0; }
+    .bottom .number { bottom: 0; }
+    .flap {
+      z-index: 4;
+      visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      will-change: transform;
+    }
+    .top-flap {
+      top: 0;
+      transform-origin: 50% 100%;
+      border-radius: 9px 9px 0 0;
+      background: #89d777;
+    }
+    .bottom-flap {
+      top: 50%;
+      transform: rotateX(90deg);
+      transform-origin: 50% 0;
+      border-radius: 0 0 9px 9px;
+      background: #79c766;
+    }
+    .turning .underlay { visibility: visible; }
+  </style>
+</head>
+<body>
+  <main class="clock" role="timer" aria-live="off" aria-label="05:14"></main>
+  <script>
+    (() => {
+      const clock = document.querySelector('.clock');
+      const params = new URLSearchParams(location.search);
+      const demo = params.get('demo') === '1';
+      const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+      const duration = 700;
+      const edge = .34;
+      const landing = .68;
+      const rebound = .83;
+
+      const units = ['hours', 'minutes'].map(name => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.dataset.unit = name;
+        card.setAttribute('aria-hidden', 'true');
+        card.innerHTML = `<span class="half static top"><span class="number" data-top></span></span>
+          <span class="half static bottom"><span class="number" data-bottom></span></span>
+          <span class="half underlay bottom"><span class="number" data-old-bottom></span></span>
+          <span class="flap top top-flap"><span class="number" data-front></span></span>
+          <span class="flap bottom bottom-flap"><span class="number" data-back></span></span>`;
+        card.querySelectorAll('.number').forEach(number => {
+          for (let i = 0; i < 2; i += 1) {
+            const digit = document.createElement('span');
+            digit.className = 'digit';
+            number.append(digit);
+          }
+        });
+        clock.append(card);
+        return {
+          card,
+          top: card.querySelector('[data-top]'),
+          bottom: card.querySelector('[data-bottom]'),
+          oldBottom: card.querySelector('[data-old-bottom]'),
+          underlay: card.querySelector('.underlay'),
+          front: card.querySelector('[data-front]'),
+          back: card.querySelector('[data-back]'),
+          topFlap: card.querySelector('.top-flap'),
+          bottomFlap: card.querySelector('.bottom-flap'),
+          value: null,
+          animations: []
+        };
+      });
+
+      function writeNumber(node, value) {
+        [...value].forEach((digit, index) => {
+          node.children[index].textContent = digit;
+        });
+      }
+
+      function stop(unit) {
+        unit.card.classList.remove('turning');
+        unit.animations.forEach(animation => {
+          animation.onfinish = null;
+          animation.cancel();
+        });
+        unit.animations = [];
+      }
+
+      function flip(unit, value, animate) {
+        if (unit.value === value) return;
+        const previous = unit.value;
+        stop(unit);
+        unit.value = value;
+        unit.card.dataset.value = value;
+        [unit.top, unit.bottom, unit.back].forEach(node => writeNumber(node, value));
+
+        if (!animate || previous === null || document.hidden || reducedMotion.matches) {
+          [unit.front, unit.oldBottom].forEach(node => writeNumber(node, value));
+          return;
+        }
+
+        [unit.front, unit.oldBottom].forEach(node => writeNumber(node, previous));
+        unit.card.classList.add('turning');
+
+        const topTurn = unit.topFlap.animate([
+          { transform: 'rotateX(0deg)', visibility: 'visible', offset: 0, easing: 'cubic-bezier(.42,0,.82,.64)' },
+          { transform: 'rotateX(-90deg)', visibility: 'visible', offset: edge },
+          { transform: 'rotateX(-90deg)', visibility: 'hidden', offset: edge + .00001 },
+          { transform: 'rotateX(-90deg)', visibility: 'hidden', offset: 1 }
+        ], { duration, fill: 'both' });
+
+        const bottomTurn = unit.bottomFlap.animate([
+          { transform: 'rotateX(90deg)', visibility: 'hidden', offset: 0 },
+          { transform: 'rotateX(90deg)', visibility: 'hidden', offset: edge - .00001 },
+          { transform: 'rotateX(90deg)', visibility: 'visible', offset: edge, easing: 'cubic-bezier(.18,.34,.62,.86)' },
+          { transform: 'rotateX(0deg)', visibility: 'visible', offset: landing, easing: 'cubic-bezier(.18,.52,.34,1)' },
+          { transform: 'rotateX(14deg)', visibility: 'visible', offset: rebound, easing: 'cubic-bezier(.42,0,.58,1)' },
+          { transform: 'rotateX(0deg)', visibility: 'visible', offset: 1 }
+        ], { duration, fill: 'both' });
+
+        const backing = unit.underlay.animate([
+          { visibility: 'visible', offset: 0 },
+          { visibility: 'visible', offset: landing - .00001 },
+          { visibility: 'hidden', offset: landing },
+          { visibility: 'hidden', offset: 1 }
+        ], { duration, fill: 'both' });
+
+        unit.animations = [topTurn, bottomTurn, backing];
+        bottomTurn.onfinish = () => {
+          [unit.front, unit.oldBottom].forEach(node => writeNumber(node, value));
+          stop(unit);
+        };
+      }
+
+      function show(hours, minutes, animate = true) {
+        const values = [hours, minutes].map(value => String(value).padStart(2, '0'));
+        units.forEach((unit, index) => flip(unit, values[index], animate));
+        clock.setAttribute('aria-label', values.join(':'));
+      }
+
+      if (demo) {
+        let hours = 5;
+        let minutes = 14;
+        show(hours, minutes, false);
+        setInterval(() => {
+          minutes += 1;
+          if (minutes === 60) {
+            minutes = 0;
+            hours = (hours + 1) % 24;
+          }
+          show(hours, minutes, true);
+        }, 2200);
+        return;
+      }
+
+      const explicit = params.get('time')?.match(/^(\d{1,2}):(\d{2})$/);
+      if (explicit) {
+        show(Number(explicit[1]) % 24, Number(explicit[2]) % 60, false);
+        return;
+      }
+
+      let timer;
+      function tick() {
+        clearTimeout(timer);
+        const now = new Date();
+        show(now.getHours(), now.getMinutes(), true);
+        timer = setTimeout(tick, 1000 - now.getMilliseconds());
+      }
+      tick();
+    })();
+  </script>
+</body>
+</html>

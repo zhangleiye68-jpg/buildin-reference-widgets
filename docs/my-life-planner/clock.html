@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Перекидные часы</title>
+  <style>
+    :root{color-scheme:light;font-family:Georgia,"Times New Roman",serif;background:transparent}
+    *{box-sizing:border-box}html,body{width:100%;height:100%;overflow:hidden}body{margin:0;min-height:100vh;display:grid;place-items:center;background:transparent}
+    .clock{width:100%;display:flex;align-items:flex-end;justify-content:center;gap:14px;padding:16px}
+    .tile{position:relative;display:grid;place-items:center;width:136px;height:118px;border-radius:13px;background:#efbad1;color:white;font:800 64px/1 system-ui;box-shadow:0 10px 22px #a66c8738;overflow:hidden}
+    .tile.small{width:72px;height:70px;font-size:30px;margin-bottom:8px}
+    .tile::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:#b77a985c;box-shadow:0 1px #fff5}
+    .tile.flip{animation:flip .55s cubic-bezier(.2,.7,.25,1)}
+    @keyframes flip{0%{transform:perspective(500px) rotateX(0)}45%{transform:perspective(500px) rotateX(-82deg);filter:brightness(.82)}55%{transform:perspective(500px) rotateX(75deg);filter:brightness(.9)}100%{transform:perspective(500px) rotateX(0)}}
+    @media(max-width:420px){.clock{gap:7px;padding:8px 4px}.tile{width:82px;height:82px;border-radius:11px;font-size:44px}.tile.small{width:46px;height:48px;margin-bottom:5px;border-radius:9px;font-size:18px}}
+    @media(max-width:250px){.tile{width:72px;height:74px;font-size:39px}.tile.small{width:40px;height:44px;font-size:16px}}
+  </style>
+</head>
+<body>
+  <main class="clock" aria-label="Текущее время">
+    <div class="tile" id="hour">12</div><div class="tile" id="minute">11</div><div class="tile small" id="suffix">24Ч</div>
+  </main>
+  <script>
+    const parts={hour:document.querySelector('#hour'),minute:document.querySelector('#minute'),suffix:document.querySelector('#suffix')};
+    let last={};
+    function update(){
+      const now=new Date();const h=now.getHours();
+      const next={hour:String(h).padStart(2,'0'),minute:String(now.getMinutes()).padStart(2,'0'),suffix:'24Ч'};
+      for(const key of Object.keys(next))if(next[key]!==last[key]){parts[key].textContent=next[key];parts[key].classList.remove('flip');void parts[key].offsetWidth;parts[key].classList.add('flip')}
+      last=next;
+    }
+    update();setInterval(update,1000);
+  </script>
+</body>
+</html>

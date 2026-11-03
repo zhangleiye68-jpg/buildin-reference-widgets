@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Flip Clock</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-width: 240px; min-height: 100%; background: transparent; }
+    body { min-height: 100svh; display: grid; place-items: center; }
+    .clock { display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 24px 8px; background: transparent; }
+    .digits { display: flex; align-items: center; gap: 3px; }
+    .card {
+      --card-height: 82px;
+      position: relative;
+      width: clamp(58px, 25.5vw, 88px);
+      height: var(--card-height);
+      overflow: visible;
+      border: 1px solid rgb(0 0 0 / 34%);
+      border-radius: 6px;
+      background: #f4f1ef;
+      perspective: 340px;
+      perspective-origin: 50% 50%;
+      box-shadow: 0 2px 3px rgb(0 0 0 / 12%);
+    }
+    .card::after {
+      content: ""; position: absolute; z-index: 6;
+      top: calc(50% - .5px); right: 0; left: 0; height: 1px;
+      background: rgb(0 0 0 / 20%); pointer-events: none;
+    }
+    .half { position: absolute; left: 0; width: 100%; height: 50%; overflow: hidden; background: #f4f1ef; }
+    .top { top: 0; border-radius: 5px 5px 0 0; }
+    .bottom { bottom: 0; border-radius: 0 0 5px 5px; }
+    .static { z-index: 1; }
+    .underlay { z-index: 2; visibility: hidden; }
+    .number {
+      /* Both halves crop the same 80px canvas inside the 82px bordered frame. */
+      position: absolute; left: 0; width: 100%; height: calc(var(--card-height) - 2px);
+      display: flex; align-items: center; justify-content: center;
+      gap: clamp(3px, .8vw, 5px); background: transparent; color: #151515;
+      font-family: Impact, "Arial Black", "Roboto Condensed", sans-serif;
+      font-size: clamp(41px, 15vw, 54px); font-weight: 900;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0; line-height: 1;
+    }
+    .digit { display: block; flex: 0 0 .58em; width: .58em; text-align: center; }
+    .top .number { top: 0; }
+    .bottom .number { bottom: 0; }
+    .flap {
+      position: absolute; left: 0; width: 100%; height: 50%; z-index: 4;
+      overflow: hidden; background: #f4f1ef; pointer-events: none; visibility: hidden;
+      backface-visibility: hidden; -webkit-backface-visibility: hidden;
+      will-change: transform;
+    }
+    /* Two single-sided surfaces meet edge-on at the SAME centre hinge.
+       This avoids a double-sided texture/backface swap and its one-frame flash. */
+    .top-flap { top: 0; transform-origin: 50% 100%; border-radius: 5px 5px 0 0; }
+    .bottom-flap { top: 50%; transform-origin: 50% 0; border-radius: 0 0 5px 5px; transform: rotateX(90deg); }
+    .flap::after, .half::after {
+      content: ""; position: absolute; left: 1px; right: 1px; height: 1px;
+      background: #d4d0cb; pointer-events: none;
+    }
+    .top::after { top: 0; }
+    .bottom::after { bottom: 0; }
+    .turning .underlay { visibility: visible; }
+    .colon { width: 9px; color: #e9e6e3; font: 800 31px/1 Georgia, serif; text-align: center; transform: translateY(-2px); }
+    .date { white-space: nowrap; color: #a8a8a8; font: 500 11px/1 system-ui, sans-serif; letter-spacing: .01em; }
+    .inspection { position: fixed; z-index: 20; bottom: 12px; left: 12px; right: 12px; max-width: 680px;
+      margin: auto; padding: 12px; border: 1px solid #444; border-radius: 8px; background: #181818;
+      color: #ddd; font: 12px/1.5 system-ui, sans-serif; }
+    .inspection label, .inspection button, .inspection select { margin: 3px; }
+    .inspection button, .inspection select { padding: 5px 8px; border: 1px solid #555; border-radius: 4px;
+      color: #eee; background: #292929; font: inherit; }
+    .inspection input { width: 100%; }
+    .inspection output { display: block; font-variant-numeric: tabular-nums; }
+    .inspection pre { display: none; }
+  </style>
+</head>
+<body>
+  <main class="clock" aria-label="Часы">
+    <div class="digits" role="timer" aria-live="off" data-clock></div>
+    <div class="date" data-date></div>
+  </main>
+  <script>
+    (() => {
+      const clock = document.querySelector('[data-clock]');
+      const date = document.querySelector('[data-date]');
+      const params = new URLSearchParams(location.search);
+      const locale = params.get('locale') || 'ru-RU';
+      const formatter = new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'long', year: 'numeric' });
+      const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+      const duration = 600;
+      const edge = .26;
+      const landing = .54;
+      const rebound = .72;
+      const units = ['hours', 'minutes', 'seconds'].map((name, index) => {
+        if (index) {
+          const colon = document.createElement('span');
+          colon.className = 'colon'; colon.textContent = ':'; colon.setAttribute('aria-hidden', 'true'); clock.append(colon);
+        }
+        const card = document.createElement('div');
+        card.className = 'card'; card.dataset.unit = name; card.setAttribute('aria-hidden', 'true');
+        card.innerHTML = `<span class="half static top"><span class="number" data-top></span></span>
+          <span class="half static bottom"><span class="number" data-bottom></span></span>
+          <span class="half underlay bottom"><span class="number" data-old-bottom></span></span>
+          <span class="flap top top-flap"><span class="number" data-front></span></span>
+          <span class="flap bottom bottom-flap"><span class="number" data-back></span></span>`;
+        card.querySelectorAll('.number').forEach(number => {
+          for (let i = 0; i < 2; i++) {
+            const digit = document.createElement('span'); digit.className = 'digit'; number.append(digit);
+          }
+        });
+        clock.append(card);
+        return { card, top: card.querySelector('[data-top]'), bottom: card.querySelector('[data-bottom]'),
+          oldBottom: card.querySelector('[data-old-bottom]'), underlay: card.querySelector('.underlay'),
+          front: card.querySelector('[data-front]'), back: card.querySelector('[data-back]'),
+          topFlap: card.querySelector('.top-flap'), bottomFlap: card.querySelector('.bottom-flap'),
+          value: null, animations: [] };
+      });
+      function stop(unit) {
+        unit.card.classList.remove('turning');
+        unit.animations.forEach(animation => { animation.onfinish = null; animation.cancel(); });
+        unit.animations = [];
+      }
+      function writeNumber(node, value) {
+        [...value].forEach((digit, index) => { node.children[index].textContent = digit; });
+      }
+      function flip(unit, value, animate, inspect = false) {
+        if (unit.value === value) return;
+        const previous = unit.value;
+        stop(unit);
+        unit.value = value;
+        unit.card.dataset.value = value;
+        [unit.top, unit.bottom, unit.back].forEach(node => writeNumber(node, value));
+        if (!animate || previous === null || (!inspect && (document.hidden || reducedMotion.matches))) {
+          [unit.front, unit.oldBottom].forEach(node => writeNumber(node, value));
+          return;
+        }
+        [unit.front, unit.oldBottom].forEach(node => writeNumber(node, previous));
+        unit.card.classList.add('turning');
+        // Upper old half falls to the centre; lower new half continues down from that centre.
+        // Only the lower leaf rebounds. The outer frame never gets an animation or transform.
+        const topTurn = unit.topFlap.animate([
+          { transform: 'rotateX(0deg)', visibility: 'visible', offset: 0, easing: 'cubic-bezier(.42,0,.8,.65)' },
+          { transform: 'rotateX(-90deg)', visibility: 'visible', offset: edge },
+          { transform: 'rotateX(-90deg)', visibility: 'hidden', offset: edge + .00001 },
+          { transform: 'rotateX(-90deg)', visibility: 'hidden', offset: 1 }
+        ], { duration, fill: 'both' });
+        const bottomTurn = unit.bottomFlap.animate([
+          { transform: 'rotateX(90deg)', visibility: 'hidden', offset: 0 },
+          { transform: 'rotateX(90deg)', visibility: 'hidden', offset: edge - .00001 },
+          { transform: 'rotateX(90deg)', visibility: 'visible', offset: edge, easing: 'cubic-bezier(.2,.35,.68,.78)' },
+          { transform: 'rotateX(0deg)', visibility: 'visible', offset: landing, easing: 'cubic-bezier(.22,.28,.42,1)' },
+          { transform: 'rotateX(28deg)', visibility: 'visible', offset: rebound, easing: 'cubic-bezier(.4,0,.6,1)' },
+          { transform: 'rotateX(0deg)', visibility: 'visible', offset: 1 }
+        ], { duration, fill: 'both' });
+        // The old lower number stays covered until landing; the rebound reveals only the NEW number.
+        // All three animations are created in one task and share the browser's pending animation frame.
+        const backing = unit.underlay.animate([
+          { visibility: 'visible', offset: 0 },
+          { visibility: 'visible', offset: landing - .00001 },
+          { visibility: 'hidden', offset: landing },
+          { visibility: 'hidden', offset: 1 }
+        ], { duration, fill: 'both' });
+        unit.animations = [topTurn, bottomTurn, backing];
+        bottomTurn.onfinish = () => {
+          [unit.front, unit.oldBottom].forEach(node => writeNumber(node, value));
+          stop(unit);
+        };
+      }
+      let timer;
+      function tick(animate = true) {
+        clearTimeout(timer);
+        const now = new Date();
+        const values = [now.getHours(), now.getMinutes(), now.getSeconds()].map(n => String(n).padStart(2, '0'));
+        units.forEach((unit, index) => flip(unit, values[index], animate));
+        clock.setAttribute('aria-label', values.join(':'));
+        date.textContent = formatter.format(now).replace(/\s*г\.$/, '').replace(/\s+/g, '\u00a0');
+        timer = setTimeout(tick, 1004 - Date.now() % 1000);
+      }
+      document.addEventListener('visibilitychange', () => {
+        if (params.has('inspect')) return;
+        units.forEach(unit => { stop(unit); unit.value = null; });
+        tick(false);
+      });
+      tick(false);
+      // Opt-in local QA only. Normal embeds never create controls or expose a testing API.
+      if (params.has('inspect')) {
+        clearTimeout(timer);
+        const panel = document.createElement('aside'); panel.className = 'inspection';
+        panel.innerHTML = `<label>检查场景 <select aria-label="检查场景">
+          <option value="seconds">秒：12:34:56 → 12:34:57</option>
+          <option value="minutes">分秒进位：12:34:59 → 12:35:00</option>
+          <option value="hours">时分秒进位：12:59:59 → 13:00:00</option>
+          <option value="midnight">午夜：23:59:59 → 00:00:00</option></select></label>
+          <div><button data-before>静止旧值</button><button data-prev>上一帧</button><button data-next>下一帧</button>
+          <button data-play>正常播放</button><button data-scan>检查全部帧</button><button data-after>静止新值</button></div>
+          <label>动画时间<input aria-label="动画时间" type="range" min="0" max="600" step="0.01" value="0"></label>
+          <output data-position></output><output data-summary></output><pre data-inspection-results></pre><pre data-playback-results></pre>`;
+        document.body.append(panel);
+        const select = panel.querySelector('select');
+        const slider = panel.querySelector('input');
+        const position = panel.querySelector('[data-position]');
+        const summary = panel.querySelector('[data-summary]');
+        let current = 0;
+        let playback;
+        function scenario() {
+          const cases = { seconds: [['12','34','56'], ['12','34','57']], minutes: [['12','34','59'], ['12','35','00']],
+            hours: [['12','59','59'], ['13','00','00']], midnight: [['23','59','59'], ['00','00','00']] };
+          return cases[select.value];
+        }
+        function prepare(paused = true) {
+          cancelAnimationFrame(playback);
+          const [before, after] = scenario();
+          units.forEach((unit, index) => {
+            unit.value = null; flip(unit, before[index], false);
+            flip(unit, after[index], true, true);
+            if (paused) unit.animations.forEach(animation => { animation.onfinish = null; animation.pause(); animation.currentTime = 0; });
+          });
+          clock.setAttribute('aria-label', after.join(':'));
+        }
+        function seek(time) {
+          current = Math.max(0, Math.min(duration, Number(time)));
+          units.forEach(unit => unit.animations.forEach(animation => { animation.currentTime = current; }));
+          slider.value = String(current);
+          position.textContent = `${current.toFixed(1)} / ${duration} ms · 中轴固定 · ${
+            current < duration * edge ? '上半片翻向中轴' : current < duration * landing ? '下半片从中轴落下' :
+              current < duration * rebound ? '下半片向上回弹' : '下半片回落归位'}`;
+        }
+        function rest(next) {
+          cancelAnimationFrame(playback);
+          const values = scenario()[next ? 1 : 0];
+          units.forEach((unit, index) => { unit.value = null; flip(unit, values[index], false); });
+          clock.setAttribute('aria-label', values.join(':'));
+          position.textContent = next ? '静止新值' : '静止旧值';
+        }
+        select.addEventListener('change', () => { prepare(); seek(0); summary.textContent = ''; });
+        slider.addEventListener('input', () => { cancelAnimationFrame(playback); if (!units.some(u => u.animations.length)) prepare(); seek(slider.value); });
+        panel.querySelector('[data-before]').onclick = () => rest(false);
+        panel.querySelector('[data-after]').onclick = () => rest(true);
+        panel.querySelector('[data-prev]').onclick = () => { cancelAnimationFrame(playback); if (!units.some(u => u.animations.length)) prepare(); seek(current - 1000/60); };
+        panel.querySelector('[data-next]').onclick = () => { cancelAnimationFrame(playback); if (!units.some(u => u.animations.length)) prepare(); seek(current + 1000/60); };
+        panel.querySelector('[data-play]').onclick = () => {
+          // Exercise the exact production animation and its cleanup, not a JS-driven imitation.
+          prepare(false); const start = performance.now(); const frames = [];
+          panel.querySelector('[data-playback-results]').textContent = '';
+          summary.textContent = '实时播放检查中…';
+          function frame(now) {
+            const sample = { time: now - start, units: units.map(unit => {
+              const r = unit.card.getBoundingClientRect();
+              return { unit: unit.card.dataset.unit, value: unit.card.dataset.value, frame: [r.x,r.y,r.width,r.height],
+                turning: unit.card.classList.contains('turning'), lowerTransform: getComputedStyle(unit.bottomFlap).transform,
+                lowerVisible: getComputedStyle(unit.bottomFlap).visibility,
+                backingVisible: getComputedStyle(unit.underlay).visibility };
+            }) };
+            frames.push(sample);
+            position.textContent = `${Math.min(duration, sample.time).toFixed(1)} / ${duration} ms · 实时原生动画`;
+            if (sample.time < duration + 100) playback = requestAnimationFrame(frame);
+            else {
+              panel.querySelector('[data-playback-results]').textContent = JSON.stringify(frames);
+              const gaps = frames.slice(1).map((f,i) => f.time - frames[i].time).sort((a,b) => a-b);
+              summary.textContent = `实时采样 ${frames.length} 帧 · 帧间隔中位数 ${gaps[Math.floor(gaps.length/2)].toFixed(1)} ms`;
+            }
+          }
+          playback = requestAnimationFrame(frame);
+        };
+        panel.querySelector('[data-scan]').onclick = async () => {
+          prepare(); const records = [];
+          panel.querySelector('[data-inspection-results]').textContent = '';
+          summary.textContent = '逐帧检查中…';
+          const rect = node => { const r = node.getBoundingClientRect(); return [r.x,r.y,r.width,r.height]; };
+          const baselines = units.map(unit => rect(unit.card));
+          const times = [...new Set([...Array.from({length: 37}, (_, i) => i * 1000 / 60),
+            duration * edge - .02, duration * edge, duration * edge + .02,
+            duration * landing - .02, duration * landing, duration * landing + .02, duration * rebound])].sort((a,b) => a-b);
+          for (const time of times) {
+            seek(time); await new Promise(requestAnimationFrame);
+            records.push({ time, units: units.map((unit, index) => {
+              const frame = rect(unit.card); const upper = getComputedStyle(unit.topFlap); const lower = getComputedStyle(unit.bottomFlap);
+              return { unit: unit.card.dataset.unit, frame, fixed: frame.every((v,i) => Math.abs(v - baselines[index][i]) < .001),
+                upper: { rect: rect(unit.topFlap), transform: upper.transform, origin: upper.transformOrigin, visible: upper.visibility, shadow: upper.boxShadow },
+                lower: { rect: rect(unit.bottomFlap), transform: lower.transform, origin: lower.transformOrigin, visible: lower.visibility, shadow: lower.boxShadow },
+                backingVisible: getComputedStyle(unit.underlay).visibility, backingValue: unit.oldBottom.textContent,
+                numberHeight: getComputedStyle(unit.top).height, value: unit.card.dataset.value };
+            })});
+          }
+          panel.querySelector('[data-inspection-results]').textContent = JSON.stringify(records);
+          summary.textContent = `已检查 ${records.length} 帧 · 外框${records.every(r => r.units.every(u => u.fixed)) ? '全程固定' : '发生位移'}`;
+          seek(0);
+        };
+        prepare(); seek(0);
+      }
+    })();
+  </script>
+</body>
+</html>

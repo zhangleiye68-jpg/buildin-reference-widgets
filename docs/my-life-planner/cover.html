@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Садовая обложка</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { overflow: hidden; background: #7dbb42; }
+    .cover {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      min-height: 230px;
+      overflow: hidden;
+      background: url('assets/garden-cover.png') center/cover no-repeat;
+    }
+    .cover::before {
+      content: '';
+      position: absolute;
+      inset: -20%;
+      background:
+        radial-gradient(circle at 20% 22%, rgba(255,255,214,.32), transparent 24%),
+        radial-gradient(circle at 72% 55%, rgba(255,255,255,.18), transparent 28%);
+      animation: sunlight 8s ease-in-out infinite alternate;
+      mix-blend-mode: screen;
+    }
+    .cover::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(105deg, transparent 18%, rgba(255,255,255,.22) 42%, transparent 62%);
+      transform: translateX(-110%);
+      animation: sweep 9s ease-in-out infinite;
+    }
+    .leaf-shadow {
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border-radius: 48% 52% 55% 45%;
+      background: rgba(26, 98, 45, .12);
+      filter: blur(18px);
+      transform-origin: 50% 100%;
+      animation: sway 5.6s ease-in-out infinite alternate;
+    }
+    .leaf-shadow.one { left: -80px; bottom: -120px; }
+    .leaf-shadow.two { right: -70px; bottom: -135px; animation-delay: -2.1s; }
+    .butterfly {
+      position: absolute;
+      width: 22px;
+      height: 15px;
+      animation: fly 8.5s linear infinite;
+      filter: drop-shadow(0 2px 3px rgba(56,67,27,.25));
+    }
+    .butterfly::before, .butterfly::after {
+      content: '';
+      position: absolute;
+      top: 1px;
+      width: 11px;
+      height: 13px;
+      background: #fff7c7;
+      border: 1px solid rgba(103,85,34,.35);
+      animation: wing .34s ease-in-out infinite alternate;
+    }
+    .butterfly::before { left: 0; border-radius: 90% 24% 80% 30%; transform-origin: 100% 60%; }
+    .butterfly::after { right: 0; border-radius: 24% 90% 30% 80%; transform-origin: 0 60%; animation-direction: alternate-reverse; }
+    .butterfly.b2 { animation-delay: -4.2s; animation-duration: 10.5s; transform: scale(.75); }
+    @keyframes sunlight { from { transform: translate(-2%, -1%) scale(1); opacity: .65; } to { transform: translate(4%, 2%) scale(1.05); opacity: 1; } }
+    @keyframes sweep { 0%, 25% { transform: translateX(-120%); } 70%, 100% { transform: translateX(115%); } }
+    @keyframes sway { from { transform: rotate(-3deg) scaleX(.96); } to { transform: rotate(5deg) scaleX(1.05); } }
+    @keyframes wing { from { transform: rotateY(12deg) rotate(-7deg); } to { transform: rotateY(76deg) rotate(7deg); } }
+    @keyframes fly {
+      0% { left: -4%; top: 65%; transform: translateY(0) rotate(-6deg); }
+      28% { top: 44%; transform: translateY(-14px) rotate(5deg); }
+      58% { top: 38%; transform: translateY(12px) rotate(-2deg); }
+      100% { left: 104%; top: 24%; transform: translateY(-8px) rotate(4deg); }
+    }
+  </style>
+</head>
+<body>
+  <main class="cover" aria-label="Анимированная садовая обложка">
+    <span class="leaf-shadow one"></span>
+    <span class="leaf-shadow two"></span>
+    <span class="butterfly"></span>
+    <span class="butterfly b2"></span>
+  </main>
+</body>
+</html>

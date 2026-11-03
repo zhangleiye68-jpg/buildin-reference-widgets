@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ru" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Погода</title>
+  <style>
+    * { box-sizing: border-box; }
+    /* Night-only text, with a transparent iframe canvas rather than a black box. */
+    :root { color-scheme: normal; --ink: #f5f7fa; --muted: #bac3cf; }
+    html, body { margin: 0; width: 100%; height: 100%; min-width: 0; overflow: hidden; background: transparent; }
+    body { color: var(--ink); font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased; }
+    .fit-viewport { position: fixed; inset: 0; padding: 12px 8px; overflow: hidden; }
+    .weather { position: absolute; width: 344px; max-width: none; transform-origin: center;
+      visibility: hidden; }
+    .weather[data-fit-ready="true"] { visibility: visible; }
+    .current { display: grid; grid-template-columns: 140px 44px 120px;
+      gap: 12px; justify-content: space-between; align-items: center; }
+    .location, .now { min-width: 0; text-align: center; }
+    .city { font-size: 13px; font-weight: 750; line-height: 1.25;
+      text-transform: uppercase; overflow-wrap: anywhere; }
+    .source { display: block; width: fit-content; margin: 5px auto 0; color: var(--muted);
+      font-size: 10.5px; line-height: 1.2; text-decoration: none; }
+    .source:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+    .current-icon { display: grid; place-items: center; }
+    .current-icon svg { width: 44px; height: 44px; }
+    .temperature { font-size: 31px; line-height: 1.05; font-weight: 750;
+      white-space: nowrap; font-variant-numeric: tabular-nums; letter-spacing: -.025em; }
+    .condition { margin-top: 5px; color: var(--muted); font-size: 12.5px;
+      line-height: 1.25; overflow-wrap: anywhere; }
+    .forecast { display: grid; grid-template-columns: repeat(5, 64px);
+      gap: 6px; justify-content: space-between; margin-top: 20px; text-align: center; }
+    .day { min-width: 0; }
+    .weekday { font-size: 14.5px; line-height: 1.15; font-weight: 700; }
+    .date { display: block; margin-top: 4px; color: var(--muted); font-size: 11.25px;
+      line-height: 1.15; font-weight: 600; font-variant-numeric: tabular-nums; }
+    .day-icon { display: block; width: 36px; height: 36px; margin: 7px auto; }
+    .high, .low { display: flex; align-items: baseline; justify-content: center; gap: .22em;
+      font-size: 13.5px; line-height: 1.4; font-weight: 650;
+      white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .low { color: var(--muted); }
+    .arrow { font-size: .9em; font-weight: 700; }
+    .symbols { position: absolute; width: 0; height: 0; overflow: hidden; }
+  </style>
+  <script src="../shared/fit-to-frame.js" defer></script>
+</head>
+<body>
+  <svg class="symbols" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <g id="sun"><circle cx="24" cy="24" r="10" fill="#f2be45" stroke="#ffda83" stroke-width="2"/>
+        <path d="M24 5v4m0 30v4M5 24h4m30 0h4M10.5 10.5l3 3m21 21 3 3m0-27-3 3m-21 21-3 3"
+          fill="none" stroke="#e9ad36" stroke-width="2.5" stroke-linecap="round"/></g>
+      <g id="moon"><path d="M31 7a17 17 0 1 0 10 27A18 18 0 0 1 31 7Z" fill="#f3cc69" stroke="#ffe29a" stroke-width="2"/></g>
+      <g id="cloud"><path d="M14 36h21a9 9 0 0 0 0-18h-1a12 12 0 0 0-23-1A9.5 9.5 0 0 0 14 36Z"
+        fill="#3c9fea" stroke="#9bd9ff" stroke-width="2.5" stroke-linejoin="round"/></g>
+      <g id="partly"><circle cx="34" cy="13" r="8" fill="#f3bf4b" stroke="#ffdc8e" stroke-width="2"/><use href="#cloud"/></g>
+      <g id="rain"><use href="#cloud"/><path d="m15 40-2 4m12-4-2 4m12-4-2 4" stroke="#5bb6ef" stroke-width="2.5" stroke-linecap="round"/></g>
+      <g id="snow"><use href="#cloud"/><path d="M15 40v6m-3-3h6m12-3v6m-3-3h6" stroke="#9cd8ff" stroke-width="1.8" stroke-linecap="round"/></g>
+      <g id="fog"><use href="#cloud"/><path d="M9 40h30M14 45h22" stroke="#9abfd3" stroke-width="2" stroke-linecap="round"/></g>
+      <g id="storm"><use href="#cloud"/><path d="m25 30-6 10h6l-3 7 12-13h-8l3-4Z" fill="#f3c64c"/></g>
+    </defs>
+  </svg>
+  <div class="fit-viewport" data-fit-viewport>
+  <main class="weather" aria-label="Погода в Лос-Анджелесе" data-status="loading"
+    data-fit-content data-fit-min-width="344" data-fit-fill-width>
+    <div class="current">
+      <div class="location"><div class="city" data-city>Лос-Анджелес</div>
+        <a class="source" href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer"
+          title="Данные погоды: Open-Meteo · CC BY 4.0" aria-label="Данные погоды: Open-Meteo">Open-Meteo</a></div>
+      <div class="current-icon" data-current-icon aria-hidden="true"></div>
+      <div class="now"><div class="temperature" data-temperature>— °C</div>
+        <div class="condition" data-condition aria-live="polite">Загрузка…</div></div>
+    </div>
+    <div class="forecast" aria-label="Прогноз на пять дней" data-forecast></div>
+  </main>
+  </div>
+  <script>
+    (() => {
+      'use strict';
+      const params = new URLSearchParams(location.search);
+      const coordinate = (key, fallback, min, max) => {
+        if (!params.has(key)) return fallback;
+        const n = Number(params.get(key));
+        return Number.isFinite(n) && n >= min && n <= max ? n : fallback;
+      };
+      const latitude = coordinate('lat', 34.0522, -90, 90);
+      const longitude = coordinate('lon', -118.2437, -180, 180);
+      const city = (params.get('city') || 'Лос-Анджелес').trim().slice(0, 70) || 'Лос-Анджелес';
+      let timeZone = params.get('tz') || 'America/Los_Angeles';
+      try { new Intl.DateTimeFormat('ru', {timeZone}).format(); } catch { timeZone = 'America/Los_Angeles'; }
+      const host = document.querySelector('.weather');
+      const currentIcon = document.querySelector('[data-current-icon]');
+      const temperature = document.querySelector('[data-temperature]');
+      const condition = document.querySelector('[data-condition]');
+      const forecast = document.querySelector('[data-forecast]');
+      document.querySelector('[data-city]').textContent = city;
+      host.setAttribute('aria-label', `Погода: ${city}`);
+      const cacheKey = `planner-weather-celsius-v1:${latitude}:${longitude}:${timeZone}`;
+      const refreshInterval = 15 * 60 * 1000;
+      const maxCacheAge = 60 * 60 * 1000;
+      let cached;
+      let busy = false;
+
+      // WMO codes: https://open-meteo.com/en/docs#weathervariables
+      function weather(code, isDay = true) {
+        if (code === 0) return {icon: isDay ? 'sun' : 'moon', label: 'Ясно'};
+        if (code === 1) return {icon: 'partly', label: 'Малооблачно'};
+        if (code === 2) return {icon: 'partly', label: 'Переменная облачность'};
+        if (code === 3) return {icon: 'cloud', label: 'Облачно'};
+        if ([45, 48].includes(code)) return {icon: 'fog', label: 'Туман'};
+        if ([51, 53, 55].includes(code)) return {icon: 'rain', label: 'Морось'};
+        if ([56, 57, 66, 67].includes(code)) return {icon: 'rain', label: 'Ледяной дождь'};
+        if ([61, 63, 65].includes(code)) return {icon: 'rain', label: 'Дождь'};
+        if ([71, 73, 75, 77, 85, 86].includes(code)) return {icon: 'snow', label: 'Снег'};
+        if ([80, 81, 82].includes(code)) return {icon: 'rain', label: 'Ливни'};
+        if ([95, 96, 97, 99].includes(code)) return {icon: 'storm', label: 'Гроза'};
+        return {icon: 'cloud', label: 'Облачно'};
+      }
+      function icon(name, className = '') {
+        return `<svg class="${className}" viewBox="0 0 48 48" aria-hidden="true"><use href="#${name}"/></svg>`;
+      }
+      function valid(data) {
+        const daily = data?.daily;
+        return typeof data?.current?.temperature_2m === 'number' && Number.isFinite(data.current.temperature_2m)
+          && Number.isInteger(data.current.weather_code) && daily
+          && ['time','weather_code','temperature_2m_max','temperature_2m_min'].every(k => Array.isArray(daily[k]) && daily[k].length >= 5)
+          && daily.time.slice(0,5).every(t => /^\d{4}-\d{2}-\d{2}$/.test(t))
+          && ['weather_code','temperature_2m_max','temperature_2m_min'].every(k => daily[k].slice(0,5).every(n => typeof n === 'number' && Number.isFinite(n)));
+      }
+      const degrees = n => `${Math.round(n)}\u00a0°C`;
+      const weekday = t => {
+        const word = new Intl.DateTimeFormat('ru-RU', {weekday: 'short', timeZone: 'UTC'}).format(new Date(`${t}T12:00:00Z`)).replace('.', '');
+        return word[0].toUpperCase() + word.slice(1);
+      };
+      const shortDate = day => `${day.slice(8,10)}.${day.slice(5,7)}`;
+      const fullDate = day => new Intl.DateTimeFormat('ru-RU', {dateStyle: 'long', timeZone: 'UTC'}).format(new Date(`${day}T12:00:00Z`));
+      function setDegrees(node, number) {
+        node.querySelector('.value').textContent = number === null ? '—' : Math.round(number);
+        node.querySelector('.unit').hidden = number === null;
+      }
+      function makeDay(day) {
+        const col = document.createElement('div'); col.className = 'day';
+        col.setAttribute('role', 'group');
+        col.innerHTML = '<div class="weekday"></div><time class="date"></time><svg class="day-icon" viewBox="0 0 48 48" aria-hidden="true"></svg>'
+          + '<span class="high"><span class="arrow" aria-hidden="true">↑</span><span class="degrees"><span class="value">—</span><span class="unit" hidden><span class="unit-space">&nbsp;</span>°<span class="unit-letter">C</span></span></span></span>'
+          + '<span class="low"><span class="arrow" aria-hidden="true">↓</span><span class="degrees"><span class="value">—</span><span class="unit" hidden><span class="unit-space">&nbsp;</span>°<span class="unit-letter">C</span></span></span></span>';
+        col.querySelector('.weekday').textContent = weekday(day);
+        col.querySelector('.date').textContent = shortDate(day);
+        col.querySelector('.date').dateTime = day;
+        col.setAttribute('aria-label', `${fullDate(day)}, загрузка прогноза`);
+        return col;
+      }
+      function render(data, state = 'live') {
+        const current = weather(data.current.weather_code, data.current.is_day !== 0);
+        currentIcon.innerHTML = icon(current.icon);
+        temperature.textContent = degrees(data.current.temperature_2m);
+        condition.textContent = state === 'stale' ? 'Данные устарели' : current.label;
+        forecast.replaceChildren(...data.daily.time.slice(0,5).map((day, i) => {
+          const detail = weather(data.daily.weather_code[i]);
+          const col = makeDay(day);
+          col.setAttribute('aria-label', `${fullDate(day)}, ${detail.label}, максимум ${degrees(data.daily.temperature_2m_max[i])}, минимум ${degrees(data.daily.temperature_2m_min[i])}`);
+          col.querySelector('.day-icon').outerHTML = icon(detail.icon, 'day-icon');
+          setDegrees(col.querySelector('.high'), data.daily.temperature_2m_max[i]);
+          setDegrees(col.querySelector('.low'), data.daily.temperature_2m_min[i]);
+          return col;
+        }));
+        host.dataset.status = state;
+      }
+      function unavailable() {
+        temperature.textContent = '— °C';
+        condition.textContent = 'Нет данных';
+        currentIcon.replaceChildren();
+        forecast.querySelectorAll('.high,.low').forEach(node => setDegrees(node, null));
+        forecast.querySelectorAll('.day-icon').forEach(node => node.replaceChildren());
+        forecast.querySelectorAll('.day').forEach(node => node.setAttribute('aria-label', `${fullDate(node.querySelector('.date').dateTime)}, нет данных`));
+        host.dataset.status = 'unavailable';
+      }
+      // Preserve the five-column structure while loading. Never fabricate weather data.
+      const localToday = new Intl.DateTimeFormat('sv-SE', {timeZone, year: 'numeric', month: '2-digit', day: '2-digit'}).format(new Date());
+      const today = new Date(`${localToday}T12:00:00Z`);
+      for (let i = 0; i < 5; i++) {
+        const day = new Date(today.getTime() + i * 86400000).toISOString().slice(0,10);
+        forecast.append(makeDay(day));
+      }
+      try {
+        const stored = JSON.parse(localStorage.getItem(cacheKey));
+        if (stored && valid(stored.data) && Number.isFinite(stored.fetchedAt) && Date.now() >= stored.fetchedAt && Date.now() - stored.fetchedAt < maxCacheAge) {
+          cached = stored; render(cached.data, Date.now() - cached.fetchedAt < refreshInterval ? 'cached' : 'stale');
+        }
+      } catch { /* Sandboxed embeds may disable local storage. Live weather still works. */ }
+      async function refresh(force = false) {
+        if (busy) return;
+        if (!force && cached && Date.now() - cached.fetchedAt < refreshInterval) return;
+        busy = true;
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 8000);
+        try {
+          const url = new URL('https://api.open-meteo.com/v1/forecast');
+          url.search = new URLSearchParams({latitude, longitude, current: 'temperature_2m,weather_code,is_day',
+            daily: 'weather_code,temperature_2m_max,temperature_2m_min', temperature_unit: 'celsius', timezone: timeZone, forecast_days: '5'});
+          const response = await fetch(url, {signal: controller.signal});
+          if (!response.ok) throw new Error(`Weather unavailable: ${response.status}`);
+          const data = await response.json();
+          if (!valid(data)) throw new Error('Invalid weather response');
+          cached = {fetchedAt: Date.now(), data};
+          try { localStorage.setItem(cacheKey, JSON.stringify(cached)); } catch {}
+          render(data);
+        } catch {
+          if (cached && Date.now() - cached.fetchedAt < maxCacheAge) render(cached.data, Date.now() - cached.fetchedAt < refreshInterval ? 'cached' : 'stale');
+          else unavailable();
+        } finally { clearTimeout(timeout); busy = false; }
+      }
+      document.addEventListener('visibilitychange', () => { if (!document.hidden) refresh(); });
+      addEventListener('online', () => refresh(true));
+      setInterval(() => { if (!document.hidden) refresh(); }, refreshInterval);
+      refresh();
+    })();
+  </script>
+</body>
+</html>

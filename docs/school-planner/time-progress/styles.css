@@ -1,0 +1,66 @@
+* { box-sizing: border-box; }
+:root {
+  /* Match the embedding document's scheme, otherwise Chromium may give a
+     transparent iframe an opaque white canvas in a dark parent. */
+  color-scheme: light dark;
+  --ink: #f2f2ef;
+  --label-width: 104px;
+  --column-gap: 12px;
+  --row-gap: 8px;
+  --bar-height: clamp(16px, calc((100dvh - 32px) / 4), 28px);
+  --type-size: 14px;
+}
+html, body {
+  width: 100%; height: 100%; margin: 0; min-width: 0;
+  overflow: hidden; background: transparent;
+}
+body {
+  display: flex; align-items: center; padding: 4px;
+  color: var(--ink); font: 400 var(--type-size)/1.2 Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.time-progress { width: 100%; min-width: 0; display: grid; gap: var(--row-gap); }
+.time-progress[data-ready="false"] { visibility: hidden; }
+.progress-row {
+  display: grid; grid-template-columns: minmax(0, 1fr) var(--label-width);
+  gap: var(--column-gap); align-items: center; min-width: 0;
+}
+.track {
+  min-width: 0; height: var(--bar-height); padding: 3px;
+  border: 1.5px solid var(--ink); border-radius: 1px;
+  background: transparent;
+}
+.fill {
+  height: 100%; width: 0; max-width: 100%;
+  background: var(--ink); border-radius: 0;
+}
+.fill[data-animate="true"] { transition: width 1000ms linear; }
+.label {
+  display: grid; grid-template-columns: minmax(0, 1fr) 4ch; gap: 6px;
+  align-items: baseline; min-width: 0; white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.percentage { text-align: right; }
+html[lang="zh-CN"] { --label-width: 78px; }
+@media (max-width: 239px) {
+  :root { --label-width: 87px; --column-gap: 8px; --type-size: 12px; }
+  html[lang="zh-CN"] { --label-width: 65px; }
+  .track { padding: 2px; }
+}
+@media (max-width: 159px) {
+  :root { --label-width: 79px; --column-gap: 6px; --type-size: 11px; }
+  html[lang="zh-CN"] { --label-width: 61px; }
+  .track { border-width: 1px; padding: 1px; }
+}
+@media (max-height: 110px) {
+  :root { --row-gap: 4px; --bar-height: max(10px, calc((100dvh - 20px) / 4)); --type-size: 12px; }
+  .track { padding: 2px; }
+}
+@media (max-height: 79px) {
+  :root { --row-gap: 3px; --bar-height: max(7px, calc((100dvh - 15px) / 4)); --type-size: 10px; }
+  body { padding: 3px; }
+  .track { border-width: 1px; padding: 1px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fill[data-animate="true"] { transition: none; }
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Прогресс времени</title>
+</head>
+<body>
+  <main class="time-progress" aria-label="Прогресс времени" data-ready="false">
+    <div class="progress-row" data-period="day">
+      <div class="track" role="progressbar" aria-label="День" aria-valuemin="0" aria-valuemax="100"><div class="fill"></div></div>
+      <div class="label" aria-hidden="true"><span class="period-name">День</span><span class="percentage">—</span></div>
+    </div>
+    <div class="progress-row" data-period="week">
+      <div class="track" role="progressbar" aria-label="Неделя" aria-valuemin="0" aria-valuemax="100"><div class="fill"></div></div>
+      <div class="label" aria-hidden="true"><span class="period-name">Неделя</span><span class="percentage">—</span></div>
+    </div>
+    <div class="progress-row" data-period="month">
+      <div class="track" role="progressbar" aria-label="Месяц" aria-valuemin="0" aria-valuemax="100"><div class="fill"></div></div>
+      <div class="label" aria-hidden="true"><span class="period-name">Месяц</span><span class="percentage">—</span></div>
+    </div>
+    <div class="progress-row" data-period="year">
+      <div class="track" role="progressbar" aria-label="Год" aria-valuemin="0" aria-valuemax="100"><div class="fill"></div></div>
+      <div class="label" aria-hidden="true"><span class="period-name">Год</span><span class="percentage">—</span></div>
+    </div>
+  </main>
+  <noscript>Для отображения прогресса нужен JavaScript.</noscript>
+  <script type="module" src="./widget.mjs"></script>
+</body>
+</html>

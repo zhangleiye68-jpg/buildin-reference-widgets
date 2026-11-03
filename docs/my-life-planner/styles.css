@@ -1,0 +1,80 @@
+:root {
+  color-scheme: light;
+  --paper: #fffdf9;
+  --ink: #2e2b2b;
+  --muted: #6c6967;
+  --pink: #efb4ca;
+  --pink-soft: #f9e7ee;
+  --burgundy: #a01f55;
+  --sage: #dfeae1;
+  --sage-deep: #447e58;
+  --teal: #1397a7;
+  --teal-deep: #076d79;
+  --navy: #12365d;
+  --cream: #fff9ee;
+  --shadow: 0 14px 38px rgba(48, 73, 54, 0.16);
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; min-height: 100%; }
+
+body {
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: transparent;
+}
+
+button, input { font: inherit; }
+button { cursor: pointer; }
+
+.widget {
+  width: min(100%, 520px);
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 26px;
+  box-shadow: var(--shadow);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-5px) scale(1.012); }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-140%) rotate(8deg); }
+  55%, 100% { transform: translateX(240%) rotate(8deg); }
+}
+
+@keyframes bump {
+  0% { transform: scale(1); }
+  38% { transform: scale(1.24); }
+  100% { transform: scale(1); }
+}
+
+@keyframes float-up {
+  0% { opacity: 0; transform: translate3d(0, 18px, 0) scale(.7); }
+  35% { opacity: 1; }
+  100% { opacity: 0; transform: translate3d(var(--drift, 0), -90px, 0) rotate(var(--turn, 0deg)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .001ms !important;
+  }
+}

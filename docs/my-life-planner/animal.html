@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Уютная комната</title>
+  <style>
+    *{box-sizing:border-box}html,body{width:100%;height:100%;overflow:hidden}body{margin:0;min-height:100vh;display:grid;place-items:center;background:transparent;font-family:system-ui,sans-serif}
+    .widget{width:min(100%,560px);overflow:hidden;border-radius:24px;background:#129ca9;color:#fff;box-shadow:0 18px 45px #17514b33}.visual{position:relative;aspect-ratio:4/3;background:#efd9bb;overflow:hidden}
+    .visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .65s ease}.visual img.out{opacity:0}.stamp{position:absolute;left:0;right:0;bottom:0;padding:64px 22px 18px;background:linear-gradient(transparent,#231613b8);font-weight:800;font-size:21px}.stamp small{display:block;margin-top:4px;font-size:19px}
+    .panel{padding:20px 24px 24px}.buttons{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.buttons button{margin:auto;width:62px;height:62px;border:3px solid white;border-radius:50%;background:#ffffff12;color:#fff;font-size:27px;cursor:pointer}.buttons button:active{transform:scale(.94)}
+    .hint{text-align:center;font-weight:700;margin:15px 0 12px}input{width:100%;accent-color:white}.scene-name{text-align:center;font-size:13px;opacity:.85;margin-top:7px}
+    @media(max-width:420px){.widget{height:100%;border-radius:18px}.visual{aspect-ratio:auto;height:58%}.stamp{padding:48px 15px 13px;font-size:16px}.stamp small{font-size:15px}.panel{padding:13px 14px 15px}.buttons{gap:8px}.buttons button{width:46px;height:46px;border-width:2px;font-size:21px}.hint{margin:10px 0 8px;font-size:13px}.scene-name{font-size:11px}}
+  </style>
+</head>
+<body>
+  <main class="widget"><section class="visual"><img id="scene" alt="Уютная комната"><div class="stamp" id="date"></div></section><section class="panel"><div class="buttons"><button id="pause" aria-label="Остановить смену сцен">Ⅱ</button><button id="play" aria-label="Запустить смену сцен">▶</button><button id="shuffle" aria-label="Случайная сцена">⤨</button><button id="weather" aria-label="Сменить атмосферу">☂</button></div><div class="hint">Нажми, чтобы сменить сцену</div><input id="volume" type="range" min="0" max="1" step="0.01" value="0.35" aria-label="Громкость атмосферы"><div class="scene-name" id="name"></div></section></main>
+  <script>
+    const scenes=[
+      {name:'Солнечная комната в саду',src:'assets/room-day.png',tone:420},
+      {name:'Комната для чтения под дождём',src:'assets/room-rain.png',tone:210},
+      {name:'Комната в золотом закате',src:'assets/room-sunset.png',tone:330},
+      {name:'Тихая комната при луне',src:'assets/room-night.png',tone:160}
+    ];
+    const image=document.querySelector('#scene'),name=document.querySelector('#name'),volume=document.querySelector('#volume');let index=0,cycle=null,audio=null,gain=null,source=null;
+    function setScene(next){index=(next+scenes.length)%scenes.length;image.classList.add('out');setTimeout(()=>{image.src=scenes[index].src;name.textContent=scenes[index].name;image.onload=()=>image.classList.remove('out');if(audio)startAmbience()},260)}
+    function updateClock(){const now=new Date();document.querySelector('#date').innerHTML=`${new Intl.DateTimeFormat('ru-RU',{weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(now)}<small>${new Intl.DateTimeFormat('ru-RU',{hour:'2-digit',minute:'2-digit'}).format(now)}</small>`}
+    function ensureAudio(){if(audio)return;audio=new AudioContext();gain=audio.createGain();gain.gain.value=Number(volume.value);gain.connect(audio.destination)}
+    function startAmbience(){ensureAudio();source?.stop();const length=audio.sampleRate*2,buffer=audio.createBuffer(1,length,audio.sampleRate),data=buffer.getChannelData(0);for(let i=0;i<length;i++)data[i]=(Math.random()*2-1)*.14;source=audio.createBufferSource();source.buffer=buffer;source.loop=true;const filter=audio.createBiquadFilter();filter.type='lowpass';filter.frequency.value=scenes[index].tone;source.connect(filter).connect(gain);source.start()}
+    function play(){clearInterval(cycle);cycle=setInterval(()=>setScene(index+1),7000);startAmbience()}function pause(){clearInterval(cycle);cycle=null;source?.stop();source=null}
+    document.querySelector('#play').onclick=play;document.querySelector('#pause').onclick=pause;document.querySelector('#shuffle').onclick=()=>{let next=index;while(next===index)next=Math.floor(Math.random()*scenes.length);setScene(next)};document.querySelector('#weather').onclick=()=>setScene(index+1);volume.oninput=()=>{if(gain)gain.gain.value=Number(volume.value)};
+    image.src=scenes[0].src;name.textContent=scenes[0].name;updateClock();setInterval(updateClock,1000);
+  </script>
+</body>
+</html>
