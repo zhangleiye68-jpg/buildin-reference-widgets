@@ -208,7 +208,7 @@ https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/gree
 
 目录 ID：`widget-009`
 
-### Cozy 蓝色指针时钟 · 英语／俄语
+### Cozy 蓝色指针时钟 · 俄语／英语
 
 ![Cozy 蓝色指针时钟默认预览](previews/cozy-clock.png)
 
@@ -216,17 +216,17 @@ https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/gree
 
 按设备时间更新的蓝色圆形指针时钟。
 
-[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=clock) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/cozy-study/) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/cozy-study/)
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=clock&lang=ru) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/cozy-study/) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/cozy-study/)
 
 嵌入／素材地址：
 
 ```text
-https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=clock
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=clock&lang=ru
 ```
 
 - 按查看者设备日期与时区显示；可加 theme=light 或 theme=dark。
 - 俄语地址：https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=clock&lang=ru
-- 默认预览保留英语界面；lang=ru 同时翻译星期、月份、按钮与日期。
+- 目录默认提供俄语地址与真实预览；去掉 lang=ru 可恢复英语。
 
 许可：MIT · [许可与归属](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/cozy-study/LICENSE)
 
@@ -304,7 +304,7 @@ https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere
 
 目录 ID：`widget-011`
 
-### Cozy 动态月历 · 英语／俄语
+### Cozy 动态月历 · 俄语／英语
 
 ![Cozy 动态月历默认预览](previews/cozy-calendar.png)
 
@@ -312,18 +312,18 @@ https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere
 
 跟随当前月份，高亮今天，可切月、选日期和返回今天。
 
-[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=calendar) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/cozy-study/) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/cozy-study/)
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=calendar&lang=ru) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/cozy-study/) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/cozy-study/)
 
 嵌入／素材地址：
 
 ```text
-https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=calendar
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=calendar&lang=ru
 ```
 
 - 周一开始；不存储日程，不连接数据库。
 - 可加 theme=light 或 theme=dark；无参数时跟随色彩模式。
 - 俄语地址：https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=calendar&lang=ru
-- 默认预览保留英语界面；lang=ru 同时翻译星期、月份、按钮与日期。
+- 目录默认提供俄语地址与真实预览；去掉 lang=ru 可恢复英语。
 
 许可：MIT · [许可与归属](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/cozy-study/LICENSE)
 
