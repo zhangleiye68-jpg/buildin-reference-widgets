@@ -1983,12 +1983,13 @@
       "kind": "widget",
       "name": "Cozy 动态月历",
       "category": "日历",
-      "language": "英语",
+      "language": "英语／俄语",
       "ownership": "self",
       "status": "ready",
       "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=calendar",
       "aliases": [
-        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=calendar&v=8bde6ea"
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=calendar&v=8bde6ea",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=calendar&lang=ru"
       ],
       "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/cozy-study/",
       "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/cozy-study/",
@@ -1997,7 +1998,11 @@
         "url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/cozy-study/LICENSE"
       },
       "description": "跟随当前月份，高亮今天，可切月、选日期和返回今天。",
-      "tags": [],
+      "tags": [
+        "Cozy study",
+        "俄语",
+        "英语"
+      ],
       "recommended_size": {
         "width": 320,
         "height": 320
@@ -2005,12 +2010,18 @@
       "dependencies": [],
       "notes": [
         "周一开始；不存储日程，不连接数据库。",
-        "可加 theme=light 或 theme=dark；无参数时跟随色彩模式。"
+        "可加 theme=light 或 theme=dark；无参数时跟随色彩模式。",
+        "俄语地址：https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=calendar&lang=ru",
+        "默认预览保留英语界面；lang=ru 同时翻译星期、月份、按钮与日期。"
       ],
       "parameters": {
         "widget": {
           "example": "calendar",
           "description": "calendar 为月历，clock 为指针时钟"
+        },
+        "lang": {
+          "example": "ru",
+          "description": "ru 为俄语；省略时保留原英语界面"
         }
       },
       "preview": "previews/cozy-calendar.png",
@@ -2028,12 +2039,13 @@
       "kind": "widget",
       "name": "Cozy 蓝色指针时钟",
       "category": "日期与时钟",
-      "language": "英语",
+      "language": "英语／俄语",
       "ownership": "self",
       "status": "ready",
       "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=clock",
       "aliases": [
-        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=clock&v=8bde6ea"
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=clock&v=8bde6ea",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=clock&lang=ru"
       ],
       "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/cozy-study/",
       "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/cozy-study/",
@@ -2042,19 +2054,29 @@
         "url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/cozy-study/LICENSE"
       },
       "description": "按设备时间更新的蓝色圆形指针时钟。",
-      "tags": [],
+      "tags": [
+        "Cozy study",
+        "俄语",
+        "英语"
+      ],
       "recommended_size": {
         "width": 340,
         "height": 340
       },
       "dependencies": [],
       "notes": [
-        "按查看者设备日期与时区显示；可加 theme=light 或 theme=dark。"
+        "按查看者设备日期与时区显示；可加 theme=light 或 theme=dark。",
+        "俄语地址：https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=clock&lang=ru",
+        "默认预览保留英语界面；lang=ru 同时翻译星期、月份、按钮与日期。"
       ],
       "parameters": {
         "widget": {
           "example": "clock",
           "description": "calendar 为月历，clock 为指针时钟"
+        },
+        "lang": {
+          "example": "ru",
+          "description": "ru 为俄语；省略时保留原英语界面"
         }
       },
       "preview": "previews/cozy-clock.png",

@@ -208,7 +208,7 @@ https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/gree
 
 目录 ID：`widget-009`
 
-### Cozy 蓝色指针时钟 · 英语
+### Cozy 蓝色指针时钟 · 英语／俄语
 
 ![Cozy 蓝色指针时钟默认预览](previews/cozy-clock.png)
 
@@ -225,6 +225,8 @@ https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=
 ```
 
 - 按查看者设备日期与时区显示；可加 theme=light 或 theme=dark。
+- 俄语地址：https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=clock&lang=ru
+- 默认预览保留英语界面；lang=ru 同时翻译星期、月份、按钮与日期。
 
 许可：MIT · [许可与归属](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/cozy-study/LICENSE)
 
@@ -302,7 +304,7 @@ https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere
 
 目录 ID：`widget-011`
 
-### Cozy 动态月历 · 英语
+### Cozy 动态月历 · 英语／俄语
 
 ![Cozy 动态月历默认预览](previews/cozy-calendar.png)
 
@@ -320,6 +322,8 @@ https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=
 
 - 周一开始；不存储日程，不连接数据库。
 - 可加 theme=light 或 theme=dark；无参数时跟随色彩模式。
+- 俄语地址：https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=calendar&lang=ru
+- 默认预览保留英语界面；lang=ru 同时翻译星期、月份、按钮与日期。
 
 许可：MIT · [许可与归属](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/cozy-study/LICENSE)
 

@@ -26,6 +26,16 @@
   <script>
     'use strict';
     const query=new URLSearchParams(location.search);
+    const russian=query.get('lang')==='ru';
+    const locale=russian?'ru-RU':'en-GB';
+    document.documentElement.lang=russian?'ru':'en';
+    const words=russian?{
+      calendarTitle:'Уютный календарь',calendar:'Календарь месяца',previous:'Предыдущий месяц',next:'Следующий месяц',dates:'Даты',today:'Сегодня',
+      clockTitle:'Уютные часы',time:'Текущее местное время',week:['Пн','Вт','Ср','Чт','Пт','Сб','Вс']
+    }:{
+      calendarTitle:'Cozy month calendar',calendar:'Month calendar',previous:'Previous month',next:'Next month',dates:'Dates',today:'Today',
+      clockTitle:'Cozy analog clock',time:'Current local time',week:['M','T','W','T','F','S','S']
+    };
     const theme=query.get('theme');
     if(theme==='light'||theme==='dark')document.documentElement.dataset.theme=theme;
     const kind=query.get('widget')==='clock'?'clock':'calendar';
@@ -34,21 +44,21 @@
     let todayKey=key(new Date());
     const setText=(selector,text)=>{root.querySelector(selector).textContent=text};
     if(kind==='calendar'){
-      document.title='Cozy month calendar';
+      document.title=words.calendarTitle;
       const now=new Date();
       let cursor=new Date(now.getFullYear(),now.getMonth(),1),selected=todayKey;
-      root.innerHTML='<section class="calendar" aria-label="Month calendar"><header><button id="previous" aria-label="Previous month">‹</button><h1 id="month" aria-live="polite"></h1><button id="next" aria-label="Next month">›</button></header><div class="week" aria-hidden="true"></div><div class="days" role="group" aria-label="Dates"></div><footer><button class="today-button" id="today">Today</button></footer></section>';
-      for(const day of ['M','T','W','T','F','S','S']){const span=document.createElement('span');span.textContent=day;root.querySelector('.week').append(span)}
+      root.innerHTML=`<section class="calendar" aria-label="${words.calendar}"><header><button id="previous" aria-label="${words.previous}">‹</button><h1 id="month" aria-live="polite"></h1><button id="next" aria-label="${words.next}">›</button></header><div class="week" aria-hidden="true"></div><div class="days" role="group" aria-label="${words.dates}"></div><footer><button class="today-button" id="today">${words.today}</button></footer></section>`;
+      for(const day of words.week){const span=document.createElement('span');span.textContent=day;root.querySelector('.week').append(span)}
       const render=()=>{
         const year=cursor.getFullYear(),month=cursor.getMonth(),offset=(new Date(year,month,1).getDay()+6)%7;
         const grid=root.querySelector('.days');
-        setText('#month',cursor.toLocaleDateString('en-GB',{month:'long',year:'numeric'}));
+        setText('#month',cursor.toLocaleDateString(locale,{month:'long',year:'numeric'}));
         grid.replaceChildren();
         for(let index=0;index<42;index++){
           const date=new Date(year,month,index-offset+1),id=key(date),button=document.createElement('button');
           button.type='button';button.className='day'+(date.getMonth()!==month?' outside':'')+(id===todayKey?' today':'')+(id===selected?' selected':'');
           button.textContent=String(date.getDate());button.dataset.date=id;
-          button.setAttribute('aria-label',date.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'}));
+          button.setAttribute('aria-label',date.toLocaleDateString(locale,{weekday:'long',day:'numeric',month:'long',year:'numeric'}));
           button.setAttribute('aria-pressed',String(id===selected));
           if(id===todayKey)button.setAttribute('aria-current','date');
           button.onclick=()=>{selected=id;cursor=new Date(date.getFullYear(),date.getMonth(),1);render()};
@@ -61,7 +71,7 @@
       const refresh=()=>{const next=key(new Date());if(next!==todayKey){const wasCurrent=selected===todayKey;todayKey=next;if(wasCurrent){selected=next;const date=new Date();cursor=new Date(date.getFullYear(),date.getMonth(),1)}render()}};
       render();setInterval(refresh,30000);document.addEventListener('visibilitychange',refresh);
     }else{
-      document.title='Cozy analog clock';
+      document.title=words.clockTitle;
       root.innerHTML='<section class="clock"><svg viewBox="0 0 240 240" role="img" aria-label="Current local time"><circle class="rim" cx="120" cy="120" r="116"/><circle class="face" cx="120" cy="120" r="101"/><g id="ticks"></g><g id="numbers"></g><line class="hour" id="hour" x1="120" y1="125" x2="120" y2="67"/><line class="minute" id="minute" x1="120" y1="129" x2="120" y2="43"/><line class="second" id="second" x1="120" y1="137" x2="120" y2="36"/><circle class="pin" cx="120" cy="120" r="3.4"/></svg><time class="date" id="clock-date"></time></section>';
       const svgNS='http://www.w3.org/2000/svg';
       for(let index=0;index<60;index++){
@@ -74,10 +84,10 @@
       const render=()=>{
         const now=new Date(),seconds=now.getSeconds(),minutes=now.getMinutes()+seconds/60,hours=now.getHours()%12+minutes/60;
         for(const [id,angle]of [['hour',hours*30],['minute',minutes*6],['second',seconds*6]])root.querySelector('#'+id).setAttribute('transform',`rotate(${angle} 120 120)`);
-        const spoken=now.toLocaleTimeString('en-GB',{hour12:false});
-        root.querySelector('svg').setAttribute('aria-label','Current local time '+spoken);
+        const spoken=now.toLocaleTimeString(locale,{hour12:false});
+        root.querySelector('svg').setAttribute('aria-label',words.time+' '+spoken);
         root.querySelector('svg').dataset.time=spoken;
-        setText('#clock-date',now.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short',year:'numeric'}));
+        setText('#clock-date',now.toLocaleDateString(locale,{weekday:'short',day:'numeric',month:'short',year:'numeric'}));
         root.querySelector('#clock-date').dateTime=key(now);
       };
       render();setInterval(render,1000);document.addEventListener('visibilitychange',render);
