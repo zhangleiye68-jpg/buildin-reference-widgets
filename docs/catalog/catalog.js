@@ -26,7 +26,7 @@ function render(){
   $('#grid').innerHTML=result.map(card).join('');$('#result-count').textContent=`显示 ${result.length} / ${entries.length} 条`;$('#empty').hidden=result.length>0;
 }
 $('#filters').addEventListener('input',render);
-$('#reset').addEventListener('click',()=>{$('#filters').reset();render();});
+$('#clear-filters').addEventListener('click',()=>{$('#filters').reset();render();});
 $('#grid').addEventListener('click',async event=>{
   const copy=event.target.closest('[data-copy]');
   if(copy){const item=entries.find(e=>e.id===copy.dataset.copy);try{await navigator.clipboard.writeText(item.embed_url);toast('已复制完整地址');}catch{toast('复制暂不可用，请打开组件后复制地址');}return;}
