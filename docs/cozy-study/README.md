@@ -15,5 +15,5 @@ Gregorian leap years using native Date arithmetic. The clock includes hour,
 minute, and second hands. The display refreshes across midnight and tab
 visibility changes. English labels match the Cozy study space template.
 
-Recommended embed heights: 300 pixels for the calendar and 320 pixels for the
+Recommended embed heights: 320 pixels for the calendar and 340 pixels for the
 clock. Both fit columns down to 160 pixels wide. MIT licensed; see LICENSE.
