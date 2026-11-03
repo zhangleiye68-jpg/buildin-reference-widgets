@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Cozy study widgets</title>
+  <style>
+    :root{color-scheme:light dark;--paper:#fffdf7;--ink:#493f43;--muted:#a59a9b;--pink:#efcad8;--chosen:#9c5672;--blue:#c3e0ef;--face:#f8fcfd;--hand:#375468;--line:#e9e2dd}
+    *{box-sizing:border-box}html,body{margin:0;min-width:0;width:100%;background:transparent;font-family:ui-rounded,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink)}
+    body{padding:8px}button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent}button:focus-visible{outline:2px solid var(--chosen);outline-offset:1px}
+    .calendar{width:100%;max-width:330px;margin:auto;background:var(--paper);border:1px solid var(--line);border-radius:15px;overflow:hidden}
+    header{display:grid;grid-template-columns:32px 1fr 32px;align-items:center;background:var(--pink);min-height:42px;padding:0 5px}header button{height:34px;font-size:25px;line-height:1;border-radius:8px}header button:hover{background:#ffffff42}h1{margin:0;text-align:center;font-size:clamp(12px,5vw,16px);font-weight:650;letter-spacing:.01em}
+    .week,.days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));text-align:center;padding:0 8px}.week{padding-top:12px;padding-bottom:5px;color:var(--muted);font-size:clamp(9px,3.8vw,11px);font-weight:650}
+    .days{padding-bottom:6px;gap:3px 0}.day{aspect-ratio:1;min-width:0;max-height:38px;display:flex;align-items:center;justify-content:center;border-radius:50%;font-size:clamp(10px,4.6vw,13px);padding:0}.day.outside{color:var(--muted);opacity:.55}.day:hover{background:var(--pink)}.day.today{box-shadow:inset 0 0 0 1.5px var(--chosen);font-weight:750}.day.selected{background:var(--pink);color:var(--ink)}
+    footer{display:flex;justify-content:center;padding:0 0 9px}.today-button{font-size:11px;color:var(--chosen);padding:5px 12px;border-radius:12px}.today-button:hover{background:var(--pink)}
+    .clock{max-width:310px;margin:auto;display:flex;flex-direction:column;align-items:center;padding:0 5px 8px}.clock svg{display:block;width:min(100%,280px);height:auto;overflow:visible}.rim{fill:var(--blue)}.face{fill:var(--face)}.tick{stroke:var(--hand);stroke-width:1;opacity:.42}.hour-tick{stroke-width:2.3;opacity:.6}.number{fill:var(--hand);font-size:17px;dominant-baseline:central;text-anchor:middle}.hour,.minute,.second{stroke-linecap:round}.hour{stroke:var(--hand);stroke-width:5}.minute{stroke:var(--hand);stroke-width:3}.second{stroke:#c27b94;stroke-width:1.35}.pin{fill:var(--hand)}.date{font-size:12px;color:var(--muted);margin-top:8px;text-align:center;line-height:1.4}
+    @media(prefers-color-scheme:dark){:root{--paper:#282429;--ink:#f4e9ec;--muted:#b6a9b0;--pink:#59404f;--chosen:#e4a5bf;--blue:#7faabd;--face:#24353f;--hand:#e5f0f5;--line:#463b44}}
+    html[data-theme=light]{color-scheme:light;--paper:#fffdf7;--ink:#493f43;--muted:#a59a9b;--pink:#efcad8;--chosen:#9c5672;--blue:#c3e0ef;--face:#f8fcfd;--hand:#375468;--line:#e9e2dd}
+    html[data-theme=dark]{color-scheme:dark;--paper:#282429;--ink:#f4e9ec;--muted:#b6a9b0;--pink:#59404f;--chosen:#e4a5bf;--blue:#7faabd;--face:#24353f;--hand:#e5f0f5;--line:#463b44}
+    @media(max-width:200px){body{padding:4px}.week,.days{padding-left:4px;padding-right:4px}.days{gap:2px 0}.date{font-size:10px}}
+  </style>
+</head>
+<body>
+  <main id="widget"></main>
+  <script>
+    'use strict';
+    const query=new URLSearchParams(location.search);
+    const theme=query.get('theme');
+    if(theme==='light'||theme==='dark')document.documentElement.dataset.theme=theme;
+    const kind=query.get('widget')==='clock'?'clock':'calendar';
+    const root=document.getElementById('widget');
+    const key=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+    let todayKey=key(new Date());
+    const setText=(selector,text)=>{root.querySelector(selector).textContent=text};
+    if(kind==='calendar'){
+      document.title='Cozy month calendar';
+      const now=new Date();
+      let cursor=new Date(now.getFullYear(),now.getMonth(),1),selected=todayKey;
+      root.innerHTML='<section class="calendar" aria-label="Month calendar"><header><button id="previous" aria-label="Previous month">‹</button><h1 id="month" aria-live="polite"></h1><button id="next" aria-label="Next month">›</button></header><div class="week" aria-hidden="true"></div><div class="days" role="group" aria-label="Dates"></div><footer><button class="today-button" id="today">Today</button></footer></section>';
+      for(const day of ['M','T','W','T','F','S','S']){const span=document.createElement('span');span.textContent=day;root.querySelector('.week').append(span)}
+      const render=()=>{
+        const year=cursor.getFullYear(),month=cursor.getMonth(),offset=(new Date(year,month,1).getDay()+6)%7;
+        const grid=root.querySelector('.days');
+        setText('#month',cursor.toLocaleDateString('en-GB',{month:'long',year:'numeric'}));
+        grid.replaceChildren();
+        for(let index=0;index<42;index++){
+          const date=new Date(year,month,index-offset+1),id=key(date),button=document.createElement('button');
+          button.type='button';button.className='day'+(date.getMonth()!==month?' outside':'')+(id===todayKey?' today':'')+(id===selected?' selected':'');
+          button.textContent=String(date.getDate());button.dataset.date=id;
+          button.setAttribute('aria-label',date.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'}));
+          button.setAttribute('aria-pressed',String(id===selected));
+          if(id===todayKey)button.setAttribute('aria-current','date');
+          button.onclick=()=>{selected=id;cursor=new Date(date.getFullYear(),date.getMonth(),1);render()};
+          grid.append(button);
+        }
+      };
+      root.querySelector('#previous').onclick=()=>{cursor=new Date(cursor.getFullYear(),cursor.getMonth()-1,1);render()};
+      root.querySelector('#next').onclick=()=>{cursor=new Date(cursor.getFullYear(),cursor.getMonth()+1,1);render()};
+      root.querySelector('#today').onclick=()=>{const date=new Date();todayKey=key(date);selected=todayKey;cursor=new Date(date.getFullYear(),date.getMonth(),1);render()};
+      const refresh=()=>{const next=key(new Date());if(next!==todayKey){const wasCurrent=selected===todayKey;todayKey=next;if(wasCurrent){selected=next;const date=new Date();cursor=new Date(date.getFullYear(),date.getMonth(),1)}render()}};
+      render();setInterval(refresh,30000);document.addEventListener('visibilitychange',refresh);
+    }else{
+      document.title='Cozy analog clock';
+      root.innerHTML='<section class="clock"><svg viewBox="0 0 240 240" role="img" aria-label="Current local time"><circle class="rim" cx="120" cy="120" r="116"/><circle class="face" cx="120" cy="120" r="101"/><g id="ticks"></g><g id="numbers"></g><line class="hour" id="hour" x1="120" y1="125" x2="120" y2="67"/><line class="minute" id="minute" x1="120" y1="129" x2="120" y2="43"/><line class="second" id="second" x1="120" y1="137" x2="120" y2="36"/><circle class="pin" cx="120" cy="120" r="3.4"/></svg><time class="date" id="clock-date"></time></section>';
+      const svgNS='http://www.w3.org/2000/svg';
+      for(let index=0;index<60;index++){
+        const line=document.createElementNS(svgNS,'line'),major=index%5===0;
+        line.setAttribute('class','tick'+(major?' hour-tick':''));
+        for(const [name,value]of Object.entries({x1:120,y1:major?23:25,x2:120,y2:major?30:28}))line.setAttribute(name,String(value));
+        line.setAttribute('transform',`rotate(${index*6} 120 120)`);root.querySelector('#ticks').append(line);
+      }
+      for(const [number,x,y]of [[12,120,47],[3,193,120],[6,120,193],[9,47,120]]){const text=document.createElementNS(svgNS,'text');text.setAttribute('class','number');text.setAttribute('x',x);text.setAttribute('y',y);text.textContent=number;root.querySelector('#numbers').append(text)}
+      const render=()=>{
+        const now=new Date(),seconds=now.getSeconds(),minutes=now.getMinutes()+seconds/60,hours=now.getHours()%12+minutes/60;
+        for(const [id,angle]of [['hour',hours*30],['minute',minutes*6],['second',seconds*6]])root.querySelector('#'+id).setAttribute('transform',`rotate(${angle} 120 120)`);
+        const spoken=now.toLocaleTimeString('en-GB',{hour12:false});
+        root.querySelector('svg').setAttribute('aria-label','Current local time '+spoken);
+        root.querySelector('svg').dataset.time=spoken;
+        setText('#clock-date',now.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short',year:'numeric'}));
+        root.querySelector('#clock-date').dateTime=key(now);
+      };
+      render();setInterval(render,1000);document.addEventListener('visibilitychange',render);
+    }
+  </script>
+</body>
+</html>
