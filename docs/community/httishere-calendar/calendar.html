@@ -15,6 +15,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Calendar</title>
   <script src="./calendar-runtime.js"></script>
+  <script>
+    if (new URLSearchParams(location.search).get("fit") === "1") {
+      document.documentElement.dataset.fit = "1";
+    }
+  </script>
   <style>
     @font-face {
       font-family: "Klee-One";
@@ -78,6 +83,40 @@
 
     html[theme="dark"] .active {
       background-color: rgba(35, 119, 164, 0.5);
+    }
+
+    html[data-fit="1"] body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 4px;
+    }
+
+    html[data-fit="1"] .container {
+      width: 100%;
+      max-width: 280px;
+    }
+
+    html[data-fit="1"] #month {
+      font-size: clamp(14px, 8vw, 24px);
+      line-height: 1.25;
+      margin: 4px 0 8px;
+    }
+
+    html[data-fit="1"] .week-days {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+    }
+
+    html[data-fit="1"] .week-days span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-width: 0;
+      height: auto;
+      aspect-ratio: 1;
+      line-height: normal;
+      font-size: clamp(10px, 3.5vw, 14px);
     }
   </style>
 </head>

@@ -1,6 +1,6 @@
 # Buildin 统一组件库
 
-更新：2026-11-03 · 49 个组件 · 11 项素材
+更新：2026-11-05 · 49 个组件 · 11 项素材
 
 [打开可搜索的图文目录](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/catalog/) · [读取完整 JSON](components.json)
 
@@ -299,6 +299,8 @@ https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere
 - 社区源码已收录并保留归属、许可；使用本地简化运行脚本。
 - 固定 280px 宽，当前月展示，无切月按钮；sw=1 周日起始，省略则周一起始；dd=1 深色。
 - 不支持上游加密配置参数。
+- Gitee v3/v4 month 旧地址已返回404；这些别名仅作来源追踪，使用本条目的固定GitHub Pages地址。旧sw参数继续决定周日起始，省略为周一起始。
+- 窄栏嵌入可加fit=1，自适应当前宽度（建议至少170px）；默认不加参数时保持原280px布局。
 
 许可：Apache-2.0；字体 SIL OFL · [许可与归属](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/community/httishere-calendar/NOTICE.md)
 

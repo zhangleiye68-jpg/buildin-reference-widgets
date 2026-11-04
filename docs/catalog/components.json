@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-03",
+  "updated_at": "2026-11-05",
   "title": "Buildin 统一组件库",
   "catalog_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/catalog/",
   "repository": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets",
@@ -497,7 +497,9 @@
       "status": "ready",
       "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere-calendar/calendar.html?sw=1&dd=0",
       "aliases": [
-        "https://httishere.github.io/notion-widget/calendar.html?sw=1&dd=0"
+        "https://httishere.github.io/notion-widget/calendar.html?sw=1&dd=0",
+        "https://httishere.gitee.io/notion/v3/month.html",
+        "https://httishere.gitee.io/notion/v4/month.html?sw=1"
       ],
       "source_url": "https://github.com/httIsHere/notion-widget",
       "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/community/httishere-calendar/",
@@ -515,7 +517,9 @@
       "notes": [
         "社区源码已收录并保留归属、许可；使用本地简化运行脚本。",
         "固定 280px 宽，当前月展示，无切月按钮；sw=1 周日起始，省略则周一起始；dd=1 深色。",
-        "不支持上游加密配置参数。"
+        "不支持上游加密配置参数。",
+        "Gitee v3/v4 month 旧地址已返回404；这些别名仅作来源追踪，使用本条目的固定GitHub Pages地址。旧sw参数继续决定周日起始，省略为周一起始。",
+        "窄栏嵌入可加fit=1，自适应当前宽度（建议至少170px）；默认不加参数时保持原280px布局。"
       ],
       "parameters": {
         "sw": {
@@ -525,10 +529,14 @@
         "dd": {
           "example": "0",
           "description": "沿用组件 URL 中的配置"
+        },
+        "fit": {
+          "example": "1",
+          "description": "适应嵌入宽度并保留七列；省略时保持原280px固定布局"
         }
       },
       "preview": "previews/widget-011.png",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-05",
       "verification": {
         "level": "preview",
         "default_state": true,
