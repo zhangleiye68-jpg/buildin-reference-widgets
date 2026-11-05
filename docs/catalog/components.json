@@ -2345,6 +2345,97 @@
         "visual_only": true
       },
       "replacement_id": null
+    },
+    {
+      "id": "template-ru-adapter",
+      "kind": "widget",
+      "name": "模板俄语适配组件（11种模式）",
+      "category": "专注与计时",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/template-ru/?widget=timer&lang=ru&compact=1",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/template-ru/?widget=timer&lang=ru&compact=1",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/template-ru/?widget=clock&lang=ru&compact=1",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/template-ru/?widget=calendar-purple&lang=ru&compact=1",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/template-ru/?widget=calendar-background&lang=ru&compact=1",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/template-ru/?widget=progress&lang=ru&compact=1",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/template-ru/?widget=progress-vertical&lang=ru&compact=1",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/template-ru/?widget=range&lang=ru&compact=1",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/template-ru/?widget=countdown&lang=ru&compact=1",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/template-ru/?widget=day&lang=ru&compact=1",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/template-ru/?widget=week&lang=ru&compact=1",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/template-ru/?widget=holidays&lang=ru&compact=1"
+      ],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/template-ru",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/template-ru",
+      "license": {
+        "label": "自制适配代码，可在本库复用；兼容来源与图片引用见说明",
+        "url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/template-ru/NOTICE.md"
+      },
+      "description": "俄语计时器、问候钟、月历、时间进度、日期范围、倒数与星期／节假日组件；保留原模板参数与功能。",
+      "tags": [
+        "俄语",
+        "番茄钟",
+        "Start Stop",
+        "月历",
+        "日期",
+        "倒数",
+        "httishere",
+        "模板迁移"
+      ],
+      "recommended_size": {
+        "width": 560,
+        "height": 420
+      },
+      "dependencies": [
+        "WebCrypto（HTTPS或localhost）",
+        "背景月历及配置的倒数背景引用作者公开HTTPS图片"
+      ],
+      "notes": [
+        "计时器Stop重置25:00，并非暂停；每个iframe独立，支持自定义分钟。",
+        "原e参数只解码为配置JSON，不执行脚本；私人参数不可写进公开目录或预览。",
+        "保留原日期、配色与月历周起始；ru_name仅替换显示名称。",
+        "节假日模式固定保留Source2025年中国节假日，不是当年俄罗斯假期。",
+        "14项功能模型、隔离浏览器11模式默认预览和19个原参数位置验证通过；Buildin页面另行验收。"
+      ],
+      "parameters": {
+        "widget": {
+          "example": "timer",
+          "description": "timer/clock/calendar-purple/calendar-background/progress/progress-vertical/range/countdown/day/week/holidays"
+        },
+        "compact": {
+          "example": "1",
+          "description": "紧凑迁移模式标记；界面按当前容器宽度适配"
+        },
+        "e": {
+          "example": "沿用原模板参数",
+          "description": "可选原始加密JSON配置；实际私参不可提交至公开仓库"
+        },
+        "ru_name": {
+          "example": "Экзамен",
+          "description": "只替换显示名称，保留原事件与日期配置"
+        },
+        "sw": {
+          "example": "1",
+          "description": "月历周日起始；省略时沿用monday配置或周一起始"
+        },
+        "dd": {
+          "example": "1",
+          "description": "深色；0优先保留浅色"
+        }
+      },
+      "preview": "previews/template-ru.png",
+      "checked_at": "2026-11-05",
+      "verification": {
+        "level": "functional",
+        "default_state": true,
+        "preview_width": 560,
+        "preview_height": 420,
+        "scope": "Standalone models and isolated headless widgets only; Native Buildin integration separate."
+      },
+      "replacement_id": null
     }
   ],
   "assets": [

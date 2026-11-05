@@ -1,6 +1,6 @@
 # Buildin 统一组件库
 
-更新：2026-11-05 · 49 个组件 · 11 项素材
+更新：2026-11-05 · 50 个组件 · 11 项素材
 
 [打开可搜索的图文目录](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/catalog/) · [读取完整 JSON](components.json)
 
@@ -514,6 +514,32 @@ https://studywithme.io/aesthetic-pomodoro-timer/
 许可：第三方服务，保存引用
 
 目录 ID：`studywithme-pomodoro`
+
+### 模板俄语适配组件（11种模式） · 俄语
+
+![模板俄语适配组件（11种模式）默认预览](previews/template-ru.png)
+
+自制 · 可用 · 建议 560 × 420 px
+
+俄语计时器、问候钟、月历、时间进度、日期范围、倒数与星期／节假日组件；保留原模板参数与功能。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/template-ru/?widget=timer&lang=ru&compact=1) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/template-ru) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/template-ru)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/template-ru/?widget=timer&lang=ru&compact=1
+```
+
+- 计时器Stop重置25:00，并非暂停；每个iframe独立，支持自定义分钟。
+- 原e参数只解码为配置JSON，不执行脚本；私人参数不可写进公开目录或预览。
+- 保留原日期、配色与月历周起始；ru_name仅替换显示名称。
+- 节假日模式固定保留Source2025年中国节假日，不是当年俄罗斯假期。
+- 14项功能模型、隔离浏览器11模式默认预览和19个原参数位置验证通过；Buildin页面另行验收。
+
+许可：自制适配代码，可在本库复用；兼容来源与图片引用见说明 · [许可与归属](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/template-ru/NOTICE.md)
+
+目录 ID：`template-ru-adapter`
 
 ## 进度
 
