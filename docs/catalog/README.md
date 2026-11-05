@@ -280,7 +280,7 @@ https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=med-calendar&
 
 目录 ID：`widget-010`
 
-### 简洁月历 · 通用
+### 简洁月历 · 俄语／英语
 
 ![简洁月历默认预览](previews/widget-011.png)
 
@@ -288,12 +288,12 @@ https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=med-calendar&
 
 简洁月历
 
-[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere-calendar/calendar.html?sw=1&dd=0) · [原始来源](https://github.com/httIsHere/notion-widget) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/community/httishere-calendar/)
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere-calendar/calendar.html?sw=1&dd=0&lang=ru) · [原始来源](https://github.com/httIsHere/notion-widget) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/community/httishere-calendar/)
 
 嵌入／素材地址：
 
 ```text
-https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere-calendar/calendar.html?sw=1&dd=0
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere-calendar/calendar.html?sw=1&dd=0&lang=ru
 ```
 
 - 社区源码已收录并保留归属、许可；使用本地简化运行脚本。
@@ -301,6 +301,7 @@ https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere
 - 不支持上游加密配置参数。
 - Gitee v3/v4 month 旧地址已返回404；这些别名仅作来源追踪，使用本条目的固定GitHub Pages地址。旧sw参数继续决定周日起始，省略为周一起始。
 - 窄栏嵌入可加fit=1，自适应当前宽度（建议至少170px）；默认不加参数时保持原280px布局。
+- 可选lang=ru只翻译月份与星期；保留fit、周起始顺序和深色模式。省略语言参数时仍为英语。
 
 许可：Apache-2.0；字体 SIL OFL · [许可与归属](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/community/httishere-calendar/NOTICE.md)
 

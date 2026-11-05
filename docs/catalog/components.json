@@ -492,14 +492,16 @@
       "kind": "widget",
       "name": "简洁月历",
       "category": "日历",
-      "language": "通用",
+      "language": "俄语／英语",
       "ownership": "community",
       "status": "ready",
-      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere-calendar/calendar.html?sw=1&dd=0",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere-calendar/calendar.html?sw=1&dd=0&lang=ru",
       "aliases": [
         "https://httishere.github.io/notion-widget/calendar.html?sw=1&dd=0",
         "https://httishere.gitee.io/notion/v3/month.html",
-        "https://httishere.gitee.io/notion/v4/month.html?sw=1"
+        "https://httishere.gitee.io/notion/v4/month.html?sw=1",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere-calendar/calendar.html?sw=1&dd=0",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere-calendar/calendar.html?sw=1&dd=0&lang=ru"
       ],
       "source_url": "https://github.com/httIsHere/notion-widget",
       "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/community/httishere-calendar/",
@@ -521,7 +523,8 @@
         "固定 280px 宽，当前月展示，无切月按钮；sw=1 周日起始，省略则周一起始；dd=1 深色。",
         "不支持上游加密配置参数。",
         "Gitee v3/v4 month 旧地址已返回404；这些别名仅作来源追踪，使用本条目的固定GitHub Pages地址。旧sw参数继续决定周日起始，省略为周一起始。",
-        "窄栏嵌入可加fit=1，自适应当前宽度（建议至少170px）；默认不加参数时保持原280px布局。"
+        "窄栏嵌入可加fit=1，自适应当前宽度（建议至少170px）；默认不加参数时保持原280px布局。",
+        "可选lang=ru只翻译月份与星期；保留fit、周起始顺序和深色模式。省略语言参数时仍为英语。"
       ],
       "parameters": {
         "sw": {
@@ -535,6 +538,10 @@
         "fit": {
           "example": "1",
           "description": "适应嵌入宽度并保留七列；省略时保持原280px固定布局"
+        },
+        "lang": {
+          "example": "ru",
+          "description": "可选界面语言；lang=ru 使用俄语月份和星期，省略时保留原有英语。"
         }
       },
       "preview": "previews/widget-011.png",
@@ -543,7 +550,9 @@
         "level": "preview",
         "default_state": true,
         "preview_width": 560,
-        "preview_height": 420
+        "preview_height": 420,
+        "russian_labels_actual_reviewed": true,
+        "dates_and_week_order_preserved": true
       },
       "replacement_id": null
     },

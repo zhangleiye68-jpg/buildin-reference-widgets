@@ -159,9 +159,16 @@
 <script type="text/javascript">
   const params = getAllParams();
   handleDarkMode(params);
+  const russian = /^ru(?:-|$)/i.test(params.lang || "");
+  document.documentElement.lang = russian ? "ru" : "en";
   let days = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-  const week_day_en = ["S", "M", "T", "W", "T", "F", "S"];
-  const months = [
+  const week_day_en = russian
+    ? ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"]
+    : ["S", "M", "T", "W", "T", "F", "S"];
+  const months = russian ? [
+    " ", "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
+    "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь",
+  ] : [
     " ",
     "January",
     "February",

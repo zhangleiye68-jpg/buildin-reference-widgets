@@ -6,4 +6,6 @@ The calendar HTML is distributed under the upstream Apache License 2.0; see `LIC
 
 Local changes: replace the global runtime and CryptoJS script dependencies with a small local compatibility script for plain `sw`, `dd`, and `black` query parameters. The upstream encrypted-configuration feature and global promotional UI are not included. The calendar's rendering, fixed 280-pixel width, month display, and date highlighting remain as upstream.
 
+Optional `lang=ru` adds Russian month and weekday labels. Omitting it retains the original English labels. The existing `fit`, `sw`, `dd`, and `black` behavior is preserved. The Russian labels are a local adaptation, not an upstream feature.
+
 This entry is provided for reuse and comparison. For narrow columns and month navigation, prefer the self-authored Cozy calendar in `../../cozy-study/`.
