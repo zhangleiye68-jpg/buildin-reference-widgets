@@ -39,6 +39,7 @@ main += ['', '## 可以从哪里调用','',
          '- [结构化索引](docs/catalog/components.json)：供后续模板任务检索，包含来源、参数、尺寸、预览、状态、依赖及替代项。',
          '- [完整素材清单](docs/catalog/assets-manifest.json)：检索仓库中全部图片、动图和视频，不局限于首页精选素材。',
          '- [之前模板的动态素材](docs/catalog/DYNAMIC-MEDIA.md)：查看 GIF、循环视频的尺寸、时长、帧数和原文件地址。',
+         '- [GitHub 原文件直链](docs/catalog/DIRECT-LINKS.md)：直接打开或下载动图、视频，不依赖图文站点发布。',
          '- [新增条目示例](docs/catalog/entry-template.json)：添加条目时参考。','',
          '## 源码与来源','',
          '自制组件的源码和静态资源保留在 `docs/`；已有其他 GitHub 仓库中的自制组件通过目录中的源码链接统一定位。社区月历已收录在 [community/httishere-calendar](docs/community/httishere-calendar/)，保留 Apache-2.0 与字体许可，并说明本地改动。',
@@ -56,3 +57,21 @@ main += ['', '## 可以从哪里调用','',
          f'目录更新：{data["updated_at"]}。']
 (ROOT/'README.md').write_text('\n'.join(main)+'\n')
 print(f'Rendered {len(items)} components and {len(assets)} assets')
+
+# Keep original-file links usable independently of the Pages deployment queue.
+direct=['# 之前模板的动态素材：GitHub 原文件直链','',
+        '仅包含原有编号模板和此前制作的组件审核素材。咸鱼模板已排除。','',
+        'GIF 可使用下面的原文件地址；MP4 是原文件下载地址，播放器嵌入优先使用组件索引中的 Pages 地址。','',
+        '| 素材 | 格式 | GitHub 原文件 |','| --- | --- | --- |']
+for entry in assets:
+    if entry['category']!='动态封面与视频':continue
+    media=entry.get('media',{})
+    if entry['ownership']=='external':
+        url=entry['embed_url'];label='第三方来源，仅引用'
+    else:
+        url=entry['source_url'].replace('https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/',
+                                       'https://raw.githubusercontent.com/zhangleiye68-jpg/buildin-reference-widgets/main/')
+        label='打开原文件'
+    direct.append(f"| {entry['name']} | {media.get('type','').upper()} | [{label}]({url}) |")
+direct+=['','[结构化索引](components.json)','']
+(BASE/'DIRECT-LINKS.md').write_text('\n'.join(direct))

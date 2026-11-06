@@ -34,6 +34,7 @@
 - [结构化索引](docs/catalog/components.json)：供后续模板任务检索，包含来源、参数、尺寸、预览、状态、依赖及替代项。
 - [完整素材清单](docs/catalog/assets-manifest.json)：检索仓库中全部图片、动图和视频，不局限于首页精选素材。
 - [之前模板的动态素材](docs/catalog/DYNAMIC-MEDIA.md)：查看 GIF、循环视频的尺寸、时长、帧数和原文件地址。
+- [GitHub 原文件直链](docs/catalog/DIRECT-LINKS.md)：直接打开或下载动图、视频，不依赖图文站点发布。
 - [新增条目示例](docs/catalog/entry-template.json)：添加条目时参考。
 
 ## 源码与来源
