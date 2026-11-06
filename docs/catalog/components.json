@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-05",
+  "updated_at": "2026-11-06",
   "title": "Buildin 统一组件库",
   "catalog_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/catalog/",
   "repository": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets",
@@ -313,7 +313,8 @@
       "status": "ready",
       "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/flip-clock/?locale=ru&v=27",
       "aliases": [
-        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/flip-clock/?locale=ru&v=27"
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/flip-clock/?locale=ru&v=27",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/flip-clock/?locale=ru-RU&show_date=0&fit=1&labels=1"
       ],
       "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/flip-clock/",
       "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/flip-clock/",
@@ -329,7 +330,9 @@
       },
       "dependencies": [],
       "notes": [
-        "独立网页组件，不自动关联 Buildin 原生数据库。"
+        "独立网页组件，不自动关联 Buildin 原生数据库。",
+        "可选show_date=0隐藏日期，fit=1支持174px窄栏；background和dark_background分别设置系统深浅容器背景，原默认不变。",
+        "labels=1显示Часы／Минуты／Секунды单位标签，locale控制语言；原默认不显示单位标签。"
       ],
       "parameters": {
         "locale": {
@@ -339,10 +342,30 @@
         "v": {
           "example": "27",
           "description": "缓存标识；不代表可恢复的历史版本"
+        },
+        "show_date": {
+          "example": "0",
+          "description": "隐藏日期，只显示本地24h时分秒"
+        },
+        "fit": {
+          "example": "1",
+          "description": "窄栏适配"
+        },
+        "background": {
+          "example": "#ffffff",
+          "description": "浅色背景"
+        },
+        "dark_background": {
+          "example": "#2f3437",
+          "description": "系统深色背景"
+        },
+        "labels": {
+          "example": "1",
+          "description": "显示本地化的时分秒单位标签"
         }
       },
       "preview": "previews/widget-007.png",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-06",
       "verification": {
         "level": "preview",
         "default_state": true,
@@ -574,7 +597,7 @@
         "label": "自制，可在本库复用",
         "url": null
       },
-      "description": "洛杉矶天气与五日预报；保留原深色配置。",
+      "description": "默认洛杉矶天气与五日预报，可按坐标和时区切换城市；保留原深色配置。",
       "tags": [
         "深色模板"
       ],
@@ -588,7 +611,7 @@
       "notes": [
         "独立网页组件，不自动关联 Buildin 原生数据库。",
         "浅色文字与透明背景，适合深色模板；浅色页面需提供深色底色。",
-        "当前固定洛杉矶；变更城市需调整源码配置。"
+        "已支持lat/lon/city/tz，forecast_days=7可选七日；默认五日保持。浅色页面用theme=light，窄栏七日另见weather-ru-seven-day。"
       ],
       "parameters": {
         "locale": {
@@ -602,10 +625,34 @@
         "v": {
           "example": "30",
           "description": "缓存标识；不代表可恢复的历史版本"
+        },
+        "lat": {
+          "example": "31.230416",
+          "description": "城市纬度"
+        },
+        "lon": {
+          "example": "121.473701",
+          "description": "城市经度"
+        },
+        "city": {
+          "example": "Шанхай",
+          "description": "俄语显示名"
+        },
+        "tz": {
+          "example": "Asia/Shanghai",
+          "description": "IANA时区"
+        },
+        "forecast_days": {
+          "example": "7",
+          "description": "7启用七日，省略仍为原五日"
+        },
+        "greyscale": {
+          "example": "1",
+          "description": "灰度图标"
         }
       },
       "preview": "previews/widget-012.png",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-06",
       "verification": {
         "level": "preview",
         "default_state": true,
@@ -2010,7 +2057,8 @@
       "aliases": [
         "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=calendar",
         "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=calendar&v=8bde6ea",
-        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=calendar&lang=ru"
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=calendar&lang=ru",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=calendar&lang=ru&variant=minimal"
       ],
       "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/cozy-study/",
       "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/cozy-study/",
@@ -2033,7 +2081,9 @@
         "周一开始；不存储日程，不连接数据库。",
         "可加 theme=light 或 theme=dark；无参数时跟随色彩模式。",
         "俄语地址：https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=calendar&lang=ru",
-        "目录默认提供俄语地址与真实预览；去掉 lang=ru 可恢复英语。"
+        "目录默认提供俄语地址与真实预览；去掉 lang=ru 可恢复英语。",
+        "variant=minimal提供简洁源兼容月历：周一、35/42格、非本月淡化、日期不可选择，箭头翻月、标题回今天；无农历。",
+        "普通Cozy默认保留原42格与选日样式；新变体另支持星期/悬停/今天/箭头/标题/日期数字HEX配色。"
       ],
       "parameters": {
         "widget": {
@@ -2043,10 +2093,42 @@
         "lang": {
           "example": "ru",
           "description": "ru 为俄语；省略时保留原英语界面"
+        },
+        "variant": {
+          "example": "minimal",
+          "description": "简洁月历变体，旧默认不变"
+        },
+        "week_color": {
+          "example": "#37352f",
+          "description": "URL编码HEX星期配色"
+        },
+        "hover_color": {
+          "example": "#eeeeee",
+          "description": "悬停背景"
+        },
+        "today_background": {
+          "example": "#dddddd",
+          "description": "今天背景"
+        },
+        "nav_color": {
+          "example": "#37352f",
+          "description": "箭头配色"
+        },
+        "title_color": {
+          "example": "#37352f",
+          "description": "月份标题"
+        },
+        "date_color": {
+          "example": "#37352f",
+          "description": "日期数字"
+        },
+        "dark_background": {
+          "example": "#191919",
+          "description": "系统深色背景"
         }
       },
       "preview": "previews/cozy-calendar.png",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-06",
       "verification": {
         "level": "functional",
         "default_state": true,
@@ -2068,7 +2150,8 @@
       "aliases": [
         "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=clock",
         "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=clock&v=8bde6ea",
-        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=clock&lang=ru"
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=clock&lang=ru",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=clock&lang=ru&variant=minimal&smooth=1&seconds_dial=1&indicators=1&digital=1&digital_seconds=0&show_date=0"
       ],
       "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/cozy-study/",
       "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/cozy-study/",
@@ -2090,7 +2173,9 @@
       "notes": [
         "按查看者设备日期与时区显示；可加 theme=light 或 theme=dark。",
         "俄语地址：https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=clock&lang=ru",
-        "目录默认提供俄语地址与真实预览；去掉 lang=ru 可恢复英语。"
+        "目录默认提供俄语地址与真实预览；去掉 lang=ru 可恢复英语。",
+        "variant=minimal提供简洁模拟钟：50ms平滑指针、可选秒针、12个小时刻度、HH:mm读数；可隐藏日期并设置指针/表盘/背景配色。",
+        "旧Cozy默认60刻度和12/3/6/9数字、蓝色外观不变。"
       ],
       "parameters": {
         "widget": {
@@ -2100,10 +2185,50 @@
         "lang": {
           "example": "ru",
           "description": "ru 为俄语；省略时保留原英语界面"
+        },
+        "variant": {
+          "example": "minimal",
+          "description": "简洁模拟钟，旧默认不变"
+        },
+        "smooth": {
+          "example": "1",
+          "description": "50ms毫秒插值平滑指针"
+        },
+        "seconds_dial": {
+          "example": "1",
+          "description": "显示秒针"
+        },
+        "indicators": {
+          "example": "1",
+          "description": "显示12小时刻度"
+        },
+        "digital": {
+          "example": "1",
+          "description": "显示数字时间"
+        },
+        "digital_seconds": {
+          "example": "0",
+          "description": "数字读数不显示秒"
+        },
+        "show_date": {
+          "example": "0",
+          "description": "隐藏日期"
+        },
+        "foreground": {
+          "example": "#222222",
+          "description": "指针、刻度和读数配色"
+        },
+        "clock_face": {
+          "example": "#ffffff",
+          "description": "表盘配色"
+        },
+        "background": {
+          "example": "#ffffff",
+          "description": "页面背景配色"
         }
       },
       "preview": "previews/cozy-clock.png",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-06",
       "verification": {
         "level": "functional",
         "default_state": true,
@@ -2434,6 +2559,373 @@
         "preview_width": 560,
         "preview_height": 420,
         "scope": "Standalone models and isolated headless widgets only; Native Buildin integration separate."
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "httishere-ru-variants",
+      "kind": "widget",
+      "name": "经典日期／引用组件俄语适配（15种）",
+      "category": "日期与时钟",
+      "language": "俄语",
+      "ownership": "community",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere-ru/quote3.html?ru_text=%D0%9A%D0%B0%D0%B6%D0%B4%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C%20%E2%80%94%20%D0%BD%D0%BE%D0%B2%D1%8B%D0%B9%20%D1%88%D0%B0%D0%B3.",
+      "aliases": [
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere-ru/v3-month.html",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere-ru/calendarByWeek.html",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere-ru/new-blue-week.html",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere-ru/new-highlight-week.html",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere-ru/progress.html",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere-ru/quarterly-progress.html",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere-ru/quote.html",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere-ru/quote-EN.html",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere-ru/swiper.html",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere-ru/v220-rotate-clock.html",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere-ru/days-matter.html?day=2026%2F12%2F31&ru_name=%D0%94%D0%B5%D0%BC%D0%BE",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere-ru/days-matter2.html?day=2026%2F12%2F31&ru_name=%D0%94%D0%B5%D0%BC%D0%BE",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere-ru/v230-countdown-p.html?day=2026%2F12%2F31",
+        "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere-ru/v203-mul-days-matter.html?msg=%D0%94%D0%B5%D0%BC%D0%BE%232026%2F12%2F31&created=2026%2F01%2F01"
+      ],
+      "source_url": "https://github.com/httIsHere/notion-widget",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/community/httishere-ru",
+      "license": {
+        "label": "上游Apache-2.0；依赖MIT；图片与字体仅保留远程引用",
+        "url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/community/httishere-ru/NOTICE.md"
+      },
+      "description": "保留旧版月历日期高亮、周日期定位、倒数日、多事件进度、季度进度、引用、轮播和翻页时钟行为的俄语版本。",
+      "tags": [
+        "俄语",
+        "httishere",
+        "周日历",
+        "倒数日",
+        "引用",
+        "翻页时钟",
+        "季度进度",
+        "模板迁移"
+      ],
+      "recommended_size": {
+        "width": 480,
+        "height": 300
+      },
+      "dependencies": [
+        "可选作者HTTPS字体、照片及Icons8引用图片；计算脚本与CryptoJS/jQuery/Vue/Swiper已本地打包"
+      ],
+      "notes": [
+        "能准确满足需求时，优先复用既有template-ru或简洁月历；此条提供其他变体。",
+        "保留原e、日期、范围、s、year、sw/dd与颜色；ru_name/ru_text只覆盖显示文案，ru_tasks只按顺序替换任务名称。",
+        "不新增本地保存，不连接Buildin数据库；历史日期保持原值。",
+        "多事件模式需提供原tasks/created或有效msg；公开别名使用通用演示日期，默认预览不含私参。",
+        "保留作者来源署名。动态语录feed、作者访客计数、损坏配置和天气并非此条功能。",
+        "58组原日期/样式算法对照与29组打包配置解码通过；15种实际公开画面已复核，翻页秒针、轮播5秒自动切换与拖动、跨月范围实际验证。",
+        "俄语引用采用支持西里尔字母的系统字体；窄栏引号独立留白。轮播保留原远图，失效时用纯色背景保证文字可读。"
+      ],
+      "parameters": {
+        "file": {
+          "example": "quote3.html",
+          "description": "源码README列出15个独立入口；路径决定原组件变体"
+        },
+        "e": {
+          "example": "沿用原参数",
+          "description": "原公开前端配置格式；私有实例值不可提交仓库"
+        },
+        "ru_name": {
+          "example": "Экзамен",
+          "description": "只替换事件显示名"
+        },
+        "ru_text": {
+          "example": "Каждый день — новый шаг.",
+          "description": "只替换引用显示文案"
+        },
+        "ru_tasks": {
+          "example": "[\"Экзамен\"]",
+          "description": "JSON名称数组；数量和顺序须与原tasks一致；非法覆盖保留原任务"
+        }
+      },
+      "preview": "previews/httishere-ru-quote3.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "functional",
+        "default_state": true,
+        "preview_width": 480,
+        "preview_height": 300,
+        "offline_source_date_cases": 58,
+        "bundled_configuration_cases": 29,
+        "actual_browser_verification": "15 modes; Russian quote480/223, carousel autoplay+drag, flip-clock seconds, cross-month highlight; generic demos only"
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "focus-timer-ru",
+      "kind": "widget",
+      "name": "俄语专注倒计时（五档预设）",
+      "category": "专注与计时",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/focus-timer-ru/",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/focus-timer-ru",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/focus-timer-ru",
+      "license": {
+        "label": "MIT",
+        "url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/focus-timer-ru/LICENSE"
+      },
+      "description": "默认60秒，预设1/15/30/60/120分钟，开始、暂停、继续及复位；计时数字也可操作。",
+      "tags": [
+        "俄语",
+        "计时",
+        "专注",
+        "窄栏"
+      ],
+      "recommended_size": {
+        "width": 480,
+        "height": 400
+      },
+      "dependencies": [],
+      "notes": [
+        "独立通用实现，无账号、数据库连接、本地保存、声音或通知。刷新回到默认60秒。",
+        "选择预设停止并设置时长；复位回当前所选预设。到零停止，可手动再开始。",
+        "按单调时钟截止时刻计算，后台或bfcache返回后按实际经过时间更新；无法迁移第三方服务状态。",
+        "161px窄栏到480px所有控件均实际可见，五预设、开始暂停继续复位及bfcache实际验证。"
+      ],
+      "parameters": {
+        "accent": {
+          "example": "#e9bd98",
+          "description": "主色，URL编码六位HEX"
+        },
+        "surface": {
+          "example": "#e9e9e9",
+          "description": "按钮底色，URL编码六位HEX"
+        }
+      },
+      "preview": "previews/focus-timer-ru.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "functional",
+        "default_state": true,
+        "preview_width": 480,
+        "preview_height": 400,
+        "offline_cases": 11,
+        "actual_browser_verification": "480x400 and161x400; all presets/start/pause/resume/reset/dial/bfcache"
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "weather-ru-seven-day",
+      "kind": "widget",
+      "name": "俄语城市天气·七日／窄栏",
+      "category": "天气",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/weather/?lat=31.230416&lon=121.473701&city=%D0%A8%D0%B0%D0%BD%D1%85%D0%B0%D0%B9&tz=Asia%2FShanghai&forecast_days=7&theme=light&greyscale=1",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/weather",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/weather",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "当前温度与七日预报，公开默认使用上海、摄氏和灰度图标。",
+      "tags": [
+        "俄语",
+        "天气",
+        "可配置",
+        "窄栏"
+      ],
+      "recommended_size": {
+        "width": 560,
+        "height": 360
+      },
+      "dependencies": [
+        "Open-Meteo实时天气接口"
+      ],
+      "notes": [
+        "数据来自Open-Meteo，不是Indify；相同城市/单位/天数不意味着预报模型、刷新节奏和实时数值相同。",
+        "十五分钟刷新；一小时内缓存可短暂离线使用，过十五分钟标明数据已过时。无数据时明确显示，不生成温度。",
+        "默认五日入口保持原样；此条七日模式在≤220px时纵向显示全部七日，最窄77px，需要更高容器或纵向滚动。",
+        "公开默认是选定城市，不自动读取访客位置；不连接服务账号或原Customize按钮。"
+      ],
+      "parameters": {
+        "lat": {
+          "example": "31.230416",
+          "description": "城市纬度"
+        },
+        "lon": {
+          "example": "121.473701",
+          "description": "城市经度"
+        },
+        "city": {
+          "example": "Шанхай",
+          "description": "俄语显示名"
+        },
+        "tz": {
+          "example": "Asia/Shanghai",
+          "description": "IANA时区"
+        },
+        "forecast_days": {
+          "example": "7",
+          "description": "7启用七日，省略仍为原五日"
+        },
+        "theme": {
+          "example": "light",
+          "description": "浅色页面使用深色文字"
+        },
+        "greyscale": {
+          "example": "1",
+          "description": "灰度图标"
+        }
+      },
+      "preview": "previews/weather-ru-seven-day.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "functional",
+        "default_state": true,
+        "actual_browser_verification": "560x360 real API200/7days/Celsius/Shanghai, 77x400 and161x400 all7days via vertical scroll and no horizontal overflow; default5 unchanged",
+        "preview_width": 560,
+        "preview_height": 360
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "legacy-progress-ru",
+      "kind": "widget",
+      "name": "可配置时间／人生进度（兼容算法）",
+      "category": "进度",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "sample",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/time-progress/legacy.html?bars=year,month,week,day,quarter,life&decimals=0&lifespan=80#birth=2000-01-01",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/time-progress",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/time-progress",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "按原整日、分钟、季度和寿命规则计算，可配置显示项与顺序。",
+      "tags": [
+        "俄语",
+        "进度",
+        "可配置",
+        "窄栏"
+      ],
+      "recommended_size": {
+        "width": 480,
+        "height": 300
+      },
+      "dependencies": [],
+      "notes": [
+        "目录预览是通用2000-01-01出生／80年寿命示例，不能当作用户生日或真实账户数据。",
+        "源兼容算法：周一开始，日/周计分钟，月含今天，年固定除365，季度端点差，人生固定365年基数加trunc寿命/4；标签toFixed舍入。",
+        "与已有连续时间进度入口不同；生日只从#birth片段读取，不写本地存储，不连接服务账号或Buildin数据库。",
+        "配置源服务的账号编辑器与Customize入口未复刻。"
+      ],
+      "parameters": {
+        "bars": {
+          "example": "year,month,week,day,quarter,life",
+          "description": "按显示顺序的进度子集"
+        },
+        "decimals": {
+          "example": "0",
+          "description": "toFixed百分比小数位"
+        },
+        "lifespan": {
+          "example": "80",
+          "description": "配置寿命年数"
+        },
+        "#birth": {
+          "example": "2000-01-01",
+          "description": "客户端片段中的示例生日，不发送到HTTP查询"
+        },
+        "color": {
+          "example": "#37352f",
+          "description": "URL编码HEX文字/条形配色"
+        },
+        "theme": {
+          "example": "system",
+          "description": "可选跟随系统配色"
+        }
+      },
+      "preview": "previews/legacy-progress-ru.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "functional",
+        "default_state": true,
+        "actual_browser_verification": "480px default and178px progress/165px digital; Russian, all configured rows/clock options visible, no overflow",
+        "preview_width": 480,
+        "preview_height": 300
+      },
+      "replacement_id": null
+    },
+    {
+      "id": "local-digital-clock-ru",
+      "kind": "widget",
+      "name": "俄语双块本地数字钟",
+      "category": "日期与时钟",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=digital-clock&lang=ru&variant=minimal",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/cozy-study",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/cozy-study",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "访客本地24小时HH/mm、俄语星期和日期，无秒或AM/PM。",
+      "tags": [
+        "俄语",
+        "日期与时钟",
+        "可配置",
+        "窄栏"
+      ],
+      "recommended_size": {
+        "width": 320,
+        "height": 260
+      },
+      "dependencies": [],
+      "notes": [
+        "读取访客浏览器本地时间，每秒刷新分钟显示；没有秒盘或倒数模式。",
+        "不读取服务账号、不保存状态、不连接Buildin数据库；不复刻来源服务编辑器。",
+        "同目录的calendar和clock模式另提供月历与指针钟。"
+      ],
+      "parameters": {
+        "widget": {
+          "example": "digital-clock",
+          "description": "数字钟模式"
+        },
+        "lang": {
+          "example": "ru",
+          "description": "俄语"
+        },
+        "variant": {
+          "example": "minimal",
+          "description": "简洁独立样式"
+        },
+        "foreground": {
+          "example": "#cc782f",
+          "description": "URL编码HEX文字配色"
+        },
+        "local_background": {
+          "example": "#ffffff",
+          "description": "浅色容器底色"
+        },
+        "dark_background": {
+          "example": "#191919",
+          "description": "系统深色容器底色"
+        }
+      },
+      "preview": "previews/local-digital-clock-ru.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "functional",
+        "default_state": true,
+        "actual_browser_verification": "480px default and178px progress/165px digital; Russian, all configured rows/clock options visible, no overflow",
+        "preview_width": 480,
+        "preview_height": 260
       },
       "replacement_id": null
     }

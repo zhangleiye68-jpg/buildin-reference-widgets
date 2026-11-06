@@ -11,3 +11,5 @@
 可选 `accent` 和 `surface` 接受 URL 编码的六位 HEX 色值，用于主色和按钮底色；默认值分别为 `#e9bd98`、`#e9e9e9`。不读取或执行第三方服务的配置。
 
 源码使用 MIT 许可，见 [LICENSE](LICENSE)。
+
+通用默认实际预览：[480px PNG](../catalog/previews/focus-timer-ru.png) · [161px PNG](../catalog/previews/focus-timer-ru-161.png)。

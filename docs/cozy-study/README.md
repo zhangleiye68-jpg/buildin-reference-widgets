@@ -27,6 +27,10 @@ clock. Both fit columns down to 160 pixels wide. MIT licensed; see LICENSE.
 
 - `widget=calendar`：周一开始、本地日期、35或42格、非本月淡化，只有左右翻月和标题回今天；日格不可选择。保留本地跨午夜刷新，无农历或节假日数据。`week_color`、`hover_color`、`today_background`、`nav_color`、`title_color`、`date_color` 对应星期、悬停、今天、箭头、标题和日期数字配色；`dark_background` 为系统深色背景。
 - `widget=digital-clock`：本地24小时HH、mm两块、俄语星期和日期，无秒和AM/PM；每秒更新。`foreground`、`local_background`、`dark_background` 配置文字及系统深浅背景。
-- `widget=clock&smooth=1&seconds_dial=1&digital=1&digital_seconds=0&show_date=0`：平滑模拟指针、秒针及HH:mm读数，每50毫秒更新。`indicators=1` 保留刻度与数字；`foreground`、`clock_face`、`background` 为指针、表盘与页面配色。使用访客浏览器当地时间，不固定为任何城市。
+- `widget=clock&smooth=1&seconds_dial=1&digital=1&digital_seconds=0&show_date=0`：平滑模拟指针、秒针及HH:mm读数，每50毫秒更新。`indicators=1` 保留12个小时刻度（简洁变体不显示数字或小刻度）；`foreground`、`clock_face`、`background` 为指针、表盘与页面配色。使用访客浏览器当地时间，不固定为任何城市。
 
 HEX配色参数须URL编码。不读取服务账号，不保存状态，不连接Buildin数据库。以上为独立实现的通用显示，不分发第三方专有源码或私人实例配置。
+
+简洁月历实际预览：[PNG](../catalog/previews/cozy-minimal-calendar.png)；数字钟实际预览：[PNG](../catalog/previews/local-digital-clock-ru.png)。
+
+简洁平滑指针钟实际预览：[PNG](../catalog/previews/cozy-minimal-clock.png)，12小时刻度、无数字与小刻度。

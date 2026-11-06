@@ -1,6 +1,6 @@
 # Buildin 统一组件库
 
-更新：2026-11-05 · 50 个组件 · 11 项素材
+更新：2026-11-06 · 55 个组件 · 11 项素材
 
 [打开可搜索的图文目录](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/catalog/) · [读取完整 JSON](components.json)
 
@@ -159,6 +159,8 @@ https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/flip
 ```
 
 - 独立网页组件，不自动关联 Buildin 原生数据库。
+- 可选show_date=0隐藏日期，fit=1支持174px窄栏；background和dark_background分别设置系统深浅容器背景，原默认不变。
+- labels=1显示Часы／Минуты／Секунды单位标签，locale控制语言；原默认不显示单位标签。
 
 许可：自制，可在本库复用
 
@@ -227,6 +229,8 @@ https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=
 - 按查看者设备日期与时区显示；可加 theme=light 或 theme=dark。
 - 俄语地址：https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=clock&lang=ru
 - 目录默认提供俄语地址与真实预览；去掉 lang=ru 可恢复英语。
+- variant=minimal提供简洁模拟钟：50ms平滑指针、可选秒针、12个小时刻度、HH:mm读数；可隐藏日期并设置指针/表盘/背景配色。
+- 旧Cozy默认60刻度和12/3/6/9数字、蓝色外观不变。
 
 许可：MIT · [许可与归属](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/cozy-study/LICENSE)
 
@@ -254,6 +258,58 @@ https://widgetbox.app/embed/clock/analog/e78606f2-863a-4335-a0b4-5320b334e14e
 许可：第三方服务，保存引用
 
 目录 ID：`widgetbox-clock-retired`
+
+### 经典日期／引用组件俄语适配（15种） · 俄语
+
+![经典日期／引用组件俄语适配（15种）默认预览](previews/httishere-ru-quote3.png)
+
+社区源码 · 可用 · 建议 480 × 300 px
+
+保留旧版月历日期高亮、周日期定位、倒数日、多事件进度、季度进度、引用、轮播和翻页时钟行为的俄语版本。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere-ru/quote3.html?ru_text=%D0%9A%D0%B0%D0%B6%D0%B4%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C%20%E2%80%94%20%D0%BD%D0%BE%D0%B2%D1%8B%D0%B9%20%D1%88%D0%B0%D0%B3.) · [原始来源](https://github.com/httIsHere/notion-widget) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/community/httishere-ru)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/httishere-ru/quote3.html?ru_text=%D0%9A%D0%B0%D0%B6%D0%B4%D1%8B%D0%B9%20%D0%B4%D0%B5%D0%BD%D1%8C%20%E2%80%94%20%D0%BD%D0%BE%D0%B2%D1%8B%D0%B9%20%D1%88%D0%B0%D0%B3.
+```
+
+- 能准确满足需求时，优先复用既有template-ru或简洁月历；此条提供其他变体。
+- 保留原e、日期、范围、s、year、sw/dd与颜色；ru_name/ru_text只覆盖显示文案，ru_tasks只按顺序替换任务名称。
+- 不新增本地保存，不连接Buildin数据库；历史日期保持原值。
+- 多事件模式需提供原tasks/created或有效msg；公开别名使用通用演示日期，默认预览不含私参。
+- 保留作者来源署名。动态语录feed、作者访客计数、损坏配置和天气并非此条功能。
+- 58组原日期/样式算法对照与29组打包配置解码通过；15种实际公开画面已复核，翻页秒针、轮播5秒自动切换与拖动、跨月范围实际验证。
+- 俄语引用采用支持西里尔字母的系统字体；窄栏引号独立留白。轮播保留原远图，失效时用纯色背景保证文字可读。
+
+许可：上游Apache-2.0；依赖MIT；图片与字体仅保留远程引用 · [许可与归属](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/community/httishere-ru/NOTICE.md)
+
+目录 ID：`httishere-ru-variants`
+
+### 俄语双块本地数字钟 · 俄语
+
+![俄语双块本地数字钟默认预览](previews/local-digital-clock-ru.png)
+
+自制 · 可用 · 建议 320 × 260 px
+
+访客本地24小时HH/mm、俄语星期和日期，无秒或AM/PM。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=digital-clock&lang=ru&variant=minimal) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/cozy-study) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/cozy-study)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=digital-clock&lang=ru&variant=minimal
+```
+
+- 读取访客浏览器本地时间，每秒刷新分钟显示；没有秒盘或倒数模式。
+- 不读取服务账号、不保存状态、不连接Buildin数据库；不复刻来源服务编辑器。
+- 同目录的calendar和clock模式另提供月历与指针钟。
+
+许可：自制，可在本库复用
+
+目录 ID：`local-digital-clock-ru`
 
 ## 日历
 
@@ -327,6 +383,8 @@ https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=
 - 可加 theme=light 或 theme=dark；无参数时跟随色彩模式。
 - 俄语地址：https://zhangleiye68-jpg.github.io/buildin-reference-widgets/cozy-study/?widget=calendar&lang=ru
 - 目录默认提供俄语地址与真实预览；去掉 lang=ru 可恢复英语。
+- variant=minimal提供简洁源兼容月历：周一、35/42格、非本月淡化、日期不可选择，箭头翻月、标题回今天；无农历。
+- 普通Cozy默认保留原42格与选日样式；新变体另支持星期/悬停/今天/箭头/标题/日期数字HEX配色。
 
 许可：MIT · [许可与归属](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/cozy-study/LICENSE)
 
@@ -363,7 +421,7 @@ https://widgetbox.app/embed/calendar/simple/60788344-032d-4bad-b871-5832168828ae
 
 自制 · 可用 · 建议 560 × 420 px
 
-洛杉矶天气与五日预报；保留原深色配置。
+默认洛杉矶天气与五日预报，可按坐标和时区切换城市；保留原深色配置。
 
 [打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/weather/?locale=ru&theme=dark&v=30) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/weather/) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/weather/)
 
@@ -375,11 +433,36 @@ https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/weat
 
 - 独立网页组件，不自动关联 Buildin 原生数据库。
 - 浅色文字与透明背景，适合深色模板；浅色页面需提供深色底色。
-- 当前固定洛杉矶；变更城市需调整源码配置。
+- 已支持lat/lon/city/tz，forecast_days=7可选七日；默认五日保持。浅色页面用theme=light，窄栏七日另见weather-ru-seven-day。
 
 许可：自制，可在本库复用
 
 目录 ID：`widget-012`
+
+### 俄语城市天气·七日／窄栏 · 俄语
+
+![俄语城市天气·七日／窄栏默认预览](previews/weather-ru-seven-day.png)
+
+自制 · 可用 · 建议 560 × 360 px
+
+当前温度与七日预报，公开默认使用上海、摄氏和灰度图标。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/weather/?lat=31.230416&lon=121.473701&city=%D0%A8%D0%B0%D0%BD%D1%85%D0%B0%D0%B9&tz=Asia%2FShanghai&forecast_days=7&theme=light&greyscale=1) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/weather) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/weather)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/weather/?lat=31.230416&lon=121.473701&city=%D0%A8%D0%B0%D0%BD%D1%85%D0%B0%D0%B9&tz=Asia%2FShanghai&forecast_days=7&theme=light&greyscale=1
+```
+
+- 数据来自Open-Meteo，不是Indify；相同城市/单位/天数不意味着预报模型、刷新节奏和实时数值相同。
+- 十五分钟刷新；一小时内缓存可短暂离线使用，过十五分钟标明数据已过时。无数据时明确显示，不生成温度。
+- 默认五日入口保持原样；此条七日模式在≤220px时纵向显示全部七日，最窄77px，需要更高容器或纵向滚动。
+- 公开默认是选定城市，不自动读取访客位置；不连接服务账号或原Customize按钮。
+
+许可：自制，可在本库复用
+
+目录 ID：`weather-ru-seven-day`
 
 ## 专注与计时
 
@@ -541,6 +624,31 @@ https://zhangleiye68-jpg.github.io/buildin-reference-widgets/template-ru/?widget
 
 目录 ID：`template-ru-adapter`
 
+### 俄语专注倒计时（五档预设） · 俄语
+
+![俄语专注倒计时（五档预设）默认预览](previews/focus-timer-ru.png)
+
+自制 · 可用 · 建议 480 × 400 px
+
+默认60秒，预设1/15/30/60/120分钟，开始、暂停、继续及复位；计时数字也可操作。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/focus-timer-ru/) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/focus-timer-ru) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/focus-timer-ru)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/focus-timer-ru/
+```
+
+- 独立通用实现，无账号、数据库连接、本地保存、声音或通知。刷新回到默认60秒。
+- 选择预设停止并设置时长；复位回当前所选预设。到零停止，可手动再开始。
+- 按单调时钟截止时刻计算，后台或bfcache返回后按实际经过时间更新；无法迁移第三方服务状态。
+- 161px窄栏到480px所有控件均实际可见，五预设、开始暂停继续复位及bfcache实际验证。
+
+许可：MIT · [许可与归属](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/focus-timer-ru/LICENSE)
+
+目录 ID：`focus-timer-ru`
+
 ## 进度
 
 ### 地中海风格进度 · 俄语（来源模板）
@@ -676,6 +784,31 @@ https://zhangleiye68-jpg.github.io/buildin-reference-widgets/?view=progress
 许可：自制，可在本库复用
 
 目录 ID：`widget-023`
+
+### 可配置时间／人生进度（兼容算法） · 俄语
+
+![可配置时间／人生进度（兼容算法）默认预览](previews/legacy-progress-ru.png)
+
+自制 · 含示例内容 · 建议 480 × 300 px
+
+按原整日、分钟、季度和寿命规则计算，可配置显示项与顺序。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/time-progress/legacy.html?bars=year,month,week,day,quarter,life&decimals=0&lifespan=80#birth=2000-01-01) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/time-progress) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/time-progress)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/time-progress/legacy.html?bars=year,month,week,day,quarter,life&decimals=0&lifespan=80#birth=2000-01-01
+```
+
+- 目录预览是通用2000-01-01出生／80年寿命示例，不能当作用户生日或真实账户数据。
+- 源兼容算法：周一开始，日/周计分钟，月含今天，年固定除365，季度端点差，人生固定365年基数加trunc寿命/4；标签toFixed舍入。
+- 与已有连续时间进度入口不同；生日只从#birth片段读取，不写本地存储，不连接服务账号或Buildin数据库。
+- 配置源服务的账号编辑器与Customize入口未复刻。
+
+许可：自制，可在本库复用
+
+目录 ID：`legacy-progress-ru`
 
 ## 习惯与阅读计数
 
