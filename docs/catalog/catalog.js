@@ -34,7 +34,7 @@ $('#grid').addEventListener('click',async event=>{
   if(replacement){event.preventDefault();$('#filters').reset();render();document.getElementById(replacement.dataset.replacement)?.scrollIntoView({behavior:'smooth',block:'start'});}
 });
 (async()=>{try{
-  const response=await fetch('./components.json');if(!response.ok)throw Error('目录加载失败');registry=await response.json();entries=[...registry.components,...registry.assets];
+  const response=await fetch('./components.json',{cache:'no-cache'});if(!response.ok)throw Error('目录加载失败');registry=await response.json();entries=[...registry.components,...registry.assets];
   $('#stats').innerHTML=`<span><b>${registry.components.length}</b>组件</span><span><b>${registry.assets.length}</b>素材</span><span>更新 ${esc(registry.updated_at)}</span>`;
   [...new Set(entries.map(e=>e.category))].forEach(category=>{const option=document.createElement('option');option.value=category;option.textContent=category;$('#category').append(option);});render();
 }catch(error){$('#error').hidden=false;$('#error').textContent='组件目录暂时无法读取，请从 GitHub 仓库中的 docs/catalog/components.json 查看。';$('#stats').textContent='目录未加载';}})();
