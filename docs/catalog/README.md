@@ -434,6 +434,7 @@ https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/weat
 - 独立网页组件，不自动关联 Buildin 原生数据库。
 - 浅色文字与透明背景，适合深色模板；浅色页面需提供深色底色。
 - 已支持lat/lon/city/tz，forecast_days=7可选七日；默认五日保持。浅色页面用theme=light，窄栏七日另见weather-ru-seven-day。
+- 默认PNG为实际已加载的洛杉矶摄氏五日界面；透明深色专用组件的预览使用深色宿主。
 
 许可：自制，可在本库复用
 
