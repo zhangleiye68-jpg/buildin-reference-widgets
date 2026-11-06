@@ -1,0 +1,16 @@
+/* MIT License. Copyright (c) 2026 Buildin reference widgets contributors. */
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 100%; min-width: 0; background: #fff; color: #262626; }
+body, button { font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif; }
+.timer { --accent: #e9bd98; --surface: #e9e9e9; width: 100%; max-width: 480px; margin: auto; min-height: 360px; padding: clamp(8px, 4vw, 24px); display: grid; align-content: center; gap: 14px; }
+button { min-width: 0; border: 1px solid #dedede; border-radius: 10px; background: var(--surface); color: inherit; cursor: pointer; font-size: 13px; padding: 10px 5px; line-height: 1.3; overflow-wrap: break-word; }
+button:hover { background: #ededed; }
+button:focus-visible { outline: 3px solid #7498cc; outline-offset: 2px; }
+.dial { border: 6px solid var(--accent); border-radius: 50%; background: transparent; display: grid; place-content: center; gap: 6px; width: 100%; max-width: 220px; aspect-ratio: 1; justify-self: center; }
+.dial:hover { background: #fafafa; }
+.value { font-size: clamp(32px, 12vw, 56px); font-weight: 500; font-variant-numeric: tabular-nums; letter-spacing: -.04em; line-height: 1.1; }
+.phase { font-size: 13px; color: #777; }
+.presets { display: grid; grid-template-columns: repeat(auto-fit, minmax(58px, 1fr)); gap: 6px; }
+.presets button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #262626; }
+.actions { display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 6px; }
+#start { background: var(--accent); color: #262626; border-color: var(--accent); }

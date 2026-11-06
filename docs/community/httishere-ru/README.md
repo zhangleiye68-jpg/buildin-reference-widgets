@@ -14,10 +14,10 @@ Base: `https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/ht
 | `new-highlight-week.html` | Dates for the week containing `s` (or configured `day`), otherwise this week; retains week-start option. |
 | `progress.html` | Original year/week bars, date, and live clock. |
 | `quarterly-progress.html` | Original year bar and quarter milestones; preserves `year`, including past/future handling. |
-| `quote3.html` | Plain quotation; preserves original text/content and color config. |
-| `quote-EN.html` | Handwritten-style quotation variant. |
+| `quote3.html` | Plain quotation; preserves original text/content and color config, with a Cyrillic-capable system font and separate quote-mark space. |
+| `quote-EN.html` | Decorative quotation variant; Russian text uses a Cyrillic-capable system font. |
 | `quote.html` | Raised/embossed quotation variant. |
-| `swiper.html` | Original two-image quotation carousel, Russian captions, five-second autoplay and one-second transition; remote source image availability required. |
+| `swiper.html` | Original two-image quotation carousel, Russian captions, five-second autoplay and one-second transition; original remote source images retained; a solid background keeps captions readable if the images are unavailable. |
 | `v203-mul-days-matter.html` | Multiple configured target dates and progress bars; retains `tasks`, `created`, and original floor rounding. |
 | `v220-rotate-clock.html` | Animated 24-hour flip clock including seconds, date, and weekday. |
 | `v230-countdown-p.html` | Absolute difference shown as days/hours/minutes, retaining original minute refresh. |

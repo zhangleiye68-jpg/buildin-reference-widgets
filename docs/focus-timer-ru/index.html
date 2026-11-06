@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Таймер фокуса</title>
+  <link rel="stylesheet" href="./style.css?rev=20261106-1">
+  <script type="module" src="./timer.mjs?rev=20261106-1"></script>
+</head>
+<body>
+  <main class="timer" aria-label="Таймер фокуса">
+    <button class="dial" id="toggle" type="button" aria-label="Запустить таймер">
+      <span class="value" id="value" aria-hidden="true">60</span>
+      <span class="phase" id="phase" aria-live="polite">секунд</span>
+    </button>
+    <div class="presets" aria-label="Длительность">
+      <button type="button" data-seconds="60" aria-pressed="true">1 мин</button>
+      <button type="button" data-seconds="900" aria-pressed="false">15 мин</button>
+      <button type="button" data-seconds="1800" aria-pressed="false">30 мин</button>
+      <button type="button" data-seconds="3600" aria-pressed="false">1 ч</button>
+      <button type="button" data-seconds="7200" aria-pressed="false">2 ч</button>
+    </div>
+    <div class="actions">
+      <button type="button" id="start">Старт</button>
+      <button type="button" id="reset">Сброс</button>
+    </div>
+  </main>
+</body>
+</html>
