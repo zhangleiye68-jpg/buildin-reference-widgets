@@ -66,6 +66,8 @@
     .turning .underlay { visibility: visible; }
     .colon { width: 9px; color: #e9e6e3; font: 800 31px/1 Georgia, serif; text-align: center; transform: translateY(-2px); }
     .date { white-space: nowrap; color: #a8a8a8; font: 500 11px/1 system-ui, sans-serif; letter-spacing: .01em; }
+    .unit-label { position: absolute; top: calc(100% + 7px); left: 0; width: 100%; text-align: center; color: #6b6b6b; font: 500 clamp(8px, 2.4vw, 11px)/1.1 system-ui, sans-serif; }
+    @media(prefers-color-scheme:dark){.unit-label{color:#c6c6c6}}
     .inspection { position: fixed; z-index: 20; bottom: 12px; left: 12px; right: 12px; max-width: 680px;
       margin: auto; padding: 12px; border: 1px solid #444; border-radius: 8px; background: #181818;
       color: #ddd; font: 12px/1.5 system-ui, sans-serif; }
@@ -125,6 +127,11 @@
             const digit = document.createElement('span'); digit.className = 'digit'; number.append(digit);
           }
         });
+        if (params.get('labels') === '1') {
+          const label = document.createElement('span'); label.className = 'unit-label';
+          label.textContent = (/^ru(?:-|$)/i.test(locale) ? ['Часы', 'Минуты', 'Секунды'] : ['Hours', 'Minutes', 'Seconds'])[index];
+          card.append(label); clock.style.marginBottom = '20px';
+        }
         clock.append(card);
         return { card, top: card.querySelector('[data-top]'), bottom: card.querySelector('[data-bottom]'),
           oldBottom: card.querySelector('[data-old-bottom]'), underlay: card.querySelector('.underlay'),
