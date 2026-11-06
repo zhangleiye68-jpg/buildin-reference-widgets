@@ -17,3 +17,10 @@ export function localClockLabels(now, locale = 'ru-RU') {
     hour:String(now.getHours()).padStart(2, '0'), minute:String(now.getMinutes()).padStart(2, '0'),
   };
 }
+export function todayForeground(hex) {
+  if (!/^#[\da-f]{6}(?:[\da-f]{2})?$/i.test(hex || '')) return null;
+  const values = [1, 3, 5].map(index => parseInt(hex.slice(index, index + 2), 16));
+  const opacity = hex.length === 9 ? parseInt(hex.slice(7, 9), 16) / 255 : 1;
+  const brightness = values.reduce((sum, value, index) => sum + value * [0.299, 0.587, 0.114][index], 0) / 255;
+  return brightness > 0.62 && opacity > 0.5 ? '#1d1d1f' : '#fff';
+}

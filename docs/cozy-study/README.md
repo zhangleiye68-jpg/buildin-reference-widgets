@@ -34,3 +34,5 @@ HEX配色参数须URL编码。不读取服务账号，不保存状态，不连�
 简洁月历实际预览：[PNG](../catalog/previews/cozy-minimal-calendar.png)；数字钟实际预览：[PNG](../catalog/previews/local-digital-clock-ru.png)。
 
 简洁平滑指针钟实际预览：[PNG](../catalog/previews/cozy-minimal-clock.png)，12小时刻度、无数字与小刻度。
+
+简洁月历的今天文字根据已配置今天背景的亮度与透明度自动取深色或白色；其余六项配色与普通Cozy默认不变。

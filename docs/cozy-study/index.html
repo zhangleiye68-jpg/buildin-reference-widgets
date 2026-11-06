@@ -28,7 +28,7 @@
     html[data-variant=minimal] .week{color:var(--week-color,#37352f)}
     html[data-variant=minimal] .day{color:var(--date-color,#37352f)}
     html[data-variant=minimal] .day:hover{background:var(--hover-color,#eee)}
-    html[data-variant=minimal] .day.today{background:var(--today-background,#ddd);box-shadow:none}
+    html[data-variant=minimal] .day.today{background:var(--today-background,#ddd);color:var(--today-foreground,var(--date-color,#37352f));box-shadow:none}
     html[data-variant=minimal] footer{display:none}
     html[data-variant=minimal] .clock{max-width:100%;color:var(--foreground,#222)}
     html[data-variant=minimal] .rim{fill:transparent}
@@ -47,7 +47,7 @@
 <body>
   <main id="widget"></main>
   <script type="module">
-    import {monthCells,clockParts,localClockLabels} from './models.mjs?rev=20261106-1';
+    import {monthCells,clockParts,localClockLabels,todayForeground} from './models.mjs?rev=20261106-2';
     'use strict';
     const query=new URLSearchParams(location.search);
     const russian=query.get('lang')==='ru';
@@ -68,6 +68,7 @@
     if(minimal)document.documentElement.dataset.variant='minimal';
     const colorKeys=['week_color','hover_color','today_background','nav_color','title_color','date_color','foreground','clock_face','calendar_background','local_background','dark_background'];
     for(const name of colorKeys){const value=query.get(name);if(/^#[0-9a-f]{6}(?:[0-9a-f]{2})?$/i.test(value||''))document.documentElement.style.setProperty('--'+name.replaceAll('_','-'),value)}
+    if(minimal){const foreground=todayForeground(query.get('today_background'));if(foreground)document.documentElement.style.setProperty('--today-foreground',foreground)}
     const background=query.get('background');
     if(/^#[0-9a-f]{6}(?:[0-9a-f]{2})?$/i.test(background||''))document.body.style.background=background;
     const root=document.getElementById('widget');
