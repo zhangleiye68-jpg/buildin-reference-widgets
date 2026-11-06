@@ -6,6 +6,7 @@ Base: `https://zhangleiye68-jpg.github.io/buildin-reference-widgets/community/ht
 
 | File | Function and constraints |
 | --- | --- |
+| `v3-month.html` | Source month grid highlighting every elapsed date, with configured font/highlight color and week start. |
 | `calendarByWeek.html` | Month calendar with the original `start`/`end` or `date_range` highlight, including the original adjacent-month behavior; Monday start. |
 | `days-matter.html` | Square event card; absolute day difference rounded up, target midnight. Requires `day`; optional `name`. |
 | `days-matter2.html` | Outlined event card with the same midnight/ceiling algorithm. Requires `day`; optional `name`. |

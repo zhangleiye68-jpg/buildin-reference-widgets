@@ -2,7 +2,7 @@
 
 The HTML adapters, `global.js`, and `flexibleMerge.js` derive from Tina Huang / httIsHere's [notion-widget](https://github.com/httIsHere/notion-widget), Apache-2.0, repository revision `b3adf7d2cad6069b753fbdb42a8dee189df13aa7`. Copyright and source headers are retained. The adjacent `LICENSE` contains the upstream Apache license.
 
-Changes dated 2026-11-06: Russian interface labels; display-only `ru_name`, `ru_text`, and `ru_tasks` overrides; local script references; removal of configuration console logging; blue-week default-color guard; responsive safeguards. Original date calculations, relative-date rounding, configured dates, theme/week settings, flip animation, and carousel timing remain in the derived pages. No browser storage or database connection is added.
+Changes dated 2026-11-06: Russian interface labels; display-only `ru_name`, `ru_text`, and `ru_tasks` overrides; local script references; removal of configuration console logging; blue-week and month default-color guards; responsive safeguards. Original date calculations, relative-date rounding, configured dates, theme/week settings, flip animation, and carousel timing remain in the derived pages. No browser storage or database connection is added.
 
 `i18n.js` is independently authored for this library. Public frontend `e` configuration compatibility is retained; its published interoperability material is not an account credential. Private instance configurations are never included in these files or previews.
 
