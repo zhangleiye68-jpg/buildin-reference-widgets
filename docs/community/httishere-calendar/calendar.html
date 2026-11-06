@@ -16,7 +16,8 @@
   <title>Calendar</title>
   <script src="./calendar-runtime.js"></script>
   <script>
-    if (new URLSearchParams(location.search).get("fit") === "1") {
+    const displayQuery = new URLSearchParams(location.search);
+    if (displayQuery.get("fit") === "1" || /^ru(?:-|$)/i.test(displayQuery.get("lang") || "")) {
       document.documentElement.dataset.fit = "1";
     }
   </script>
@@ -118,6 +119,8 @@
       line-height: normal;
       font-size: clamp(10px, 3.5vw, 14px);
     }
+    html[lang="ru"] body,
+    html[lang="ru"] #month { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
   </style>
 </head>
 
