@@ -2,17 +2,18 @@
 (() => {
   const sourceQuery = window.getQueryString;
   const sourceParams = window.getAllParams;
+  const displayQuery = name => new URLSearchParams(window.location.search).get(name);
   window.getQueryString = function (name) {
-    if (name === 'name') return sourceQuery('ru_name') || sourceQuery(name);
-    if (name === 'text') return sourceQuery('ru_text') || sourceQuery(name);
+    if (name === 'name') return displayQuery('ru_name') || sourceQuery(name);
+    if (name === 'text') return displayQuery('ru_text') || sourceQuery(name);
     return sourceQuery(name);
   };
   window.getAllParams = function (crypto) {
     const params = sourceParams(crypto);
-    const name = sourceQuery('ru_name'), text = sourceQuery('ru_text');
+    const name = displayQuery('ru_name'), text = displayQuery('ru_text');
     if (name) params.name = name;
     if (text) params.content = text;
-    const names = sourceQuery('ru_tasks');
+    const names = displayQuery('ru_tasks');
     if (names) {
       try {
         const values = JSON.parse(names);

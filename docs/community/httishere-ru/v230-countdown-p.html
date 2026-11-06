@@ -20,7 +20,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>倒计时</title>
+  <title>Обратный отсчёт</title>
   <script src="./flexibleMerge.js"></script>
   <script src="./global.js"></script><script src="./i18n.js"></script>
   <script src="./crypto-js.min.js"></script>
@@ -110,7 +110,7 @@
   <div class="wrap">
     <div class="countdown">
       <!-- <div class="days"><span id="days"></span></div> -->
-      <p id="down">12小时45分23秒</p>
+      <p id="down">12 ч 45 мин 23 с</p>
       <div id="date"></div>
     </div>
   </div>
@@ -122,7 +122,7 @@
     const params = getAllParams(CryptoJS);
     handleDarkMode(params);
     let target_day = getQueryString("day") || params.day || `${(new Date()).getFullYear()}/12/31`,
-      name = getQueryString("name") || params.name || "今年结束";
+      name = getQueryString("name") || params.name || "Конец года";
     let _date = new Date(target_day).getDay();
     let _target = new Date(target_day).getTime();
     // document.getElementById(
