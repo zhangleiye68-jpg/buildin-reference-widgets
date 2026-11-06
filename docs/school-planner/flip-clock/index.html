@@ -87,6 +87,20 @@
       const clock = document.querySelector('[data-clock]');
       const date = document.querySelector('[data-date]');
       const params = new URLSearchParams(location.search);
+      for (const [name, media] of [['background', ''], ['dark_background', '@media(prefers-color-scheme:dark)']]) {
+        const color = params.get(name);
+        if (/^#[0-9a-f]{6}$/i.test(color || '')) {
+          const style = document.createElement('style');
+          style.textContent = media ? `${media}{html,body{background:${color}}}` : `html,body{background:${color}}`;
+          document.head.append(style);
+        }
+      }
+      if (params.get('show_date') === '0') date.hidden = true;
+      if (params.get('fit') === '1') {
+        const style = document.createElement('style');
+        style.textContent = 'html,body{min-width:0;width:100%;overflow-x:hidden}.clock{width:100%;max-width:400px;padding:12px 4px}.digits{width:100%;justify-content:center}.card{width:clamp(22px,25vw,88px)}.number{font-size:clamp(16px,15vw,54px)}';
+        document.head.append(style);
+      }
       const locale = params.get('locale') || 'ru-RU';
       const formatter = new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'long', year: 'numeric' });
       const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');

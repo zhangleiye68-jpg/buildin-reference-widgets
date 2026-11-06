@@ -19,11 +19,35 @@
     html[data-theme=light]{color-scheme:light;--paper:#fffdf7;--ink:#493f43;--muted:#a59a9b;--pink:#efcad8;--chosen:#9c5672;--blue:#c3e0ef;--face:#f8fcfd;--hand:#375468;--line:#e9e2dd}
     html[data-theme=dark]{color-scheme:dark;--paper:#282429;--ink:#f4e9ec;--muted:#b6a9b0;--pink:#59404f;--chosen:#e4a5bf;--blue:#7faabd;--face:#24353f;--hand:#e5f0f5;--line:#463b44}
     @media(max-width:200px){body{padding:4px}.week,.days{padding-left:4px;padding-right:4px}.days{gap:2px 0}.date{font-size:10px}}
+
+    html[data-variant=minimal] body{padding:0}
+    html[data-variant=minimal] .calendar{max-width:100%;border:0;border-radius:0;background:var(--calendar-background,transparent)}
+    html[data-variant=minimal] header{background:transparent;color:var(--title-color,#37352f)}
+    html[data-variant=minimal] header button{color:var(--nav-color,#37352f)}
+    html[data-variant=minimal] #month{cursor:pointer}
+    html[data-variant=minimal] .week{color:var(--week-color,#37352f)}
+    html[data-variant=minimal] .day{color:var(--date-color,#37352f)}
+    html[data-variant=minimal] .day:hover{background:var(--hover-color,#eee)}
+    html[data-variant=minimal] .day.today{background:var(--today-background,#ddd);box-shadow:none}
+    html[data-variant=minimal] footer{display:none}
+    html[data-variant=minimal] .clock{max-width:100%;color:var(--foreground,#222)}
+    html[data-variant=minimal] .rim{fill:transparent}
+    html[data-variant=minimal] .face{fill:var(--clock-face,#fff)}
+    html[data-variant=minimal] .tick,html[data-variant=minimal] .hour,html[data-variant=minimal] .minute,html[data-variant=minimal] .second{stroke:var(--foreground,#222)}
+    html[data-variant=minimal] .number,html[data-variant=minimal] .pin{fill:var(--foreground,#222)}
+    .clock-digital{font-size:clamp(18px,8vw,32px);font-variant-numeric:tabular-nums;font-weight:650;color:var(--foreground,#222)}
+    .local-clock{width:100%;max-width:360px;margin:auto;padding:12px 8px;background:var(--local-background,#fff);color:var(--foreground,#cc782f);border-radius:5px}
+    .local-date{display:flex;justify-content:space-between;gap:5px;font-size:clamp(10px,4vw,14px);margin-bottom:12px;line-height:1.4}
+    .local-digits{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .digit-block{min-width:0;background:#f4f4f6;border:1px solid #efeff0;border-radius:20px;text-align:center;padding:18px 2px;font-size:clamp(28px,20vw,72px);font-weight:650;line-height:1.2;font-variant-numeric:tabular-nums}
+    @media(prefers-color-scheme:dark){html[data-variant=minimal]:not([data-theme=light]) .calendar{background:var(--dark-background,transparent)}html:not([data-theme=light]) .local-clock{background:var(--dark-background,#191919)}html:not([data-theme=light]) .digit-block{background:#303034;border-color:#3b3b40}}
+    html[data-theme=dark] .local-clock{background:var(--dark-background,#191919)}html[data-theme=dark] .digit-block{background:#303034;border-color:#3b3b40}
   </style>
 </head>
 <body>
   <main id="widget"></main>
-  <script>
+  <script type="module">
+    import {monthCells,clockParts,localClockLabels} from './models.mjs?rev=20261106-1';
     'use strict';
     const query=new URLSearchParams(location.search);
     const russian=query.get('lang')==='ru';
@@ -38,12 +62,24 @@
     };
     const theme=query.get('theme');
     if(theme==='light'||theme==='dark')document.documentElement.dataset.theme=theme;
-    const kind=query.get('widget')==='clock'?'clock':'calendar';
+    const requestedKind=query.get('widget');
+    const kind=['clock','digital-clock'].includes(requestedKind)?requestedKind:'calendar';
+    const minimal=query.get('variant')==='minimal';
+    if(minimal)document.documentElement.dataset.variant='minimal';
+    const colorKeys=['week_color','hover_color','today_background','nav_color','title_color','date_color','foreground','clock_face','calendar_background','local_background','dark_background'];
+    for(const name of colorKeys){const value=query.get(name);if(/^#[0-9a-f]{6}(?:[0-9a-f]{2})?$/i.test(value||''))document.documentElement.style.setProperty('--'+name.replaceAll('_','-'),value)}
+    const background=query.get('background');
+    if(/^#[0-9a-f]{6}(?:[0-9a-f]{2})?$/i.test(background||''))document.body.style.background=background;
     const root=document.getElementById('widget');
     const key=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
     let todayKey=key(new Date());
     const setText=(selector,text)=>{root.querySelector(selector).textContent=text};
-    if(kind==='calendar'){
+    if(kind==='digital-clock'){
+      document.title=russian?'Местное время':'Local time';
+      root.innerHTML='<section class="local-clock"><div class="local-date"><span id="weekday"></span><span id="local-date"></span></div><div class="local-digits" role="timer" aria-live="off"><span class="digit-block" id="local-hour"></span><span class="digit-block" id="local-minute"></span></div></section>';
+      const render=()=>{const now=new Date(),labels=localClockLabels(now,locale);setText('#weekday',labels.weekday);setText('#local-date',labels.date);setText('#local-hour',labels.hour);setText('#local-minute',labels.minute);root.querySelector('.local-digits').setAttribute('aria-label',now.toLocaleTimeString(locale,{hour:'2-digit',minute:'2-digit',hour12:false}));};
+      render();setInterval(render,1000);document.addEventListener('visibilitychange',render);window.addEventListener('pageshow',render);
+    }else if(kind==='calendar'){
       document.title=words.calendarTitle;
       const now=new Date();
       let cursor=new Date(now.getFullYear(),now.getMonth(),1),selected=todayKey;
@@ -54,25 +90,32 @@
         const grid=root.querySelector('.days');
         setText('#month',cursor.toLocaleDateString(locale,{month:'long',year:'numeric'}));
         grid.replaceChildren();
-        for(let index=0;index<42;index++){
-          const date=new Date(year,month,index-offset+1),id=key(date),button=document.createElement('button');
-          button.type='button';button.className='day'+(date.getMonth()!==month?' outside':'')+(id===todayKey?' today':'')+(id===selected?' selected':'');
+        for(const date of monthCells(year,month,minimal)){
+          const id=key(date),button=document.createElement(minimal?'div':'button');
+          button.type='button';button.className='day'+(date.getMonth()!==month?' outside':'')+(id===todayKey?' today':'')+(!minimal&&id===selected?' selected':'');
           button.textContent=String(date.getDate());button.dataset.date=id;
           button.setAttribute('aria-label',date.toLocaleDateString(locale,{weekday:'long',day:'numeric',month:'long',year:'numeric'}));
-          button.setAttribute('aria-pressed',String(id===selected));
+          if(!minimal)button.setAttribute('aria-pressed',String(id===selected));
           if(id===todayKey)button.setAttribute('aria-current','date');
-          button.onclick=()=>{selected=id;cursor=new Date(date.getFullYear(),date.getMonth(),1);render()};
+          if(!minimal)button.onclick=()=>{selected=id;cursor=new Date(date.getFullYear(),date.getMonth(),1);render()};
           grid.append(button);
         }
       };
       root.querySelector('#previous').onclick=()=>{cursor=new Date(cursor.getFullYear(),cursor.getMonth()-1,1);render()};
       root.querySelector('#next').onclick=()=>{cursor=new Date(cursor.getFullYear(),cursor.getMonth()+1,1);render()};
       root.querySelector('#today').onclick=()=>{const date=new Date();todayKey=key(date);selected=todayKey;cursor=new Date(date.getFullYear(),date.getMonth(),1);render()};
-      const refresh=()=>{const next=key(new Date());if(next!==todayKey){const wasCurrent=selected===todayKey;todayKey=next;if(wasCurrent){selected=next;const date=new Date();cursor=new Date(date.getFullYear(),date.getMonth(),1)}render()}};
+      if(minimal){const title=root.querySelector('#month');title.setAttribute('role','button');title.setAttribute('tabindex','0');title.setAttribute('aria-label',words.today);title.onclick=root.querySelector('#today').onclick;title.onkeydown=event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();title.click()}}}
+      const refresh=()=>{const next=key(new Date());if(next!==todayKey){const wasCurrent=selected===todayKey;todayKey=next;if(wasCurrent&&!minimal){selected=next;const date=new Date();cursor=new Date(date.getFullYear(),date.getMonth(),1)}render()}};
       render();setInterval(refresh,30000);document.addEventListener('visibilitychange',refresh);
     }else{
       document.title=words.clockTitle;
       root.innerHTML='<section class="clock"><svg viewBox="0 0 240 240" role="img" aria-label="Current local time"><circle class="rim" cx="120" cy="120" r="116"/><circle class="face" cx="120" cy="120" r="101"/><g id="ticks"></g><g id="numbers"></g><line class="hour" id="hour" x1="120" y1="125" x2="120" y2="67"/><line class="minute" id="minute" x1="120" y1="129" x2="120" y2="43"/><line class="second" id="second" x1="120" y1="137" x2="120" y2="36"/><circle class="pin" cx="120" cy="120" r="3.4"/></svg><time class="date" id="clock-date"></time></section>';
+      const smooth=query.get('smooth')==='1';
+      const showSecondsDial=query.get('seconds_dial')!=='0';
+      if(query.get('indicators')==='0'){root.querySelector('#ticks').style.display='none';root.querySelector('#numbers').style.display='none'}
+      if(!showSecondsDial)root.querySelector('#second').style.display='none';
+      if(query.get('show_date')==='0')root.querySelector('#clock-date').style.display='none';
+      if(query.get('digital')==='1'){const time=document.createElement('time');time.className='clock-digital';time.id='clock-digital';root.querySelector('.clock').append(time)}
       const svgNS='http://www.w3.org/2000/svg';
       for(let index=0;index<60;index++){
         const line=document.createElementNS(svgNS,'line'),major=index%5===0;
@@ -82,15 +125,16 @@
       }
       for(const [number,x,y]of [[12,120,47],[3,193,120],[6,120,193],[9,47,120]]){const text=document.createElementNS(svgNS,'text');text.setAttribute('class','number');text.setAttribute('x',x);text.setAttribute('y',y);text.textContent=number;root.querySelector('#numbers').append(text)}
       const render=()=>{
-        const now=new Date(),seconds=now.getSeconds(),minutes=now.getMinutes()+seconds/60,hours=now.getHours()%12+minutes/60;
+        const now=new Date(),{seconds,minutes,hours}=clockParts(now,smooth);
         for(const [id,angle]of [['hour',hours*30],['minute',minutes*6],['second',seconds*6]])root.querySelector('#'+id).setAttribute('transform',`rotate(${angle} 120 120)`);
         const spoken=now.toLocaleTimeString(locale,{hour12:false});
         root.querySelector('svg').setAttribute('aria-label',words.time+' '+spoken);
         root.querySelector('svg').dataset.time=spoken;
         setText('#clock-date',now.toLocaleDateString(locale,{weekday:'short',day:'numeric',month:'short',year:'numeric'}));
         root.querySelector('#clock-date').dateTime=key(now);
+        const digital=root.querySelector('#clock-digital');if(digital)digital.textContent=now.toLocaleTimeString(locale,{hour:'2-digit',minute:'2-digit',...(query.get('digital_seconds')==='1'?{second:'2-digit'}:{}),hour12:false});
       };
-      render();setInterval(render,1000);document.addEventListener('visibilitychange',render);
+      render();setInterval(render,smooth?50:1000);document.addEventListener('visibilitychange',render);window.addEventListener('pageshow',render);
     }
   </script>
 </body>

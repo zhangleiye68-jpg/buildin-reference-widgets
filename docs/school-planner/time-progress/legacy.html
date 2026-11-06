@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Прогресс времени</title>
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    :root{--ink:#37352f;--rows:3;--bar-height:clamp(7px,calc((100dvh - 12px - (var(--rows) - 1)*8px)/var(--rows)),24px)}
+    .label{grid-template-columns:minmax(0,1fr) auto}
+    .period-name{overflow:hidden;text-overflow:ellipsis}
+    html,body{overflow-y:auto}
+    html[data-theme=system]{--ink:var(--light-ink,#37352f)}
+    @media(prefers-color-scheme:dark){html[data-theme=system]{--ink:var(--dark-ink,#e6e6e6)}}
+    @media(max-height:110px){:root{--row-gap:4px;--bar-height:max(5px,calc((100dvh - 8px - (var(--rows) - 1)*4px)/var(--rows)))}}
+  </style>
+  <script type="module" src="./legacy-widget.mjs?rev=20261106-1"></script>
+</head>
+<body><main class="time-progress" aria-label="Прогресс времени" data-ready="false"></main></body>
+</html>
