@@ -1,0 +1,116 @@
+<!-- Russian adaptation, 2026-11-06: UI labels, optional ru_name/ru_text/ru_tasks overrides, local dependency paths and responsive safeguards. Original source under Apache-2.0; see NOTICE.md. -->
+<!--
+ * @Author: httishere
+ * @Date: 2021-08-19 10:45:40
+ * @LastEditTime: 2022-12-22 17:38:50
+ * @LastEditors: Tina Huang
+ * @Description: 简易倒数日组件
+ * @FilePath: /notion/days-matter.html
+-->
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Days Matter</title>
+  <script src="./global.js"></script><script src="./i18n.js"></script>
+  <script src="./crypto-js.min.js"></script>
+  <style>
+    body,
+    html {
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      height: 100vh;
+    }
+
+    .days-box {
+      width: 300px;
+      margin: 0 auto;
+      border-radius: 10px;
+      border: 1px solid #333333;
+      overflow: hidden;
+      background-color: #ffffff;
+    }
+
+    .head {
+      width: 100%;
+      height: 50px;
+      text-align: center;
+      background-color: #333333;
+      color: #ffffff;
+      font-size: 18px;
+      line-height: 50px;
+    }
+
+    .content {
+      width: 100%;
+      height: 120px;
+      font-size: 72px;
+      color: #333333;
+      font-weight: bold;
+      font-family: monospace;
+      text-align: center;
+      line-height: 120px;
+      border-bottom: 1px dashed #eeeeee;
+    }
+
+    .bottom {
+      background-color: #f9f9f9;
+      color: #999999;
+      text-align: center;
+      height: 40px;
+      line-height: 40px;
+      font-size: 14px;
+    }
+
+    html[theme="dark"],
+    html[theme="dark"] body {
+      background-color: #191919;
+    }
+
+    /* html[theme="dark"] .days-box{background-color: rgba(0, 0, 0, .3);}
+        html[theme="dark"] .content {border-color: #333;}
+        html[theme="dark"] .head, html[theme="dark"] .bottom{background-color:rgba(75, 154, 195, .3);} */
+  </style>
+<style>html,body{max-width:100%;overflow-x:hidden}*{box-sizing:border-box}#text{overflow-wrap:anywhere}#watermark{font-family:system-ui,sans-serif} .container{max-width:100%} .inner{min-width:0}</style></head>
+
+<body>
+  <div class="container">
+    <div class="days-box">
+      <div class="head" id="title"></div>
+      <div class="content" id="number"></div>
+      <div class="bottom" id="date"></div>
+    </div>
+  </div>
+</body>
+<script>
+  const params = getAllParams(CryptoJS);
+  handleDarkMode(params);
+  var week = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', ];
+  var week_ZN = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', ];
+  window.onload = function () {
+    let target_day = getQueryString('day') || params.day,
+      name = getQueryString('name') || params.name;
+    let _now = new Date().getTime(),
+      _target = new Date(target_day).getTime();
+    // 设置项目名
+    name = _target > _now ? `До события «${name}» осталось` : `После события «${name}» прошло`;
+    document.getElementById('title').innerHTML = name;
+    // 设置时间
+    let times = Math.abs(_target - _now);
+    let d_days = Math.ceil(times / 1000 / 60 / 60 / 24);
+    document.getElementById('number').innerHTML = d_days;
+    let _date = new Date(target_day).getDay();
+    target_day = target_day.split('/').join('-');
+    let text = _target > _now ? 'Целевая дата' : 'Дата начала';
+    document.getElementById('date').innerHTML = `${text}：${target_day} ${week_ZN[_date]}`;
+  }
+</script>
+
+</html>
