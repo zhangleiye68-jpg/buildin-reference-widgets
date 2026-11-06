@@ -3250,7 +3250,7 @@
       "id": "asset-009",
       "kind": "asset",
       "name": "花园动态封面 GIF",
-      "category": "封面与装饰",
+      "category": "动态封面与视频",
       "language": "通用",
       "ownership": "self",
       "status": "ready",
@@ -3262,29 +3262,51 @@
         "label": "自制，可在本库复用",
         "url": null
       },
-      "description": "花园动态封面 GIF",
-      "tags": [],
+      "description": "原 My Life Planner 花园场景 GIF，适合宽幅页面封面。",
+      "tags": [
+        "GIF",
+        "动态素材",
+        "动图",
+        "封面",
+        "循环"
+      ],
       "recommended_size": {
-        "width": 560,
-        "height": 420
+        "width": 1920,
+        "height": 640
       },
       "dependencies": [],
       "notes": [
-        "图片或动图素材，作为图片/原生页面封面使用；不含交互控件。"
+        "真实文件：1920 × 640 px，约 6.01 秒，48 帧。",
+        "已核对线上文件与仓库文件一致，并解码确认多帧画面有变化。",
+        "GIF 保留原有动画；可作为图片或原生页面封面使用。",
+        "文件设置为无限循环。"
       ],
       "parameters": {},
       "preview": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/garden-cover-animated.gif",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-06",
       "verification": {
-        "level": "source-asset"
+        "level": "functional",
+        "scope": "Published bytes and decoded temporal frame changes; no Buildin links changed",
+        "distinct_sampled_frames": 6,
+        "sha256": "4a48a4dbdebed4329fa97ed057fd469bd60e62100ce01be4dd31ac3f063040e2"
       },
-      "replacement_id": null
+      "replacement_id": null,
+      "media": {
+        "type": "gif",
+        "duration_seconds": 6.01,
+        "width": 1920,
+        "height": 640,
+        "frame_count": 48,
+        "bytes": 4508629,
+        "audio": false,
+        "gif_loop_count": 0
+      }
     },
     {
       "id": "asset-010",
       "kind": "asset",
       "name": "池塘动态封面 GIF",
-      "category": "封面与装饰",
+      "category": "动态封面与视频",
       "language": "通用",
       "ownership": "self",
       "status": "ready",
@@ -3296,23 +3318,45 @@
         "label": "自制，可在本库复用",
         "url": null
       },
-      "description": "池塘动态封面 GIF",
-      "tags": [],
+      "description": "原 School Planner 池塘场景的循环 GIF，适合装饰卡片和页面封面。",
+      "tags": [
+        "GIF",
+        "动态素材",
+        "动图",
+        "封面",
+        "循环"
+      ],
       "recommended_size": {
-        "width": 560,
-        "height": 420
+        "width": 960,
+        "height": 540
       },
       "dependencies": [],
       "notes": [
-        "图片或动图素材，作为图片/原生页面封面使用；不含交互控件。"
+        "真实文件：960 × 540 px，约 6 秒，60 帧。",
+        "已核对线上文件与仓库文件一致，并解码确认多帧画面有变化。",
+        "GIF 保留原有动画；可作为图片或原生页面封面使用。",
+        "文件设置为无限循环。"
       ],
       "parameters": {},
       "preview": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/pond-cover.gif",
-      "checked_at": "2026-11-03",
+      "checked_at": "2026-11-06",
       "verification": {
-        "level": "source-asset"
+        "level": "functional",
+        "scope": "Published bytes and decoded temporal frame changes; no Buildin links changed",
+        "distinct_sampled_frames": 6,
+        "sha256": "63abf91250ab699ba082ad78cfe51346e3d2354386b7c6f0df6ef05eb4db69c4"
       },
-      "replacement_id": null
+      "replacement_id": null,
+      "media": {
+        "type": "gif",
+        "duration_seconds": 6.0,
+        "width": 960,
+        "height": 540,
+        "frame_count": 60,
+        "bytes": 8935176,
+        "audio": false,
+        "gif_loop_count": 0
+      }
     },
     {
       "id": "asset-011",
@@ -3347,6 +3391,293 @@
         "level": "source-asset"
       },
       "replacement_id": null
+    },
+    {
+      "id": "school-study-cover-gif",
+      "kind": "asset",
+      "name": "像素植物动态横幅 GIF",
+      "category": "动态封面与视频",
+      "language": "通用",
+      "ownership": "external",
+      "status": "needs-review",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/study-cover.gif",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/study-cover.gif",
+      "code_url": null,
+      "license": {
+        "label": "既有素材引用；原始再分发许可待核对",
+        "url": null
+      },
+      "description": "原 School Planner 中的像素植物循环横幅，适合窄横幅或原生页面封面。",
+      "tags": [
+        "GIF",
+        "动态素材",
+        "动图",
+        "封面",
+        "循环",
+        "像素",
+        "植物"
+      ],
+      "recommended_size": {
+        "width": 1280,
+        "height": 184
+      },
+      "dependencies": [],
+      "notes": [
+        "真实文件：1280 × 184 px，约 8.08 秒，97 帧。",
+        "已核对线上文件与仓库文件一致，并解码确认多帧画面有变化。",
+        "GIF 保留原有动画；可作为图片或原生页面封面使用。",
+        "文件设置为无限循环。",
+        "目录缩略图为静帧；打开素材链接可查看实际动画。",
+        "此前模板迁入的已有文件；未找到原始作者和再分发许可记录，按既有素材引用收录，不标为自制或开源。"
+      ],
+      "parameters": {},
+      "preview": "previews/school-study-cover-gif.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "functional",
+        "scope": "Published bytes and decoded temporal frame changes; no Buildin links changed",
+        "distinct_sampled_frames": 8,
+        "sha256": "d59eea394e75ec5c2e53c0412afd9fe709a67702e738441bb051a99fb4b88f7c"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "gif",
+        "duration_seconds": 8.08,
+        "width": 1280,
+        "height": 184,
+        "frame_count": 97,
+        "bytes": 2468029,
+        "audio": false,
+        "gif_loop_count": 0
+      }
+    },
+    {
+      "id": "school-pond-loop-mp4",
+      "kind": "asset",
+      "name": "池塘循环视频 MP4",
+      "category": "动态封面与视频",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/pond-loop.mp4",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/pond-loop.mp4",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/pond-loop.mp4",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "原 School Planner 池塘视频文件，与池塘 GIF 对应；保留原文件及音轨。",
+      "tags": [
+        "MP4",
+        "动态素材",
+        "视频",
+        "封面",
+        "循环"
+      ],
+      "recommended_size": {
+        "width": 1280,
+        "height": 720
+      },
+      "dependencies": [],
+      "notes": [
+        "真实文件：1280 × 720 px，约 6.08 秒，145 帧。",
+        "已核对线上文件与仓库文件一致，并解码确认多帧画面有变化。",
+        "MP4 播放与循环由嵌入播放器控制；作为原生图片封面时请选择对应 GIF。",
+        "文件包含音轨，静音播放需由播放器设置。"
+      ],
+      "parameters": {},
+      "preview": "previews/school-pond-loop-mp4.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "functional",
+        "scope": "Published bytes and decoded temporal frame changes; no Buildin links changed",
+        "distinct_sampled_frames": 6,
+        "sha256": "d930710b1405b8ca2cbdf8477f6f19d477aa031395142598a99b9afc27bb4007"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "video",
+        "duration_seconds": 6.08,
+        "width": 1280,
+        "height": 720,
+        "frame_count": 145,
+        "bytes": 3107368,
+        "audio": true,
+        "gif_loop_count": null
+      }
+    },
+    {
+      "id": "garden-cover-preview-mp4",
+      "kind": "asset",
+      "name": "花园动态封面 MP4",
+      "category": "动态封面与视频",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/garden-cover-preview.mp4",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/my-life-planner/assets/garden-cover-preview.mp4",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/my-life-planner/assets/garden-cover-preview.mp4",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "原 My Life Planner 花园场景视频，与花园 GIF 对应。",
+      "tags": [
+        "MP4",
+        "动态素材",
+        "视频",
+        "封面",
+        "循环"
+      ],
+      "recommended_size": {
+        "width": 1920,
+        "height": 640
+      },
+      "dependencies": [],
+      "notes": [
+        "真实文件：1920 × 640 px，约 6 秒，60 帧。",
+        "已核对线上文件与仓库文件一致，并解码确认多帧画面有变化。",
+        "MP4 播放与循环由嵌入播放器控制；作为原生图片封面时请选择对应 GIF。",
+        "文件没有音轨。"
+      ],
+      "parameters": {},
+      "preview": "previews/garden-cover-preview-mp4.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "functional",
+        "scope": "Published bytes and decoded temporal frame changes; no Buildin links changed",
+        "distinct_sampled_frames": 6,
+        "sha256": "f0a8f56e08b36bcf20cd95e440e6fe7a563ebd17d81263ddd270b4af5efe159b"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "video",
+        "duration_seconds": 6.0,
+        "width": 1920,
+        "height": 640,
+        "frame_count": 60,
+        "bytes": 589975,
+        "audio": false,
+        "gif_loop_count": null
+      }
+    },
+    {
+      "id": "mediterranean-cover-loop-v1-gif",
+      "kind": "asset",
+      "name": "地中海动态封面 GIF（历史版）",
+      "category": "动态封面与视频",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v4/cover-dynamic-loop-v1.gif",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/mediterranean/v4/cover-dynamic-loop-v1.gif",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/mediterranean/v4/cover-dynamic-loop-v1.gif",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "地中海模板已有的首版动态封面；保留旧地址供历史模板继续使用。",
+      "tags": [
+        "GIF",
+        "动态素材",
+        "动图",
+        "封面",
+        "循环"
+      ],
+      "recommended_size": {
+        "width": 1200,
+        "height": 400
+      },
+      "dependencies": [],
+      "notes": [
+        "真实文件：1200 × 400 px，约 6 秒，60 帧。",
+        "已核对线上文件与仓库文件一致，并解码确认多帧画面有变化。",
+        "GIF 保留原有动画；可作为图片或原生页面封面使用。",
+        "文件设置为无限循环。",
+        "目录缩略图为静帧；打开素材链接可查看实际动画。",
+        "这是历史版本；新模板优先使用“地中海固定机位动态封面 GIF”。"
+      ],
+      "parameters": {},
+      "preview": "previews/mediterranean-cover-loop-v1-gif.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "functional",
+        "scope": "Published bytes and decoded temporal frame changes; no Buildin links changed",
+        "distinct_sampled_frames": 6,
+        "sha256": "11cf5cf735543b736730e3cd51d15aac9cd878638112fc683673ec5f93377c16"
+      },
+      "replacement_id": "mediterranean-cover-fixed-camera-gif",
+      "media": {
+        "type": "gif",
+        "duration_seconds": 6.0,
+        "width": 1200,
+        "height": 400,
+        "frame_count": 60,
+        "bytes": 12620126,
+        "audio": false,
+        "gif_loop_count": 0
+      }
+    },
+    {
+      "id": "mediterranean-cover-fixed-camera-gif",
+      "kind": "asset",
+      "name": "地中海固定机位动态封面 GIF",
+      "category": "动态封面与视频",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v5/cover-fixed-camera-hd.gif",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/mediterranean/v5/cover-fixed-camera-hd.gif",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/mediterranean/v5/cover-fixed-camera-hd.gif",
+      "license": {
+        "label": "自制，可在本库复用",
+        "url": null
+      },
+      "description": "地中海模板固定机位高清动态封面，适合宽幅原生页面封面。",
+      "tags": [
+        "GIF",
+        "动态素材",
+        "动图",
+        "封面",
+        "循环"
+      ],
+      "recommended_size": {
+        "width": 1920,
+        "height": 640
+      },
+      "dependencies": [],
+      "notes": [
+        "真实文件：1920 × 640 px，约 6 秒，120 帧。",
+        "已核对线上文件与仓库文件一致，并解码确认多帧画面有变化。",
+        "GIF 保留原有动画；可作为图片或原生页面封面使用。",
+        "文件设置为无限循环。",
+        "目录缩略图为静帧；打开素材链接可查看实际动画。"
+      ],
+      "parameters": {},
+      "preview": "previews/mediterranean-cover-fixed-camera-gif.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "functional",
+        "scope": "Published bytes and decoded temporal frame changes; no Buildin links changed",
+        "distinct_sampled_frames": 6,
+        "sha256": "9984dead6497785222ee7a558230ad67c4616ddef8473d5b0ca9a3d06fdb88d3"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "gif",
+        "duration_seconds": 6.0,
+        "width": 1920,
+        "height": 640,
+        "frame_count": 120,
+        "bytes": 10534970,
+        "audio": false,
+        "gif_loop_count": 0
+      }
     }
   ]
 }

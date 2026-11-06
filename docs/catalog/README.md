@@ -1,6 +1,6 @@
 # Buildin 统一组件库
 
-更新：2026-11-06 · 55 个组件 · 11 项素材
+更新：2026-11-06 · 55 个组件 · 16 项素材
 
 [打开可搜索的图文目录](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/catalog/) · [读取完整 JSON](components.json)
 
@@ -1466,50 +1466,6 @@ https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranea
 
 目录 ID：`asset-008`
 
-### 花园动态封面 GIF · 通用
-
-![花园动态封面 GIF默认预览](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/garden-cover-animated.gif)
-
-自制 · 可用 · 建议 560 × 420 px
-
-花园动态封面 GIF
-
-[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/garden-cover-animated.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/my-life-planner/assets/garden-cover-animated.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/my-life-planner/assets/garden-cover-animated.gif)
-
-嵌入／素材地址：
-
-```text
-https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/garden-cover-animated.gif
-```
-
-- 图片或动图素材，作为图片/原生页面封面使用；不含交互控件。
-
-许可：自制，可在本库复用
-
-目录 ID：`asset-009`
-
-### 池塘动态封面 GIF · 通用
-
-![池塘动态封面 GIF默认预览](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/pond-cover.gif)
-
-自制 · 可用 · 建议 560 × 420 px
-
-池塘动态封面 GIF
-
-[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/pond-cover.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/pond-cover.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/pond-cover.gif)
-
-嵌入／素材地址：
-
-```text
-https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/pond-cover.gif
-```
-
-- 图片或动图素材，作为图片/原生页面封面使用；不含交互控件。
-
-许可：自制，可在本库复用
-
-目录 ID：`asset-010`
-
 ### 透明封面占位素材 · 通用
 
 ![透明封面占位素材默认预览](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/transparent-cover-placeholder.svg)
@@ -1531,4 +1487,186 @@ https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/tran
 许可：自制，可在本库复用
 
 目录 ID：`asset-011`
+
+## 动态封面与视频
+
+### 花园动态封面 GIF · 通用
+
+![花园动态封面 GIF默认预览](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/garden-cover-animated.gif)
+
+自制 · 可用 · 建议 1920 × 640 px
+
+原 My Life Planner 花园场景 GIF，适合宽幅页面封面。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/garden-cover-animated.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/my-life-planner/assets/garden-cover-animated.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/my-life-planner/assets/garden-cover-animated.gif)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/garden-cover-animated.gif
+```
+
+- 真实文件：1920 × 640 px，约 6.01 秒，48 帧。
+- 已核对线上文件与仓库文件一致，并解码确认多帧画面有变化。
+- GIF 保留原有动画；可作为图片或原生页面封面使用。
+- 文件设置为无限循环。
+
+许可：自制，可在本库复用
+
+目录 ID：`asset-009`
+
+### 池塘动态封面 GIF · 通用
+
+![池塘动态封面 GIF默认预览](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/pond-cover.gif)
+
+自制 · 可用 · 建议 960 × 540 px
+
+原 School Planner 池塘场景的循环 GIF，适合装饰卡片和页面封面。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/pond-cover.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/pond-cover.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/pond-cover.gif)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/pond-cover.gif
+```
+
+- 真实文件：960 × 540 px，约 6 秒，60 帧。
+- 已核对线上文件与仓库文件一致，并解码确认多帧画面有变化。
+- GIF 保留原有动画；可作为图片或原生页面封面使用。
+- 文件设置为无限循环。
+
+许可：自制，可在本库复用
+
+目录 ID：`asset-010`
+
+### 像素植物动态横幅 GIF · 通用
+
+![像素植物动态横幅 GIF默认预览](previews/school-study-cover-gif.png)
+
+第三方引用 · 待复核 · 建议 1280 × 184 px
+
+原 School Planner 中的像素植物循环横幅，适合窄横幅或原生页面封面。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/study-cover.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/study-cover.gif)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/study-cover.gif
+```
+
+- 真实文件：1280 × 184 px，约 8.08 秒，97 帧。
+- 已核对线上文件与仓库文件一致，并解码确认多帧画面有变化。
+- GIF 保留原有动画；可作为图片或原生页面封面使用。
+- 文件设置为无限循环。
+- 目录缩略图为静帧；打开素材链接可查看实际动画。
+- 此前模板迁入的已有文件；未找到原始作者和再分发许可记录，按既有素材引用收录，不标为自制或开源。
+
+许可：既有素材引用；原始再分发许可待核对
+
+目录 ID：`school-study-cover-gif`
+
+### 池塘循环视频 MP4 · 通用
+
+![池塘循环视频 MP4默认预览](previews/school-pond-loop-mp4.png)
+
+自制 · 可用 · 建议 1280 × 720 px
+
+原 School Planner 池塘视频文件，与池塘 GIF 对应；保留原文件及音轨。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/pond-loop.mp4) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/pond-loop.mp4) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/pond-loop.mp4)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/pond-loop.mp4
+```
+
+- 真实文件：1280 × 720 px，约 6.08 秒，145 帧。
+- 已核对线上文件与仓库文件一致，并解码确认多帧画面有变化。
+- MP4 播放与循环由嵌入播放器控制；作为原生图片封面时请选择对应 GIF。
+- 文件包含音轨，静音播放需由播放器设置。
+
+许可：自制，可在本库复用
+
+目录 ID：`school-pond-loop-mp4`
+
+### 花园动态封面 MP4 · 通用
+
+![花园动态封面 MP4默认预览](previews/garden-cover-preview-mp4.png)
+
+自制 · 可用 · 建议 1920 × 640 px
+
+原 My Life Planner 花园场景视频，与花园 GIF 对应。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/garden-cover-preview.mp4) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/my-life-planner/assets/garden-cover-preview.mp4) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/my-life-planner/assets/garden-cover-preview.mp4)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/garden-cover-preview.mp4
+```
+
+- 真实文件：1920 × 640 px，约 6 秒，60 帧。
+- 已核对线上文件与仓库文件一致，并解码确认多帧画面有变化。
+- MP4 播放与循环由嵌入播放器控制；作为原生图片封面时请选择对应 GIF。
+- 文件没有音轨。
+
+许可：自制，可在本库复用
+
+目录 ID：`garden-cover-preview-mp4`
+
+### 地中海动态封面 GIF（历史版） · 通用
+
+![地中海动态封面 GIF（历史版）默认预览](previews/mediterranean-cover-loop-v1-gif.png)
+
+自制 · 可用 · 建议 1200 × 400 px
+
+地中海模板已有的首版动态封面；保留旧地址供历史模板继续使用。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v4/cover-dynamic-loop-v1.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/mediterranean/v4/cover-dynamic-loop-v1.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/mediterranean/v4/cover-dynamic-loop-v1.gif)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v4/cover-dynamic-loop-v1.gif
+```
+
+- 真实文件：1200 × 400 px，约 6 秒，60 帧。
+- 已核对线上文件与仓库文件一致，并解码确认多帧画面有变化。
+- GIF 保留原有动画；可作为图片或原生页面封面使用。
+- 文件设置为无限循环。
+- 目录缩略图为静帧；打开素材链接可查看实际动画。
+- 这是历史版本；新模板优先使用“地中海固定机位动态封面 GIF”。
+
+许可：自制，可在本库复用
+
+目录 ID：`mediterranean-cover-loop-v1-gif`
+
+### 地中海固定机位动态封面 GIF · 通用
+
+![地中海固定机位动态封面 GIF默认预览](previews/mediterranean-cover-fixed-camera-gif.png)
+
+自制 · 可用 · 建议 1920 × 640 px
+
+地中海模板固定机位高清动态封面，适合宽幅原生页面封面。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v5/cover-fixed-camera-hd.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/mediterranean/v5/cover-fixed-camera-hd.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/mediterranean/v5/cover-fixed-camera-hd.gif)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v5/cover-fixed-camera-hd.gif
+```
+
+- 真实文件：1920 × 640 px，约 6 秒，120 帧。
+- 已核对线上文件与仓库文件一致，并解码确认多帧画面有变化。
+- GIF 保留原有动画；可作为图片或原生页面封面使用。
+- 文件设置为无限循环。
+- 目录缩略图为静帧；打开素材链接可查看实际动画。
+
+许可：自制，可在本库复用
+
+目录 ID：`mediterranean-cover-fixed-camera-gif`
 

@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03",
+  "updated_at": "2026-11-06",
   "note": "仓库中全部现有图片、动图和视频素材（不含目录缩略图）。许可依对应组件或相邻归属说明；不把第三方资源统一声明为自制。",
   "assets": [
     {
@@ -147,14 +147,32 @@
       "kind": "animation",
       "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v4/cover-dynamic-loop-v1.gif",
       "bytes": 12620126,
-      "sha256": "11cf5cf735543b736730e3cd51d15aac9cd878638112fc683673ec5f93377c16"
+      "sha256": "11cf5cf735543b736730e3cd51d15aac9cd878638112fc683673ec5f93377c16",
+      "media": {
+        "width": 1200,
+        "height": 400,
+        "frames": 60,
+        "duration_seconds": 6.0,
+        "audio": false,
+        "gif_loop_count": 0
+      },
+      "checked_at": "2026-11-06"
     },
     {
       "path": "assets/mediterranean/v5/cover-fixed-camera-hd.gif",
       "kind": "animation",
       "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranean/v5/cover-fixed-camera-hd.gif",
       "bytes": 10534970,
-      "sha256": "9984dead6497785222ee7a558230ad67c4616ddef8473d5b0ca9a3d06fdb88d3"
+      "sha256": "9984dead6497785222ee7a558230ad67c4616ddef8473d5b0ca9a3d06fdb88d3",
+      "media": {
+        "width": 1920,
+        "height": 640,
+        "frames": 120,
+        "duration_seconds": 6.0,
+        "audio": false,
+        "gif_loop_count": 0
+      },
+      "checked_at": "2026-11-06"
     },
     {
       "path": "before-home-cover.png",
@@ -210,14 +228,32 @@
       "kind": "animation",
       "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/garden-cover-animated.gif",
       "bytes": 4508629,
-      "sha256": "4a48a4dbdebed4329fa97ed057fd469bd60e62100ce01be4dd31ac3f063040e2"
+      "sha256": "4a48a4dbdebed4329fa97ed057fd469bd60e62100ce01be4dd31ac3f063040e2",
+      "media": {
+        "width": 1920,
+        "height": 640,
+        "frames": 48,
+        "duration_seconds": 6.01,
+        "audio": false,
+        "gif_loop_count": 0
+      },
+      "checked_at": "2026-11-06"
     },
     {
       "path": "my-life-planner/assets/garden-cover-preview.mp4",
       "kind": "video",
       "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/my-life-planner/assets/garden-cover-preview.mp4",
       "bytes": 589975,
-      "sha256": "f0a8f56e08b36bcf20cd95e440e6fe7a563ebd17d81263ddd270b4af5efe159b"
+      "sha256": "f0a8f56e08b36bcf20cd95e440e6fe7a563ebd17d81263ddd270b4af5efe159b",
+      "media": {
+        "width": 1920,
+        "height": 640,
+        "frames": 60,
+        "duration_seconds": 6.0,
+        "audio": false,
+        "gif_loop_count": null
+      },
+      "checked_at": "2026-11-06"
     },
     {
       "path": "my-life-planner/assets/garden-cover.png",
@@ -294,14 +330,32 @@
       "kind": "animation",
       "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/pond-cover.gif",
       "bytes": 8935176,
-      "sha256": "63abf91250ab699ba082ad78cfe51346e3d2354386b7c6f0df6ef05eb4db69c4"
+      "sha256": "63abf91250ab699ba082ad78cfe51346e3d2354386b7c6f0df6ef05eb4db69c4",
+      "media": {
+        "width": 960,
+        "height": 540,
+        "frames": 60,
+        "duration_seconds": 6.0,
+        "audio": false,
+        "gif_loop_count": 0
+      },
+      "checked_at": "2026-11-06"
     },
     {
       "path": "school-planner/pond-loop.mp4",
       "kind": "video",
       "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/pond-loop.mp4",
       "bytes": 3107368,
-      "sha256": "d930710b1405b8ca2cbdf8477f6f19d477aa031395142598a99b9afc27bb4007"
+      "sha256": "d930710b1405b8ca2cbdf8477f6f19d477aa031395142598a99b9afc27bb4007",
+      "media": {
+        "width": 1280,
+        "height": 720,
+        "frames": 145,
+        "duration_seconds": 6.08,
+        "audio": true,
+        "gif_loop_count": null
+      },
+      "checked_at": "2026-11-06"
     },
     {
       "path": "school-planner/pond-poster.png",
@@ -315,7 +369,16 @@
       "kind": "animation",
       "url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/study-cover.gif",
       "bytes": 2468029,
-      "sha256": "d59eea394e75ec5c2e53c0412afd9fe709a67702e738441bb051a99fb4b88f7c"
+      "sha256": "d59eea394e75ec5c2e53c0412afd9fe709a67702e738441bb051a99fb4b88f7c",
+      "media": {
+        "width": 1280,
+        "height": 184,
+        "frames": 97,
+        "duration_seconds": 8.08,
+        "audio": false,
+        "gif_loop_count": 0
+      },
+      "checked_at": "2026-11-06"
     },
     {
       "path": "school-planner/transparent-cover-placeholder.svg",

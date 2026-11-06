@@ -21,12 +21,12 @@
     <form class="filters" id="filters" role="search" onsubmit="return false">
       <label class="search">搜索组件<input id="search" type="search" placeholder="日历、俄语、阅读、深色…" autocomplete="off"></label>
       <label>用途<select id="category"><option value="">全部用途</option></select></label>
-      <label>类型<select id="kind"><option value="">组件与素材</option><option value="widget">交互组件</option><option value="asset">图片与动图</option></select></label>
+      <label>类型<select id="kind"><option value="">组件与素材</option><option value="widget">交互组件</option><option value="asset">图片、动图与视频</option></select></label>
       <label>来源<select id="owner"><option value="">全部来源</option><option value="self">自制 · GitHub</option><option value="community">社区 · 已收录源码</option><option value="external">公开服务引用</option></select></label>
       <label>状态<select id="status"><option value="">全部状态</option><option value="ready">可用</option><option value="sample">含示例内容</option><option value="needs-review">待复核</option><option value="retired">已停用参考</option><option value="unavailable">当前不可用</option><option value="reference">内部占位素材</option></select></label>
       <button id="clear-filters" type="button">清除筛选</button>
     </form>
-    <div class="results-line"><p id="result-count" role="status"></p><a href="README.md">完整目录</a><a href="components.json">组件数据 JSON</a></div>
+    <div class="results-line"><p id="result-count" role="status"></p><a href="README.md">完整目录</a><a href="DYNAMIC-MEDIA.md">动态素材清单</a><a href="components.json">组件数据 JSON</a></div>
     <section class="grid" id="grid" aria-label="组件列表"></section>
     <p id="empty" hidden>没有匹配的条目。先换个关键词；仍没有合适的，再寻找新的公开来源并补充到仓库。</p>
     <p id="error" role="alert" hidden></p>
