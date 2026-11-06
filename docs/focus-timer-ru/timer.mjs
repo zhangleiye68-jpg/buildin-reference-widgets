@@ -69,8 +69,17 @@ export function mountTimer(doc = document) {
   doc.getElementById('reset').addEventListener('click', () => change(() => timer.reset()));
   doc.querySelectorAll('[data-seconds]').forEach(button => button.addEventListener('click', () => change(() => timer.select(Number(button.dataset.seconds)))));
   render();
-  const interval = setInterval(render, 200);
-  window.addEventListener('pagehide', () => clearInterval(interval), { once: true });
+  let interval = null;
+  const resumeRefresh = () => {
+    if (interval === null) interval = setInterval(render, 200);
+    render();
+  };
+  window.addEventListener('pagehide', () => {
+    clearInterval(interval);
+    interval = null;
+  });
+  window.addEventListener('pageshow', resumeRefresh);
+  resumeRefresh();
   return timer;
 }
 

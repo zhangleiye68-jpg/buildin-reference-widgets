@@ -30,7 +30,7 @@
       white-space: nowrap; font-variant-numeric: tabular-nums; letter-spacing: -.025em; }
     .condition { margin-top: 5px; color: var(--muted); font-size: 12.5px;
       line-height: 1.25; overflow-wrap: anywhere; }
-    .forecast { display: grid; grid-template-columns: repeat(5, 64px);
+    .forecast { display: grid; grid-template-columns: repeat(var(--forecast-days, 5), 64px);
       gap: 6px; justify-content: space-between; margin-top: 20px; text-align: center; }
     .day { min-width: 0; }
     .weekday { font-size: 14.5px; line-height: 1.15; font-weight: 700; }
@@ -77,6 +77,18 @@
   </main>
   </div>
   <script>
+    // Set the natural width before the shared deferred fitting script runs.
+    {
+      const host = document.querySelector('.weather');
+      const count = new URLSearchParams(location.search).get('forecast_days') === '7' ? 7 : 5;
+      host.dataset.forecastDays = String(count);
+      host.dataset.fitMinWidth = count === 7 ? '484' : '344';
+      host.style.width = `${host.dataset.fitMinWidth}px`;
+      host.style.setProperty('--forecast-days', count);
+    }
+  </script>
+  <script type="module">
+    import {validWeatherData} from './weather-model.mjs?rev=20261106-1';
     (() => {
       'use strict';
       const params = new URLSearchParams(location.search);
@@ -91,13 +103,24 @@
       let timeZone = params.get('tz') || 'America/Los_Angeles';
       try { new Intl.DateTimeFormat('ru', {timeZone}).format(); } catch { timeZone = 'America/Los_Angeles'; }
       const host = document.querySelector('.weather');
+      const forecastDays = Number(host.dataset.forecastDays);
+      if (params.get('theme') === 'light') {
+        host.style.setProperty('--ink', '#262626');
+        host.style.setProperty('--muted', '#666666');
+      }
+      host.style.color = 'var(--ink)';
       const currentIcon = document.querySelector('[data-current-icon]');
       const temperature = document.querySelector('[data-temperature]');
       const condition = document.querySelector('[data-condition]');
       const forecast = document.querySelector('[data-forecast]');
+      forecast.setAttribute('aria-label', forecastDays === 7 ? 'Прогноз на семь дней' : 'Прогноз на пять дней');
+      if (params.get('greyscale') === '1') {
+        currentIcon.style.filter = 'grayscale(1)';
+        forecast.style.filter = 'grayscale(1)';
+      }
       document.querySelector('[data-city]').textContent = city;
       host.setAttribute('aria-label', `Погода: ${city}`);
-      const cacheKey = `planner-weather-celsius-v1:${latitude}:${longitude}:${timeZone}`;
+      const cacheKey = `planner-weather-celsius-v1:${latitude}:${longitude}:${timeZone}:${forecastDays}`;
       const refreshInterval = 15 * 60 * 1000;
       const maxCacheAge = 60 * 60 * 1000;
       let cached;
@@ -122,12 +145,7 @@
         return `<svg class="${className}" viewBox="0 0 48 48" aria-hidden="true"><use href="#${name}"/></svg>`;
       }
       function valid(data) {
-        const daily = data?.daily;
-        return typeof data?.current?.temperature_2m === 'number' && Number.isFinite(data.current.temperature_2m)
-          && Number.isInteger(data.current.weather_code) && daily
-          && ['time','weather_code','temperature_2m_max','temperature_2m_min'].every(k => Array.isArray(daily[k]) && daily[k].length >= 5)
-          && daily.time.slice(0,5).every(t => /^\d{4}-\d{2}-\d{2}$/.test(t))
-          && ['weather_code','temperature_2m_max','temperature_2m_min'].every(k => daily[k].slice(0,5).every(n => typeof n === 'number' && Number.isFinite(n)));
+        return validWeatherData(data, forecastDays);
       }
       const degrees = n => `${Math.round(n)}\u00a0°C`;
       const weekday = t => {
@@ -157,7 +175,7 @@
         currentIcon.innerHTML = icon(current.icon);
         temperature.textContent = degrees(data.current.temperature_2m);
         condition.textContent = state === 'stale' ? 'Данные устарели' : current.label;
-        forecast.replaceChildren(...data.daily.time.slice(0,5).map((day, i) => {
+        forecast.replaceChildren(...data.daily.time.slice(0,forecastDays).map((day, i) => {
           const detail = weather(data.daily.weather_code[i]);
           const col = makeDay(day);
           col.setAttribute('aria-label', `${fullDate(day)}, ${detail.label}, максимум ${degrees(data.daily.temperature_2m_max[i])}, минимум ${degrees(data.daily.temperature_2m_min[i])}`);
@@ -177,10 +195,10 @@
         forecast.querySelectorAll('.day').forEach(node => node.setAttribute('aria-label', `${fullDate(node.querySelector('.date').dateTime)}, нет данных`));
         host.dataset.status = 'unavailable';
       }
-      // Preserve the five-column structure while loading. Never fabricate weather data.
+      // Preserve the selected column count while loading. Never fabricate weather data.
       const localToday = new Intl.DateTimeFormat('sv-SE', {timeZone, year: 'numeric', month: '2-digit', day: '2-digit'}).format(new Date());
       const today = new Date(`${localToday}T12:00:00Z`);
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < forecastDays; i++) {
         const day = new Date(today.getTime() + i * 86400000).toISOString().slice(0,10);
         forecast.append(makeDay(day));
       }
@@ -199,7 +217,7 @@
         try {
           const url = new URL('https://api.open-meteo.com/v1/forecast');
           url.search = new URLSearchParams({latitude, longitude, current: 'temperature_2m,weather_code,is_day',
-            daily: 'weather_code,temperature_2m_max,temperature_2m_min', temperature_unit: 'celsius', timezone: timeZone, forecast_days: '5'});
+            daily: 'weather_code,temperature_2m_max,temperature_2m_min', temperature_unit: 'celsius', timezone: timeZone, forecast_days: String(forecastDays)});
           const response = await fetch(url, {signal: controller.signal});
           if (!response.ok) throw new Error(`Weather unavailable: ${response.status}`);
           const data = await response.json();
