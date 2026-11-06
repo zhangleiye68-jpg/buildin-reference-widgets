@@ -118,12 +118,14 @@
       if(query.get('digital')==='1'){const time=document.createElement('time');time.className='clock-digital';time.id='clock-digital';root.querySelector('.clock').append(time)}
       const svgNS='http://www.w3.org/2000/svg';
       for(let index=0;index<60;index++){
-        const line=document.createElementNS(svgNS,'line'),major=index%5===0;
+        const major=index%5===0;
+        if(minimal&&!major)continue;
+        const line=document.createElementNS(svgNS,'line');
         line.setAttribute('class','tick'+(major?' hour-tick':''));
         for(const [name,value]of Object.entries({x1:120,y1:major?23:25,x2:120,y2:major?30:28}))line.setAttribute(name,String(value));
         line.setAttribute('transform',`rotate(${index*6} 120 120)`);root.querySelector('#ticks').append(line);
       }
-      for(const [number,x,y]of [[12,120,47],[3,193,120],[6,120,193],[9,47,120]]){const text=document.createElementNS(svgNS,'text');text.setAttribute('class','number');text.setAttribute('x',x);text.setAttribute('y',y);text.textContent=number;root.querySelector('#numbers').append(text)}
+      if(!minimal)for(const [number,x,y]of [[12,120,47],[3,193,120],[6,120,193],[9,47,120]]){const text=document.createElementNS(svgNS,'text');text.setAttribute('class','number');text.setAttribute('x',x);text.setAttribute('y',y);text.textContent=number;root.querySelector('#numbers').append(text)}
       const render=()=>{
         const now=new Date(),{seconds,minutes,hours}=clockParts(now,smooth);
         for(const [id,angle]of [['hour',hours*30],['minute',minutes*6],['second',seconds*6]])root.querySelector('#'+id).setAttribute('transform',`rotate(${angle} 120 120)`);
