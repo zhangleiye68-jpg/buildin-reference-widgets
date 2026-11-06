@@ -3398,14 +3398,14 @@
       "name": "像素植物动态横幅 GIF",
       "category": "动态封面与视频",
       "language": "通用",
-      "ownership": "external",
-      "status": "needs-review",
+      "ownership": "self",
+      "status": "ready",
       "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/study-cover.gif",
       "aliases": [],
       "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/study-cover.gif",
-      "code_url": null,
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/study-cover.gif",
       "license": {
-        "label": "既有素材引用；原始再分发许可待核对",
+        "label": "此前自制模板的生成素材，可在本库复用",
         "url": null
       },
       "description": "原 School Planner 中的像素植物循环横幅，适合窄横幅或原生页面封面。",
@@ -3429,7 +3429,7 @@
         "GIF 保留原有动画；可作为图片或原生页面封面使用。",
         "文件设置为无限循环。",
         "目录缩略图为静帧；打开素材链接可查看实际动画。",
-        "此前模板迁入的已有文件；未找到原始作者和再分发许可记录，按既有素材引用收录，不标为自制或开源。"
+        "已与此前顶部封面生成记录和原始输出逐字节核对，确认属于自制素材。"
       ],
       "parameters": {},
       "preview": "previews/school-study-cover-gif.png",
@@ -3677,6 +3677,1402 @@
         "bytes": 10534970,
         "audio": false,
         "gif_loop_count": 0
+      }
+    },
+    {
+      "id": "school-planner-window-gif",
+      "kind": "asset",
+      "name": "像素窗边植物动图",
+      "category": "动态封面与视频",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/school-planner/window.gif",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/school-planner/window.gif",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/school-planner/window.gif",
+      "license": {
+        "label": "此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可",
+        "url": null
+      },
+      "description": "像素学生计划的动态装饰素材。",
+      "tags": [
+        "GIF",
+        "动态素材",
+        "装饰",
+        "像素学生计划"
+      ],
+      "recommended_size": {
+        "width": 480,
+        "height": 600
+      },
+      "dependencies": [],
+      "notes": [
+        "480 × 600 px，约 8.08 秒，97 帧。",
+        "目录为静帧预览；打开素材地址可查看完整动态效果。",
+        "可作为图片、装饰块或原生页面封面使用；按原始比例放置。",
+        "GIF 已设为无限循环。"
+      ],
+      "parameters": {},
+      "preview": "previews/school-planner-window-gif.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "preview",
+        "scope": "Verified against earlier local source; decoded temporal frames and actual still preview",
+        "distinct_sampled_frames": 16,
+        "sha256": "7ea1c5fda50ea63bda06ff856c176b47b10a4589699608d4bb0a1eebe738f53c"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "gif",
+        "duration_seconds": 8.08,
+        "width": 480,
+        "height": 600,
+        "frame_count": 97,
+        "bytes": 6470854,
+        "audio": false,
+        "gif_loop_count": 0,
+        "sha256": "7ea1c5fda50ea63bda06ff856c176b47b10a4589699608d4bb0a1eebe738f53c",
+        "usage": "decoration",
+        "hosted_in_repository": true
+      }
+    },
+    {
+      "id": "school-original-pixel-cover-reference",
+      "kind": "asset",
+      "name": "原像素植物封面 GIF（第三方引用）",
+      "category": "动态封面与视频",
+      "language": "通用",
+      "ownership": "external",
+      "status": "needs-review",
+      "embed_url": "https://64.media.tumblr.com/ce237ad7762fc6bce812f5f47f499d76/215844a9b980cfd1-b8/s1280x1920/7acfce390ffb6e00a0b8f0dce34b0c0169943001.gif",
+      "aliases": [],
+      "source_url": "https://64.media.tumblr.com/ce237ad7762fc6bce812f5f47f499d76/215844a9b980cfd1-b8/s1280x1920/7acfce390ffb6e00a0b8f0dce34b0c0169943001.gif",
+      "code_url": null,
+      "license": {
+        "label": "第三方公开素材，仅引用；再分发许可未确认",
+        "url": null
+      },
+      "description": "原学生计划模板的动态装饰素材。",
+      "tags": [
+        "GIF",
+        "动态素材",
+        "装饰",
+        "第三方引用"
+      ],
+      "recommended_size": {
+        "width": 700,
+        "height": 434
+      },
+      "dependencies": [
+        "第三方图片托管"
+      ],
+      "notes": [
+        "700 × 434 px，约 6.64 秒，83 帧。",
+        "目录为静帧预览；打开素材地址可查看完整动态效果。",
+        "只收录公开来源链接、说明及静帧参考图；未镜像原 GIF 文件，也未声明开源或自制。",
+        "GIF 已设为无限循环。"
+      ],
+      "parameters": {},
+      "preview": "previews/school-original-pixel-cover-reference.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "preview",
+        "scope": "Verified against earlier local source; decoded temporal frames and actual still preview",
+        "distinct_sampled_frames": 13,
+        "sha256": "d1e00f2f888ad9c498e936e3385dbca27c3c0338ed71f21ddbe35cf8b9f012ba"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "gif",
+        "duration_seconds": 6.64,
+        "width": 700,
+        "height": 434,
+        "frame_count": 83,
+        "bytes": 247421,
+        "audio": false,
+        "gif_loop_count": 0,
+        "sha256": "d1e00f2f888ad9c498e936e3385dbca27c3c0338ed71f21ddbe35cf8b9f012ba",
+        "usage": "decoration",
+        "hosted_in_repository": false
+      }
+    },
+    {
+      "id": "inner-garden-halo-gif",
+      "kind": "asset",
+      "name": "Inner Garden 额心光环动图",
+      "category": "动态封面与视频",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/inner-garden/halo.gif",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/inner-garden/halo.gif",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/inner-garden/halo.gif",
+      "license": {
+        "label": "此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可",
+        "url": null
+      },
+      "description": "My Inner Garden的动态装饰素材。",
+      "tags": [
+        "GIF",
+        "动态素材",
+        "装饰",
+        "My Inner Garden"
+      ],
+      "recommended_size": {
+        "width": 720,
+        "height": 240
+      },
+      "dependencies": [],
+      "notes": [
+        "720 × 240 px，约 5.07 秒，71 帧。",
+        "目录为静帧预览；打开素材地址可查看完整动态效果。",
+        "可作为图片、装饰块或原生页面封面使用；按原始比例放置。",
+        "GIF 已设为无限循环。"
+      ],
+      "parameters": {},
+      "preview": "previews/inner-garden-halo-gif.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "preview",
+        "scope": "Verified against earlier local source; decoded temporal frames and actual still preview",
+        "distinct_sampled_frames": 10,
+        "sha256": "9a8b58eeafa5cb70a99ec379dd252f667fd2200c2c72a9b474532cee45a5a419"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "gif",
+        "duration_seconds": 5.07,
+        "width": 720,
+        "height": 240,
+        "frame_count": 71,
+        "bytes": 4668943,
+        "audio": false,
+        "gif_loop_count": 0,
+        "sha256": "9a8b58eeafa5cb70a99ec379dd252f667fd2200c2c72a9b474532cee45a5a419",
+        "usage": "decoration",
+        "hosted_in_repository": true
+      }
+    },
+    {
+      "id": "inner-garden-horse-gif",
+      "kind": "asset",
+      "name": "Inner Garden 白马与女孩动图",
+      "category": "动态封面与视频",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/inner-garden/horse.gif",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/inner-garden/horse.gif",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/inner-garden/horse.gif",
+      "license": {
+        "label": "此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可",
+        "url": null
+      },
+      "description": "My Inner Garden的动态装饰素材。",
+      "tags": [
+        "GIF",
+        "动态素材",
+        "装饰",
+        "My Inner Garden"
+      ],
+      "recommended_size": {
+        "width": 720,
+        "height": 240
+      },
+      "dependencies": [],
+      "notes": [
+        "720 × 240 px，约 5.07 秒，71 帧。",
+        "目录为静帧预览；打开素材地址可查看完整动态效果。",
+        "可作为图片、装饰块或原生页面封面使用；按原始比例放置。",
+        "GIF 已设为无限循环。"
+      ],
+      "parameters": {},
+      "preview": "previews/inner-garden-horse-gif.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "preview",
+        "scope": "Verified against earlier local source; decoded temporal frames and actual still preview",
+        "distinct_sampled_frames": 10,
+        "sha256": "cf536bd8caa9758f40f7c6609e5622a0e0a22f99736045b150ec76975b9c856b"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "gif",
+        "duration_seconds": 5.07,
+        "width": 720,
+        "height": 240,
+        "frame_count": 71,
+        "bytes": 4829257,
+        "audio": false,
+        "gif_loop_count": 0,
+        "sha256": "cf536bd8caa9758f40f7c6609e5622a0e0a22f99736045b150ec76975b9c856b",
+        "usage": "decoration",
+        "hosted_in_repository": true
+      }
+    },
+    {
+      "id": "inner-garden-meditation-gif",
+      "kind": "asset",
+      "name": "Inner Garden 溪边冥想动图",
+      "category": "动态封面与视频",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/inner-garden/meditation.gif",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/inner-garden/meditation.gif",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/inner-garden/meditation.gif",
+      "license": {
+        "label": "此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可",
+        "url": null
+      },
+      "description": "My Inner Garden的动态装饰素材。",
+      "tags": [
+        "GIF",
+        "动态素材",
+        "装饰",
+        "My Inner Garden"
+      ],
+      "recommended_size": {
+        "width": 720,
+        "height": 240
+      },
+      "dependencies": [],
+      "notes": [
+        "720 × 240 px，约 5.07 秒，71 帧。",
+        "目录为静帧预览；打开素材地址可查看完整动态效果。",
+        "可作为图片、装饰块或原生页面封面使用；按原始比例放置。",
+        "GIF 已设为无限循环。"
+      ],
+      "parameters": {},
+      "preview": "previews/inner-garden-meditation-gif.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "preview",
+        "scope": "Verified against earlier local source; decoded temporal frames and actual still preview",
+        "distinct_sampled_frames": 10,
+        "sha256": "c599c895bf1329046f3bb3cc28534f742aa40e8c9219b488d7d31bc66a694273"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "gif",
+        "duration_seconds": 5.07,
+        "width": 720,
+        "height": 240,
+        "frame_count": 71,
+        "bytes": 4829432,
+        "audio": false,
+        "gif_loop_count": 0,
+        "sha256": "c599c895bf1329046f3bb3cc28534f742aa40e8c9219b488d7d31bc66a694273",
+        "usage": "decoration",
+        "hosted_in_repository": true
+      }
+    },
+    {
+      "id": "inner-garden-moth-gif",
+      "kind": "asset",
+      "name": "Inner Garden 字符飞蛾动图",
+      "category": "动态封面与视频",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/inner-garden/moth.gif",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/inner-garden/moth.gif",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/inner-garden/moth.gif",
+      "license": {
+        "label": "此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可",
+        "url": null
+      },
+      "description": "My Inner Garden的动态装饰素材。",
+      "tags": [
+        "GIF",
+        "动态素材",
+        "装饰",
+        "My Inner Garden",
+        "字符动画"
+      ],
+      "recommended_size": {
+        "width": 600,
+        "height": 450
+      },
+      "dependencies": [],
+      "notes": [
+        "600 × 450 px，约 5 秒，70 帧。",
+        "目录为静帧预览；打开素材地址可查看完整动态效果。",
+        "可作为图片、装饰块或原生页面封面使用；按原始比例放置。",
+        "GIF 已设为无限循环。"
+      ],
+      "parameters": {},
+      "preview": "previews/inner-garden-moth-gif.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "preview",
+        "scope": "Verified against earlier local source; decoded temporal frames and actual still preview",
+        "distinct_sampled_frames": 10,
+        "sha256": "03521330c37a60767b5499adb16648f20d11dca26fb2c53313ccf62e280c2eff"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "gif",
+        "duration_seconds": 5.0,
+        "width": 600,
+        "height": 450,
+        "frame_count": 70,
+        "bytes": 1114534,
+        "audio": false,
+        "gif_loop_count": 0,
+        "sha256": "03521330c37a60767b5499adb16648f20d11dca26fb2c53313ccf62e280c2eff",
+        "usage": "decoration",
+        "hosted_in_repository": true
+      }
+    },
+    {
+      "id": "digital-garden-kollab-flower-loop-gif",
+      "kind": "asset",
+      "name": "数字花园粉色花朵动图",
+      "category": "动态封面与视频",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/digital-garden/kollab-flower-loop.gif",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/kollab-flower-loop.gif",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/kollab-flower-loop.gif",
+      "license": {
+        "label": "此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可",
+        "url": null
+      },
+      "description": "数字花园的动态装饰素材。",
+      "tags": [
+        "GIF",
+        "动态素材",
+        "装饰",
+        "数字花园"
+      ],
+      "recommended_size": {
+        "width": 360,
+        "height": 405
+      },
+      "dependencies": [],
+      "notes": [
+        "360 × 405 px，约 4 秒，48 帧。",
+        "目录为静帧预览；打开素材地址可查看完整动态效果。",
+        "可作为图片、装饰块或原生页面封面使用；按原始比例放置。",
+        "GIF 已设为无限循环。"
+      ],
+      "parameters": {},
+      "preview": "previews/digital-garden-kollab-flower-loop-gif.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "preview",
+        "scope": "Verified against earlier local source; decoded temporal frames and actual still preview",
+        "distinct_sampled_frames": 8,
+        "sha256": "d6ecfe05b0b5e862e737caa405b02b61018d47e5e534044f6f7902c7067f2f92"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "gif",
+        "duration_seconds": 4.0,
+        "width": 360,
+        "height": 405,
+        "frame_count": 48,
+        "bytes": 2630563,
+        "audio": false,
+        "gif_loop_count": 0,
+        "sha256": "d6ecfe05b0b5e862e737caa405b02b61018d47e5e534044f6f7902c7067f2f92",
+        "usage": "decoration",
+        "hosted_in_repository": true
+      }
+    },
+    {
+      "id": "digital-garden-page-cover-final-gif",
+      "kind": "asset",
+      "name": "数字花园页头动图",
+      "category": "动态封面与视频",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/digital-garden/page-cover-final.gif",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/page-cover-final.gif",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/page-cover-final.gif",
+      "license": {
+        "label": "此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可",
+        "url": null
+      },
+      "description": "数字花园的动态装饰素材。",
+      "tags": [
+        "GIF",
+        "动态素材",
+        "装饰",
+        "数字花园"
+      ],
+      "recommended_size": {
+        "width": 960,
+        "height": 176
+      },
+      "dependencies": [],
+      "notes": [
+        "960 × 176 px，约 4 秒，40 帧。",
+        "目录为静帧预览；打开素材地址可查看完整动态效果。",
+        "可作为图片、装饰块或原生页面封面使用；按原始比例放置。",
+        "GIF 已设为无限循环。"
+      ],
+      "parameters": {},
+      "preview": "previews/digital-garden-page-cover-final-gif.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "preview",
+        "scope": "Verified against earlier local source; decoded temporal frames and actual still preview",
+        "distinct_sampled_frames": 8,
+        "sha256": "eaedc8515d9ce8a10cc7ac66d459804854756c224574cd2a883a783f026e3a32"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "gif",
+        "duration_seconds": 4.0,
+        "width": 960,
+        "height": 176,
+        "frame_count": 40,
+        "bytes": 2136946,
+        "audio": false,
+        "gif_loop_count": 0,
+        "sha256": "eaedc8515d9ce8a10cc7ac66d459804854756c224574cd2a883a783f026e3a32",
+        "usage": "decoration",
+        "hosted_in_repository": true
+      }
+    },
+    {
+      "id": "digital-garden-pixel-friends-loop-ru-gif",
+      "kind": "asset",
+      "name": "数字花园像素伙伴动图（俄语）",
+      "category": "动态封面与视频",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/digital-garden/pixel-friends-loop-ru.gif",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/pixel-friends-loop-ru.gif",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/pixel-friends-loop-ru.gif",
+      "license": {
+        "label": "此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可",
+        "url": null
+      },
+      "description": "数字花园的动态装饰素材。",
+      "tags": [
+        "GIF",
+        "动态素材",
+        "装饰",
+        "数字花园"
+      ],
+      "recommended_size": {
+        "width": 560,
+        "height": 458
+      },
+      "dependencies": [],
+      "notes": [
+        "560 × 458 px，约 4.08 秒，49 帧。",
+        "目录为静帧预览；打开素材地址可查看完整动态效果。",
+        "可作为图片、装饰块或原生页面封面使用；按原始比例放置。",
+        "GIF 已设为无限循环。"
+      ],
+      "parameters": {},
+      "preview": "previews/digital-garden-pixel-friends-loop-ru-gif.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "preview",
+        "scope": "Verified against earlier local source; decoded temporal frames and actual still preview",
+        "distinct_sampled_frames": 8,
+        "sha256": "1c6ae7e9bbed351b3e40684c84a507ac50b0d67de46d612d52c0507e8adf76cc"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "gif",
+        "duration_seconds": 4.08,
+        "width": 560,
+        "height": 458,
+        "frame_count": 49,
+        "bytes": 2304269,
+        "audio": false,
+        "gif_loop_count": 0,
+        "sha256": "1c6ae7e9bbed351b3e40684c84a507ac50b0d67de46d612d52c0507e8adf76cc",
+        "usage": "decoration",
+        "hosted_in_repository": true
+      }
+    },
+    {
+      "id": "school-planner-forest-waterfall-v2-optimized-gif",
+      "kind": "asset",
+      "name": "像素森林瀑布动图",
+      "category": "动态封面与视频",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/school-planner/forest-waterfall-v2-optimized.gif",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/school-planner/forest-waterfall-v2-optimized.gif",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/school-planner/forest-waterfall-v2-optimized.gif",
+      "license": {
+        "label": "此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可",
+        "url": null
+      },
+      "description": "像素学生计划的动态装饰素材。",
+      "tags": [
+        "GIF",
+        "动态素材",
+        "装饰",
+        "像素学生计划"
+      ],
+      "recommended_size": {
+        "width": 480,
+        "height": 600
+      },
+      "dependencies": [],
+      "notes": [
+        "480 × 600 px，约 8 秒，80 帧。",
+        "目录为静帧预览；打开素材地址可查看完整动态效果。",
+        "可作为图片、装饰块或原生页面封面使用；按原始比例放置。",
+        "GIF 已设为无限循环。"
+      ],
+      "parameters": {},
+      "preview": "previews/school-planner-forest-waterfall-v2-optimized-gif.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "preview",
+        "scope": "Verified against earlier local source; decoded temporal frames and actual still preview",
+        "distinct_sampled_frames": 16,
+        "sha256": "31b336e056f0f149c9babc1c98935bf62a624e1c0d965d57ef17e3380ae1d768"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "gif",
+        "duration_seconds": 8.0,
+        "width": 480,
+        "height": 600,
+        "frame_count": 80,
+        "bytes": 6617130,
+        "audio": false,
+        "gif_loop_count": 0,
+        "sha256": "31b336e056f0f149c9babc1c98935bf62a624e1c0d965d57ef17e3380ae1d768",
+        "usage": "decoration",
+        "hosted_in_repository": true
+      }
+    },
+    {
+      "id": "digital-garden-mind-garden-card-optimized-gif",
+      "kind": "asset",
+      "name": "思维花园卡片动图",
+      "category": "动态封面与视频",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/digital-garden/mind-garden-card-optimized.gif",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/mind-garden-card-optimized.gif",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/mind-garden-card-optimized.gif",
+      "license": {
+        "label": "此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可",
+        "url": null
+      },
+      "description": "数字花园的动态装饰素材。",
+      "tags": [
+        "GIF",
+        "动态素材",
+        "装饰",
+        "数字花园"
+      ],
+      "recommended_size": {
+        "width": 720,
+        "height": 405
+      },
+      "dependencies": [],
+      "notes": [
+        "720 × 405 px，约 4.01 秒，32 帧。",
+        "目录为静帧预览；打开素材地址可查看完整动态效果。",
+        "可作为图片、装饰块或原生页面封面使用；按原始比例放置。",
+        "GIF 已设为无限循环。"
+      ],
+      "parameters": {},
+      "preview": "previews/digital-garden-mind-garden-card-optimized-gif.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "preview",
+        "scope": "Verified against earlier local source; decoded temporal frames and actual still preview",
+        "distinct_sampled_frames": 8,
+        "sha256": "dae478aac66cda9fd01d5ff165eb5751cedc2f4856ed7b71d43f4e42bfd30b83"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "gif",
+        "duration_seconds": 4.01,
+        "width": 720,
+        "height": 405,
+        "frame_count": 32,
+        "bytes": 4086477,
+        "audio": false,
+        "gif_loop_count": 0,
+        "sha256": "dae478aac66cda9fd01d5ff165eb5751cedc2f4856ed7b71d43f4e42bfd30b83",
+        "usage": "decoration",
+        "hosted_in_repository": true
+      }
+    },
+    {
+      "id": "inner-garden-waterfall-gif",
+      "kind": "asset",
+      "name": "Inner Garden 梦境瀑布动图",
+      "category": "动态封面与视频",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/inner-garden/waterfall.gif",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/inner-garden/waterfall.gif",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/inner-garden/waterfall.gif",
+      "license": {
+        "label": "此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可",
+        "url": null
+      },
+      "description": "My Inner Garden的动态装饰素材。",
+      "tags": [
+        "GIF",
+        "动态素材",
+        "装饰",
+        "My Inner Garden"
+      ],
+      "recommended_size": {
+        "width": 720,
+        "height": 540
+      },
+      "dependencies": [],
+      "notes": [
+        "720 × 540 px，约 5.07 秒，71 帧。",
+        "目录为静帧预览；打开素材地址可查看完整动态效果。",
+        "可作为图片、装饰块或原生页面封面使用；按原始比例放置。",
+        "GIF 已设为无限循环。"
+      ],
+      "parameters": {},
+      "preview": "previews/inner-garden-waterfall-gif.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "preview",
+        "scope": "Verified against earlier local source; decoded temporal frames and actual still preview",
+        "distinct_sampled_frames": 10,
+        "sha256": "22b66e8ed8916db855d079231aa35a331303fac37b4e186ba4f538ea54a9f1b9"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "gif",
+        "duration_seconds": 5.07,
+        "width": 720,
+        "height": 540,
+        "frame_count": 71,
+        "bytes": 15249473,
+        "audio": false,
+        "gif_loop_count": 0,
+        "sha256": "22b66e8ed8916db855d079231aa35a331303fac37b4e186ba4f538ea54a9f1b9",
+        "usage": "decoration",
+        "hosted_in_repository": true
+      }
+    },
+    {
+      "id": "digital-garden-mind-garden-cover-optimized-gif",
+      "kind": "asset",
+      "name": "思维花园封面动图",
+      "category": "动态封面与视频",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/digital-garden/mind-garden-cover-optimized.gif",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/mind-garden-cover-optimized.gif",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/mind-garden-cover-optimized.gif",
+      "license": {
+        "label": "此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可",
+        "url": null
+      },
+      "description": "数字花园的动态装饰素材。",
+      "tags": [
+        "GIF",
+        "动态素材",
+        "装饰",
+        "数字花园"
+      ],
+      "recommended_size": {
+        "width": 960,
+        "height": 176
+      },
+      "dependencies": [],
+      "notes": [
+        "960 × 176 px，约 4.01 秒，32 帧。",
+        "目录为静帧预览；打开素材地址可查看完整动态效果。",
+        "可作为图片、装饰块或原生页面封面使用；按原始比例放置。",
+        "GIF 已设为无限循环。"
+      ],
+      "parameters": {},
+      "preview": "previews/digital-garden-mind-garden-cover-optimized-gif.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "preview",
+        "scope": "Verified against earlier local source; decoded temporal frames and actual still preview",
+        "distinct_sampled_frames": 8,
+        "sha256": "7f7d1d9d0ab9cbc0284a24a510a62e6c99db9fc18f723b98bcafdc47f0ae15aa"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "gif",
+        "duration_seconds": 4.01,
+        "width": 960,
+        "height": 176,
+        "frame_count": 32,
+        "bytes": 2773971,
+        "audio": false,
+        "gif_loop_count": 0,
+        "sha256": "7f7d1d9d0ab9cbc0284a24a510a62e6c99db9fc18f723b98bcafdc47f0ae15aa",
+        "usage": "decoration",
+        "hosted_in_repository": true
+      }
+    },
+    {
+      "id": "my-life-planner-cover-garden-loop-gif",
+      "kind": "asset",
+      "name": "生活计划花园封面 GIF（原生版）",
+      "category": "动态封面与视频",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/my-life-planner/cover-garden-loop.gif",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/cover-garden-loop.gif",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/cover-garden-loop.gif",
+      "license": {
+        "label": "此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可",
+        "url": null
+      },
+      "description": "生活计划的动态装饰素材。",
+      "tags": [
+        "GIF",
+        "动态素材",
+        "装饰",
+        "生活计划"
+      ],
+      "recommended_size": {
+        "width": 960,
+        "height": 240
+      },
+      "dependencies": [],
+      "notes": [
+        "960 × 240 px，约 5 秒，60 帧。",
+        "目录为静帧预览；打开素材地址可查看完整动态效果。",
+        "可作为图片、装饰块或原生页面封面使用；按原始比例放置。",
+        "GIF 已设为无限循环。"
+      ],
+      "parameters": {},
+      "preview": "previews/my-life-planner-cover-garden-loop-gif.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "preview",
+        "scope": "Verified against earlier local source; decoded temporal frames and actual still preview",
+        "distinct_sampled_frames": 10,
+        "sha256": "fbe5c88fab64e57a91ab56631f1107bc8c3e0f61e802f972429646f0c6530d3d"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "gif",
+        "duration_seconds": 5.0,
+        "width": 960,
+        "height": 240,
+        "frame_count": 60,
+        "bytes": 2056200,
+        "audio": false,
+        "gif_loop_count": 0,
+        "sha256": "fbe5c88fab64e57a91ab56631f1107bc8c3e0f61e802f972429646f0c6530d3d",
+        "usage": "decoration",
+        "hosted_in_repository": true
+      }
+    },
+    {
+      "id": "digital-garden-kollab-yoga-loop-gif",
+      "kind": "asset",
+      "name": "数字花园复古瑜伽动图",
+      "category": "动态封面与视频",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/digital-garden/kollab-yoga-loop.gif",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/kollab-yoga-loop.gif",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/kollab-yoga-loop.gif",
+      "license": {
+        "label": "此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可",
+        "url": null
+      },
+      "description": "数字花园的动态装饰素材。",
+      "tags": [
+        "GIF",
+        "动态素材",
+        "装饰",
+        "数字花园"
+      ],
+      "recommended_size": {
+        "width": 720,
+        "height": 405
+      },
+      "dependencies": [],
+      "notes": [
+        "720 × 405 px，约 4 秒，48 帧。",
+        "目录为静帧预览；打开素材地址可查看完整动态效果。",
+        "可作为图片、装饰块或原生页面封面使用；按原始比例放置。",
+        "GIF 已设为无限循环。"
+      ],
+      "parameters": {},
+      "preview": "previews/digital-garden-kollab-yoga-loop-gif.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "preview",
+        "scope": "Verified against earlier local source; decoded temporal frames and actual still preview",
+        "distinct_sampled_frames": 8,
+        "sha256": "95f58ab2919c54a178fb47c90e77ed12b2d15db35bfa67f2d45643ce03a84d2a"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "gif",
+        "duration_seconds": 4.0,
+        "width": 720,
+        "height": 405,
+        "frame_count": 48,
+        "bytes": 3701787,
+        "audio": false,
+        "gif_loop_count": 0,
+        "sha256": "95f58ab2919c54a178fb47c90e77ed12b2d15db35bfa67f2d45643ce03a84d2a",
+        "usage": "decoration",
+        "hosted_in_repository": true
+      }
+    },
+    {
+      "id": "digital-garden-secret-garden-loop-ru-gif",
+      "kind": "asset",
+      "name": "秘密花园动图（俄语）",
+      "category": "动态封面与视频",
+      "language": "俄语",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/digital-garden/secret-garden-loop-ru.gif",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/secret-garden-loop-ru.gif",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/secret-garden-loop-ru.gif",
+      "license": {
+        "label": "此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可",
+        "url": null
+      },
+      "description": "数字花园的动态装饰素材。",
+      "tags": [
+        "GIF",
+        "动态素材",
+        "装饰",
+        "数字花园"
+      ],
+      "recommended_size": {
+        "width": 800,
+        "height": 168
+      },
+      "dependencies": [],
+      "notes": [
+        "800 × 168 px，约 4.08 秒，49 帧。",
+        "目录为静帧预览；打开素材地址可查看完整动态效果。",
+        "可作为图片、装饰块或原生页面封面使用；按原始比例放置。",
+        "GIF 已设为无限循环。"
+      ],
+      "parameters": {},
+      "preview": "previews/digital-garden-secret-garden-loop-ru-gif.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "preview",
+        "scope": "Verified against earlier local source; decoded temporal frames and actual still preview",
+        "distinct_sampled_frames": 8,
+        "sha256": "4f1a00dd4acffd3d895156b184ff69ad0ede1b9ac9688757669fa0840f1c28b7"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "gif",
+        "duration_seconds": 4.08,
+        "width": 800,
+        "height": 168,
+        "frame_count": 49,
+        "bytes": 258271,
+        "audio": false,
+        "gif_loop_count": 0,
+        "sha256": "4f1a00dd4acffd3d895156b184ff69ad0ede1b9ac9688757669fa0840f1c28b7",
+        "usage": "decoration",
+        "hosted_in_repository": true
+      }
+    },
+    {
+      "id": "digital-garden-kollab-floral-vine-loop-v2-gif",
+      "kind": "asset",
+      "name": "数字花园花藤分隔动图",
+      "category": "动态封面与视频",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/digital-garden/kollab-floral-vine-loop-v2.gif",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/kollab-floral-vine-loop-v2.gif",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/kollab-floral-vine-loop-v2.gif",
+      "license": {
+        "label": "此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可",
+        "url": null
+      },
+      "description": "数字花园的动态装饰素材。",
+      "tags": [
+        "GIF",
+        "动态素材",
+        "装饰",
+        "数字花园"
+      ],
+      "recommended_size": {
+        "width": 800,
+        "height": 104
+      },
+      "dependencies": [],
+      "notes": [
+        "800 × 104 px，约 4.08 秒，49 帧。",
+        "目录为静帧预览；打开素材地址可查看完整动态效果。",
+        "可作为图片、装饰块或原生页面封面使用；按原始比例放置。",
+        "GIF 已设为无限循环。"
+      ],
+      "parameters": {},
+      "preview": "previews/digital-garden-kollab-floral-vine-loop-v2-gif.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "preview",
+        "scope": "Verified against earlier local source; decoded temporal frames and actual still preview",
+        "distinct_sampled_frames": 8,
+        "sha256": "27789bc86d0794de00500d6358bf107026bd0a0600bd1a8519bb00adc0ed67fe"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "gif",
+        "duration_seconds": 4.08,
+        "width": 800,
+        "height": 104,
+        "frame_count": 49,
+        "bytes": 1364013,
+        "audio": false,
+        "gif_loop_count": 0,
+        "sha256": "27789bc86d0794de00500d6358bf107026bd0a0600bd1a8519bb00adc0ed67fe",
+        "usage": "decoration",
+        "hosted_in_repository": true
+      }
+    },
+    {
+      "id": "my-life-planner-pomodoro-demo-gif",
+      "kind": "asset",
+      "name": "番茄钟状态演示 GIF",
+      "category": "动态封面与视频",
+      "language": "英语演示",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/my-life-planner/pomodoro-demo.gif",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/pomodoro-demo.gif",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/pomodoro-demo.gif",
+      "license": {
+        "label": "此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可",
+        "url": null
+      },
+      "description": "生活计划的组件状态演示。",
+      "tags": [
+        "GIF",
+        "动态素材",
+        "演示",
+        "生活计划"
+      ],
+      "recommended_size": {
+        "width": 480,
+        "height": 600
+      },
+      "dependencies": [],
+      "notes": [
+        "480 × 600 px，约 3 秒，36 帧。",
+        "目录为静帧预览；打开素材地址可查看完整动态效果。",
+        "这是此前组件审核包的状态演示图片；需要点击、计时或保存计数时，请使用目录中的对应交互组件。",
+        "计数和时间均为演示状态，不读取或同步个人数据。",
+        "GIF 已设为无限循环。"
+      ],
+      "parameters": {},
+      "preview": "previews/my-life-planner-pomodoro-demo-gif.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "preview",
+        "scope": "Verified against earlier local source; decoded temporal frames and actual still preview",
+        "distinct_sampled_frames": 3,
+        "sha256": "a5f36f5df631bc9c31a49822cbd6333c656b803e20b609f0b6a938c331763f3a"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "gif",
+        "duration_seconds": 3.0,
+        "width": 480,
+        "height": 600,
+        "frame_count": 36,
+        "bytes": 7264449,
+        "audio": false,
+        "gif_loop_count": 0,
+        "sha256": "a5f36f5df631bc9c31a49822cbd6333c656b803e20b609f0b6a938c331763f3a",
+        "usage": "demonstration",
+        "hosted_in_repository": true
+      }
+    },
+    {
+      "id": "my-life-planner-flip-clock-demo-gif",
+      "kind": "asset",
+      "name": "翻页时钟状态演示 GIF",
+      "category": "动态封面与视频",
+      "language": "英语演示",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/my-life-planner/flip-clock-demo.gif",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/flip-clock-demo.gif",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/flip-clock-demo.gif",
+      "license": {
+        "label": "此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可",
+        "url": null
+      },
+      "description": "生活计划的组件状态演示。",
+      "tags": [
+        "GIF",
+        "动态素材",
+        "演示",
+        "生活计划"
+      ],
+      "recommended_size": {
+        "width": 720,
+        "height": 280
+      },
+      "dependencies": [],
+      "notes": [
+        "720 × 280 px，约 5 秒，60 帧。",
+        "目录为静帧预览；打开素材地址可查看完整动态效果。",
+        "这是此前组件审核包的状态演示图片；需要点击、计时或保存计数时，请使用目录中的对应交互组件。",
+        "计数和时间均为演示状态，不读取或同步个人数据。",
+        "GIF 已设为无限循环。"
+      ],
+      "parameters": {},
+      "preview": "previews/my-life-planner-flip-clock-demo-gif.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "preview",
+        "scope": "Verified against earlier local source; decoded temporal frames and actual still preview",
+        "distinct_sampled_frames": 6,
+        "sha256": "27e3af513f1ebabfef494a0c817b5287d901bd345fe602a4f954676b2be0e11e"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "gif",
+        "duration_seconds": 5.0,
+        "width": 720,
+        "height": 280,
+        "frame_count": 60,
+        "bytes": 389907,
+        "audio": false,
+        "gif_loop_count": 0,
+        "sha256": "27e3af513f1ebabfef494a0c817b5287d901bd345fe602a4f954676b2be0e11e",
+        "usage": "demonstration",
+        "hosted_in_repository": true
+      }
+    },
+    {
+      "id": "my-life-planner-books-counter-demo-gif",
+      "kind": "asset",
+      "name": "阅读计数状态演示 GIF",
+      "category": "动态封面与视频",
+      "language": "英语演示",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/my-life-planner/books-counter-demo.gif",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/books-counter-demo.gif",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/books-counter-demo.gif",
+      "license": {
+        "label": "此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可",
+        "url": null
+      },
+      "description": "生活计划的组件状态演示。",
+      "tags": [
+        "GIF",
+        "动态素材",
+        "演示",
+        "生活计划"
+      ],
+      "recommended_size": {
+        "width": 600,
+        "height": 333
+      },
+      "dependencies": [],
+      "notes": [
+        "600 × 333 px，约 3 秒，36 帧。",
+        "目录为静帧预览；打开素材地址可查看完整动态效果。",
+        "这是此前组件审核包的状态演示图片；需要点击、计时或保存计数时，请使用目录中的对应交互组件。",
+        "计数和时间均为演示状态，不读取或同步个人数据。",
+        "GIF 已设为无限循环。"
+      ],
+      "parameters": {},
+      "preview": "previews/my-life-planner-books-counter-demo-gif.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "preview",
+        "scope": "Verified against earlier local source; decoded temporal frames and actual still preview",
+        "distinct_sampled_frames": 3,
+        "sha256": "0bd9d9b6fd599c919cdffcf33491c11fe4353a102885c6bd069638f151d722a3"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "gif",
+        "duration_seconds": 3.0,
+        "width": 600,
+        "height": 333,
+        "frame_count": 36,
+        "bytes": 303729,
+        "audio": false,
+        "gif_loop_count": 0,
+        "sha256": "0bd9d9b6fd599c919cdffcf33491c11fe4353a102885c6bd069638f151d722a3",
+        "usage": "demonstration",
+        "hosted_in_repository": true
+      }
+    },
+    {
+      "id": "my-life-planner-pixel-plant-loop-gif",
+      "kind": "asset",
+      "name": "像素植物摆动 GIF",
+      "category": "动态封面与视频",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/my-life-planner/pixel-plant-loop.gif",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/pixel-plant-loop.gif",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/pixel-plant-loop.gif",
+      "license": {
+        "label": "此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可",
+        "url": null
+      },
+      "description": "生活计划的动态装饰素材。",
+      "tags": [
+        "GIF",
+        "动态素材",
+        "装饰",
+        "生活计划"
+      ],
+      "recommended_size": {
+        "width": 520,
+        "height": 380
+      },
+      "dependencies": [],
+      "notes": [
+        "520 × 380 px，约 4 秒，48 帧。",
+        "目录为静帧预览；打开素材地址可查看完整动态效果。",
+        "可作为图片、装饰块或原生页面封面使用；按原始比例放置。",
+        "GIF 已设为无限循环。"
+      ],
+      "parameters": {},
+      "preview": "previews/my-life-planner-pixel-plant-loop-gif.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "preview",
+        "scope": "Verified against earlier local source; decoded temporal frames and actual still preview",
+        "distinct_sampled_frames": 8,
+        "sha256": "bce3e2ad6e218087582e7e0ae81f023cce81c3d5b26bcecfeb660c3cedc642ad"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "gif",
+        "duration_seconds": 4.0,
+        "width": 520,
+        "height": 380,
+        "frame_count": 48,
+        "bytes": 1883895,
+        "audio": false,
+        "gif_loop_count": 0,
+        "sha256": "bce3e2ad6e218087582e7e0ae81f023cce81c3d5b26bcecfeb660c3cedc642ad",
+        "usage": "decoration",
+        "hosted_in_repository": true
+      }
+    },
+    {
+      "id": "my-life-planner-room-scene-cycle-gif",
+      "kind": "asset",
+      "name": "房间四景轮播 GIF",
+      "category": "动态封面与视频",
+      "language": "英语演示",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/my-life-planner/room-scene-cycle.gif",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/room-scene-cycle.gif",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/room-scene-cycle.gif",
+      "license": {
+        "label": "此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可",
+        "url": null
+      },
+      "description": "生活计划的动态装饰素材。",
+      "tags": [
+        "GIF",
+        "动态素材",
+        "装饰",
+        "生活计划"
+      ],
+      "recommended_size": {
+        "width": 480,
+        "height": 600
+      },
+      "dependencies": [],
+      "notes": [
+        "480 × 600 px，约 9.33 秒，112 帧。",
+        "目录为静帧预览；打开素材地址可查看完整动态效果。",
+        "可作为图片、装饰块或原生页面封面使用；按原始比例放置。",
+        "GIF 已设为无限循环。"
+      ],
+      "parameters": {},
+      "preview": "previews/my-life-planner-room-scene-cycle-gif.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "preview",
+        "scope": "Verified against earlier local source; decoded temporal frames and actual still preview",
+        "distinct_sampled_frames": 11,
+        "sha256": "b5194531c0454ed87f1d1c4a774e018f88ab2df8b7d8def9871a564a71730ca6"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "gif",
+        "duration_seconds": 9.33,
+        "width": 480,
+        "height": 600,
+        "frame_count": 112,
+        "bytes": 14745114,
+        "audio": false,
+        "gif_loop_count": 0,
+        "sha256": "b5194531c0454ed87f1d1c4a774e018f88ab2df8b7d8def9871a564a71730ca6",
+        "usage": "decoration",
+        "hosted_in_repository": true
+      }
+    },
+    {
+      "id": "my-life-planner-cover-garden-loop-mp4",
+      "kind": "asset",
+      "name": "生活计划花园封面 MP4（原生版）",
+      "category": "动态封面与视频",
+      "language": "通用",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/my-life-planner/cover-garden-loop.mp4",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/cover-garden-loop.mp4",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/cover-garden-loop.mp4",
+      "license": {
+        "label": "此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可",
+        "url": null
+      },
+      "description": "生活计划的动态装饰素材。",
+      "tags": [
+        "MP4",
+        "动态素材",
+        "装饰",
+        "生活计划"
+      ],
+      "recommended_size": {
+        "width": 1280,
+        "height": 320
+      },
+      "dependencies": [],
+      "notes": [
+        "1280 × 320 px，约 5 秒，60 帧。",
+        "目录为静帧预览；打开素材地址可查看完整动态效果。",
+        "MP4 使用视频播放器嵌入；循环与静音由播放器控制。"
+      ],
+      "parameters": {},
+      "preview": "previews/my-life-planner-cover-garden-loop-mp4.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "preview",
+        "scope": "Verified against earlier local source; decoded temporal frames and actual still preview",
+        "distinct_sampled_frames": 10,
+        "sha256": "6d9c787a8ec576ae953b2ba87fe2df54594a0e4bbaa399648f2254462cddc24d"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "video",
+        "duration_seconds": 5.0,
+        "width": 1280,
+        "height": 320,
+        "frame_count": 60,
+        "bytes": 299467,
+        "audio": false,
+        "gif_loop_count": null,
+        "sha256": "6d9c787a8ec576ae953b2ba87fe2df54594a0e4bbaa399648f2254462cddc24d",
+        "usage": "decoration",
+        "hosted_in_repository": true
+      }
+    },
+    {
+      "id": "my-life-planner-room-scene-cycle-mp4",
+      "kind": "asset",
+      "name": "房间四景轮播 MP4",
+      "category": "动态封面与视频",
+      "language": "英语演示",
+      "ownership": "self",
+      "status": "ready",
+      "embed_url": "https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/my-life-planner/room-scene-cycle.mp4",
+      "aliases": [],
+      "source_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/room-scene-cycle.mp4",
+      "code_url": "https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/room-scene-cycle.mp4",
+      "license": {
+        "label": "此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可",
+        "url": null
+      },
+      "description": "生活计划的动态装饰素材。",
+      "tags": [
+        "MP4",
+        "动态素材",
+        "装饰",
+        "生活计划"
+      ],
+      "recommended_size": {
+        "width": 720,
+        "height": 900
+      },
+      "dependencies": [],
+      "notes": [
+        "720 × 900 px，约 9.33333 秒，112 帧。",
+        "目录为静帧预览；打开素材地址可查看完整动态效果。",
+        "MP4 使用视频播放器嵌入；循环与静音由播放器控制。"
+      ],
+      "parameters": {},
+      "preview": "previews/my-life-planner-room-scene-cycle-mp4.png",
+      "checked_at": "2026-11-06",
+      "verification": {
+        "level": "preview",
+        "scope": "Verified against earlier local source; decoded temporal frames and actual still preview",
+        "distinct_sampled_frames": 19,
+        "sha256": "b7303d6d07492d0c45b9b9a2ed190563a9ae58af16b22b10aa571972508ec9ee"
+      },
+      "replacement_id": null,
+      "media": {
+        "type": "video",
+        "duration_seconds": 9.333333,
+        "width": 720,
+        "height": 900,
+        "frame_count": 112,
+        "bytes": 984720,
+        "audio": false,
+        "gif_loop_count": null,
+        "sha256": "b7303d6d07492d0c45b9b9a2ed190563a9ae58af16b22b10aa571972508ec9ee",
+        "usage": "decoration",
+        "hosted_in_repository": true
       }
     }
   ]

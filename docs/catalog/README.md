@@ -1,6 +1,6 @@
 # Buildin 统一组件库
 
-更新：2026-11-06 · 55 个组件 · 16 项素材
+更新：2026-11-06 · 55 个组件 · 40 项素材
 
 [打开可搜索的图文目录](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/catalog/) · [读取完整 JSON](components.json)
 
@@ -1544,11 +1544,11 @@ https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/pond
 
 ![像素植物动态横幅 GIF默认预览](previews/school-study-cover-gif.png)
 
-第三方引用 · 待复核 · 建议 1280 × 184 px
+自制 · 可用 · 建议 1280 × 184 px
 
 原 School Planner 中的像素植物循环横幅，适合窄横幅或原生页面封面。
 
-[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/study-cover.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/study-cover.gif)
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/study-cover.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/study-cover.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/school-planner/study-cover.gif)
 
 嵌入／素材地址：
 
@@ -1561,9 +1561,9 @@ https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/stud
 - GIF 保留原有动画；可作为图片或原生页面封面使用。
 - 文件设置为无限循环。
 - 目录缩略图为静帧；打开素材链接可查看实际动画。
-- 此前模板迁入的已有文件；未找到原始作者和再分发许可记录，按既有素材引用收录，不标为自制或开源。
+- 已与此前顶部封面生成记录和原始输出逐字节核对，确认属于自制素材。
 
-许可：既有素材引用；原始再分发许可待核对
+许可：此前自制模板的生成素材，可在本库复用
 
 目录 ID：`school-study-cover-gif`
 
@@ -1669,4 +1669,605 @@ https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/mediterranea
 许可：自制，可在本库复用
 
 目录 ID：`mediterranean-cover-fixed-camera-gif`
+
+### 像素窗边植物动图 · 通用
+
+![像素窗边植物动图默认预览](previews/school-planner-window-gif.png)
+
+自制 · 可用 · 建议 480 × 600 px
+
+像素学生计划的动态装饰素材。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/school-planner/window.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/school-planner/window.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/school-planner/window.gif)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/school-planner/window.gif
+```
+
+- 480 × 600 px，约 8.08 秒，97 帧。
+- 目录为静帧预览；打开素材地址可查看完整动态效果。
+- 可作为图片、装饰块或原生页面封面使用；按原始比例放置。
+- GIF 已设为无限循环。
+
+许可：此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可
+
+目录 ID：`school-planner-window-gif`
+
+### 原像素植物封面 GIF（第三方引用） · 通用
+
+![原像素植物封面 GIF（第三方引用）默认预览](previews/school-original-pixel-cover-reference.png)
+
+第三方引用 · 待复核 · 建议 700 × 434 px
+
+原学生计划模板的动态装饰素材。
+
+[打开组件或素材](https://64.media.tumblr.com/ce237ad7762fc6bce812f5f47f499d76/215844a9b980cfd1-b8/s1280x1920/7acfce390ffb6e00a0b8f0dce34b0c0169943001.gif) · [原始来源](https://64.media.tumblr.com/ce237ad7762fc6bce812f5f47f499d76/215844a9b980cfd1-b8/s1280x1920/7acfce390ffb6e00a0b8f0dce34b0c0169943001.gif)
+
+嵌入／素材地址：
+
+```text
+https://64.media.tumblr.com/ce237ad7762fc6bce812f5f47f499d76/215844a9b980cfd1-b8/s1280x1920/7acfce390ffb6e00a0b8f0dce34b0c0169943001.gif
+```
+
+- 700 × 434 px，约 6.64 秒，83 帧。
+- 目录为静帧预览；打开素材地址可查看完整动态效果。
+- 只收录公开来源链接、说明及静帧参考图；未镜像原 GIF 文件，也未声明开源或自制。
+- GIF 已设为无限循环。
+
+许可：第三方公开素材，仅引用；再分发许可未确认
+
+目录 ID：`school-original-pixel-cover-reference`
+
+### Inner Garden 额心光环动图 · 通用
+
+![Inner Garden 额心光环动图默认预览](previews/inner-garden-halo-gif.png)
+
+自制 · 可用 · 建议 720 × 240 px
+
+My Inner Garden的动态装饰素材。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/inner-garden/halo.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/inner-garden/halo.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/inner-garden/halo.gif)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/inner-garden/halo.gif
+```
+
+- 720 × 240 px，约 5.07 秒，71 帧。
+- 目录为静帧预览；打开素材地址可查看完整动态效果。
+- 可作为图片、装饰块或原生页面封面使用；按原始比例放置。
+- GIF 已设为无限循环。
+
+许可：此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可
+
+目录 ID：`inner-garden-halo-gif`
+
+### Inner Garden 白马与女孩动图 · 通用
+
+![Inner Garden 白马与女孩动图默认预览](previews/inner-garden-horse-gif.png)
+
+自制 · 可用 · 建议 720 × 240 px
+
+My Inner Garden的动态装饰素材。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/inner-garden/horse.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/inner-garden/horse.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/inner-garden/horse.gif)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/inner-garden/horse.gif
+```
+
+- 720 × 240 px，约 5.07 秒，71 帧。
+- 目录为静帧预览；打开素材地址可查看完整动态效果。
+- 可作为图片、装饰块或原生页面封面使用；按原始比例放置。
+- GIF 已设为无限循环。
+
+许可：此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可
+
+目录 ID：`inner-garden-horse-gif`
+
+### Inner Garden 溪边冥想动图 · 通用
+
+![Inner Garden 溪边冥想动图默认预览](previews/inner-garden-meditation-gif.png)
+
+自制 · 可用 · 建议 720 × 240 px
+
+My Inner Garden的动态装饰素材。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/inner-garden/meditation.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/inner-garden/meditation.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/inner-garden/meditation.gif)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/inner-garden/meditation.gif
+```
+
+- 720 × 240 px，约 5.07 秒，71 帧。
+- 目录为静帧预览；打开素材地址可查看完整动态效果。
+- 可作为图片、装饰块或原生页面封面使用；按原始比例放置。
+- GIF 已设为无限循环。
+
+许可：此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可
+
+目录 ID：`inner-garden-meditation-gif`
+
+### Inner Garden 字符飞蛾动图 · 通用
+
+![Inner Garden 字符飞蛾动图默认预览](previews/inner-garden-moth-gif.png)
+
+自制 · 可用 · 建议 600 × 450 px
+
+My Inner Garden的动态装饰素材。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/inner-garden/moth.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/inner-garden/moth.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/inner-garden/moth.gif)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/inner-garden/moth.gif
+```
+
+- 600 × 450 px，约 5 秒，70 帧。
+- 目录为静帧预览；打开素材地址可查看完整动态效果。
+- 可作为图片、装饰块或原生页面封面使用；按原始比例放置。
+- GIF 已设为无限循环。
+
+许可：此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可
+
+目录 ID：`inner-garden-moth-gif`
+
+### 数字花园粉色花朵动图 · 通用
+
+![数字花园粉色花朵动图默认预览](previews/digital-garden-kollab-flower-loop-gif.png)
+
+自制 · 可用 · 建议 360 × 405 px
+
+数字花园的动态装饰素材。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/digital-garden/kollab-flower-loop.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/kollab-flower-loop.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/kollab-flower-loop.gif)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/digital-garden/kollab-flower-loop.gif
+```
+
+- 360 × 405 px，约 4 秒，48 帧。
+- 目录为静帧预览；打开素材地址可查看完整动态效果。
+- 可作为图片、装饰块或原生页面封面使用；按原始比例放置。
+- GIF 已设为无限循环。
+
+许可：此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可
+
+目录 ID：`digital-garden-kollab-flower-loop-gif`
+
+### 数字花园页头动图 · 通用
+
+![数字花园页头动图默认预览](previews/digital-garden-page-cover-final-gif.png)
+
+自制 · 可用 · 建议 960 × 176 px
+
+数字花园的动态装饰素材。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/digital-garden/page-cover-final.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/page-cover-final.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/page-cover-final.gif)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/digital-garden/page-cover-final.gif
+```
+
+- 960 × 176 px，约 4 秒，40 帧。
+- 目录为静帧预览；打开素材地址可查看完整动态效果。
+- 可作为图片、装饰块或原生页面封面使用；按原始比例放置。
+- GIF 已设为无限循环。
+
+许可：此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可
+
+目录 ID：`digital-garden-page-cover-final-gif`
+
+### 数字花园像素伙伴动图（俄语） · 俄语
+
+![数字花园像素伙伴动图（俄语）默认预览](previews/digital-garden-pixel-friends-loop-ru-gif.png)
+
+自制 · 可用 · 建议 560 × 458 px
+
+数字花园的动态装饰素材。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/digital-garden/pixel-friends-loop-ru.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/pixel-friends-loop-ru.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/pixel-friends-loop-ru.gif)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/digital-garden/pixel-friends-loop-ru.gif
+```
+
+- 560 × 458 px，约 4.08 秒，49 帧。
+- 目录为静帧预览；打开素材地址可查看完整动态效果。
+- 可作为图片、装饰块或原生页面封面使用；按原始比例放置。
+- GIF 已设为无限循环。
+
+许可：此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可
+
+目录 ID：`digital-garden-pixel-friends-loop-ru-gif`
+
+### 像素森林瀑布动图 · 通用
+
+![像素森林瀑布动图默认预览](previews/school-planner-forest-waterfall-v2-optimized-gif.png)
+
+自制 · 可用 · 建议 480 × 600 px
+
+像素学生计划的动态装饰素材。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/school-planner/forest-waterfall-v2-optimized.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/school-planner/forest-waterfall-v2-optimized.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/school-planner/forest-waterfall-v2-optimized.gif)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/school-planner/forest-waterfall-v2-optimized.gif
+```
+
+- 480 × 600 px，约 8 秒，80 帧。
+- 目录为静帧预览；打开素材地址可查看完整动态效果。
+- 可作为图片、装饰块或原生页面封面使用；按原始比例放置。
+- GIF 已设为无限循环。
+
+许可：此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可
+
+目录 ID：`school-planner-forest-waterfall-v2-optimized-gif`
+
+### 思维花园卡片动图 · 通用
+
+![思维花园卡片动图默认预览](previews/digital-garden-mind-garden-card-optimized-gif.png)
+
+自制 · 可用 · 建议 720 × 405 px
+
+数字花园的动态装饰素材。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/digital-garden/mind-garden-card-optimized.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/mind-garden-card-optimized.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/mind-garden-card-optimized.gif)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/digital-garden/mind-garden-card-optimized.gif
+```
+
+- 720 × 405 px，约 4.01 秒，32 帧。
+- 目录为静帧预览；打开素材地址可查看完整动态效果。
+- 可作为图片、装饰块或原生页面封面使用；按原始比例放置。
+- GIF 已设为无限循环。
+
+许可：此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可
+
+目录 ID：`digital-garden-mind-garden-card-optimized-gif`
+
+### Inner Garden 梦境瀑布动图 · 通用
+
+![Inner Garden 梦境瀑布动图默认预览](previews/inner-garden-waterfall-gif.png)
+
+自制 · 可用 · 建议 720 × 540 px
+
+My Inner Garden的动态装饰素材。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/inner-garden/waterfall.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/inner-garden/waterfall.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/inner-garden/waterfall.gif)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/inner-garden/waterfall.gif
+```
+
+- 720 × 540 px，约 5.07 秒，71 帧。
+- 目录为静帧预览；打开素材地址可查看完整动态效果。
+- 可作为图片、装饰块或原生页面封面使用；按原始比例放置。
+- GIF 已设为无限循环。
+
+许可：此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可
+
+目录 ID：`inner-garden-waterfall-gif`
+
+### 思维花园封面动图 · 通用
+
+![思维花园封面动图默认预览](previews/digital-garden-mind-garden-cover-optimized-gif.png)
+
+自制 · 可用 · 建议 960 × 176 px
+
+数字花园的动态装饰素材。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/digital-garden/mind-garden-cover-optimized.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/mind-garden-cover-optimized.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/mind-garden-cover-optimized.gif)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/digital-garden/mind-garden-cover-optimized.gif
+```
+
+- 960 × 176 px，约 4.01 秒，32 帧。
+- 目录为静帧预览；打开素材地址可查看完整动态效果。
+- 可作为图片、装饰块或原生页面封面使用；按原始比例放置。
+- GIF 已设为无限循环。
+
+许可：此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可
+
+目录 ID：`digital-garden-mind-garden-cover-optimized-gif`
+
+### 生活计划花园封面 GIF（原生版） · 通用
+
+![生活计划花园封面 GIF（原生版）默认预览](previews/my-life-planner-cover-garden-loop-gif.png)
+
+自制 · 可用 · 建议 960 × 240 px
+
+生活计划的动态装饰素材。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/my-life-planner/cover-garden-loop.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/cover-garden-loop.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/cover-garden-loop.gif)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/my-life-planner/cover-garden-loop.gif
+```
+
+- 960 × 240 px，约 5 秒，60 帧。
+- 目录为静帧预览；打开素材地址可查看完整动态效果。
+- 可作为图片、装饰块或原生页面封面使用；按原始比例放置。
+- GIF 已设为无限循环。
+
+许可：此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可
+
+目录 ID：`my-life-planner-cover-garden-loop-gif`
+
+### 数字花园复古瑜伽动图 · 通用
+
+![数字花园复古瑜伽动图默认预览](previews/digital-garden-kollab-yoga-loop-gif.png)
+
+自制 · 可用 · 建议 720 × 405 px
+
+数字花园的动态装饰素材。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/digital-garden/kollab-yoga-loop.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/kollab-yoga-loop.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/kollab-yoga-loop.gif)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/digital-garden/kollab-yoga-loop.gif
+```
+
+- 720 × 405 px，约 4 秒，48 帧。
+- 目录为静帧预览；打开素材地址可查看完整动态效果。
+- 可作为图片、装饰块或原生页面封面使用；按原始比例放置。
+- GIF 已设为无限循环。
+
+许可：此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可
+
+目录 ID：`digital-garden-kollab-yoga-loop-gif`
+
+### 秘密花园动图（俄语） · 俄语
+
+![秘密花园动图（俄语）默认预览](previews/digital-garden-secret-garden-loop-ru-gif.png)
+
+自制 · 可用 · 建议 800 × 168 px
+
+数字花园的动态装饰素材。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/digital-garden/secret-garden-loop-ru.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/secret-garden-loop-ru.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/secret-garden-loop-ru.gif)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/digital-garden/secret-garden-loop-ru.gif
+```
+
+- 800 × 168 px，约 4.08 秒，49 帧。
+- 目录为静帧预览；打开素材地址可查看完整动态效果。
+- 可作为图片、装饰块或原生页面封面使用；按原始比例放置。
+- GIF 已设为无限循环。
+
+许可：此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可
+
+目录 ID：`digital-garden-secret-garden-loop-ru-gif`
+
+### 数字花园花藤分隔动图 · 通用
+
+![数字花园花藤分隔动图默认预览](previews/digital-garden-kollab-floral-vine-loop-v2-gif.png)
+
+自制 · 可用 · 建议 800 × 104 px
+
+数字花园的动态装饰素材。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/digital-garden/kollab-floral-vine-loop-v2.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/kollab-floral-vine-loop-v2.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/digital-garden/kollab-floral-vine-loop-v2.gif)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/digital-garden/kollab-floral-vine-loop-v2.gif
+```
+
+- 800 × 104 px，约 4.08 秒，49 帧。
+- 目录为静帧预览；打开素材地址可查看完整动态效果。
+- 可作为图片、装饰块或原生页面封面使用；按原始比例放置。
+- GIF 已设为无限循环。
+
+许可：此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可
+
+目录 ID：`digital-garden-kollab-floral-vine-loop-v2-gif`
+
+### 番茄钟状态演示 GIF · 英语演示
+
+![番茄钟状态演示 GIF默认预览](previews/my-life-planner-pomodoro-demo-gif.png)
+
+自制 · 可用 · 建议 480 × 600 px
+
+生活计划的组件状态演示。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/my-life-planner/pomodoro-demo.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/pomodoro-demo.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/pomodoro-demo.gif)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/my-life-planner/pomodoro-demo.gif
+```
+
+- 480 × 600 px，约 3 秒，36 帧。
+- 目录为静帧预览；打开素材地址可查看完整动态效果。
+- 这是此前组件审核包的状态演示图片；需要点击、计时或保存计数时，请使用目录中的对应交互组件。
+- 计数和时间均为演示状态，不读取或同步个人数据。
+- GIF 已设为无限循环。
+
+许可：此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可
+
+目录 ID：`my-life-planner-pomodoro-demo-gif`
+
+### 翻页时钟状态演示 GIF · 英语演示
+
+![翻页时钟状态演示 GIF默认预览](previews/my-life-planner-flip-clock-demo-gif.png)
+
+自制 · 可用 · 建议 720 × 280 px
+
+生活计划的组件状态演示。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/my-life-planner/flip-clock-demo.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/flip-clock-demo.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/flip-clock-demo.gif)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/my-life-planner/flip-clock-demo.gif
+```
+
+- 720 × 280 px，约 5 秒，60 帧。
+- 目录为静帧预览；打开素材地址可查看完整动态效果。
+- 这是此前组件审核包的状态演示图片；需要点击、计时或保存计数时，请使用目录中的对应交互组件。
+- 计数和时间均为演示状态，不读取或同步个人数据。
+- GIF 已设为无限循环。
+
+许可：此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可
+
+目录 ID：`my-life-planner-flip-clock-demo-gif`
+
+### 阅读计数状态演示 GIF · 英语演示
+
+![阅读计数状态演示 GIF默认预览](previews/my-life-planner-books-counter-demo-gif.png)
+
+自制 · 可用 · 建议 600 × 333 px
+
+生活计划的组件状态演示。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/my-life-planner/books-counter-demo.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/books-counter-demo.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/books-counter-demo.gif)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/my-life-planner/books-counter-demo.gif
+```
+
+- 600 × 333 px，约 3 秒，36 帧。
+- 目录为静帧预览；打开素材地址可查看完整动态效果。
+- 这是此前组件审核包的状态演示图片；需要点击、计时或保存计数时，请使用目录中的对应交互组件。
+- 计数和时间均为演示状态，不读取或同步个人数据。
+- GIF 已设为无限循环。
+
+许可：此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可
+
+目录 ID：`my-life-planner-books-counter-demo-gif`
+
+### 像素植物摆动 GIF · 通用
+
+![像素植物摆动 GIF默认预览](previews/my-life-planner-pixel-plant-loop-gif.png)
+
+自制 · 可用 · 建议 520 × 380 px
+
+生活计划的动态装饰素材。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/my-life-planner/pixel-plant-loop.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/pixel-plant-loop.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/pixel-plant-loop.gif)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/my-life-planner/pixel-plant-loop.gif
+```
+
+- 520 × 380 px，约 4 秒，48 帧。
+- 目录为静帧预览；打开素材地址可查看完整动态效果。
+- 可作为图片、装饰块或原生页面封面使用；按原始比例放置。
+- GIF 已设为无限循环。
+
+许可：此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可
+
+目录 ID：`my-life-planner-pixel-plant-loop-gif`
+
+### 房间四景轮播 GIF · 英语演示
+
+![房间四景轮播 GIF默认预览](previews/my-life-planner-room-scene-cycle-gif.png)
+
+自制 · 可用 · 建议 480 × 600 px
+
+生活计划的动态装饰素材。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/my-life-planner/room-scene-cycle.gif) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/room-scene-cycle.gif) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/room-scene-cycle.gif)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/my-life-planner/room-scene-cycle.gif
+```
+
+- 480 × 600 px，约 9.33 秒，112 帧。
+- 目录为静帧预览；打开素材地址可查看完整动态效果。
+- 可作为图片、装饰块或原生页面封面使用；按原始比例放置。
+- GIF 已设为无限循环。
+
+许可：此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可
+
+目录 ID：`my-life-planner-room-scene-cycle-gif`
+
+### 生活计划花园封面 MP4（原生版） · 通用
+
+![生活计划花园封面 MP4（原生版）默认预览](previews/my-life-planner-cover-garden-loop-mp4.png)
+
+自制 · 可用 · 建议 1280 × 320 px
+
+生活计划的动态装饰素材。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/my-life-planner/cover-garden-loop.mp4) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/cover-garden-loop.mp4) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/cover-garden-loop.mp4)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/my-life-planner/cover-garden-loop.mp4
+```
+
+- 1280 × 320 px，约 5 秒，60 帧。
+- 目录为静帧预览；打开素材地址可查看完整动态效果。
+- MP4 使用视频播放器嵌入；循环与静音由播放器控制。
+
+许可：此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可
+
+目录 ID：`my-life-planner-cover-garden-loop-mp4`
+
+### 房间四景轮播 MP4 · 英语演示
+
+![房间四景轮播 MP4默认预览](previews/my-life-planner-room-scene-cycle-mp4.png)
+
+自制 · 可用 · 建议 720 × 900 px
+
+生活计划的动态装饰素材。
+
+[打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/my-life-planner/room-scene-cycle.mp4) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/room-scene-cycle.mp4) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/blob/main/docs/assets/animations/my-life-planner/room-scene-cycle.mp4)
+
+嵌入／素材地址：
+
+```text
+https://zhangleiye68-jpg.github.io/buildin-reference-widgets/assets/animations/my-life-planner/room-scene-cycle.mp4
+```
+
+- 720 × 900 px，约 9.33333 秒，112 帧。
+- 目录为静帧预览；打开素材地址可查看完整动态效果。
+- MP4 使用视频播放器嵌入；循环与静音由播放器控制。
+
+许可：此前自制模板生成／制作素材，可在本库模板中复用；未声明通用开源许可
+
+目录 ID：`my-life-planner-room-scene-cycle-mp4`
 
