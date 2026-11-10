@@ -41,6 +41,10 @@
       font-size: 13.5px; line-height: 1.4; font-weight: 650;
       white-space: nowrap; font-variant-numeric: tabular-nums; }
     .low { color: var(--muted); }
+    .city, .source, .temperature, .condition, .weekday, .date, .high, .low {
+      -webkit-text-stroke: var(--text-outline-width, .8px) #000;
+      paint-order: stroke fill;
+    }
     .arrow { font-size: .9em; font-weight: 700; }
     .symbols { position: absolute; width: 0; height: 0; overflow: hidden; }
     @media (max-width: 220px) {
@@ -119,6 +123,7 @@
       if (params.get('theme') === 'light') {
         host.style.setProperty('--ink', '#262626');
         host.style.setProperty('--muted', '#666666');
+        host.style.setProperty('--text-outline-width', '0px');
       }
       host.style.color = 'var(--ink)';
       const currentIcon = document.querySelector('[data-current-icon]');

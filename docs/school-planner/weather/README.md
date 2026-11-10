@@ -2,7 +2,7 @@
 
 入口：<https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/weather/>
 
-默认保留洛杉矶、摄氏、五日预报、浅色文字及透明底色。支持 `lat`、`lon`、`city`、`tz` 设置坐标、俄语城市显示名和 IANA 时区。`forecast_days=7` 启用七日，其他值维持五日；七日自然宽度 484px，整体随 iframe 等比缩放。`theme=light` 为浅色页面使用深色文字，`greyscale=1` 显示灰度天气图标。
+默认保留洛杉矶、摄氏、五日预报、浅色文字及透明底色。浅色文字加细黑描边，透明组件可嵌入白底或深色背景。支持 `lat`、`lon`、`city`、`tz` 设置坐标、俄语城市显示名和 IANA 时区。`forecast_days=7` 启用七日，其他值维持五日；七日自然宽度 484px，整体随 iframe 等比缩放。`theme=light` 为浅色页面使用深色文字，`greyscale=1` 显示灰度天气图标。
 
 七日模式在宽度不超过 220px 时改用纵向一列，保留全部七天，最窄支持 77px。窄栏需要更高的容器或在 iframe 内纵向滚动，不会把全部内容缩成微小文字；默认五日模式保持原有布局。
 

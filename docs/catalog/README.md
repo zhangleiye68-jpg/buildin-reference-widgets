@@ -421,7 +421,7 @@ https://widgetbox.app/embed/calendar/simple/60788344-032d-4bad-b871-5832168828ae
 
 自制 · 可用 · 建议 560 × 420 px
 
-默认洛杉矶天气与五日预报，可按坐标和时区切换城市；保留原深色配置。
+默认洛杉矶天气与五日预报，可按坐标和时区切换城市。浅色文字带细黑描边，背景透明。
 
 [打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/weather/?locale=ru&theme=dark&v=30) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/weather/) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/weather/)
 
@@ -432,9 +432,9 @@ https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/weat
 ```
 
 - 独立网页组件，不自动关联 Buildin 原生数据库。
-- 浅色文字与透明背景，适合深色模板；浅色页面需提供深色底色。
-- 已支持lat/lon/city/tz，forecast_days=7可选七日；默认五日保持。浅色页面用theme=light，窄栏七日另见weather-ru-seven-day。
-- 默认PNG为实际已加载的洛杉矶摄氏五日界面；透明深色专用组件的预览使用深色宿主。
+- 浅色文字的细黑描边适用于白底和深色背景，组件背景透明。
+- 支持 lat/lon/city/tz；forecast_days=7 可选七日。theme=light 可选深色文字，窄栏七日另见 weather-ru-seven-day。
+- 默认 PNG 是洛杉矶摄氏五日预报在深色背景上的实际画面。
 
 许可：自制，可在本库复用
 
