@@ -7,11 +7,9 @@
   <title>Погода</title>
   <style>
     * { box-sizing: border-box; }
-    /* The embed remains transparent. Direct visits supply their own matching background. */
-    :root { color-scheme: normal; --ink: #f5f7fa; --muted: #bac3cf; --standalone-bg: #191919; }
-    :root[data-theme="light"] { --ink: #262626; --muted: #59636e; --standalone-bg: #fff; }
+    /* Night-only text, with a transparent iframe canvas rather than a black box. */
+    :root { color-scheme: normal; --ink: #f5f7fa; --muted: #bac3cf; }
     html, body { margin: 0; width: 100%; height: 100%; min-width: 0; overflow: hidden; background: transparent; }
-    html[data-standalone] { background-color: var(--standalone-bg); }
     body { color: var(--ink); font-family: Arial, Helvetica, sans-serif;
       -webkit-font-smoothing: antialiased; }
     .fit-viewport { position: fixed; inset: 0; padding: 12px 8px; overflow: hidden; }
@@ -76,10 +74,10 @@
     </defs>
   </svg>
   <div class="fit-viewport" data-fit-viewport>
-  <main class="weather" aria-label="Погода: Москва" data-status="loading"
+  <main class="weather" aria-label="Погода в Лос-Анджелесе" data-status="loading"
     data-fit-content data-fit-min-width="344" data-fit-fill-width>
     <div class="current">
-      <div class="location"><div class="city" data-city>Москва</div>
+      <div class="location"><div class="city" data-city>Лос-Анджелес</div>
         <a class="source" href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer"
           title="Данные погоды: Open-Meteo · CC BY 4.0" aria-label="Данные погоды: Open-Meteo">Open-Meteo</a></div>
       <div class="current-icon" data-current-icon aria-hidden="true"></div>
@@ -92,13 +90,9 @@
   <script>
     // Set the natural width before the shared deferred fitting script runs.
     {
-      const params = new URLSearchParams(location.search);
-      const root = document.documentElement;
-      if (params.get('theme') === 'light') root.dataset.theme = 'light';
-      if (window.self === window.top) root.dataset.standalone = '';
       const host = document.querySelector('.weather');
-      const count = params.get('forecast_days') === '7' ? 7 : 5;
-      if (count === 7) root.dataset.sevenDay = '';
+      const count = new URLSearchParams(location.search).get('forecast_days') === '7' ? 7 : 5;
+      if (count === 7) document.documentElement.dataset.sevenDay = '';
       host.dataset.forecastDays = String(count);
       host.dataset.fitMinWidth = count === 7 ? '484' : '344';
       host.style.width = `${host.dataset.fitMinWidth}px`;
@@ -115,15 +109,18 @@
         const n = Number(params.get(key));
         return Number.isFinite(n) && n >= min && n <= max ? n : fallback;
       };
-      const defaultCity = 'Москва';
-      const defaultTimeZone = 'Europe/Moscow';
-      const latitude = coordinate('lat', 55.75204, -90, 90);
-      const longitude = coordinate('lon', 37.61781, -180, 180);
-      const city = (params.get('city') || defaultCity).trim().slice(0, 70) || defaultCity;
-      let timeZone = params.get('tz') || defaultTimeZone;
-      try { new Intl.DateTimeFormat('ru', {timeZone}).format(); } catch { timeZone = defaultTimeZone; }
+      const latitude = coordinate('lat', 34.0522, -90, 90);
+      const longitude = coordinate('lon', -118.2437, -180, 180);
+      const city = (params.get('city') || 'Лос-Анджелес').trim().slice(0, 70) || 'Лос-Анджелес';
+      let timeZone = params.get('tz') || 'America/Los_Angeles';
+      try { new Intl.DateTimeFormat('ru', {timeZone}).format(); } catch { timeZone = 'America/Los_Angeles'; }
       const host = document.querySelector('.weather');
       const forecastDays = Number(host.dataset.forecastDays);
+      if (params.get('theme') === 'light') {
+        host.style.setProperty('--ink', '#262626');
+        host.style.setProperty('--muted', '#666666');
+      }
+      host.style.color = 'var(--ink)';
       const currentIcon = document.querySelector('[data-current-icon]');
       const temperature = document.querySelector('[data-temperature]');
       const condition = document.querySelector('[data-condition]');

@@ -2,9 +2,7 @@
 
 入口：<https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/weather/>
 
-默认显示莫斯科的摄氏温度和五日预报。页面内没有城市选择器，现有 `lat`、`lon`、`city`、`tz` 配置链接继续可用。`forecast_days=7` 启用七日，其他值维持五日。七日自然宽度 484px，整体随 iframe 等比缩放。`greyscale=1` 显示灰度天气图标。
-
-原有 `theme=dark` 链接使用浅色文字，`theme=light` 使用深色文字。嵌入时两版都是透明背景，按宿主底色选用。直接打开时，组件使用与配色相配的深底或白底。字体、布局和图标共用同一套样式。
+默认保留洛杉矶、摄氏、五日预报、浅色文字及透明底色。支持 `lat`、`lon`、`city`、`tz` 设置坐标、俄语城市显示名和 IANA 时区。`forecast_days=7` 启用七日，其他值维持五日；七日自然宽度 484px，整体随 iframe 等比缩放。`theme=light` 为浅色页面使用深色文字，`greyscale=1` 显示灰度天气图标。
 
 七日模式在宽度不超过 220px 时改用纵向一列，保留全部七天，最窄支持 77px。窄栏需要更高的容器或在 iframe 内纵向滚动，不会把全部内容缩成微小文字；默认五日模式保持原有布局。
 
