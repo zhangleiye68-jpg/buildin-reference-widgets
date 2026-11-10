@@ -1,6 +1,6 @@
 # Buildin 统一组件库
 
-更新：2026-11-06 · 55 个组件 · 40 项素材
+更新：2026-11-10 · 55 个组件 · 40 项素材
 
 [打开可搜索的图文目录](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/catalog/) · [读取完整 JSON](components.json)
 
@@ -421,7 +421,7 @@ https://widgetbox.app/embed/calendar/simple/60788344-032d-4bad-b871-5832168828ae
 
 自制 · 可用 · 建议 560 × 420 px
 
-默认洛杉矶天气与五日预报，可按坐标和时区切换城市；保留原深色配置。
+默认显示莫斯科当前天气与摄氏五日预报，保留俄语、原布局和固定嵌入地址。
 
 [打开组件或素材](https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/weather/?locale=ru&theme=dark&v=30) · [原始来源](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/weather/) · [源码](https://github.com/zhangleiye68-jpg/buildin-reference-widgets/tree/main/docs/school-planner/weather/)
 
@@ -431,10 +431,10 @@ https://widgetbox.app/embed/calendar/simple/60788344-032d-4bad-b871-5832168828ae
 https://zhangleiye68-jpg.github.io/buildin-reference-widgets/school-planner/weather/?locale=ru&theme=dark&v=30
 ```
 
-- 独立网页组件，不自动关联 Buildin 原生数据库。
-- 浅色文字与透明背景，适合深色模板；浅色页面需提供深色底色。
-- 已支持lat/lon/city/tz，forecast_days=7可选七日；默认五日保持。浅色页面用theme=light，窄栏七日另见weather-ru-seven-day。
-- 默认PNG为实际已加载的洛杉矶摄氏五日界面；透明深色专用组件的预览使用深色宿主。
+- 默认莫斯科。支持已有的 lat、lon、city、tz 链接配置，组件界面仅显示城市。
+- 嵌入时背景透明。theme=dark 用浅色字，theme=light 用深色字；直接打开时显示对应的深底或白底。
+- 默认五日。forecast_days=7 可选七日，窄栏布局见 weather-ru-seven-day。
+- 默认 PNG 是莫斯科实时天气加载后的黑夜版，未包含私人模板内容。
 
 许可：自制，可在本库复用
 
